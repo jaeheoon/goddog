@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">보호소목록</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/shelter/shelter_list.css">
+		<link rel="stylesheet" href="/assets/css/lib/swiper.css" media="all">
+		<link rel="stylesheet" href="/assets/css/theme/theme.css" media="all">
+		<link rel="stylesheet" href="/assets/css/shelter/donation.css">
+		<link rel="stylesheet" href="/assets/css/shelter/shelter-lite3153.css" media="all">
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FFFCF7;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated"
+												style="margin-top: 8%; margin-bottom: 8%;">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">보호소</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>기관에 등록된 보호소를 살펴보세요!</p>
+													</div>
+												</div>
+											</div>
+										</div>
+								</section>
+							</div>
+						</div>
+				</section>
+
+
+				<!-- 첫번째 보호소 -->
+				<div data-elementor-type="wp-page" data-elementor-id="1691"
+					class="elementor elementor-1691" data-elementor-post-type="page">
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="3ae9f652" data-element_type="section"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<!-- 배경색 -->
+						<!-- <div class="elementor-background-overlay"></div> -->
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+								data-id="1de2e7fd" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="6080893a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+								data-id="76dc7882" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<section
+										class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+										data-id="5e9da05a" data-element_type="section"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+										<div class="elementor-container elementor-column-gap-no">
+											<div
+												class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-12691664"
+												data-id="12691664" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+														data-id="7f2c345c" data-element_type="widget"
+														data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;no&quot;,&quot;pause_on_hover&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+														data-widget_type="image-carousel.default">
+														<div class="elementor-widget-container">
+															<div
+																class="elementor-image-carousel-wrapper swiper-container"
+																dir="ltr">
+																<div class="elementor-image-carousel swiper-wrapper"
+																	aria-live="off">
+																	<figure class="swiper-slide-inner">
+																		<img decoding="async" class="swiper-slide-image"
+																			src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-profile-5.jpg"
+																			alt="dog profile 5" />
+																	</figure>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-2a2ee40d"
+												data-id="2a2ee40d" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-3fd55719 elementor-widget elementor-widget-heading"
+														data-id="3fd55719" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4
+																class="elementor-heading-title elementor-size-default semititle">
+																<i aria-hidden="true" class="fas fa-building"> 굿도그</i>
+															</h4>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-2896e802 elementor-widget elementor-widget-spacer"
+														data-id="2896e802" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<section
+														class="elementor-section elementor-inner-section elementor-element elementor-element-31c2e04 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+														data-id="31c2e04" data-element_type="section">
+														<div class="elementor-container elementor-column-gap-no">
+															<div
+																class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-58ba4b30"
+																data-id="58ba4b30" data-element_type="column">
+																<div
+																	class="elementor-widget-wrap elementor-element-populated">
+																	<div
+																		class="elementor-element elementor-element-27f35498 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="27f35498" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">휴무일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-6d2ee96e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="6d2ee96e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				일요일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-2d0f7b54 elementor-widget elementor-widget-spacer"
+																		data-id="2d0f7b54" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-73123f9e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="73123f9e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">전화번호</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-5cf9221c elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="5cf9221c" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				02-9687-7777</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-3c7c0cf1 elementor-widget elementor-widget-spacer"
+																		data-id="3c7c0cf1" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-693a8307 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="693a8307" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">주소</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-4d232eb elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="4d232eb" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				서울특별시 중랑구 떡볶이좋아로</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-207d674d elementor-widget elementor-widget-spacer"
+																		data-id="207d674d" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+													<div
+														class="elementor-element elementor-element-827b4fe elementor-widget elementor-widget-spacer"
+														data-id="827b4fe" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-203fa29a elementor-mobile-align-justify elementor-widget elementor-widget-button"
+														data-id="203fa29a" data-element_type="widget"
+														data-widget_type="button.default"
+														style="display: contents;">
+														<div class="elementor-widget-container"
+															style="float: right;">
+															<div class="elementor-button-wrapper">
+																<a
+																	class="elementor-button elementor-button-link elementor-size-sm"
+																	href="/shelter/shelter-detail.html"
+																	th:href="@{'/'+shelter+'/'+detail}"> <span
+																	class="elementor-button-content-wrapper"> <span
+																		class="elementor-button-icon elementor-align-icon-left">
+																			<i aria-hidden="true" class="fas fa-file-alt"></i>
+																	</span> <span class="elementor-button-text">자세히 보기</span>
+																</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!---------------------------------------------------------------- 두번째--------------------------------------------------------- -->
+				<div data-elementor-type="wp-page" data-elementor-id="1691"
+					class="elementor elementor-1691" data-elementor-post-type="page">
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="3ae9f652" data-element_type="section"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<!-- 배경색 -->
+						<!-- <div class="elementor-background-overlay"></div> -->
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+								data-id="1de2e7fd" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="6080893a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+								data-id="76dc7882" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<section
+										class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+										data-id="5e9da05a" data-element_type="section"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+										<div class="elementor-container elementor-column-gap-no">
+											<div
+												class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-12691664"
+												data-id="12691664" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+														data-id="7f2c345c" data-element_type="widget"
+														data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;no&quot;,&quot;pause_on_hover&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+														data-widget_type="image-carousel.default">
+														<div class="elementor-widget-container">
+															<div
+																class="elementor-image-carousel-wrapper swiper-container"
+																dir="ltr">
+																<div class="elementor-image-carousel swiper-wrapper"
+																	aria-live="off">
+																	<figure class="swiper-slide-inner">
+																		<img decoding="async" class="swiper-slide-image"
+																			src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-profile-5.jpg"
+																			alt="dog profile 5" />
+																	</figure>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-2a2ee40d"
+												data-id="2a2ee40d" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-3fd55719 elementor-widget elementor-widget-heading"
+														data-id="3fd55719" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4
+																class="elementor-heading-title elementor-size-default semititle">
+																<i aria-hidden="true" class="fas fa-building"> 해피파워</i>
+															</h4>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-2896e802 elementor-widget elementor-widget-spacer"
+														data-id="2896e802" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<section
+														class="elementor-section elementor-inner-section elementor-element elementor-element-31c2e04 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+														data-id="31c2e04" data-element_type="section">
+														<div class="elementor-container elementor-column-gap-no">
+															<div
+																class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-58ba4b30"
+																data-id="58ba4b30" data-element_type="column">
+																<div
+																	class="elementor-widget-wrap elementor-element-populated">
+																	<div
+																		class="elementor-element elementor-element-27f35498 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="27f35498" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">휴무일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-6d2ee96e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="6d2ee96e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				일요일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-2d0f7b54 elementor-widget elementor-widget-spacer"
+																		data-id="2d0f7b54" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-73123f9e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="73123f9e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">전화번호</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-5cf9221c elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="5cf9221c" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				02-9687-7777</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-3c7c0cf1 elementor-widget elementor-widget-spacer"
+																		data-id="3c7c0cf1" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-693a8307 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="693a8307" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">주소</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-4d232eb elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="4d232eb" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				서울특별시 중랑구 떡볶이좋아로</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-207d674d elementor-widget elementor-widget-spacer"
+																		data-id="207d674d" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+													<div
+														class="elementor-element elementor-element-827b4fe elementor-widget elementor-widget-spacer"
+														data-id="827b4fe" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-203fa29a elementor-mobile-align-justify elementor-widget elementor-widget-button"
+														data-id="203fa29a" data-element_type="widget"
+														data-widget_type="button.default"
+														style="display: contents;">
+														<div class="elementor-widget-container"
+															style="float: right;">
+															<div class="elementor-button-wrapper">
+																<a
+																	class="elementor-button elementor-button-link elementor-size-sm"
+																	href="/shelter/shelter-detail.html"
+																	th:href="@{'/'+shelter+'/'+detail}"> <span
+																	class="elementor-button-content-wrapper"> <span
+																		class="elementor-button-icon elementor-align-icon-left">
+																			<i aria-hidden="true" class="fas fa-file-alt"></i>
+																	</span> <span class="elementor-button-text">자세히 보기</span>
+																</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+
+				<!-------------------------------------------------------------- 세번째 --------------------------------------------------------------- -->
+				<div data-elementor-type="wp-page" data-elementor-id="1691"
+					class="elementor elementor-1691" data-elementor-post-type="page">
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="3ae9f652" data-element_type="section"
+						data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+						<!-- 배경색 -->
+						<!-- <div class="elementor-background-overlay"></div> -->
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+								data-id="1de2e7fd" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+								</div>
+							</div>
+						</div>
+					</section>
+					<section
+						class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+						data-id="6080893a" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div
+								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+								data-id="76dc7882" data-element_type="column">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<section
+										class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+										data-id="5e9da05a" data-element_type="section"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}"
+										style="margin-bottom: 10%;">
+										<div class="elementor-container elementor-column-gap-no">
+											<div
+												class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-12691664"
+												data-id="12691664" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+														data-id="7f2c345c" data-element_type="widget"
+														data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;no&quot;,&quot;pause_on_hover&quot;:&quot;no&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+														data-widget_type="image-carousel.default">
+														<div class="elementor-widget-container">
+															<div
+																class="elementor-image-carousel-wrapper swiper-container"
+																dir="ltr">
+																<div class="elementor-image-carousel swiper-wrapper"
+																	aria-live="off">
+																	<figure class="swiper-slide-inner">
+																		<img decoding="async" class="swiper-slide-image"
+																			src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-profile-5.jpg"
+																			alt="dog profile 5" />
+																	</figure>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div
+												class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-2a2ee40d"
+												data-id="2a2ee40d" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-3fd55719 elementor-widget elementor-widget-heading"
+														data-id="3fd55719" data-element_type="widget"
+														data-widget_type="heading.default">
+														<div class="elementor-widget-container">
+															<h4
+																class="elementor-heading-title elementor-size-default semititle">
+																<i aria-hidden="true" class="fas fa-building"> 춘향이와
+																	멍멍이</i>
+															</h4>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-2896e802 elementor-widget elementor-widget-spacer"
+														data-id="2896e802" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<section
+														class="elementor-section elementor-inner-section elementor-element elementor-element-31c2e04 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+														data-id="31c2e04" data-element_type="section">
+														<div class="elementor-container elementor-column-gap-no">
+															<div
+																class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-58ba4b30"
+																data-id="58ba4b30" data-element_type="column">
+																<div
+																	class="elementor-widget-wrap elementor-element-populated">
+																	<div
+																		class="elementor-element elementor-element-27f35498 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="27f35498" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">휴무일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-6d2ee96e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="6d2ee96e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				일요일</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-2d0f7b54 elementor-widget elementor-widget-spacer"
+																		data-id="2d0f7b54" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-73123f9e elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="73123f9e" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">전화번호</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-5cf9221c elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="5cf9221c" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				02-9687-7777</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-3c7c0cf1 elementor-widget elementor-widget-spacer"
+																		data-id="3c7c0cf1" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-693a8307 elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="693a8307" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">주소</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-4d232eb elementor-widget__width-initial elementor-widget elementor-widget-heading"
+																		data-id="4d232eb" data-element_type="widget"
+																		data-widget_type="heading.default">
+																		<div class="elementor-widget-container">
+																			<h6
+																				class="elementor-heading-title elementor-size-default">:
+																				서울특별시 중랑구 떡볶이좋아로</h6>
+																		</div>
+																	</div>
+																	<div
+																		class="elementor-element elementor-element-207d674d elementor-widget elementor-widget-spacer"
+																		data-id="207d674d" data-element_type="widget"
+																		data-widget_type="spacer.default">
+																		<div class="elementor-widget-container">
+																			<div class="elementor-spacer">
+																				<div class="elementor-spacer-inner"></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</section>
+													<div
+														class="elementor-element elementor-element-827b4fe elementor-widget elementor-widget-spacer"
+														data-id="827b4fe" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-203fa29a elementor-mobile-align-justify elementor-widget elementor-widget-button"
+														data-id="203fa29a" data-element_type="widget"
+														data-widget_type="button.default"
+														style="display: contents;">
+														<div class="elementor-widget-container"
+															style="float: right;">
+															<div class="elementor-button-wrapper">
+																<a
+																	class="elementor-button elementor-button-link elementor-size-sm"
+																	href="/shelter/shelter-detail.html"
+																	th:href="@{'/'+shelter+'/'+detail}"> <span
+																	class="elementor-button-content-wrapper"> <span
+																		class="elementor-button-icon elementor-align-icon-left">
+																			<i aria-hidden="true" class="fas fa-file-alt"></i>
+																	</span> <span class="elementor-button-text">자세히 보기</span>
+																</span>
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</main>
+	</th:block>
+
+</th:block>

@@ -1,0 +1,91 @@
+# 환경이름설정
+spring:
+  config:
+    activate:
+      on-profile: prod
+
+---
+
+# WebServer 설정 (application.yml 재정의 개념) 
+server:
+  port: 80
+  servlet:
+    context-path: /
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+    session:
+      timeout: 600               # 단위 : 초, 10분 설정
+  tomcat:
+    uri-encoding: UTF-8          # Spring Default
+
+---
+
+# Logging 설정
+logging:
+  pattern:
+    console: "[%d{yyyy-MM-dd}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
+    file: "[%d{yyyy-MM-dd HH:mm:ss}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
+  file:
+    name: D:/JAVA/workspace/goddog/log/application-prod.log #조장변경
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB         #default 10M
+      max-history: 31            #default 7
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.zip
+  # 패키지별 Log Level 설정
+  level:
+    org:
+      apache:
+        coyote:
+          http11: warn          # http 요청메시지 로그
+      springframework:
+        jdbc: warn              # jdbc 처리 로그
+        datasource:
+          DataSourceTransactionManager: warn
+        transaction:
+          interceptor: warn
+      
+    com:
+      ezen:
+        springmvc:
+          domain:
+            member:
+              mapper: trace       # mybatis 처리 로그
+  
+---
+
+# Spring 설정
+spring:
+  #Database 연결 정보 설정
+  config:
+    import: db-config.properties
+  # File Upload 설정
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 20MB
+  # MessageSource 설정
+  messages:
+    basename: messages,errors
+
+---
+
+# MyBatis 설정
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  
+  mapper-locations: 
+    - classpath:mybatis/mapper/**/*.xml
+  type-aliases-package: com.ezen.springmvc.domain.member.dto
+
+---
+      
+# 파일업로드 경로 설정
+common:
+  uploadPath: D:/JAVA/workspace/goddog/upload/
+  
+  
+  
+  

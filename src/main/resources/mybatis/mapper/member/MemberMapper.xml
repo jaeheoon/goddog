@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="tteogipbangbeomdae.goddog.domain.member.mapper.MemberMapper">
+
+	<insert id="create" parameterType="Member">
+		INSERT INTO MEMBER (member_id, passwd, name, birthday, adress, email, tel)
+		VALUES (#{memberId}, #{passwd}, #{name}, #{fullBirthday}, #{fullAdress}, #{fullEmail}, #{phoneNum})
+	</insert>
+	
+	<select id="findById" parameterType="string" resultType="Member">
+		SELECT member_id memberId, name, tel phoneNum, email fullEmail, lev, TO_CHAR(regdate, 'YYYY-MM-DD') regdate, TO_CHAR(birthday, 'YYYY-MM-DD') fullBirthday, adress fullAdress
+		FROM member
+		WHERE member_id = #{memberId}
+	</select>
+	
+	<select id="findByIdAndPasswd" resultType="Member">
+		SELECT member_id memberId, name, tel phoneNum, email fullEmail, lev, TO_CHAR(regdate, 'YYYY-MM-DD') regdate, TO_CHAR(birthday, 'YYYY-MM-DD') fullBirthday, adress fullAdress
+		FROM member
+		WHERE member_id = #{memberId} AND passwd = #{passwd}
+	</select>
+	
+</mapper>

@@ -1,0 +1,88 @@
+<!--/*  
+ * 홈페이지 담당
+ * 작성자 : 에너자이조 김기정
+ * 작성일 : 2023. 9. 4.
+*/-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: content})}">
+
+	<title th:fragment="title">:: Final Project Template ::</title>
+
+	<div class="container-fluid" th:fragment="content">
+
+		<h1 class="m-4 text-primary">Spring + Mybatis + Thymeleaf 기반 수료 프로젝트 템플릿입니다.</h1>
+		<hr>
+		<ul>
+			<li>수료 프로젝트 생성</li>
+			<li style="list-style: none">
+				<ul>
+					<li>프로젝트 템플릿(final_project_template) 복사 및 settings.gradle 파일의 프로젝트명 변경</li>
+				</ul>
+			</li>
+			
+			<li>의존 라이브러리 설정 파일(build.gradle) 확인</li>
+			
+			<li>스프링 설정 파일 변경</li>
+			<li style="list-style: none">
+				<ul>
+					<li>application.properties 파일 -> application.yml (application-dev.yml/application-prod.yml)로 변경</li>
+				</ul>
+			</li>
+			
+			<li>웹 퍼블리셔로부터 인수된 html, css, javascript 파일 static/ 폴더에 복사</li>
+			<li style="list-style: none">
+				<ul>
+					<li>html 페이지에 포함된 css, javascript 경로 절대경로로 변경 (예: /css/some.css)</li>
+				</ul>
+			</li>
+			
+			<li>html 구조 확인 및 주석 작성</li>
+			
+			<li>타임리프 템플릿(레이아웃) 파일 작성</li>
+			<li style="list-style: none">
+				<ul>
+					<li>예: src/templates/layout/layoutV1.html</li>
+				</ul>
+			</li>
+			
+			<li>홈 세부컨트롤러 작성 및 포워드 시 필요한 index.html 파일 작성</li>
+			<li style="list-style: none">
+				<ul>
+					<li>세부 컨트롤러: src/main/java/그룹아이디.프로젝트아이디.web.home.controller.HomeController</li>
+					<li>프리젠테이션(웹) 계층과 서비스 계층을 분리하기 위해 반드시 web 패키지와 domain 패키지 분리할 것</li>
+					<li>타임리프 파일: src/main/resources/templates/index.html</li>
+				</ul>
+			</li>
+			
+			<li>요청 테스트 및 확인</li>
+			<li style="list-style: none">
+				<ul>
+					<li>http://localhost/</li>
+				</ul>
+			</li>
+			
+			<li>관심사의 분리를 통해 도메인에 상관 없는 공통 기능 정의</li>
+			<li style="list-style: none">
+				<ul>
+					<li>로그기록 (AOP, 인터셉터 적용)</li>
+				</ul>
+			</li>
+			
+			<li>도메인별로 팀원 개발 업무를 분류하고, 팀 협의를 통해 패키지 구조를 표준화할 것</li>
+			
+			<li>각 조별 조장님들은 위의 작업을 완료한 후 Github 레포지토리를 생성하고, Push 할것</li>
+			
+			<li>각 조원들은 Github 레포지토리를 복제한 후 개발을 진행할 것</li>
+			<li style="list-style: none">
+				<ul>
+					<li>가능하면 조원별 브랜치를 생성하고 브랜치별로 개발하고 개발이 완료되면 병합할 것</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+</th:block>
+
+</html>

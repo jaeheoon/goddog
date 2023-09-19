@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="tteogipbangbeomdae.goddog.domain.shelter.mapper.ShelterMapper">
+
+	<select id="selectShelter" parameterType="int" resultType="Shelter">
+		SELECT care_no, name, adress, tel, closeday,
+		mans, open, close,
+		volunteer_am, volunteer_pm, map_url
+		FROM care
+		WHERE care_no = #{value}
+	</select>
+
+</mapper>

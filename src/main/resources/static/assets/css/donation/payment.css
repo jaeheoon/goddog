@@ -1,0 +1,124 @@
+.elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3bea7c64{
+  margin-top: 14% !important;
+}
+
+.elementor-column{
+  display: block !important;
+}
+
+.section-step-process .support-field .table-field {
+  margin-top: 20px;
+}
+.cont-support .table-field {
+  border-top: 3px solid #222;
+}
+.v2 .table-field {
+  border-top: 1px solid #bdbdbd;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-collapse: inherit;
+  border-spacing: 0;
+  word-wrap: break-word;
+  width: 100%;
+}
+.v2 .table-field {
+  border-top: 1px solid #bdbdbd;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-collapse: inherit;
+  border-spacing: 0;
+  word-wrap: break-word;
+  width: 100%;
+}
+.cont-support *, .cont-support *:before, .cont-support *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cont-support * {
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, form, fieldset, input, select, label, textarea, button, table, caption, thead, tfoot, tbody, tr, th, td {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+사용자 에이전트 스타일시트
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+#wrap {
+  letter-spacing: -1px;
+}
+
+body {
+  overflow-x: hidden !important;
+  overflow-y: auto;
+  color: #222;
+  height: auto;
+}
+body {
+  font: 14px/1 'Noto Sans KR', sans-serif;
+  -webkit-text-size-adjust: none;
+  font-family: 'noto';
+}
+
+:root {
+  --swiper-navigation-size: 44px;
+  /* --swiper-navigation-color: var(--swiper-theme-color); */
+}
+
+:root {
+  --swiper-theme-color: #007aff;
+}
+
+/* 합계금액 나오는 부분 */
+.support_infobox .box_c1 {background:#f6f6f6;border-radius:15px;padding:25px 25px 20px;position:relative;color:#222;margin-bottom:60px;}
+.support_infobox .box_c1 strong {font-size:20px;}
+.support_infobox .box_c1 dl {display:flex;flex-wrap:wrap;width:100%;margin:1% 0 1%;font-size:17px;}
+.support_infobox .box_c1 dl dt {background:#e8e8e8;width:90px;text-align:center;margin-bottom:10px;padding:6px 0 7px;border-radius:15px;}
+.support_infobox .box_c1 dl dd {width:230px;padding:6px 15px 7px;}
+
+
+
+
+/* 테이블 스타일 */
+table {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 2px solid black; 
+    border-bottom: 1px solid black; 
+}
+
+th {
+    border-right: 1px solid black; 
+}
+
+td {
+    border-top: none; 
+    border-left: none; 
+    border-right: none;
+    border-bottom: 1px solid black; 
+    padding: 20px; 
+}
+
+td:first-child {
+    border-left: 1px solid black; 
+}
+
+
+

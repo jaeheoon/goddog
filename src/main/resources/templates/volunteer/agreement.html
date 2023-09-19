@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">동의페이지</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/volunteer/common.css">
+		<!-- <link rel="stylesheet" href="../assets/css/volunteer/title_v2.css"> -->
+		<link rel="stylesheet" href="/assets/css/nontap.css">
+		<link rel="stylesheet" href="/assets/css/shelter/shelter-lite3153.css"
+			media="all">
+		<link rel="stylesheet"
+			href="/assets/css/volunteer/post1544_agreement.css" media="all">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+			rel='stylesheet' type='text/css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script
+			src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script defer
+			src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FFFCF7;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated"
+												style="margin-top: 8%; margin-bottom: 8%;">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">봉사활동
+															신청</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>봉사활동을 하고싶은 보호소를 선택한 뒤 봉사활동 신청이 가능합니다.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+								</section>
+							</div>
+						</div>
+				</section>
+
+				<form action="" id="private" name="vowInfoForm" style="margin: 5%;">
+					<section class="explore-section section-padding" id="section_2">
+						<div class="container">
+							<div class="row">
+
+								<div class="col-12">
+									<div class="tab-content" id="myTabContent">
+										<div class="centerintro">
+											<!-- 노란바탕 바로 아래 부분 -->
+											<section
+												class="elementor-section elementor-top-section elementor-element elementor-element-75f717dc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+												data-id="75f717dc" data-element_type="section"
+												style="margin: 2%; padding: 5% 0;">
+												<script defer type="text/javascript">
+													$(function() {
+														// 확인버튼 클릭
+														$('#btnSubmit')
+																.click(
+																		function() {
+																			var form = document.vowInfoForm;
+																			var chk = $(
+																					'input[name=validyn]:checked')
+																					.val();
+
+																			if (chk == 'N') {
+																				alert("자원봉사 서약서 미동의시 유기견 보호소 자원봉사 예약이 불가함을 알려드립니다.");
+																				$(
+																						"#validyn")
+																						.focus();
+																				return false;
+
+																			} else {
+																				form.action = "";
+																				form
+																						.submit();
+																			}
+
+																		})
+													})
+												</script>
+
+												<!-- 서약서 세부내용 -->
+												<h4 class="ti">
+													<i aria-hidden="true" class="fas fa-paw"></i> 보호소 자원봉사 활동에
+													대한 자원봉사자 서약서
+												</h4>
+												<br>
+												<div class="info_box agree_box">
+													<div class="inner">
+														<div class="rule_txt_wrap">
+															<div class="info_box bg_blue ">
+																<p>유기견 보호소 자원봉사 신청자는 「유기견 보호소 자원봉사 봉사신청」을 위해 아래와 같이
+																	서약합니다. 서약서 내용을 자세히 읽으신 후 동의 여부를 결정하여 주시기 바랍니다.</p>
+															</div>
+															<br> <br>
+
+															<div class="paragraph">
+																<p class="ptxt">
+																	1. 나는 유기견 보호소의 사무소로부터 자원봉사업무(활동)에 대해 교육과 안내를 받고 야외 및 실내
+																	자원봉사 활동에 따른 잠재적 위험에 대해 충분히 인지하였음을 확인합니다.<br> <br>
+																</p>
+																<p class="ptxt">
+																	2. 위험의 예방 및 사고상황 발생 시 유기견 보호소가 취해야 할 의무와 책임에 대해서도 충분한
+																	설명을 듣고 인지하였으며 이에 동의합니다.<br> <br>
+																</p>
+																<p class="ptxt">
+																	3. 이미 제시되고 안내된 범위를 넘어서거나 어겨서 생길 수 있는 부주의 및 고의로 인해 발생한
+																	사고에 대해, 유기견 보호소에 법적인 소송이나 해를 끼치지 않을 것을 서약합니다.<br>
+																	<br>
+																</p>
+																<p class="ptxt">
+																	4. 또한 기관에서 공적인 목적으로 본인의 사진 또는 영상을 사용하는 것을 수락합니다.<br>
+																	<br>
+																</p>
+																<p class="ptxt">
+																	<em class="red"> - 자원봉사 서약서 미동의시 국립공원 자원봉사 예약이
+																		불가함을 알려드립니다. </em>
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<br>
+												<div class="radio_box">
+													<ul class="ul_form">
+														<li><em class="red">(필수)</em> 위의 이용약관에 동의하십니까?</li>
+														<li><input type="radio" name="validyn" id="validynY"
+															value="Y"><label for="validynY">동의</label> <input
+															type="radio" name="validyn" id="validynN" value="N"
+															checked="checked"><label for="validynN">미동의</label>
+														</li>
+													</ul>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+					<div
+						class="elementor-element elementor-element-79257a06 elementor-align-center elementor-mobile-align-justify elementor-widget elementor-widget-button"
+						data-id="79257a06" data-element_type="widget"
+						data-widget_type="button.default">
+						<div class="elementor-widget-container">
+							<div class="elementor-button-wrapper">
+								<a
+									class="elementor-button elementor-button-link elementor-size-sm"
+									id="btnSubmit" href="/volunteer/map.html" th:href="@{'/'+volunteer+'/'+map}"> <span
+									class="elementor-button-content-wrapper"> <span
+										class="elementor-button-icon elementor-align-icon-right">
+											<i aria-hidden="true" class="fas fa-arrow-right"></i>
+									</span> <span class="elementor-button-text">동의 후 다음단계</span>
+								</span>
+								</a>
+							</div>
+						</div>
+					</div>
+
+				</form>
+				<br> <br> <br> <br>
+
+			</div>
+		</main>
+	</th:block>
+
+</th:block>

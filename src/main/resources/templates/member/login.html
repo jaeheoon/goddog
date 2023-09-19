@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">동의페이지</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/member/login.css">
+		<!-- 이 밑에 두개 수정하면 faq도 바뀌니 만약 수정 필요하면 따로 해당 페이지만의 title.css만들것 마찬가지 고유의 것만 건들것-->
+		<link rel="stylesheet" href="/assets/css/faq/title.css">
+		<link rel="stylesheet" href="/assets/css/faq/faq.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+		<link rel='stylesheet' id='e-animations-css'
+			href='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.15.3'
+			media='all' />
+
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script src="https://kit.fontawesome.com/2b070e02a1.js"
+			crossorigin="anonymous"></script>
+		<script src="https://apis.google.com/js/platform.js" async defer></script>
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script
+			src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1'
+			id='jquery-numerator-js'></script>
+		<script defer src="/assets/js/member/logincheck.js"></script>
+		<script defer src="/assets/js/member/validator.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<div data-elementor-type="wp-page" data-elementor-id="1716"
+			class="elementor elementor-1716" data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-7cfdd3b4 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="7cfdd3b4" data-element_type="section"
+				data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+				<div class="elementor-background-overlay"></div>
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-677a6be"
+						data-id="677a6be" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-4c47144e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="4c47144e" data-element_type="section"
+								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div
+										class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-27dbcae8"
+										data-id="27dbcae8" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div
+												class="elementor-element elementor-element-2f875ab2 elementor-widget elementor-widget-heading"
+												data-id="2f875ab2" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+
+													<!-- 로그인 -->
+
+													<div class="container">
+														<div class="login-box">
+															<div class="user-icon">
+																<i class="far fa-user"></i>
+															</div>
+															<form class="login" method="post"
+																th:action="@{'/'+member+'/'+login}"
+																th:object="${loginForm}">
+																<div class="form-group">
+																	<input type="text" name="loginId" placeholder="아이디"
+																		id="userId" class="form-control" th:field="*{loginId}">
+																	<p th:errors="*{loginId}" th:class="text-danger">입력오류메세지</p>
+																</div>
+																<div class="form-group">
+																	<input type="password" name="passwd" placeholder="비밀번호"
+																		id="userPw" class="form-control" th:field="*{passwd}">
+																	<p id="dup-result"></p>
+																	<p th:errors="*{passwd}" th:class="text-danger">입력오류메세지</p>
+																</div>
+																<div class="form-group">
+															
+																<label for="rememberme">
+																	<input type="checkbox" name="loginType" id="loginType">
+																	보호소 로그인
+																</label>
+															
+																</div>
+																<div class="form-group">
+																	<button class="full-btn" type="submit">Login</button>
+																</div>
+																<div class="form-group">
+																	<p>
+																		회원이 아니신가요? <a href="/member/signup.html"
+																			th:href="@{'/'+member+'/'+signup}">회원가입</a>
+																	</p>
+																</div>
+															</form>
+															<div class="serparater">Or login via social links</div>
+															<div class="social-login">
+																<!-- <a href="facebook">
+																<i class="fab fa-facebook-square"></i>
+																Facebook
+															</a> -->
+																<!-- 
+																<a href="google" href="google" class="g-signin2"
+																	data-onsuccess="onSignIn"> <i class="fab fa-google"></i>
+																	Google
+																</a>
+																 -->
+															</div>
+															<div id="my-signin2"></div>
+
+															<script>
+																function onSuccess(
+																		googleUser) {
+																	console
+																			.log('Logged in as: '
+																					+ googleUser
+																							.getBasicProfile()
+																							.getName());
+																}
+																function onFailure(
+																		error) {
+																	console
+																			.log(error);
+																}
+																function renderButton() {
+																	gapi.signin2
+																			.render(
+																					'my-signin2',
+																					{
+																						'scope' : 'profile email',
+																						'width' : 240,
+																						'height' : 50,
+																						'longtitle' : true,
+																						'theme' : 'dark',
+																						'onsuccess' : onSuccess,
+																						'onfailure' : onFailure
+																					});
+																}
+															</script>
+
+															<script
+																src="https://apis.google.com/js/platform.js?onload=renderButton"
+																async defer></script>
+														</div>
+													</div>
+
+													<script>
+														function onSignIn(
+																googleUser) {
+															var profile = googleUser
+																	.getBasicProfile();
+															console
+																	.log('ID: '
+																			+ profile
+																					.getId()); // Do not send to your backend! Use an ID token instead.
+															console
+																	.log('Name: '
+																			+ profile
+																					.getName());
+															console
+																	.log('Image URL: '
+																			+ profile
+																					.getImageUrl());
+															console
+																	.log('Email: '
+																			+ profile
+																					.getEmail()); // This is null if the 'email' scope is not present.
+														}
+														function signOut() {
+															var auth2 = gapi.auth2
+																	.getAuthInstance();
+															auth2
+																	.signOut()
+																	.then(
+																			function() {
+																				console
+																						.log('User signed out.');
+																			});
+														}
+													</script>
+
+
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<script>
+				//로그인버튼 제약 함수
+
+				function login_check() {
+					let userId = document.querySelector("#username");
+					let userPw = document.querySelector("#password");
+
+					if (userId.value == "") {
+						alert("아이디를 입력해주세요");
+						userId.focus();
+					} else if (userPw.value == "") {
+						alert("비밀번호를 입력해주세요");
+						userPw.focus();
+					} //else {
+					//alert("로그인 되었습니다.");
+					//location.href = "mypage.html"
+					//}
+				}
+
+				//가입버튼 함수
+
+				function signup() {
+					location.href = "/member/signup"
+				}
+			</script>
+		</div>
+	</th:block>
+
+</th:block>

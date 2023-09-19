@@ -1,0 +1,34 @@
+#test li{
+  margin-top: 3%;
+  margin-left: 4%;
+}
+
+.moveit{
+  margin-left: 45px !important;
+}
+
+.volunteer_step{
+  margin-right: 20%;
+}
+
+.volunteer_step ol {
+  /* 여기에 스타일을 추가하세요 */
+  /* margin-bottom: 45% !important; */
+  /* height: %; */
+  width: 35em;
+  height: 15em;
+  max-width: 35em;
+  max-height: 15em;
+}
+
+.volunteer_step_list li{
+  /* line-height: 100% !important; */
+  line-height: 3em !important;
+}
+
+.list1 {
+  margin-bottom: 15%;
+}
+
+
+

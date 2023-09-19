@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/*서브비주얼 공통*/
+.sub_visual{overflow:hidden;position:relative;left:50%;top:0;width:1920px;height:150px;margin-left:-960px;background:url(/reservation/img/sub/bg_sub01.png) no-repeat;color:#fff}
+.sub_visual div{text-align:center}
+.sub_visual p:nth-child(1){padding-top:38px;font-size:17px}
+.sub_visual p:nth-child(2){display:inline-block;width:20px;height:3px;margin:12px 0 6px 0;background-color:#fff}
+.sub_visual p:nth-child(3){font-size:34px;font-weight:700;line-height:1.2em}
+
+/* 달력 */
+.calender_wrap{}
+.month_box{overflow:hidden;margin:40px auto 20px;text-align:center}
+.month_box li{display:inline-block;line-height:1.2em}
+.month_box li img{vertical-align:inherit} 
+.month_box li.month{padding:0 50px;font-size:40px;font-weight:700}
+.tbl_calender{width:100%}
+.tbl_calender col{width:14.2857%}
+.tbl_calender .date_sun{/*background-color:#fff0f0;*/color:#df352c;font-weight:800}
+.tbl_calender .date_sat{/*background-color:#eef6ff;*/color:#0475cc;font-weight:800}
+.tbl_calender th{padding:20px 0;text-align:center;text-indent:0}
+.tbl_calender td{height:90px;padding:12px 15px;vertical-align:top}
+.tbl_calender td.on{background-color:#df352c;color:#fff}
+.tbl_calender td.on .date_sun, .tbl_calender td.on .date_sat {color:#fff}
+.tbl_calender td.on a{display:block}
+.tbl_calender td.on a, .tbl_calender td.on a:hover{color:#fff}
+.tbl_calender p{margin-bottom:10px}
+.tbl_calender ul li{margin-bottom:5px}
+.tbl_calender td.next_mon{background-color:#f9f9f9}
+.tbl_calender td.disable{background-color:#f1f1f1}
+
+	/* 달력 */
+	.tbl_calender th{padding:10px 0;text-align:center;text-indent:0}
+	/* .tbl_calender td{height:60px;padding:6px;font-size:11px;vertical-align:top} */
+
+/* 봉사활동 신청 절차 */
+.volunteer_step{float:right;width:50%;margin-top:20px}
+.volunteer_step_list{display:block;width:93%;margin-top:10px;padding:3%;border:1px solid #e5e5e5;background-color:#f9f9f9;font-size:13px;font-weight:700;line-height:1.4em;list-style:none}
+.volunteer_step_list li{line-height:1.6em}
+.processinfo{width:100%}
+

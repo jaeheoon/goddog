@@ -1,0 +1,275 @@
+#id-background {
+    max-width: 75%;
+}
+
+#name-background {
+    max-width: 75%;
+}
+
+#email-background {
+    max-width: 75%;
+}
+
+#phonenum-background {
+    max-width: 75%;
+}
+
+#brith-background {
+    max-width: 75%;
+}
+
+#address-background {
+    max-width: 75%;
+}
+
+#toggle-background {
+    max-width: 75%;
+}
+
+#user-id {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#id-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#id-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#id-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#user-name {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#user-name-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#name-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#name-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#user-email {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#user-email-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#email-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#email-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#user-phonenum {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#user-phonenum-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#phonenum-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#phonenum-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#user-brith {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#user-brith-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#brith-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#brith-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#user-address {
+    margin: 25px 0px 25px 0px !important;
+}
+
+#user-address-box {
+    margin: 10px 0px 10px 0px !important;
+}
+
+#address-content {
+    background-color: #9fcb9e;
+    width: 122px !important;
+}
+
+#address-font {
+    font-size: 15pt;
+    color: white;
+    text-align: center !important;
+}
+
+#address-last-space {
+    margin-bottom: 50px;
+}
+
+.donation-box {
+    color: #ffffff;
+    font-family: Averia Serif Libre;
+    font-size: 1.5rem;
+    line-height: 1.3em;
+    padding: 1.5em;
+}
+
+#donation-content {
+    font-size: 15pt;
+    width: 122px;
+    height: 49px;
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #9fcb9e;
+    color: white;
+    border-radius: 20px !important;
+}
+
+#volunteer-toggle-box {
+    margin-top: 35px;
+}
+
+#down-toggle {
+    color: #85bf83;
+    padding-top: 20px;
+    padding-right: 40px;
+}
+
+#down-icon {
+    font-size: large;
+}
+
+#volunteer-content {
+    font-size: 15pt;
+    width: 122px;
+    height: 49px;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 30px;
+    background-color: #9fcb9e;
+    color: white;
+    border-radius: 20px !important;
+}
+
+#content-box {
+    height: 100px !important;
+}
+
+#first-line {
+    border: solid 0.5px #a7bfa6;
+}
+
+#end-line-box {
+    padding-top: 50px;
+}
+
+#end-line {
+    border: solid 0.5px #a7bfa6;
+}
+
+.tbl_cen {
+    border-top: 2px solid #000;
+    border-bottom: 1px #e5e5e5 solid;
+    border-collapse: collapse
+}
+
+.m_hidden {
+    border-bottom: solid 1px rgb(173, 174, 176);
+    border-right: solid 1px rgb(173, 174, 176);
+}
+
+.m {
+    border-bottom: solid 1px rgb(173, 174, 176);
+}
+
+#table-subject {
+    text-align: center !important;
+    background-color: #cad9d2;
+}
+
+#table-subject th {
+    padding: 10px !important;
+}
+
+#table-content {
+    text-align: center !important;
+}
+
+#donation-table {
+    width: 100%;
+    margin-bottom: 50px;
+    border-top: 2px solid #86a69b;
+}
+
+#volunteer-table {
+    width: 100%;
+    margin-bottom: 50px;
+    border-top: 2px solid #86a69b;
+}
+
+#btn-set {
+    padding: 10px;
+}
+
+#id-input {
+    margin-top: 45px;
+}
+
+#name-input {
+    margin-top: 45px;
+}
+
+#email-input {
+    margin-top: 45px;
+}
+
+#phonenum-input {
+    margin-top: 60px;
+}
+
+#brith-input {
+    margin-top: 45px;
+}
+
+#address-input {
+    margin-top: 45px;
+}

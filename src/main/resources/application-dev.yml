@@ -1,0 +1,109 @@
+# 환경이름설정
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+---
+      
+# WebServer 설정 (application.yml 재정의 개념)      
+server:
+  port: 80
+  servlet:
+    context-path: /
+    encoding:
+      enabled: true
+      charset: UTF-8
+      force: true
+    session:
+      tracking-modes: cookie # 이게없으면 최초 요청url에 jsessionId가 붙어서 나와서 제대로된 작업이 안됨.
+      timeout: 1800              # 단위 : 초, 30분 설정
+  tomcat:
+    uri-encoding: UTF-8          # Spring Default
+
+---
+
+# Logging 설정
+logging:
+  pattern:
+    console: "[%d{yy-MM-dd}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
+    file: "[%d{yyyy-MM-dd HH:mm:ss}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
+  file:
+    name: C:\ezen_fullstack\workspace\goddog\log\application-dev.log #조장변경
+  logback:
+    rollingpolicy:
+      max-file-size: 1MB         #default 10M
+      max-history: 31            #default 7
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.zip
+  # 패키지별 Log Level 설정
+  level:
+    org:
+      apache:
+        coyote:
+          http11: info          # http 요청메시지 로그
+      springframework:
+        jdbc: debug              # jdbc 처리 로그
+        datasource:
+          DataSourceTransactionManager: debug
+        transaction:
+          interceptor: trace
+      
+    com:
+      ezen:
+        springmvc:
+          domain:
+            member:
+              mapper: trace       # mybatis 처리 로그
+
+---
+
+# Spring 설정
+spring:
+  #Database 연결 정보 설정
+  config:
+    import: db-config.properties
+  # Thymeleaf 설정
+  thymeleaf:
+#    prefix: classpath:/templates/
+#    suffix: .html
+    cache: false                 # Cache 사용하지 않게 설정
+  # File Upload 설정
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 100MB
+  # MessageSource 설정
+  messages:
+    # basename: messages          # Spring Default
+    basename: messages,errors
+
+---
+
+# MyBatis 설정
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true  
+  mapper-locations: 
+    - classpath:mybatis/mapper/**/*.xml
+    
+  type-aliases-package: tteogipbangbeomdae.goddog.domain.member.dto,
+   tteogipbangbeomdae.goddog.domain.adress.dto,
+    tteogipbangbeomdae.goddog.domain.donahistory.dto,
+     tteogipbangbeomdae.goddog.domain.reservation.dto ,
+      tteogipbangbeomdae.goddog.domain.adress.dto,
+       tteogipbangbeomdae.goddog.domain.dog.dto,
+        tteogipbangbeomdae.goddog.domain.adminmember.dto,
+        tteogipbangbeomdae.goddog.domain.shelter.dto,
+        tteogipbangbeomdae.goddog.domain.article.dto,
+        tteogipbangbeomdae.goddog.domain.announce.dto
+
+
+---
+      
+# 파일업로드 경로 설정
+common:
+  uploadPath: C:\ezen_fullstack\workspace\goddog\upload\
+  
+  
+  
+  

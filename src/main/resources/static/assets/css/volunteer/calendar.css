@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+		td {
+			width: 100px;
+			height: 100px;
+		}
+
+		.Calendar {
+			background-color: #fafcff;
+			border: solid rgb(177, 184, 212) 1px;
+			width: 100%;
+			height: 100%;
+			text-align: center;
+		}
+
+		.Calendar>thead>tr:first-child>td {
+			font-family: 'Questrial', sans-serif;
+			font-size: 1.1em;
+			font-weight: bold;
+		}
+
+		.Calendar>thead>tr:last-child>td {
+			font-family: 'Questrial', sans-serif;
+			font-weight: 600;
+		}
+
+		.Calendar>tbody>tr>td>p {
+			font-family: 'Montserrat', sans-serif;
+			height: 45px;
+			width: 45px;
+			border-radius: 45px;
+			transition-duration: .2s;
+			line-height: 45px;
+			margin: 2.5px;
+			display: block;
+			text-align: center;
+		}
+
+		.pastDay {
+			color: lightgray;
+		}
+
+		.today {
+			background-color: #F5D042;
+			color: #fff;
+			font-weight: 600;
+			cursor: pointer;
+		}
+
+		.futureDay {
+			background-color: #FFFFFF;
+			cursor: pointer;
+		}
+
+		.futureDay:hover {
+			background: #eee;
+		}
+
+		.futureDay.choiceDay,
+		.today.choiceDay {
+			background: #0A174E;
+			color: #fff;
+			font-weight: 600;
+			cursor: pointer;
+		}

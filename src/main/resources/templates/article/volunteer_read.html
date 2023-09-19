@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">봉사후기읽기</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/board/common.css">
+		<link rel="stylesheet" href="/assets/css/board/sub.css">
+		<link rel="stylesheet" href="/assets/css/board/comment.css">
+		<link rel="stylesheet" href="/assets/css/porfile/title.css">
+		<link rel="stylesheet" href="/assets/css/lib/swiper.css" media="all">
+		<link rel="stylesheet" href="/assets/css/theme/theme.css" media="all">
+		<link rel="stylesheet" href="/assets/css/donation/donation.css">
+		<link rel="stylesheet" href="/assets/css/volunteer/post1544_agreement.css" media="all">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+	
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script defer src="/assets/js/board/article.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+	<div data-elementor-type="wp-page" data-elementor-id="1691" class="elementor elementor-1691"
+		data-elementor-post-type="page">
+		<section
+			class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+			data-id="3ae9f652" data-element_type="section"
+			data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+			<div class="elementor-background-overlay"></div>
+			<div class="elementor-container elementor-column-gap-no">
+				<div
+					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+					data-id="1de2e7fd" data-element_type="column">
+					<div class="elementor-widget-wrap elementor-element-populated">
+						<section
+							class="elementor-section elementor-inner-section elementor-element elementor-element-6071eefe elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+							data-id="6071eefe" data-element_type="section"
+							data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+							<div class="elementor-container elementor-column-gap-no">
+								<div
+									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c709ea0"
+									data-id="c709ea0" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div class="elementor-element elementor-element-5dc4c099 elementor-widget elementor-widget-heading"
+											data-id="5dc4c099" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h1 class="elementor-heading-title elementor-size-default">봉사활동 후기</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+			data-id="6080893a" data-element_type="section">
+			<div class="elementor-container elementor-column-gap-no">
+				<div
+					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+					data-id="76dc7882" data-element_type="column">
+					<div class="elementor-widget-wrap elementor-element-populated">
+
+
+						<section
+							class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+							data-id="5e9da05a" data-element_type="section"
+							data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-container elementor-column-gap-no">
+								<div class="elementor-widget-wrap elementor-element-populated">
+									<div
+										class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+										data-id="7f2c345c" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;
+											:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;
+											:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;
+											:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+										data-widget_type="image-carousel.default">
+										<div class="elementor-widget-container">
+
+
+											<div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
+
+												<div class="elementor-widget-container">
+													<div class="volunteer_step m_hidden">
+														<!-- 서브 컨텐츠 -->
+														<div id="sb_contents" class="contents board_wrap">
+															<div id="sb_contents" class="contents board_wrap">
+
+														<div class="container" th:if="${articleList.levelNo == 0}" th:each="articleList, state : ${articleList}">
+															<ul class="board_detail">
+
+																<!-- 제목 -->
+																<li class="tit_detail" th:text="${articleList.reviewTitle}"><span class="hidden">제목</span>전주 유기견 보호소 봉사 후기</li>
+
+																<!-- 게시물정보 -->
+																<li>
+																	<ul class="data">
+																		<li class="adm" th:text="${articleList.memberId}"><span class="hidden" >글쓴이</span>전주영</li>
+																		<li class="date" th:text="${articleList.writeDate}"><span class="hidden">날짜</span>2023-09-04</li>
+																		<li class="view" th:text="${articleList.count}"><span class="hidden">조회수</span>조회 : 5</li>
+																	</ul>
+																</li>
+
+																<!-- 첨부파일 -->
+
+
+																<!-- 내용 -->
+																<li class="txt_box">
+																	<p th:text="${articleList.reviewContents}"></p>
+																</li>
+
+															</ul>
+
+															<!-- 버튼 -->
+															<ul class="btn_set board_btn">
+																<li class="btn_default float_l"><a href="/article/volunteer_board.html"
+																th:href="@{'/'+article+'/'+volunteer+'/'+board+'/'+{noticeNo}}"
+																		id="btnList">목록</a></li>
+																<li class="btn_default btn_red float_r"><a id="btnComment"
+																		style="cursor: pointer;">삭제하기</a></li>
+																<li class="btn_default btn_green float_r mar_r5"><a id="btnCancel"
+																		href="/article/volunteer_article_correct.html" th:href="@{'/'+article+'/'+volunteer+'/'+correct}" style="cursor: pointer;">수정하기</a>
+																</li>
+															</ul>
+															
+														</div>
+
+															<!-- // 서브 컨텐츠 -->
+
+															<!-- 댓글 컨텐츠 -->
+															<div id="sb_contents" class="contents board_wrap">
+
+																<ul class="board_detail">
+
+																	<!-- 댓글 입력 폼 -->
+																	<li class="tit_detail">
+																		<div id="commentForm">
+																			<form id="commentForm" class="commentForm" th:action="@{'/'+article+'/'+comment}" method="post">
+
+																				<input type="text" id="username" name="memberId" th:value="${session.loginMember.memberId}" placeholder="사용자명" required>
+																				<textarea id="commentInput" name="reviewContents" placeholder="댓글 내용" required></textarea>
+
+																				<br><br>
+																				<ul class="btn_set board_btn">
+																					<li class="btn_default float_l">
+																						<a id="btnList" onclick="doDisplay();">댓글보기</a>
+																					</li>
+																					<li class="btn_default btn_red float_r mar_r5">
+																						<a href="#" id="btnCancel" class="confirm">댓글 등록</a>
+																					</li>
+																				</ul>
+																			</form>
+																		</div>
+																	</li>
+
+																	<!-- 작성된 댓글들 -->
+																	<div class="commentBoxList" th:each="articleList : ${articleList}" th:if=" ${articleList.levelNo}==1" style="display: none;">
+																		<li class="commentbox">
+																			<div class="container">
+																				<div class="comment-container">
+																					<div class="box commentt">
+																						<div class="comment">
+																							<div class="date" th:text="${articleList.writeDate}">2023-08-19</div>
+																							<div class="user" th:text="${articleList.memberId}">사용자1</div>
+																							<div class="message" th:text="${articleList.reviewContents}">이 글은 정말 유용합니다!</div>
+																							<!-- <ul class="btn_set board_btn">
+																							<li class="btn_default_line btn_green float_r">
+																								<a class="a_bt02" id="btnRegist" style="cursor: pointer;">수정하기</a>
+																							</li>
+																						</ul> -->
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+
+																		<!-- 
+																		<li class="commentbox">
+																			<div class="container">
+																				<div class="comment-container">
+																					<div class="box commentt">
+																						<div class="comment">
+																							<div class="date">2023-08-19</div>
+																							<div class="user">사용자2</div>
+																							<div class="message">이 글은 정말 유용합니다!</div>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																		</li>
+																		 -->
+																	</div>
+
+
+
+																	<!-- // 서브 컨텐츠 -->
+
+															</div>
+															<!-- // contents -->
+
+
+														</div>
+
+													</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	</div>
+	</div>
+	</div>
+
+	<!-- line -->
+	<div
+		class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+		data-id="48adf803" data-element_type="widget" data-widget_type="divider.default">
+		<div class="elementor-widget-container">
+			<div class="elementor-divider">
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- // line-->
+	<!-- line -->
+	<div
+		class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+		data-id="48adf803" data-element_type="widget" data-widget_type="divider.default">
+		<div class="elementor-widget-container">
+			<div class="elementor-divider">
+				</span>
+			</div>
+		</div>
+	</div>
+	<!-- // line-->
+	<!-- line -->
+	<div
+		class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+		data-id="48adf803" data-element_type="widget" data-widget_type="divider.default">
+		<div class="elementor-widget-container">
+			<div class="elementor-divider">
+				</span>
+			</div>
+		</div>
+	</div>
+		<th:block>
+		</th:block>

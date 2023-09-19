@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">날짜선택</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/volunteer/common_cal.css">
+		<link rel="stylesheet" href="/assets/css/volunteer/sub.css">
+		<link rel="stylesheet" href="/assets/css/volunteer/calendar.css">
+		<link rel="stylesheet" href="/assets/css/shelter/shelter-lite3153.css"
+			media="all">
+		<link rel="stylesheet" href="/assets/css/shelter/shelter-detail.css">
+		<link rel="stylesheet"
+			href="/assets/css/volunteer/post1544_agreement.css" media="all">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+			rel='stylesheet' type='text/css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script defer src="/assets/js/calender/cal.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script defer
+			src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<script defer type='text/javascript' src='/assets/js/common.js'></script>
+		<script defer type='text/javascript'
+			src='/assets/js/acecounter_V70.js'></script>
+
+		<!-- <noscript><img src="http://weblog.knps.or.kr:80/?uid=1&amp;je=n&amp;" style="border:0px;width:0px;height:0px"
+				alt="acecounter" /></noscript> -->
+		<!-- <noscript><img src='https://gtp13.acecounter.com:8080/?uid=AH5A44218380732&je=n&' border='0' width='0' height='0'
+							alt=''></noscript> -->
+
+		<script defer
+			src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script>
+		<script defer src="/assets/js/shelter/slick.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FFFCF7;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated"
+												style="margin-top: 8%; margin-bottom: 8%;">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">봉사활동 신청</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>원하는 날짜를 선택하여 봉사 신청을 할 수 있습니다.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+								</section>
+							</div>
+						</div>
+				</section>
+			</div>
+			<section class="explore-section section-padding" id="section_2">
+
+
+				<div class="container">
+					<div class="container-fluid">
+						<div class="row">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+
+								<li class="nav-item nb" role="presentation">
+									<button class="nav-link center-tab active disabled"
+										data-bs-toggle="tab" data-bs-target="#center1-tab-pane"
+										type="button" role="tab" aria-controls="design-tab-pane"
+										aria-selected="true">Step 1</button>
+								</li>
+
+								<li class="nav-item nb" role="presentation">
+									<button class="nav-link center-tab disabled"
+										data-bs-toggle="tab" data-bs-target="#center2-tab-pane"
+										type="button" role="tab" aria-controls="marketing-tab-pane"
+										aria-selected="false">Step 2</button>
+								</li>
+
+								<li class="nav-item nb" role="presentation">
+									<button class="nav-link center-tab disabled"
+										data-bs-toggle="tab" data-bs-target="#center3-tab-pane"
+										type="button" role="tab" aria-controls="finance-tab-pane"
+										aria-selected="false">Step 3</button>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+
+					<div class="row">
+
+						<div class="col-12">
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="center1-tab-pane"
+									role="tabpanel" aria-labelledby="design-tab" tabindex="0">
+									<!-- 센터이름(소개) -->
+									<div class="centerintro">
+										<section
+											class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+											data-id="6080893a" data-element_type="section">
+
+											<div class="elementor-container elementor-column-gap-no">
+
+												<div
+													class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+													data-id="76dc7882" data-element_type="column">
+
+													<div
+														class="elementor-widget-wrap elementor-element-populated">
+
+														<section
+															class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+															data-id="5e9da05a" data-element_type="section"
+															data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+															<div class="elementor-container elementor-column-gap-no">
+																<div
+																	class="elementor-widget-wrap elementor-element-populated">
+																	<div
+																		class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+																		data-id="7f2c345c" data-element_type="widget"
+																		data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+																		data-widget_type="image-carousel.default">
+																		<br> <br> <br>
+																		<div class="elementor-widget-container">
+																			<h3><i aria-hidden="true" class="fas fa-house"></i><th:block th:text="${session.shelter.name + ' 보호소'}"> 굿도그 보호소 </th:block></h3>
+																		</div>
+																		<br> <br>
+
+																		<!-- calendar -->
+																		<table class="Calendar">
+																			<thead>
+																				<tr>
+																					<td onClick="prevCalendar();"
+																						style="cursor: pointer;">&#60;</td>
+																					<td colspan="5"><span id="calYear"></span>년 
+																					<span id="calMonth"></span>월</td>
+																					<td onClick="nextCalendar();" style="cursor: pointer;">&#62;</td>
+																				</tr>
+																				<tr>
+																					<td>일</td>
+																					<td>월</td>
+																					<td>화</td>
+																					<td>수</td>
+																					<td>목</td>
+																					<td>금</td>
+																					<td>토</td>
+																				</tr>
+																			</thead>
+
+																			<tbody>
+																			</tbody>
+																		</table>
+																		<!-- //calendar -->
+
+																		<!-- calendar 밑 버튼 -->
+																		<ul class="btn_set mar_t20">
+																			<li class="btn_default float_l"><a
+																				href="/volunteer/agreement.html" th:href="@{'/'+ volunteer + '/' + 'map'}">이전으로</a>
+																			</li>
+																			<li class="btn_default btn_red float_r"><a id="submit">봉사신청</a></li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</section>
+													</div>
+												</div>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+	</th:block>
+
+</th:block>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">동의페이지</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/faq/title.css">
+		<link rel="stylesheet" href="/assets/css/member/signup.css">
+		<link rel="stylesheet" href="/assets/css/team/team.css">
+		<link rel="stylesheet" href="/assets/css/howitwork/title.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script defer src="/assets/js/member/signup.js"></script>
+		<script defer src="/assets/js/postCode.js"></script>
+		<script defer src="/assets/js/member/member.js"></script>
+		<script defer src="/assets/js/member/validator.js"></script>
+		<script
+			src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<div data-elementor-type="wp-page" data-elementor-id="1711"
+			class="elementor elementor-1711" data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-179d7879 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="179d7879" data-element_type="section"
+				data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+				<div class="elementor-background-overlay"></div>
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11817486"
+						data-id="11817486" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-5bad4e54 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="5bad4e54" data-element_type="section"
+								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div
+										class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-475a3893"
+										data-id="475a3893" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div
+												class="elementor-element elementor-element-38076426 elementor-widget elementor-widget-heading"
+												data-id="38076426" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h1 class="elementor-heading-title elementor-size-default">Sign Up</h1>
+												</div>
+											</div>
+											<div
+												class="elementor-element elementor-element-261a1af9 elementor-widget elementor-widget-text-editor"
+												data-id="261a1af9" data-element_type="widget"
+												data-widget_type="text-editor.default">
+												<div class="elementor-widget-container">
+													<p>
+														가입하실 회원 정보를 입력해 주세요.
+														<!-- line -->
+													<div
+														class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+														data-id="48adf803" data-element_type="widget"
+														data-widget_type="divider.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-divider">
+																</span>
+															</div>
+														</div>
+													</div>
+													<!-- // line-->
+													<hr>
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+
+
+
+								<!-- form 시작 -->
+								<div
+									class="elementor-container signform elementor-column-gap-default">
+									<!-- 여기 나중에 실제 넣을땐 post 해야함 -->
+									<form class="elementor-form" name="signUpForm" id="signUpForm"
+										action="/member/signup" method="POST" th:object="${member}">
+										<input type="hidden" name="post_id" value="1721" /> <input
+											type="hidden" name="form_id" value="55b6ab7b" /> <input
+											type="hidden" name="referer_title" value="Contact us" /> <input
+											type="hidden" name="queried_id" value="1721" />
+										<p>
+										<div
+											class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-50">
+											<label for="form-field-name" class="elementor-field-label"
+												style="margin-bottom: 1.8%;"> 아이디 </label> <input size="1"
+												type="text" name="memberId" id="form-field-name"
+												class=" elementor-size-md  elementor-field-textual id"
+												placeholder="아이디" style="background-color: white;" th:field="*{memberId}">
+											    <p id="dup-result"></p>
+											    <!-- <p id="valid-id"></p> -->
+											    <p th:errors="*{memberId}" th:class="text-danger">입력 오류메시지</p>
+										</div>
+										</p>
+										<p>
+										<div
+											class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_8e07a04 elementor-col-50">
+											<label for="form-field-field_8e07a04"
+												class="elementor-field-label" style="margin-bottom: 1.8%;">
+												비밀번호 </label> <input size="1" type="password" name="passwd"
+												id="form-field-field_8e07a04"
+												class="elementor-field elementor-size-md  elementor-field-textual"
+												placeholder="비밀번호" style="background-color: white;" th:field="*{passwd}">
+												<p id="valid-passwd"></p>
+												<p th:errors="*{passwd}" th:class="text-danger">입력 오류메시지</p>
+											<!-- <p>비밀번호는 필수 입력사항 입니다.</p> -->
+										</div>
+										</p>
+										<p>
+										<div
+											class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_43d0f1c elementor-col-50 elementor-field-required">
+											<label for="form-field-field_43d0f1c"
+												class="elementor-field-label" style="margin-bottom: 1.8%;">
+												이름 </label> <input size="1" type="text" name="name"
+												id="form-field-field_43d0f1c"
+												class="elementor-field elementor-size-md  elementor-field-textual"
+												placeholder="이름" th:field="*{name}"
+												style="background-color: white;">
+											<!--placeholder="이름" required="required" aria-required="true" th:field="*{name}" th:errorclass="text-danger" -->
+												<p id="valid-name"></p>
+												<p th:errors="*{name}" th:class="text-danger">입력 오류메시지</p>
+											<!-- <p>이름은 필수 입력사항 입니다.</p> -->
+										</div>
+										</p>
+										<p>
+										<div
+											class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_43d0f1c elementor-col-50 elementor-field-required">
+											<label for="form-field-field_43d0f1c"
+												class="elementor-field-label" style="margin-bottom: 1.8%;">
+												핸드폰번호 </label> <input size="1" type="text" name="phoneNum"
+												id="form-field-field_43d0f1c"
+												class="elementor-field elementor-size-md  elementor-field-textual"
+												placeholder="000-0000-0000형식으로 입력해주세요." th:field="*{phoneNum}"
+												style="background-color: white;">
+											<!-- placeholder="핸드폰번호" required="required" aria-required="true" th:field="*{phoneNum}" th:errorclass="text-danger" -->
+												<p class="valid-phoneNum"></p>
+												<p th:errors="*{phoneNum}" th:class="text-danger">입력 오류메시지</p>
+											<!-- <p>핸드폰번호는 필수 입력사항 입니다.</p> -->
+										</div>
+										</p>
+										<div
+											class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
+											<label for="form-field-email" class="elementor-field-label">
+												본인 확인 이메일 (선택) </label>
+											<p>
+													<!-- required="required" aria-required="true" -->
+												<input type="text" name="emailF" id="emailF"
+													class="elementor-field elementor-size-md elementor-field-textual"
+													
+													style="background-color: white; width: 26%;" th:field="*{emailF}"> @ <input
+													type="text" name="emailB" id="domain-txt"
+													class="elementor-field elementor-size-md elementor-field-textual"
+													
+													style="background-color: white; width: 42%;" th:field="*{emailB}"> <select
+													class="box" id="domain-list" style="width: 10em;" name="emailB" th:field="*{emailB}">
+													<option value="type">직접 입력</option>
+													<option value="naver.com">naver.com</option>
+													<option value="google.com">google.com</option>
+													<option value="hanmail.net">hanmail.net</option>
+													<option value="nate.com">nate.com</option>
+													<option value="kakao.com">kakao.com</option>
+												</select>
+												<p class="valid-email"></p>
+												<p th:errors="*{emailF}" th:class="text-danger">입력 오류메시지</p>
+												<p th:errors="*{emailB}" th:class="text-danger">입력 오류메시지</p>
+												<!-- <p>이메일은 필수 입력사항 입니다.</p> -->
+										</div>
+										<div
+											class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
+											<label for="form-field-birth"
+												class="elementor-field-label birth"
+												style="margin-bottom: 0.1em;"> 생년월일 </label>
+											<div
+												class="birth elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-50 elementor-field-required">
+												<select class="box" id="birth-year" name="year" th:field="*{year}" >
+													<option disabled selected value="출생연도">출생 연도</option>
+												</select> <select class="box" id="birth-month" name="month" th:field="*{month}">
+													<option disabled selected value="월">월</option>
+												</select> <select class="box" id="birth-day" name="day" th:field="*{day}">
+													<option disabled selected value="일">일</option>
+												</select>
+												<p class="valid-birthday"></p>
+												<p th:errors="*{year}" th:class="text-danger">입력 오류메시지</p>
+												<p th:errors="*{month}" th:class="text-danger">입력 오류메시지</p>
+												<p th:errors="*{day}" th:class="text-danger">입력 오류메시지</p>
+												<!-- <p>생년월일은 필수 입력사항 입니다.</p> -->
+											</div>
+										</div>
+										<div
+											class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-field_43d0f1c elementor-col-50 elementor-field-required"
+											style="margin-top: 0.1em;">
+											<label for="form-field-field_43d0f1c"
+												class="elementor-field-label"> 주소 </label>
+										</div>
+										<div>
+											<!-- required="required" aria-required="true"  -->
+											<input type="text" name="adress" id="combinedAddress"
+												placeholder="주소" readonly
+												class="elementor-field elementor-size-md elementor-field-textual"
+												
+												style="background-color: white; width: 44%;" th:field="*{adress}"> <input
+												type="text" name="detailAdress" id="detailAddress" placeholder="상세주소"
+												class="elementor-field elementor-size-md elementor-field-textual"
+												
+												style="background-color: white; width: 55%;" th:field="*{detailAdress}"> <input
+												type="button" style="padding: 0.4em 1em; margin-top: 2%;"
+												id="findPostCode" value="우편번호 찾기">
+												<p class="valid-adress"></p>
+												<p th:errors="*{adress}" th:class="text-danger">입력 오류메시지</p>
+												<p th:errors="*{detailAdress}" th:class="text-danger">입력 오류메시지</p>
+										</div>
+										<br>
+										</p>
+
+										<!-- 전체 동의 체크박스 -->
+
+										<!-- 이용 약관 및 개인정보 처리방침 동의 박스 -->
+										<div class="agreement-box">
+											<input type="checkbox" id="allAgree" name="allAgree"
+												onclick="checkAll()"><label for="allAgree">전체
+												동의합니다.</label> <br> <input type="checkbox" id="terms"
+												name="terms" required> <label for="terms">이용
+												약관에 동의합니다. <a href="이용약관페이지.html" target="_blank"
+												style="color: blueviolet;">이용 약관 보기</a>
+											</label> <br> <input type="checkbox" id="privacy" name="privacy"
+												required> <label for="privacy">개인정보 처리방침에
+												동의합니다. <a href="개인정보처리방침페이지.html" target="_blank"
+												style="color: blueviolet;">개인정보 처리방침 보기</a>
+											</label> <br> <br>
+										</div>
+
+										<div
+											class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-40 e-form__buttons">
+											<button id="submitbtn"
+												class="elementor-button elementor-size-md">
+												<span> <span class=" elementor-button-icon"> </span>
+													<span class="elementor-button-text">가입하기</span>
+												</span>
+											</button>
+										</div>
+									</form>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</th:block>
+
+</th:block>

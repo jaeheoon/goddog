@@ -1,0 +1,6 @@
+/*서브비주얼 공통*/
+.sub_visual{overflow:hidden;position:relative;left:50%;top:0;width:1920px;height:150px;margin-left:-960px;background:url(/reservation/img/sub/bg_sub01.png) no-repeat;color:#fff}
+.sub_visual div{text-align:center}
+.sub_visual p:nth-child(1){padding-top:38px;font-size:17px}
+.sub_visual p:nth-child(2){display:inline-block;width:20px;height:3px;margin:12px 0 6px 0;background-color:#fff}
+.sub_visual p:nth-child(3){font-size:34px;font-weight:700;line-height:1.2em}

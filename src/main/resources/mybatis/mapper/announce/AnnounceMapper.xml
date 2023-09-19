@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="tteogipbangbeomdae.goddog.domain.announce.mapper.AnnounceMapper">
+
+	<select id="questionAnswer" resultType="Announce">
+		SELECT anno_no, title, contents
+		FROM anno
+	</select>
+
+	
+</mapper>

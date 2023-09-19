@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">멍멍이리스트</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/doglist/title.css">
+		<link rel="stylesheet" href="/assets/css/faq/faq.css">
+		<link rel="stylesheet" href="/assets/css/pagenation.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FFFCF7;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">보호
+															중 아이들</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>
+															아이들에게 따뜻한 손길을 내어주세요. 그리고 행복을 선물 받으세요.<br> 입양문의는 사이트
+															내 카톡 또는 각 보호소별 전화로 문의주세요.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-5221af9d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="5221af9d" data-element_type="section">
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-77d0f221"
+							data-id="77d0f221" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-22ae2982 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="22ae2982" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5d2e53be"
+											data-id="5d2e53be" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-51b15f7e elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="51b15f7e" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" fetchpriority="high" width="440"
+																	height="284"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-1.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-244"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-1.jpg 440w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-1-300x194.jpg 300w"
+																	sizes="(max-width: 440px) 100vw, 440px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Velfire</a>
+																</h4>
+																<p class="elementor-image-box-description">German
+																	Sheperd Dog</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-5dbba24c elementor-widget elementor-widget-spacer"
+													data-id="5dbba24c" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1567fdef elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="1567fdef" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Male</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">4 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Oakland,
+																	CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5f5a55ca"
+											data-id="5f5a55ca" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+											</div>
+										</div>
+									</div>
+								</section>
+								<div
+									class="elementor-element elementor-element-5aa53741 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+									data-id="5aa53741" data-element_type="widget"
+									data-widget_type="spacer.default">
+									<div class="elementor-widget-container">
+										<div class="elementor-spacer">
+											<div class="elementor-spacer-inner"></div>
+										</div>
+									</div>
+								</div>
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-29e02a75 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="29e02a75" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-670f395c"
+											data-id="670f395c" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-21a8c7d1 elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="21a8c7d1" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="442"
+																	height="285"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-05.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-571"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-05.jpg 442w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-05-300x193.jpg 300w"
+																	sizes="(max-width: 442px) 100vw, 442px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Spencer</a>
+																</h4>
+																<p class="elementor-image-box-description">German
+																	Sheperd Dog</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-4adf40c1 elementor-widget elementor-widget-spacer"
+													data-id="4adf40c1" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-a5cb17 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="a5cb17" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Male</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">4 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Oakland,
+																	CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1d01334"
+											data-id="1d01334" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-65c0ea83 elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="65c0ea83" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="441"
+																	height="285"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-03.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-569"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-03.jpg 441w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-03-300x194.jpg 300w"
+																	sizes="(max-width: 441px) 100vw, 441px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Mei Mei</a>
+																</h4>
+																<p class="elementor-image-box-description">Poodle
+																	Dog</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-336960bb elementor-widget elementor-widget-spacer"
+													data-id="336960bb" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-2216af4b elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="2216af4b" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Female</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">3 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Menlo
+																	Park, CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-29ddaa49"
+											data-id="29ddaa49" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-4c70692f elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="4c70692f" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="442"
+																	height="285"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-02.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-568"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-02.jpg 442w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-pic-02-300x193.jpg 300w"
+																	sizes="(max-width: 442px) 100vw, 442px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Revela</a>
+																</h4>
+																<p class="elementor-image-box-description">Beagle
+																	Boston Terrier</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-6695d392 elementor-widget elementor-widget-spacer"
+													data-id="6695d392" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-6fef6dcb elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="6fef6dcb" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Male</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">2 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Oakland,
+																	CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+								<div
+									class="elementor-element elementor-element-3db17a17 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+									data-id="3db17a17" data-element_type="widget"
+									data-widget_type="spacer.default">
+									<div class="elementor-widget-container">
+										<div class="elementor-spacer">
+											<div class="elementor-spacer-inner"></div>
+										</div>
+									</div>
+								</div>
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-f8eff0 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="f8eff0" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-10f446ed"
+											data-id="10f446ed" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-603abe18 elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="603abe18" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="443"
+																	height="287"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-03.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-868"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-03.jpg 443w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-03-300x194.jpg 300w"
+																	sizes="(max-width: 443px) 100vw, 443px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Paxton</a>
+																</h4>
+																<p class="elementor-image-box-description">German
+																	Sheperd Dog</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-28c901 elementor-widget elementor-widget-spacer"
+													data-id="28c901" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-b06664e elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="b06664e" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Male</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">4 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Oakland,
+																	CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-e20db61"
+											data-id="e20db61" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-32bfd8b0 elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="32bfd8b0" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="443"
+																	height="287"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-02.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-867"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-02.jpg 443w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-02-300x194.jpg 300w"
+																	sizes="(max-width: 443px) 100vw, 443px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Merrelyn</a>
+																</h4>
+																<p class="elementor-image-box-description">Poodle
+																	Dog</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-63817525 elementor-widget elementor-widget-spacer"
+													data-id="63817525" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-432b7838 elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="432b7838" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Female</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">3 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Menlo
+																	Park, CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-1adf1b2b"
+											data-id="1adf1b2b" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-6173becc elementor-position-top elementor-widget elementor-widget-image-box"
+													data-id="6173becc" data-element_type="widget"
+													data-widget_type="image-box.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-image-box-wrapper">
+															<figure class="elementor-image-box-img">
+																<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}"><img
+																	decoding="async" loading="lazy" width="443"
+																	height="287"
+																	src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-01.jpg"
+																	class="elementor-animation-float attachment-full size-full wp-image-866"
+																	alt=""
+																	srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-01.jpg 443w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/dog-new-01-300x194.jpg 300w"
+																	sizes="(max-width: 443px) 100vw, 443px" /></a>
+															</figure>
+															<div class="elementor-image-box-content">
+																<h4 class="elementor-image-box-title">
+																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}">Ramon</a>
+																</h4>
+																<p class="elementor-image-box-description">Beagle
+																	Boston Terrier</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-29868504 elementor-widget elementor-widget-spacer"
+													data-id="29868504" data-element_type="widget"
+													data-widget_type="spacer.default">
+													<div class="elementor-widget-container">
+														<div class="elementor-spacer">
+															<div class="elementor-spacer-inner"></div>
+														</div>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-58a13dfd elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+													data-id="58a13dfd" data-element_type="widget"
+													data-widget_type="icon-list.default">
+													<div class="elementor-widget-container">
+														<ul
+															class="elementor-icon-list-items elementor-inline-items">
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Male</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">2 Years</span>
+															</li>
+															<li
+																class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text">Oakland,
+																	CA</span>
+															</li>
+														</ul>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- pagenate -->
+				<ul class="pagenate">
+
+					<!-- 11페이지부터 나옴 -->
+					<li><a href="#">&lt;&lt;</a></li>
+
+					<!-- 2페이지부터 나옴 -->
+					<li><a href="#">&lt;</a></li>
+
+					<li class="on"><a>1</a></li>
+
+					<li><a href="#">2</a></li>
+
+					<li><a href="#">3</a></li>
+
+					<li><a href="#">4</a></li>
+
+					<li><a href="#">5</a></li>
+
+					<!-- 마지막 페이지에서 사라짐 -->
+					<li><a href="#">&gt;</a></li>
+
+					<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
+					<li><a href="#">&gt;&gt;</a></li>
+
+				</ul>
+				<!-- pagenate -->
+
+				<br>
+				<br>
+				<br>
+
+
+
+				<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		<section
+			class="elementor-section elementor-top-section elementor-element elementor-element-7c0aa89c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+			data-id="7c0aa89c" data-element_type="section"
+			data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-container elementor-column-gap-no">
+				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-68379af"
+					data-id="68379af" data-element_type="column">
+					<div class="elementor-widget-wrap elementor-element-populated">
+						<section
+							class="elementor-section elementor-inner-section elementor-element elementor-element-50832419 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+							data-id="50832419" data-element_type="section"
+							data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+							<div class="elementor-container elementor-column-gap-no">
+								<div
+									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7ebc6297"
+									data-id="7ebc6297" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div class="elementor-element elementor-element-426aca28 elementor-widget elementor-widget-heading"
+											data-id="426aca28" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h2 class="elementor-heading-title elementor-size-default">How it works?
+												</h2>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-f0652d1 elementor-widget elementor-widget-text-editor"
+											data-id="f0652d1" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet consectetur. Sed eros turpis et convallis
+													egestas turpis. Id nibh amet consectetur enim integer accumsan
+													cursus urna.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="elementor-element elementor-element-6302b41 elementor-widget elementor-widget-spacer"
+							data-id="6302b41" data-element_type="widget" data-widget_type="spacer.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-spacer">
+									<div class="elementor-spacer-inner"></div>
+								</div>
+							</div>
+						</div>
+						<section
+							class="elementor-section elementor-inner-section elementor-element elementor-element-11f91c29 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+							data-id="11f91c29" data-element_type="section">
+							<div class="elementor-container elementor-column-gap-no">
+								<div
+									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-43b0e462"
+									data-id="43b0e462" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div
+											class="elementor-element elementor-element-c10279 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
+											data-id="c10279" data-element_type="widget" data-widget_type="spacer.default">
+											<div class="elementor-widget-container">
+												<div class="elementor-spacer">
+													<div class="elementor-spacer-inner"></div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-65d39497 elementor-widget elementor-widget-heading"
+											data-id="65d39497" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h4 class="elementor-heading-title elementor-size-default">01.</h4>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-7090c110 elementor-widget elementor-widget-heading"
+											data-id="7090c110" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h5 class="elementor-heading-title elementor-size-default">Browse pet
+													profiles</h5>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-47fbf31 elementor-widget elementor-widget-text-editor"
+											data-id="47fbf31" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div
+									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-7624c106"
+									data-id="7624c106" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div
+											class="elementor-element elementor-element-77d463d0 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
+											data-id="77d463d0" data-element_type="widget" data-widget_type="spacer.default">
+											<div class="elementor-widget-container">
+												<div class="elementor-spacer">
+													<div class="elementor-spacer-inner"></div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-7b340cf2 elementor-widget elementor-widget-heading"
+											data-id="7b340cf2" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h4 class="elementor-heading-title elementor-size-default">02.</h4>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-325f9f22 elementor-widget elementor-widget-heading"
+											data-id="325f9f22" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h5 class="elementor-heading-title elementor-size-default">Join &amp;
+													message with Guardians</h5>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-71850aa1 elementor-widget elementor-widget-text-editor"
+											data-id="71850aa1" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div
+									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1d9b2f41"
+									data-id="1d9b2f41" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div
+											class="elementor-element elementor-element-3a992585 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
+											data-id="3a992585" data-element_type="widget" data-widget_type="spacer.default">
+											<div class="elementor-widget-container">
+												<div class="elementor-spacer">
+													<div class="elementor-spacer-inner"></div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-565863e7 elementor-widget elementor-widget-heading"
+											data-id="565863e7" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h4 class="elementor-heading-title elementor-size-default">03.</h4>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-46118eea elementor-widget elementor-widget-heading"
+											data-id="46118eea" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h5 class="elementor-heading-title elementor-size-default">Make a
+													meet-up</h5>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-77e92fbc elementor-widget elementor-widget-text-editor"
+											data-id="77e92fbc" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div
+									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-346254ed"
+									data-id="346254ed" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div
+											class="elementor-element elementor-element-7d16691d elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
+											data-id="7d16691d" data-element_type="widget" data-widget_type="spacer.default">
+											<div class="elementor-widget-container">
+												<div class="elementor-spacer">
+													<div class="elementor-spacer-inner"></div>
+												</div>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-2f0879eb elementor-widget elementor-widget-heading"
+											data-id="2f0879eb" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h4 class="elementor-heading-title elementor-size-default">04.</h4>
+											</div>
+										</div>
+										<div class="elementor-element elementor-element-31fd5649 elementor-widget elementor-widget-heading"
+											data-id="31fd5649" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h5 class="elementor-heading-title elementor-size-default">Make a Legal
+													Pet Adoption</h5>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-17f7b4d4 elementor-widget elementor-widget-text-editor"
+											data-id="17f7b4d4" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section
+			class="elementor-section elementor-top-section elementor-element elementor-element-2ea8494d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+			data-id="2ea8494d" data-element_type="section">
+			<div class="elementor-container elementor-column-gap-no">
+				<div
+					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-34db1c2d"
+					data-id="34db1c2d" data-element_type="column">
+					<div class="elementor-widget-wrap elementor-element-populated">
+						<section
+							class="elementor-section elementor-inner-section elementor-element elementor-element-598d7826 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+							data-id="598d7826" data-element_type="section"
+							data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+							<div class="elementor-container elementor-column-gap-no">
+								<div
+									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1550aaf2"
+									data-id="1550aaf2" data-element_type="column">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div class="elementor-element elementor-element-562114c8 elementor-widget elementor-widget-heading"
+											data-id="562114c8" data-element_type="widget" data-widget_type="heading.default">
+											<div class="elementor-widget-container">
+												<h2 class="elementor-heading-title elementor-size-default">Frequently
+													asked questions</h2>
+											</div>
+										</div>
+										<div
+											class="elementor-element elementor-element-488a796b elementor-widget elementor-widget-text-editor"
+											data-id="488a796b" data-element_type="widget" data-widget_type="text-editor.default">
+											<div class="elementor-widget-container">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<div class="elementor-element elementor-element-cf58e0d elementor-widget elementor-widget-spacer"
+							data-id="cf58e0d" data-element_type="widget" data-widget_type="spacer.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-spacer">
+									<div class="elementor-spacer-inner"></div>
+								</div>
+							</div>
+						</div>
+						<div class="elementor-element elementor-element-7312315c elementor-widget elementor-widget-toggle"
+							data-id="7312315c" data-element_type="widget" data-widget_type="toggle.default">
+							<div class="elementor-widget-container">
+								<div class="elementor-toggle">
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1931" class="elementor-tab-title" data-tab="1" role="button"
+											aria-controls="elementor-tab-content-1931" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">What is the adoption fee?</a>
+										</div>
+
+										<div id="elementor-tab-content-1931" class="elementor-tab-content elementor-clearfix" data-tab="1"
+											role="region" aria-labelledby="elementor-tab-title-1931">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1932" class="elementor-tab-title" data-tab="2" role="button"
+											aria-controls="elementor-tab-content-1932" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">What is the adoption
+												process?</a>
+										</div>
+
+										<div id="elementor-tab-content-1932" class="elementor-tab-content elementor-clearfix" data-tab="2"
+											role="region" aria-labelledby="elementor-tab-title-1932">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1933" class="elementor-tab-title" data-tab="3" role="button"
+											aria-controls="elementor-tab-content-1933" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">When are we open for
+												adoptions / visitors?</a>
+										</div>
+
+										<div id="elementor-tab-content-1933" class="elementor-tab-content elementor-clearfix" data-tab="3"
+											role="region" aria-labelledby="elementor-tab-title-1933">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1934" class="elementor-tab-title" data-tab="4" role="button"
+											aria-controls="elementor-tab-content-1934" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">Can we come see the dogs?</a>
+										</div>
+
+										<div id="elementor-tab-content-1934" class="elementor-tab-content elementor-clearfix" data-tab="4"
+											role="region" aria-labelledby="elementor-tab-title-1934">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1935" class="elementor-tab-title" data-tab="5" role="button"
+											aria-controls="elementor-tab-content-1935" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">Can i come play with the
+												dogs?</a>
+										</div>
+
+										<div id="elementor-tab-content-1935" class="elementor-tab-content elementor-clearfix" data-tab="5"
+											role="region" aria-labelledby="elementor-tab-title-1935">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+									<div class="elementor-toggle-item">
+										<div id="elementor-tab-title-1936" class="elementor-tab-title" data-tab="6" role="button"
+											aria-controls="elementor-tab-content-1936" aria-expanded="false">
+											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
+												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
+												<span class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+											</span>
+											<a class="elementor-toggle-title" tabindex="0">How many dogs do you
+												have?</a>
+										</div>
+
+										<div id="elementor-tab-content-1936" class="elementor-tab-content elementor-clearfix" data-tab="6"
+											role="region" aria-labelledby="elementor-tab-title-1936">Lorem ipsum dolor sit amet,
+											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
+											pulvinar dapibus leo.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section> -->
+			</div>
+		</main>
+	</th:block>
+
+</th:block>

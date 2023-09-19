@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">동의페이지</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/volunteer/common_cal.css">
+		<link rel="stylesheet" href="/assets/css/volunteer/sub.css">
+		<link rel="stylesheet" href="/assets/css/shelter/shelter-lite3153.css"
+			media="all">
+		<link rel="stylesheet" href="/assets/css/pagenation.css" media="all">
+		<link rel="stylesheet" href="/assets/css/nontap.css">
+		<link rel="stylesheet"
+			href="/assets/css/volunteer/post1544_agreement.css" media="all">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+			rel='stylesheet' type='text/css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script
+			src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script defer
+			src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<script defer
+			src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script>
+		<script defer src="/assets/js/shelter/slick.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FFFCF7;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated"
+												style="margin-top: 8%; margin-bottom: 8%;">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">봉사신청
+															내역</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>봉사 신청 내역을 확인 후 상세보기를 할 수 있습니다.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+								</section>
+							</div>
+						</div>
+				</section>
+				<section class="explore-section section-padding" id="section_2">
+
+
+					<div class="container">
+
+
+						<div class="row">
+
+							<div class="col-12">
+								<div class="tab-content" id="myTabContent">
+									<div class="centerintro">
+
+
+										<!-- 서브 컨텐츠 -->
+										<div id="sb_contents" class="contents">
+											<table class="tbl_cen tbl_confirm"
+												style="width: 100% !important; margin-bottom: 5%;">
+												<caption>유기견 보호소 봉사신청 내역 리스트</caption>
+												<colgroup>
+													<col class="m_hidden" />
+													<col class="m_hidden" />
+													<col />
+													<col />
+													<col class="m_hidden" />
+													<col />
+												</colgroup>
+												<thead>
+													<tr style="background-color: #fafcff;">
+														<th scope="col" class="m_hidden">신청번호</th>
+														<th scope="col" class="m_hidden">신청일자</th>
+														<th scope="col">보호소</th>
+														<th scope="col">봉사날짜</th>
+														<th scope="col" class="m_hidden">시간</th>
+														<th scope="col">상태</th>
+													</tr>
+												</thead>
+												<tbody>
+
+
+
+
+													<tr>
+														<td class="m_hidden">009802949240</td>
+														<td class="m_hidden">2023.09.04</td>
+														<td><a href="/volunteer/cancel-detail.html" th:href="@{'/'+volunteer+'/'+detail}"
+															style="font-size: 17px;">굿도그 유기견보호소</a></td>
+														<td>2023.10.04</td>
+														<td class="m_hidden">13:00 ~14:00</td>
+														<td>
+															<ul class="btn">
+																<li><a href="/volunteer/cancel-detail.html" th:href="@{'/'+volunteer+'/'+detail}"
+																	style="font-size: 15px; color: blue;">상세보기</a></li>
+															</ul>
+														</td>
+													</tr>
+
+
+
+												</tbody>
+											</table>
+											<!-- pagenate -->
+											<ul class="pagenate" style="margin-bottom: 5%;">
+
+												<!-- 11페이지부터 나옴 -->
+												<li><a href="#">&lt;&lt;</a></li>
+
+												<!-- 2페이지부터 나옴 -->
+												<li><a href="#">&lt;</a></li>
+
+												<li class="on"><a>1</a></li>
+
+												<li><a href="#">2</a></li>
+
+												<li><a href="#">3</a></li>
+
+												<li><a href="#">4</a></li>
+
+												<li><a href="#">5</a></li>
+
+												<!-- 마지막 페이지에서 사라짐 -->
+												<li><a href="#">&gt;</a></li>
+
+												<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
+												<li><a href="#">&gt;&gt;</a></li>
+
+											</ul>
+											<!-- pagenate -->
+										</div>
+										<!-- //서브 컨텐츠 -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</main>
+	</th:block>
+
+</th:block>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="tteogipbangbeomdae.goddog.domain.adminmember.mapper.AdminMemberMapper">
+	
+	<select id="findAdminIdAndPasswd" resultType="AdminMember">
+		SELECT ca.care_id memberId, passwd, c.name shelterName, ca.care_no careNo, lev
+		FROM care_admin ca JOIN care c ON ca.care_no = c.care_no
+		WHERE care_id = #{memberId} AND passwd=#{passwd}
+	</select>
+	
+</mapper>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">봉사관리</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/member/common.css">
+		<link rel="stylesheet" href="/assets/css/member/sub.css">
+		<link rel="stylesheet" href="/assets/css/member/title.css">
+		<link rel="stylesheet" href="/assets/css/pagenation.css">
+		<link rel="stylesheet" href="/assets/css/nontap.css">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+			rel='stylesheet' type='text/css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+		<link rel='stylesheet'
+			href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script
+			src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"></script>
+		<script defer
+			src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+		<script defer
+			src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script>
+		<script defer src="/assets/js/shelter/slick.js"></script>
+		<script defer src="/assets/js/member/admin_vol_check_submit.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<main id="centerdetail" style="background-color: #FEFDF5;">
+			<div data-elementor-type="wp-page" data-elementor-id="1686"
+				class="elementor elementor-1686" data-elementor-post-type="page">
+				<section
+					class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+					data-id="69bd6b53" data-element_type="section"
+					data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+					<div class="elementor-background-overlay"></div>
+					<div class="elementor-container elementor-column-gap-no">
+						<div
+							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-63099e24"
+							data-id="63099e24" data-element_type="column">
+							<div class="elementor-widget-wrap elementor-element-populated">
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="61adb26d" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<div
+											class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-640bdb8f"
+											data-id="640bdb8f" data-element_type="column">
+											<div
+												class="elementor-widget-wrap elementor-element-populated">
+												<div
+													class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
+													data-id="3fdf0404" data-element_type="widget"
+													data-widget_type="heading.default">
+													<div class="elementor-widget-container">
+														<h1 class="elementor-heading-title elementor-size-default">보호소
+															관리 페이지</h1>
+													</div>
+												</div>
+												<div
+													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+													data-id="1d5bbe7b" data-element_type="widget"
+													data-widget_type="text-editor.default">
+													<div class="elementor-widget-container">
+														<p>봉사 신청 내역을 확인 후 상세보기를 할 수 있습니다.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<section class="explore-section section-padding" id="section_2">
+				<div class="container">
+					<div class="row">
+						<div class="col-12" style="margin-bottom: 10%;">
+							<div class="tab-content" id="myTabContent">
+								<div class="centerintro">
+									<!-- 서브 컨텐츠 -->
+									<div id="sb_contents" class="contents">
+										<table class="tbl_cen tbl_confirm"
+											style="width: 100% !important; margin-bottom: 5%";>
+											<caption>유기견 보호소 봉사신청 내역 리스트</caption>
+											<colgroup>
+												<col class="m_hidden" />
+												<col class="m_hidden" />
+												<col />
+												<col />
+												<col class="m_hidden" />
+												<col />
+											</colgroup>
+											<thead>
+												<tr>
+													<th scope="col"><input type="checkbox" id="chkAll"
+														name="chk"></th>
+													<th scope="col" class="m_hidden">신청번호</th>
+													<th scope="col" class="m_hidden">신청일자</th>
+													<th scope="col">보호소</th>
+													<th scope="col">봉사날짜</th>
+													<th scope="col" class="m_hidden">시간</th>
+													<th scope="col">상태</th>
+												</tr>
+											</thead>
+											<tbody>
+
+												<tr th:each="reservation : ${reservations}">
+													<td>
+														<th:block th:if="${reservation != null and reservation.status != null and reservation.status.equals('await')}">
+															<input type="checkbox" class="chkBox" name="chk" th:data-reservation-no="${reservation.reservationNo == null ? '' : reservation.reservationNo}">
+														</th:block>
+													</td>
+													<td class="m_hidden" th:text="${reservation.reservationNo == null ? '' : reservation.reservationNo}">009802949240</td>
+													<td class="m_hidden" th:text="${reservation.insertDate == null ? '' : reservation.insertDate}">2023.09.04</td>
+													<td><a style="font-size: 17px;"
+														th:text="${reservation.shelterName == null ? '' : reservation.shelterName}">굿도그</a></td>
+													<td th:text="${reservation.regdate == null ? '' : reservation.regdate}">2023.10.04</td>
+													<td class="m_hidden" th:text="${reservation.regtime == null ? '' : reservation.regtime}">13:00
+														~14:00</td>
+													<td>
+														<ul class="btn">
+															<li><a href="/volunteer/cancel-detail.html" th:href="@{'/'+volunteer+'/'+detail+'/'+${reservation.reservationNo == null ? '' : reservation.reservationNo}}"
+																style="font-size: 15px; color: blue;">상세보기</a></li>
+														</ul>
+													</td>
+												</tr>
+												<!--
+												<tr>
+													<td><input type="checkbox" id="chk2" name="chk"></td>
+													<td class="m_hidden">009802949240</td>
+													<td class="m_hidden">2023.09.04</td>
+													<td><a href="#" style="font-size: 17px;">굿도그</a></td>
+													<td>2023.10.04</td>
+													<td class="m_hidden">13:00 ~14:00</td>
+													<td>
+														<ul class="btn">
+															<li><a href="/volunteer/cancel-detail.html"
+																style="font-size: 15px; color: blue;">상세보기</a></li>
+														</ul>
+													</td>
+												</tr>
+											 
+												<tr>
+													<td><input type="checkbox" id="chk3" name="chk"></td>
+													<td class="m_hidden">009802949240</td>
+													<td class="m_hidden">2023.09.04</td>
+													<td><a href="#" style="font-size: 17px;">굿도그</a></td>
+													<td>2023.10.04</td>
+													<td class="m_hidden">13:00~14:00</td>
+													<td>
+														<ul class="btn">
+															<li><a href="/volunteer/cancel-detail.html"
+																style="font-size: 15px; color: blue;">상세보기</a></li>
+														</ul>
+													</td>
+												</tr>
+												<tr>
+													<td></td>
+													<td class="m_hidden">009802949240</td>
+													<td class="m_hidden">2023.09.04</td>
+													<td><a href="#" style="font-size: 17px;">굿도그</a></td>
+													<td>2023.10.04</td>
+													<td class="m_hidden">13:00~14:00</td>
+													<td>
+														<ul class="btn">
+															<li><a href="#"
+																style="font-size: 15px; color: blue;">상세보기</a></li>
+														</ul>
+													</td>
+												</tr>
+											-->
+											</tbody>
+										</table>
+										<!-- paging -->
+										<!-- pagenate -->
+										<ul class="pagenate" style="margin-bottom: 5%;">
+
+											<th:block th:if="${pagination.showFirst}">
+												<!-- 11페이지부터 나옴 -->
+												<li class="page-item"><a
+													th:href="@{'/'+member+'/'+'mypage'+'/'+adminpage+'?'+requestPage+'='+1}"
+													class="page-link" href="#" aria-label="Previous">&lt;&lt;</a>
+												</li>
+											</th:block>
+
+											<th:block th:if="${pagination.showPrevious}">
+												<!-- 2페이지부터 나옴 -->
+												<li class="page-item"><a class="page-link" href="#"
+													aria-label="Previous"
+													th:href="@{'/'+member+'/'+'mypage'+'/'+adminpage+'?'+requestPage+'='+${pagination.previousStartPage}}">&lt;</a>
+												</li>
+											</th:block>
+
+											<th:block
+												th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
+												<li class="on page-item"
+													th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
+													<a class="page-link" href="#"
+													th:href="@{'/'+member+'/'+'mypage'+'/'+adminpage+'?'+requestPage+'='+${i}}"
+													th:text="${i}">1</a>
+												</li>
+											</th:block>
+											<!-- 
+											<li><a href="#">2</a></li>
+
+											<li><a href="#">3</a></li>
+
+											<li><a href="#">4</a></li>
+
+											<li><a href="#">5</a></li>
+											 -->
+											<th:block th:if="${pagination.showNext}">
+												<!-- 마지막 페이지에서 사라짐 -->
+												<li class="page-item"><a
+													th:href="@{'/'+member+'/'+'mypage'+'/'+adminpage+'?'+requestPage+'='+${pagination.nextStartPage}}"
+													class="page-link" href="#" aria-label="Previous">&gt;</a></li>
+											</th:block>
+
+											<th:block th:if="${pagination.showLast}">
+												<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
+												<li class="page-item"><a
+													th:href="@{'/'+member+'/'+'mypage'+'/'+adminpage+'?'+requestPage+'='+${pagination.totalPages}}"
+													class="page-link" href="#" aria-label="Previous">&gt;&gt;</a>
+												</li>
+											</th:block>
+
+										</ul>
+										<!-- pagenate -->
+
+										<br> <br> <br>
+
+										<div
+											class="elementor-element elementor-element-79257a06 elementor-align-center elementor-mobile-align-justify elementor-widget elementor-widget-button"
+											data-id="79257a06" data-element_type="widget"
+											data-widget_type="button.default" style="text-align: center;">
+											<div class="elementor-widget-container">
+												<div class="elementor-button-wrapper">
+													<a
+														class="elementor-button elementor-button-link elementor-size-sm btnSubmit"
+														id="btnAgreeSubmit" href="#" data-btn-type="승인"> <span
+														class="elementor-button-content-wrapper"> <span
+															class="elementor-button-icon elementor-align-icon-right">
+																<i aria-hidden="true" class="fas fa-check"></i>
+														</span> <span class="elementor-button-text">승인</span>
+													</span>
+													</a> <a
+														class="elementor-button elementor-button-link elementor-size-sm btnSubmit"
+														id="btnCancelSubmit" href="#" data-btn-type="거절"> <span
+														class="elementor-button-content-wrapper"> <span
+															class="elementor-button-icon elementor-align-icon-right">
+																<i aria-hidden="true" class="fas fa-x"></i>
+														</span> <span class="elementor-button-text">거절</span>
+													</span>
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+		</main>
+	</th:block>
+
+</th:block>

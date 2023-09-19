@@ -1,0 +1,3224 @@
+@charset "utf-8";
+
+/*서브비주얼 공통*/
+.sub_visual {
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  top: 0;
+  width: 1920px;
+  height: 150px;
+  margin-left: -960px;
+  background: url(/reservation/img/sub/bg_sub01.png) no-repeat;
+  color: #fff
+}
+
+.sub_visual div {
+  text-align: center
+}
+
+.sub_visual p:nth-child(1) {
+  padding-top: 38px;
+  font-size: 17px
+}
+
+.sub_visual p:nth-child(2) {
+  display: inline-block;
+  width: 20px;
+  height: 3px;
+  margin: 12px 0 6px 0;
+  background-color: #fff
+}
+
+.sub_visual p:nth-child(3) {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2em
+}
+
+/* 서브네비 공통 */
+#s_navi_wrap {
+  position: relative;
+  width: 100%;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #e5e5e5
+}
+
+#s_navi_wrap>.pagenate {
+  max-width: 998px;
+  margin: 0 auto;
+  border-left: 1px solid #e5e5e5;
+  border-right: 1px solid #e5e5e5
+}
+
+#s_navi_wrap img {
+  /*vertical-align:middle*/
+}
+
+#s_navi_wrap h2 {
+  font-size: 13px;
+  font-weight: 700
+}
+
+#s_navi_wrap>ul {
+  height: 45px
+}
+
+#s_navi_wrap>ul>li {
+  position: relative;
+  float: left;
+  padding-right: 4%;
+  border-right: 1px solid #e5e5e5
+}
+
+#s_navi_wrap>ul>li:first-child {
+  padding: 14px 16px
+}
+
+#s_navi_wrap>ul>li:nth-child(2) {
+  padding: 17px 16px 15px 16px
+}
+
+#s_navi_wrap>ul>li:last-child {
+  background: url(/reservation/img/sub/arrow_btm.png) 90% 22px no-repeat
+}
+
+#s_navi_wrap>ul>li:last-child>a {
+  display: inline-block;
+  height: 30px;
+  padding: 16px 0 0 16px;
+  min-width: 90px;
+  padding-right: 20px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 700
+}
+
+#s_navi {
+  z-index: 888;
+  position: absolute;
+  top: 45px;
+  width: 81.5%;
+  height: auto;
+  padding: 9%;
+  background-color: #f9f9f9;
+  border-top: 2px solid #8bae1c;
+  border-right: 1px solid #e5e5e5;
+  border-left: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  line-height: 1.8em
+}
+
+#s_navi li a {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.8em
+}
+
+#s_navi li a:hover {
+  text-decoration: underline
+}
+
+/* 서브 맵 공통*/
+#volunteer_map {
+  float: left;
+  width: 45%;
+  min-width: 450px;
+  margin-right: 4%
+}
+
+#volunteer_map h4.tit {
+  display: none
+}
+
+#volunteer_map>ul {
+  position: relative;
+  height: 558px;
+  background: url(/reservation/img/sub/map/bg_map.png) no-repeat
+}
+
+.map_2dep {
+  display: none;
+  z-index: 999;
+  position: absolute;
+  left: -78px;
+  top: 25px;
+  padding: 10px;
+  background-color: #fff;
+  border: 2px solid #ffc000;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px
+}
+
+.map_2dep:before {
+  display: block;
+  content: "";
+  width: 1px;
+  margin: -20px auto 0px;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ffc000;
+  border-left: 10px solid transparent
+}
+
+.map_2dep li {
+  width: 100%;
+  margin-top: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: -0.5px
+}
+
+.map_2dep li a {
+  color: #333
+}
+
+.map_2dep li:first-child:before {
+  display: block;
+  content: "";
+  width: 1px;
+  margin: -12px auto 0px;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 10px solid transparent
+}
+
+.map_2dep li:first-child a {
+  display: block;
+  width: 100%;
+  min-width: 170px;
+  padding-top: 7px
+}
+
+.map_2dep li a.map_close {
+  display: block;
+  width: 100%;
+  height: 14px;
+  margin-top: 10px;
+  padding: 6px 0;
+  background-color: #644b27;
+  color: #fff;
+  font-size: 13px;
+  text-align: center
+}
+
+.map_2dep li a.map_close:hover {
+  color: #fff
+}
+
+#volunteer_map .mobile {
+  display: none
+}
+
+#volunteer_map>ul>li:nth-child(1) {
+  position: absolute;
+  left: 246px;
+  top: 54px
+}
+
+#volunteer_map>ul>li:nth-child(2) {
+  position: absolute;
+  left: 140px;
+  top: 57px
+}
+
+#volunteer_map>ul>li:nth-child(3) {
+  position: absolute;
+  left: 256px;
+  top: 106px
+}
+
+#volunteer_map>ul>li:nth-child(4) {
+  position: absolute;
+  left: 168px;
+  top: 112px
+}
+
+#volunteer_map>ul>li:nth-child(5) {
+  position: absolute;
+  left: 265px;
+  top: 139px
+}
+
+#volunteer_map>ul>li:nth-child(6) {
+  position: absolute;
+  left: 294px;
+  top: 166px
+}
+
+#volunteer_map>ul>li:nth-child(7) {
+  position: absolute;
+  left: 314px;
+  top: 195px
+}
+
+#volunteer_map>ul>li:nth-child(8) {
+  position: absolute;
+  left: 106px;
+  top: 204px
+}
+
+#volunteer_map>ul>li:nth-child(9) {
+  position: absolute;
+  left: 230px;
+  top: 203px
+}
+
+#volunteer_map>ul>li:nth-child(10) {
+  position: absolute;
+  left: 157px;
+  top: 240px
+}
+
+#volunteer_map>ul>li:nth-child(11) {
+  position: absolute;
+  left: 260px;
+  top: 243px
+}
+
+#volunteer_map>ul>li:nth-child(12) {
+  position: absolute;
+  left: 338px;
+  top: 248px
+}
+
+#volunteer_map>ul>li:nth-child(13) {
+  position: absolute;
+  left: 227px;
+  top: 289px
+}
+
+#volunteer_map>ul>li:nth-child(14) {
+  position: absolute;
+  left: 252px;
+  top: 315px
+}
+
+#volunteer_map>ul>li:nth-child(15) {
+  position: absolute;
+  left: 174px;
+  top: 330px
+}
+
+#volunteer_map>ul>li:nth-child(16) {
+  position: absolute;
+  left: 338px;
+  top: 328px
+}
+
+#volunteer_map>ul>li:nth-child(17) {
+  position: absolute;
+  left: 91px;
+  top: 340px
+}
+
+#volunteer_map>ul>li:nth-child(18) {
+  position: absolute;
+  left: 236px;
+  top: 347px
+}
+
+#volunteer_map>ul>li:nth-child(19) {
+  position: absolute;
+  left: 166px;
+  top: 379px
+}
+
+#volunteer_map>ul>li:nth-child(20) {
+  position: absolute;
+  left: 225px;
+  top: 377px
+}
+
+#volunteer_map>ul>li:nth-child(21) {
+  position: absolute;
+  left: 316px;
+  top: 385px
+}
+
+#volunteer_map>ul>li:nth-child(22) {
+  position: absolute;
+  left: 105px;
+  top: 400px
+}
+
+#volunteer_map>ul>li:nth-child(23) {
+  position: absolute;
+  left: 41px;
+  top: 421px
+}
+
+#volunteer_map>ul>li:nth-child(24) {
+  position: absolute;
+  left: 135px;
+  top: 445px
+}
+
+/*서브컨텐츠 및 타이틀 공통 */
+#sb_contents {
+  clear: both;
+  padding: 60px 0;
+  color: #444
+}
+
+#sb_contents h3.tit {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center
+}
+
+#sb_contents h4.tit {
+  padding-left: 30px;
+  background: url(/reservation/img/sub/icon_tit.png) left center no-repeat;
+  font-size: 24px;
+  font-weight: 700
+}
+
+/* 서브 페이지 네이트 공통*/
+#sb_contents .pagenate {
+  width: 100%;
+  margin: 15px auto;
+  text-align: center
+}
+
+#sb_contents .pagenate li {
+  display: inline-block
+}
+
+#sb_contents .pagenate li a {
+  display: block;
+  padding: 8px 10px;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-weight: 400
+}
+
+#sb_contents .pagenate li a:hover {
+  color: #0e9189
+}
+
+#sb_contents .pagenate li.on a {
+  background-color: #616FE2;
+  color: #fff
+}
+
+/* 서브 탭 */
+.sb_tab {
+  overflow: hidden;
+  padding-bottom: 40px;
+  font-size: 0
+}
+
+.sb_tab li {
+  display: inline-block;
+  float: left;
+  padding: 0;
+  margin: 0
+}
+
+.sb_tab li a {
+  display: block;
+  padding: 15px 0;
+  background-color: #ebebeb;
+  color: #000;
+  text-align: center;
+  font-size: 18px
+}
+
+.sb_tab li.on a {
+  background-color: #555;
+  color: #fff;
+  font-weight: 700
+}
+
+.sb_tab.two li {
+  width: 50%
+}
+
+.sb_tab.three li {
+  width: 33.3%
+}
+
+.sb_tab.four li {
+  width: 25%
+}
+
+.sb_tab.blue li.on {
+  background-color: #0475cc
+}
+
+.sb_tab:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* 서브 탭 - 링크x*/
+.sb_tab.blue li {
+  display: inline-block;
+  padding: 15px 0;
+  background-color: #ebebeb;
+  color: #000;
+  text-align: center;
+  font-size: 18px
+}
+
+.sb_tab.blue li.on {
+  background-color: #0475cc;
+  color: #fff;
+  font-weight: 700
+}
+
+/* 툴팁 */
+.tip {
+  padding: 17px 15px;
+  background-color: #fdfdfd;
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2em
+}
+
+.tip2 {
+  padding: 10px 5px;
+  background-color: #f9f9f9;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.3em
+}
+
+.tip3 {
+  padding: 25px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ebebeb;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box
+}
+
+.tip4 {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+  line-height: 1.2em;
+  letter-spacing: -1px
+}
+
+.programList_tip_t {
+  diplay: block;
+  padding: 25px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ebebeb;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box
+}
+
+.programList_tip_b {
+  display: none;
+  padding: 25px 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ebebeb;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  box-sizing: border-box
+}
+
+/* position-table in input */
+.w01 {
+  width: 55%
+}
+
+.w02 {
+  width: 55%
+}
+
+.w03 {
+  width: 20%
+}
+
+
+/* 봉사활동 신청 */
+/* 자원봉사소개 */
+.knpsinfo p.txt_box {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1em
+}
+
+.knpsinfo ul.info_img {
+  width: 100%;
+  padding-top: 50px
+}
+
+.knpsinfo ul.info_img li {
+  display: inline-block;
+  width: 49.4%
+}
+
+.knpsinfo ul.info_img li:last-child {
+  padding-left: 0.2%
+}
+
+.knpsinfo ul.info_img li img {
+  width: 100%
+}
+
+.knpsinfo ul.info_list {
+  overflow: hidden;
+  width: 100%
+}
+
+.knpsinfo ul.info_list li {
+  float: left;
+  width: 33.3%;
+  padding-top: 40px
+}
+
+.knpsinfo ul.info_list li div {
+  padding-right: 34px
+}
+
+.knpsinfo ul.info_list li:last-child div {
+  padding-right: 0px
+}
+
+.knpsinfo ul.info_list li:before {
+  display: block;
+  content: "";
+  width: 10%;
+  height: 3px;
+  padding-top: 12px;
+  border-top: 3px solid #e5e5e5
+}
+
+.knpsinfo ul.info_list li h4,
+.knpsinfo ul.info_list li p {}
+
+.knpsinfo ul.info_list li h4 {
+  font-size: 25px
+}
+
+.knpsinfo ul.info_list li p {
+  padding-top: 30px;
+  font-size: 15px;
+  line-height: 1.4em
+}
+
+.knpsinfo_pp {
+  overflow: hidden;
+  margin-top: 70px;
+  padding: 20px;
+  background: url(/reservation/img/sub/knpsinfo_pp_img01.png) left top no-repeat #1ca39c
+}
+
+.knpsinfo_pp .txt_box {
+  float: left;
+  width: 54%
+}
+
+.knpsinfo_pp img {
+  float: right;
+  width: 40%
+}
+
+.knpsinfo_pp .txt_box {
+  padding: 25px 0 0 15px
+}
+
+.knpsinfo_pp .txt_box h4 {
+  font-size: 28px;
+  color: #f9ff9c
+}
+
+.knpsinfo_pp p {
+  padding-top: 30px;
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.4em
+}
+
+.knpsinfo_pp button {
+  max-width: 270px;
+  margin-top: 30px;
+  font-size: 15px;
+  color: #fff
+}
+
+.m_more {
+  display: none
+}
+
+/* 달력 */
+.calender_wrap {}
+
+.month_box {
+  overflow: hidden;
+  margin: 40px auto 20px;
+  text-align: center
+}
+
+.month_box li {
+  display: inline-block;
+  line-height: 1.2em
+}
+
+.month_box li img {
+  vertical-align: inherit
+}
+
+.month_box li.month {
+  padding: 0 50px;
+  font-size: 40px;
+  font-weight: 700
+}
+
+.tbl_calender {
+  width: 100%
+}
+
+.tbl_calender col {
+  width: 14.2857%
+}
+
+.tbl_calender .date_sun {
+  /*background-color:#fff0f0;*/
+  color: #df352c;
+  font-weight: 800
+}
+
+.tbl_calender .date_sat {
+  /*background-color:#eef6ff;*/
+  color: #0475cc;
+  font-weight: 800
+}
+
+.tbl_calender th {
+  padding: 20px 0;
+  text-align: center;
+  text-indent: 0
+}
+
+.tbl_calender td {
+  height: 90px;
+  padding: 12px 15px;
+  vertical-align: top
+}
+
+.tbl_calender td.on {
+  background-color: #df352c;
+  color: #fff
+}
+
+.tbl_calender td.on .date_sun,
+.tbl_calender td.on .date_sat {
+  color: #fff
+}
+
+.tbl_calender td.on a {
+  display: block
+}
+
+.tbl_calender td.on a,
+.tbl_calender td.on a:hover {
+  color: #fff
+}
+
+.tbl_calender p {
+  margin-bottom: 10px
+}
+
+.tbl_calender ul li {
+  margin-bottom: 5px
+}
+
+.tbl_calender td.next_mon {
+  background-color: #f9f9f9
+}
+
+.tbl_calender td.disable {
+  background-color: #f1f1f1
+}
+
+/* 봉사활동 신청 확인 */
+.tbl_regReser {
+  margin: 10px 0 30px 0
+}
+
+.tbl_regReser select {
+  min-width: 60px
+}
+
+.tbl_regReser col {
+  width: 12.5%
+}
+
+.tbl_regReser_02 {
+  margin: 10px 0 30px 0
+}
+
+.tbl_regReser_02 col:first-child {
+  width: 20%
+}
+
+.tbl_regReser_02 col:last-child {
+  width: 80%
+}
+
+.zip_code input,
+.zip_code a {
+  display: inline-block
+}
+
+.zip_code input {
+  width: 20%
+}
+
+.zip_code .btn_zipcode {
+  background-color: #666;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 15px
+}
+
+.mail_form .mail_01 {
+  width: 25%
+}
+
+.mail_form .mail_02 {
+  width: 65%
+}
+
+.mail_form p {
+  margin-top: 5px;
+  font-size: 13px
+}
+
+.before_box {
+  margin: 10px 0 20px 0;
+  padding: 25px 20px;
+  border: 1px solid #e5e5e5;
+  background-color: #f9f9f9
+}
+
+.before_box.gr>li {
+  padding-left: 8px;
+  background: url(/reservation/img/common/bullet_2depth_gr.png) 0 7px no-repeat;
+  font-size: 13px;
+  line-height: 1.4em
+}
+
+.tbl_regReser_03 {
+  margin: 10px 0 30px 0
+}
+
+.tbl_regReser_03 col {
+  width: 25%
+}
+
+/* 봉사활동 신청 절차 */
+.volunteer_step {
+  /* float: right; */
+  /* width: 50%; */
+  /* margin-top: 20px */
+}
+
+.volunteer_step_list {
+  display: block;
+  width: 93%;
+  margin-top: 10px;
+  padding: 3%;
+  border: 1px solid #e5e5e5;
+  background-color: #f9f9f9;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4em;
+  list-style: none
+}
+
+.volunteer_step_list li {
+  line-height: 1.6em
+}
+
+.processinfo {
+  width: 100%
+}
+
+/* 검색결과 리스트 + 프로그램 안내 공통 */
+.result_list {
+  padding-top: 50px
+}
+
+h5.result_list_tit {
+  padding-bottom: 20px;
+  font-size: 32px;
+  text-align: center;
+  font-weight: 700
+}
+
+.result_list_num {
+  padding-bottom: 12px;
+  color: #616FE2;
+  font-weight: 400
+}
+
+.result_list_num span {
+  color: #555
+}
+
+.img_program {
+  border: 1px solid #e5e5e5;
+  width: 100%
+}
+
+.program_info_tit {
+  padding-bottom: 7px;
+  font-size: 15px;
+  color: #555;
+  font-weight: 700
+}
+
+.program_info_data {
+  font-size: 14px;
+  color: #666;
+  font-weight: 400;
+  line-height: 1.5em
+}
+
+.program_info_data li {
+  line-height: 1.5em
+}
+
+.result_list table col:nth-child(1) {
+  width: 11%
+}
+
+.result_list table col:nth-child(2) {
+  width: 15%
+}
+
+.result_list table col:nth-child(3) {
+  width: 43%
+}
+
+.result_list table col:nth-child(4) {
+  width: 20%
+}
+
+.result_list table col:nth-child(5) {
+  width: 11%
+}
+
+/* 봉사활동 단체 예약 조회 신청*/
+.calender_form {
+  overflow: hidden;
+  text-align: left
+}
+
+.calender_form li {
+  display: inline-block
+}
+
+.calender_form li:nth-child(2) {
+  width: 10px;
+  padding: 0 10px
+}
+
+.calender_form li input {
+  width: 84%
+}
+
+.calender_form.v2 li input {
+  width: auto;
+}
+
+/* 봉사활동 단체관리 */
+.group_adm {}
+
+.group_adm button {
+  max-width: 220px;
+  margin: 0 auto 5px;
+  text-align: center
+}
+
+.group_search dl {
+  margin: 20px 0
+}
+
+.tbl_group {
+  margin: 10px 0 20px 0
+}
+
+.tbl_group td span {
+  padding-left: 15px;
+  font-size: 14px
+}
+
+.tbl_group col:nth-child(1) {
+  width: 15%
+}
+
+.tbl_group col:nth-child(2) {
+  width: 85%
+}
+
+.group_search_list {
+  padding-top: 50px
+}
+
+.group_search_list table col:nth-child(1) {
+  width: 30%
+}
+
+.group_search_list table col:nth-child(2) {
+  width: 20%
+}
+
+.group_search_list table col:nth-child(3) {
+  width: 30%
+}
+
+.group_search_list table col:nth-child(4) {
+  width: 20%
+}
+
+.msg_box {
+  margin-bottom: 40px;
+  padding: 60px 10%;
+  background-color: #f5f5f5;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center
+}
+
+.msg_box .msg_body {
+  margin-top: 15px;
+  font-size: 14px
+}
+
+.tbl_group_02 {
+  margin: 10px 0 20px 0
+}
+
+.tbl_group_02 col:nth-child(1) {
+  width: 15%
+}
+
+.tbl_group_02 col:nth-child(2) {
+  width: 35%
+}
+
+.tbl_group_02 col:nth-child(3) {
+  width: 15%
+}
+
+.tbl_group_02 col:nth-child(4) {
+  width: 35%
+}
+
+.tbl_group_03 col:nth-child(1) {
+  width: 16.6666%
+}
+
+.tbl_group_03 col:nth-child(2) {
+  width: 16.6666%
+}
+
+.tbl_group_03 col:nth-child(3) {
+  width: 16.6666%
+}
+
+.tbl_group_03 col:nth-child(4) {
+  width: 16.6666%
+}
+
+.tbl_group_03 col:nth-child(5) {
+  width: 16.6666%
+}
+
+.tbl_group_03 col:nth-child(6) {
+  width: 16.6666%
+}
+
+.tbl_group_04 {}
+
+.tbl_group_04 col:nth-child(1) {
+  width: 16.6666%
+}
+
+.tbl_group_04 col:nth-child(2) {
+  width: 16.6666%
+}
+
+.tbl_group_04 col:nth-child(3) {}
+
+.tbl_group_04 col:nth-child(4) {
+  width: 16.6666%
+}
+
+.tbl_group_04 col:nth-child(5) {
+  width: 16.6666%
+}
+
+.tbl_group_04 col:nth-child(6) {
+  width: 16.6666%
+}
+
+.tbl_group_05 {
+  margin: 10px 0 20px 0
+}
+
+.tbl_group_05 col:nth-child(1) {
+  width: 14.2857%
+}
+
+.tbl_group_05 col:nth-child(2) {
+  width: 12.5714%
+}
+
+.tbl_group_05 col:nth-child(3) {
+  width: 14.2857%
+}
+
+.tbl_group_05 col:nth-child(4) {
+  width: 16%
+}
+
+.tbl_group_05 col:nth-child(5) {
+  width: 14.2857%
+}
+
+.tbl_group_05 col:nth-child(6) {
+  width: 12.5714%
+}
+
+.tbl_group_05 col:nth-child(7) {
+  width: 16%
+}
+
+.input_team_leader {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle
+}
+
+#btnRank {
+  background-color: #fff;
+  border: 1px solid #c9c9c9
+}
+
+#btnRank h2 {
+  padding: 15px 0;
+  background-color: #444;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center
+}
+
+#btnRank div.rankbox {
+  margin-bottom: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center
+}
+
+/* 자원봉사 프로그램 안내 */
+/* 자원봉사프로그램 */
+.program_info .tbl_proinfo col:nth-child(1) {
+  width: 18%
+}
+
+.program_info .tbl_proinfo col:nth-child(2) {
+  width: 64%
+}
+
+.program_info .tbl_proinfo col:nth-child(3) {
+  width: 18%
+}
+
+/* 후원기금 */
+#donate .donate_list {
+  overflow: hidden;
+  border-top: 2px solid #000
+}
+
+#donate .donate_list li {
+  float: left;
+  width: 21.4%;
+  height: 24px;
+  padding: 15px 1.8%;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 17px;
+  font-weight: 700;
+  color: #444;
+  text-align: center;
+  line-height: 1.4em
+}
+
+#donate .donate_list li:nth-child(2n) {
+  background-color: #fff;
+  font-size: 15px;
+  color: #555;
+  font-weight: 400;
+  line-height: 1.4em
+}
+
+/* 확인 인증 취소 */
+/* 신청 확인 */
+.tbl_confirm {
+  margin: 10px 0 20px 0
+}
+
+.tbl_confirm_detaile {
+  margin: 10px 0 20px 0
+}
+
+.tbl_confirm_detaile col {
+  width: 25%
+}
+
+.confirm_beinfo {
+  overflow: hidden;
+  width: 100%;
+  margin: 20px 0;
+  padding: 30px 0 20px 0;
+  /*box-sizing:border-box;background-color:#f9f9f9;border:1px solid #e5e5e5*/
+}
+
+.confirm_beinfo li {
+  overflow: hidden;
+  float: left;
+  width: 33.3%;
+  margin-bottom: 50px;
+  background: url(/reservation/img/sub/arrow_set02.png) 85% center no-repeat
+}
+
+.confirm_beinfo li.bg_no {
+  background: none
+}
+
+.confirm_beinfo li:before {
+  display: block;
+  content: "";
+  width: 30px;
+  height: 3px;
+  padding-top: 12px;
+  border-top: 3px solid #e5e5e5
+}
+
+.confirm_beinfo li span.step {
+  display: block;
+  padding-bottom: 25px;
+  font-size: 20px;
+  font-weight: 800
+}
+
+.confirm_beinfo li div {
+  width: 83%
+    /*padding-right:34px*/
+}
+
+.confirm_beinfo li h4 {
+  font-size: 20px
+}
+
+.confirm_beinfo li p {
+  width: 90%;
+  padding-top: 10px;
+  font-size: 15px;
+  color: #888;
+  line-height: 1.4em;
+  letter-spacing: -1px
+}
+
+.confirm_beinfo li:nth-child(4n) {
+  clear: both
+}
+
+#confirm_photo {
+  width: 100%;
+  margin: 20px 0
+}
+
+#confirm_photo ul {
+  overflow: hidden
+}
+
+#confirm_photo>ul>li {
+  width: 42.8%;
+  padding: 3%;
+  margin-bottom: 15px;
+  border: 1px solid #e5e5e5
+}
+
+#confirm_photo>ul>li:nth-child(1) {
+  float: left
+}
+
+#confirm_photo>ul>li:nth-child(2) {
+  float: right
+}
+
+#confirm_photo>ul>li.photo .tts {
+  color: #666
+}
+
+#confirm_photo p.tit {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2em
+}
+
+#confirm_photo p.img {
+  width: 100%;
+  height: 200px;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  text-align: center
+}
+
+#confirm_photo p.tts {
+  padding: 5px 0;
+  font-size: 13px;
+  font-weight: 700
+}
+
+#confirm_photo .file_wrap {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 10px
+}
+
+#confirm_photo .file_wrap p {
+  float: left;
+  width: 73%;
+  height: 35px;
+  margin-right: 0.2%;
+  border: 1px solid #e5e5e5;
+  line-height: 2.2em;
+  text-indent: 10px
+}
+
+/*
+#confirm_photo .file_wrap ul{float:right;width:25%;height:37px}
+.file_wrap .btn_file{background-color:#555;width:100%;min-width:80px;font-size:13px}
+*/
+#confirm_photo .file_wrap ul {
+  width: 100%
+}
+
+input.btn_upload {
+  height: 34px;
+  padding: 4px;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  text-indent: 0
+}
+
+.file_wrap .btn_file {
+  background-color: #555;
+  width: 100%;
+  min-width: 80px;
+  font-size: 13px
+}
+
+.camara_setting {
+  margin: 0 auto;
+  text-align: center
+}
+
+.camara_setting li {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center
+}
+
+.camara_setting li:first-child {
+  margin-right: 5px
+}
+
+.camara_setting li a {
+  padding: 10px
+}
+
+#confirm_point {
+  width: 100%;
+  margin: 20px 0
+}
+
+#confirm_point ul {
+  overflow: hidden;
+  margin-bottom: 5px
+}
+
+#confirm_point>ul>li {
+  width: 42.8%;
+  padding: 3%;
+  margin-bottom: 15px;
+  border: 1px solid #e5e5e5
+}
+
+#confirm_point>ul>li:nth-child(1) {
+  float: left
+}
+
+#confirm_point>ul>li:nth-child(2n) {
+  float: right
+}
+
+#confirm_point>ul>li.photo .tts {
+  color: #666
+}
+
+#confirm_point p.tit {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2em
+}
+
+#confirm_point p.img {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-height: 200px;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  text-align: center
+}
+
+#confirm_point p.img img {
+  width: 100%
+}
+
+#confirm_point>ul>li>ul>li {
+  padding-top: 5px;
+  font-size: 13px;
+  font-weight: 700
+}
+
+
+/*  1365 자원봉사 인증*/
+.privacy.txt_box {
+  border: 1px solid #e5e5e5
+}
+
+.privacy ul li {}
+
+.privacy h5 {
+  padding: 18px 20px;
+  background-color: #f9f9f9;
+  font-size: 18px;
+  font-weight: 700
+}
+
+.privacy .depth {
+  padding: 20px
+}
+
+.check_box {
+  padding-top: 10px;
+  text-align: right
+}
+
+.check_box input {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle
+}
+
+.check_box span {
+  color: #777;
+  font-size: 13px;
+  font-weight: 700
+}
+
+.tbl_volunteer_1365 input.pp_num {
+  width: 26.2%
+}
+
+.volunteer1365_order {
+  margin-top: 30px
+}
+
+/* 확인서 발급 */
+/* 봉사실적 조회/확인서발급 */
+.search_time {
+  padding: 26px 0 20px 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ebebeb;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center
+}
+
+.search_time img {
+  display: inline;
+  margin-top: -5px
+}
+
+.search_time span:nth-child(2) {
+  padding-left: 10px;
+  color: #0475cc
+}
+
+.search_time span:last-child {
+  color: #0475cc
+}
+
+.btn_set>li>a>img {
+  padding-left: 5px
+}
+
+.tbl_volunteer_print {}
+
+.tbl_volunteer_print input {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle
+}
+
+.tbl_volunteer_print col:nth-child(1) {
+  width: 2%
+}
+
+.tbl_volunteer_print col:nth-child(2) {
+  width: 13%
+}
+
+.tbl_volunteer_print col:nth-child(3) {
+  width: 45%
+}
+
+.tbl_volunteer_print col:nth-child(4) {
+  width: 10%
+}
+
+.tbl_volunteer_print td:last-child {
+  padding: 8px
+}
+
+.tbl_volunteer_print .data_box {
+  overflow: hidden;
+  border: 1px solid #e5e5e5;
+  text-align: center
+}
+
+.tbl_volunteer_print .data_box span {
+  float: left;
+  display: block;
+  width: 50%;
+  padding: 4px 0;
+  background-color: #f9f9f9;
+  color: #000;
+  font-size: 13px
+}
+
+.tbl_volunteer_print .data_box .data {
+  padding: 4px 0;
+  font-size: 12px
+}
+
+/* 확인서 발급 팝업창 */
+.bg_mask {
+  z-index: 99;
+  position: fixed;
+  left: 0px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8)
+}
+
+#print_wrap {
+  z-index: 999;
+  position: fixed;
+  left: 50%;
+  top: 50px;
+  width: 800px;
+  margin-left: -350px;
+  background-color: #fff
+}
+
+#print_wrap {
+  border: 1px solid #000
+}
+
+.print_header {
+  overflow: hidden;
+  padding: 20px;
+  background-color: #0475cc;
+  color: #fff
+}
+
+.print_header h2 {
+  float: left;
+  font-size: 20px;
+  font-weight: 800
+}
+
+.print_header a.close {
+  float: right;
+  color: #fff;
+  padding-top: 2px
+}
+
+.print_content {
+  overflow-y: scroll;
+  height: 620px;
+  padding: 40px 40px 0 40px;
+  box-sizing: border-box;
+  background: url(/reservation/img/sub/pop_bg.gif) repeat
+}
+
+.print_content p {
+  margin-bottom: 5px;
+  font-size: 14px
+}
+
+.print_tb_wrap {
+  border: 1px solid #e5e5e5
+}
+
+.print_tb_wrap h5 {
+  padding: 40px 0 30px 0;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center
+}
+
+.tb_print {
+  width: 100%;
+  border-top: 1px solid #e5e5e5;
+  font-size: 14px;
+  text-align: center
+}
+
+#print_wrap .tbl_cen th {
+  background-color: #f9f9f9
+}
+
+#print_wrap .tbl_cen th,
+#print_wrap .tbl_cen td {
+  padding: 10px;
+  font-size: 13px
+}
+
+.print_tb_wrap {
+  margin-bottom: 40px
+}
+
+.print_tb_wrap h6 {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 700
+}
+
+.stamp_wrap {
+  position: relative;
+  padding-top: 40px;
+  text-align: center
+}
+
+.stamp_wrap .date {
+  padding: 20px 0 50px 0
+}
+
+.stamp_wrap .stamp {
+  z-index: 99;
+  position: relative;
+  padding-bottom: 60px;
+  font-size: 22px;
+  font-weight: bold
+}
+
+.stamp_wrap .stampimg img {
+  z-index: 1;
+  position: absolute;
+  left: 440px;
+  top: 120px;
+  width: 80px;
+  height: 80px;
+  background-color: #000
+}
+
+.print_footer {
+  background-color: #555;
+  text-align: center
+}
+
+/* 소통 */
+/* 게시판 리스트*/
+.search_box {
+  margin-bottom: 50px;
+  padding: 25px;
+  background-color: #fafcff;
+  border: 1px solid rgb(177, 184, 212);
+}
+
+.search_box select.search_w01 {
+  float: left;
+  width: 20%;
+  height: 45px;
+  margin-right: 7px
+}
+
+.search_box input.search_w02 {
+  float: left;
+  width: 65.6%;
+  height: 45px;
+  margin-right: 7px
+}
+
+.search_box input.search_w03 {
+  float: left;
+  width: 46%;
+  height: 38px;
+  margin-right: 7px
+}
+
+.search_box .search_w03 {
+  float: left;
+  width: 10%
+}
+
+.tbl_board {
+  margin: 10px 0 20px 0
+}
+
+.board_wrap .data li:first-child {
+  padding-left: 0
+}
+
+.board_wrap .data li:last-child {
+  border-right: 0
+}
+
+.board_wrap .board_btn {
+  overflow: hidden
+}
+
+.board_wrap .txt_box {
+  /* font-size: 14px; */
+  font-weight: 400;
+  line-height: 1.6em;
+  text-align: center
+}
+
+.board_wrap .txt_box img,
+.board_wrap .txt_box table,
+.board_wrap .txt_box p {
+  width: inherit !important;
+  max-width: 100%;
+  padding: 10px 0;
+  line-height: 1.8em
+}
+
+.board_wrap .repl_box {
+  background-color: #f9f9f9
+}
+
+.board_wrap .repl_box {
+  padding: 30px 30px
+}
+
+.board_wrap .repl_box .repl {
+  width: 64px;
+  margin-bottom: 10px;
+  padding: 7px 15px;
+  background-color: #049DA0;
+  ;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700
+}
+
+.board_wrap .repl_box .repl_cont {
+  padding-left: 15px;
+  font-size: 14px;
+  line-height: 1.6em
+}
+
+.board_wrap #cke_cntns_bdtxt_cont {
+  width: 100% !important
+}
+
+.board_list {
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-top: 2px solid #000
+}
+
+.board_list>li {
+  overflow: hidden;
+  border-bottom: 1px #e5e5e5 solid
+}
+
+.board_list .num {
+  float: left;
+  width: 9%;
+  padding: 34px 0 12px 0;
+  /* font-size: 14px; */
+  font-weight: 400;
+  text-align: center
+}
+
+.board_list .num .board_tit {
+  display: inline-block;
+  margin-top: -10px;
+  padding: 8px 10px;
+  background-color: #0e9189;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff
+}
+
+.board_list .data {
+  float: left;
+  width: 88%;
+  padding: 20px 0
+}
+
+.board_list .data li {
+  display: inline-block;
+  padding: 0 10px;
+  border-right: 1px solid #e5e5e5;
+  font-size: 14px
+}
+
+.board_list .data li:nth-child(2) {
+  padding-left: 0
+}
+
+.board_list .data .tit {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding-bottom: 8px;
+  border-right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1em
+}
+
+.board_detail {
+  overflow: hidden;
+  margin-bottom: 10px;
+  border-top: 3px solid #95a1b3
+}
+
+.board_detail>li {
+  overflow: hidden;
+  padding: 20px 15px;
+  border-bottom: 1px #e5e5e5 solid
+}
+
+.board_detail .tit {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background-color: #f9f9f9;
+  border-right: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1em
+}
+
+.board_detail .tit_detail {
+  background-color: #fafcff;;
+  border-right: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4em
+}
+
+.board_detail .data li {
+  display: inline-block;
+  padding: 0 10px;
+  border-right: 1px solid #e5e5e5;
+  font-size: 15px
+}
+
+.board_detail .file>ul>li {
+  display: inline-block
+}
+
+/* 자주묻는 질문 */
+.tbl_qna {
+  margin: 10px 0 20px 0
+}
+
+.tbl_qna col:nth-child(1) {
+  width: 28%
+}
+
+.tbl_qna col:nth-child(2) {
+  width: 72%
+}
+
+/* 활동갤러리 */
+.gallery_list {
+  overflow: hidden;
+  padding-top: 30px;
+  margin-bottom: 20px;
+  border-top: 2px solid #000;
+  border-bottom: 1px #e5e5e5 solid
+}
+
+.gallery_list>li {
+  float: left;
+  width: 25%;
+  padding-bottom: 30px
+}
+
+.gallery_list>li>ul {
+  width: 98%
+}
+
+.gallery_list .photo {
+  width: 98.7%;
+  border: 1px solid #e5e5e5;
+  height: 140px;
+  overflow: hidden;
+}
+
+.gallery_list .photo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery_list .photo img {
+  position: relative;
+  width: 100%;
+  min-height: 140px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.gallery_list .tit {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 90%;
+  padding: 2% 2%;
+  font-weight: 700
+}
+
+.gallery_list .date {
+  font-size: 14px;
+  padding: 0 2%;
+  color: #777
+}
+
+/* 자원활동가 명예의전당 */
+.volunteer {}
+
+.volunteer .volunteer_list {
+  overflow: hidden;
+  margin-bottom: 50px
+}
+
+.volunteer_list li {
+  float: left;
+  width: 11.8%;
+  margin: 0 0.7% 0.7% 0
+}
+
+.volunteer_list li a {
+  display: block;
+  width: 100%;
+  border: 1px solid #e5e5e5
+}
+
+.volunteer_list li a img {
+  display: inline-block;
+  width: 42px;
+  height: 56px;
+  margin: 6px 12px 6px 6px;
+  background-color: #444;
+  box-sizing: border-box;
+  border: 1px solid #e5e5e5
+}
+
+.volunteer_list li a span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.volunteer_pp_data {
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 30px 20px;
+  border: 1px solid #e5e5e5;
+  background-color: #f9f9f9
+}
+
+.volunteer_pp_data img {
+  float: left;
+  width: 180px;
+  height: 250px;
+  margin-right: 3.333%;
+  background-color: #555;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box
+}
+
+.volunteer_pp_data>dl {
+  float: left;
+  width: 33%;
+  margin-right: 3.5%
+}
+
+.volunteer_pp_data>div.scrollbox {
+  overflow-y: scroll;
+  float: left;
+  width: 40%;
+  height: 254px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff
+}
+
+.volunteer_pp_data dt,
+.volunteer_pp_data dd {
+  padding: 0
+}
+
+.volunteer_pp_data>dl>dt {
+  width: 100%;
+  padding: 22px 0 13px 0;
+  border-bottom: 2px solid #444;
+  font-size: 23px;
+  font-weight: 700
+}
+
+.volunteer_pp_data>dl>dd {
+  width: 100%;
+  padding: 5px 0 0 0
+}
+
+.volunteer_pp_data>dl>dd>dl dt,
+.volunteer_pp_data>dl>dd>dl dd {
+  display: inline-block;
+  padding: 20px 0;
+  border-bottom: 1px solid #e5e5e5
+}
+
+.volunteer_pp_data>dl>dd>dl dt {
+  width: 29.508%;
+  font-weight: 700;
+  text-indent: 5px
+}
+
+.volunteer_pp_data>dl>dd>dl dd {
+  width: 70.491%
+}
+
+.scrollbox>ul {
+  padding: 30px 25px
+}
+
+.scrollbox>ul>li {
+  padding: 0 0 20px 0;
+  background: none
+}
+
+.scrollbox>ul li h6 {
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: 700
+}
+
+.scrollbox>ul li ul.gr li {
+  font-weight: 400
+}
+
+/* 저작권 보호정책 */
+.msg_box.policy {
+  padding: 6% 9%;
+  font-size: 18px;
+  line-height: 1.6em
+}
+
+.policy_box {
+  padding: 0 1%;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3em;
+  text-align: left;
+  letter-spacing: -0.7px
+}
+
+.policy_box02 {
+  padding: 0 2%;
+  font-size: 14px;
+  font-weight: 700
+}
+
+.policy_box02 li {
+  margin-bottom: 15px;
+  color: #555;
+  line-height: 1.5em
+}
+
+.policy_box02 p {
+  padding: 3px 0;
+  font-size: 13px;
+  line-height: 1.2em
+}
+
+/* 간편예약 */
+.simpl {}
+
+.simpl .simpl_contents {
+  overflow: hidden
+}
+
+.simpl_contents ul.simpl_list {
+  overflow: hidden
+}
+
+.simpl_contents ul.simpl_list li {
+  float: left;
+  width: 49%;
+  min-height: 150px;
+  padding: 80px 10px;
+  box-sizing: border-box;
+  color: #fff;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center
+}
+
+.simpl_contents ul.simpl_list li a {
+  display: block;
+  color: #fff
+}
+
+.simpl_contents ul.simpl_list li a img {
+  margin-bottom: 25px
+}
+
+.simpl_contents ul.simpl_list li:first-child {
+  margin-right: 2%;
+  background: rgba(201, 63, 63, 0.8)
+}
+
+.simpl_contents ul.simpl_list li:nth-child(2) {
+  background: rgba(25, 143, 147, 0.8)
+}
+
+.simpl_contents ul.simpl_list li h4 {
+  margin-bottom: 15px;
+  font-size: 32px;
+  font-weight: 600
+}
+
+.simpl_contents ul.simpl_list li p {
+  font-size: 14px;
+  line-height: 1.2em;
+  letter-spacing: -1px
+}
+
+.simpl .depth li.photo {
+  overflow: hidden;
+  float: left;
+  width: 42.8%
+}
+
+.simpl #confirm_photo li#start_photo {
+  overflow: hidden;
+  clear: both;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box
+}
+
+.simpl .confirm_step_m {
+  overflow: hidden;
+  margin: 0 auto 20px;
+  text-align: center
+}
+
+.simpl .confirm_step_m li {
+  display: inline;
+  padding-right: 40px;
+  background: url(/reservation/img/sub/arrow_set02.png) 95% center no-repeat;
+  font-size: 24px;
+  text-align: center
+}
+
+.simpl .confirm_step_m li:last-child {
+  background: none
+}
+
+
+/*BI*/
+.downloadBtn {
+  text-align: right;
+}
+
+.downloadBtn a {
+  border: 1px solid gray;
+  padding: 5px 10px
+}
+
+
+@media screen and (max-width:999px) {
+
+  /* 비주얼 */
+  .sub_visual {
+    display: none
+  }
+
+  /* tip */
+  .programList_tip_t {
+    display: none
+  }
+
+  .programList_tip_b {
+    display: block
+  }
+
+  /* 봉사활동 단체관리 */
+  button {
+    max-width: inherit !important
+  }
+
+  /* 서브네비 공통 */
+  #s_navi_wrap {
+    display: none
+  }
+
+  /*서브컨텐츠 및 타이틀 공통 */
+  #sb_contents {
+    padding: 6.5% 3%
+  }
+
+  #sb_contents h3.tit {
+    font-size: 32px
+  }
+
+  /* 서브 맵 공통*/
+  #volunteer_map {
+    float: none;
+    width: 100%;
+    margin-top: 30px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #e8e8e8
+  }
+
+  #volunteer_map .web {
+    width: 450px;
+    margin: 0 auto
+  }
+
+  #volunteer_map .mobile {
+    display: none
+  }
+
+  .volunteer_step {
+    float: none;
+    width: 100%;
+    margin-top: 0px
+  }
+
+  .volunteer_step_list {
+    width: 100%;
+    box-sizing: border-box
+  }
+
+  .mobile label {
+    overflow: visible;
+    overflow: hidden;
+    z-index: 999;
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    width: 1px
+  }
+
+  .mobile select {
+    width: 99.8%;
+    height: 45px;
+    padding-left: 10px;
+    border: 1px solid #0475cc;
+    font-size: 15px;
+    font-weight: 700
+  }
+
+  .mobile select.map_list_2dep {
+    margin-top: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 15px
+  }
+
+  .result_list table col:nth-child(3) {
+    width: 80%
+  }
+
+  /* 봉사활동 신청 */
+  /* 자원봉사소개 */
+  .knpsinfo_pp .txt_box {
+    width: 100%;
+    padding: 0
+  }
+
+  .knpsinfo_pp .txt_box h4 {
+    line-height: 1.2em
+  }
+
+  .knpsinfo_pp img {
+    display: none
+  }
+
+  .knpsinfo_pp button {
+    width: 100%;
+    max-width: initial
+  }
+
+  /* 검색결과 리스트 */
+  .result_list .result_list_num {
+    padding-bottom: 5px
+  }
+
+  /* 봉사활동 단체관리 */
+  .tbl_group col:nth-child(1) {
+    width: 28%
+  }
+
+  .tbl_group col:nth-child(2) {
+    width: 72%
+  }
+
+  .tbl_group span {
+    display: none
+  }
+
+  .tbl_group_04 {}
+
+  .tbl_group_04 col:nth-child(1) {
+    width: 25%
+  }
+
+  .tbl_group_04 col:nth-child(2) {
+    width: 0%
+  }
+
+  .tbl_group_04 col:nth-child(3) {
+    width: 30%
+  }
+
+  .tbl_group_04 col:nth-child(4) {
+    width: 0%
+  }
+
+  .tbl_group_04 col:nth-child(5) {
+    width: 30%
+  }
+
+  .tbl_group_05 {
+    letter-spacing: -2px
+  }
+
+  .tbl_group_05 th {
+    font-size: 0.85em
+  }
+
+  .tbl_group_05 col:nth-child(1) {
+    width: 16%
+  }
+
+  .tbl_group_05 col:nth-child(2) {
+    width: 15%
+  }
+
+  .tbl_group_05 col:nth-child(3) {
+    width: 22%
+  }
+
+  .tbl_group_05 col:nth-child(4) {
+    width: 19%
+  }
+
+  .tbl_group_05 col:nth-child(5) {
+    width: 15%
+  }
+
+  /* position-table in */
+  .w01 {
+    width: 99.7%
+  }
+
+  .w02 {
+    width: 89.7%
+  }
+
+  .w03 {
+    width: 100%;
+    margin-bottom: 5px
+  }
+
+  /* 자원봉사 프로그램 안내 */
+  /* 후원기금 안내 */
+  #donate .donate_list li {
+    width: 46.4%;
+    padding: 15px 1.8%;
+    font-size: 15px
+  }
+
+  #donate .donate_list li:nth-child(2n) {
+    font-size: 13px
+  }
+
+  /* 확인 인증 취소 */
+  /* 신청 확인 */
+  #confirm_photo>ul>li {
+    width: 42%;
+    padding: 3%
+  }
+
+  /*  1365 자원봉사 인증*/
+  .tbl_volunteer_1365 input.pp_num {
+    width: 45.8%
+  }
+
+  /* 소통 */
+  /* 게시판 */
+  .search_box select.search_w01 {
+    float: none;
+    width: 100%;
+    height: 40px;
+    margin: 5px 0 0 0
+  }
+
+  .search_box input.search_w02 {
+    float: none;
+    width: 99.8%;
+    height: 38px;
+    margin: 5px 0 0 0
+  }
+
+  .search_box input.search_w03 {
+    float: none;
+    width: 99.8%;
+    height: 38px;
+    margin: 5px 0 0 0
+  }
+
+  .search_box .search_w03 {
+    width: 100%;
+    margin-top: 5px
+  }
+
+  /* 활동갤러리 */
+  .gallery_list>li {
+    width: 50%
+  }
+
+  /* 자원활동가 명예의전당 */
+  .volunteer_pp_data>dl>dt {
+    text-align: center
+  }
+
+  .volunteer_pp_data {
+    margin: 20px 0 10px 0;
+    padding: 20px 10px
+  }
+
+  .volunteer_pp_data>dl {
+    width: 100%
+  }
+
+  .volunteer_pp_data>dl>dt {
+    padding-top: 0
+  }
+
+  .volunteer_pp_data>div.scrollbox {
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    margin-top: 15px
+  }
+
+  .volunteer_pp_data img {
+    display: none
+  }
+
+  .volunteer_list li {
+    width: 24%;
+    margin-bottom: 2px
+  }
+
+  .volunteer_list li:nth-child(5) {
+    float: left
+  }
+
+  /* 간편예약 */
+  .simpl_contents ul.simpl_list li h4 {
+    font-size: 30px
+  }
+
+  .simpl .confirm_step_m {
+    overflow: hidden;
+    margin: 0 auto 20px;
+    text-align: center
+  }
+
+  .simpl .confirm_step_m li {
+    display: inline;
+    padding-right: 40px;
+    background: url(/reservation/img/sub/arrow_set02.png) 95% center no-repeat;
+    font-size: 24px;
+    text-align: center
+  }
+
+  .simpl .confirm_step_m li:last-child {
+    background: none
+  }
+
+  .simpl #confirm_point {}
+
+  .msg_box .msg_body {
+    line-height: 1.5em
+  }
+
+  /* 할인가맹점 안내 */
+  .kind_store img {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width:760px) {
+
+  /* 봉사활동신청 */
+  .tbl_regReser_03 select#prg_starttime,
+  .tbl_regReser_03 select#prg_endtime {
+    min-width: 60px;
+    max-width: 60px;
+    padding-left: 3px;
+    font-size: 13px
+  }
+
+  /* 확인서 발급 */
+  /* 봉사실적 조회/확인서발급 */
+  .search_time {
+    font-size: 16px
+  }
+
+  .tbl_volunteer_print th {
+    font-size: 0.85em;
+    letter-spacing: -1px
+  }
+
+  .tbl_volunteer_print td {
+    letter-spacing: -1px
+  }
+
+  .tbl_volunteer_print .data_box span {
+    float: none;
+    width: 100%
+  }
+
+  .tbl_volunteer_print col:nth-child(1) {
+    width: 2%
+  }
+
+  .tbl_volunteer_print col:nth-child(2) {
+    width: 20%
+  }
+
+  .tbl_volunteer_print col:nth-child(3) {
+    width: 37%
+  }
+
+  .tbl_volunteer_print col:nth-child(4) {
+    width: 20%
+  }
+
+  /* 확인 인증 취소 */
+  /* 신청 확인 */
+  .confirm_beinfo li {
+    background-position: 90% center
+  }
+
+}
+
+@media screen and (max-width:700px) {
+
+  /*서브컨텐츠 및 타이틀 공통 */
+  .result_list table col:nth-child(5) {
+    width: 20%
+  }
+
+  /* 봉사활동 단체 예약 조회 신청*/
+  .calender_form {
+    overflow: hidden;
+    text-align: left
+  }
+
+  .calender_form li {
+    display: block
+  }
+
+  .calender_form li:nth-child(2) {
+    margin: 0 auto;
+    padding: 10px 0;
+    text-align: center
+  }
+
+  .calender_form li input {
+    width: 92%
+  }
+
+  .calender_form.v2 li input {
+    width: 88%;
+  }
+
+  /* 확인 인증 취소 */
+  /* 신청 확인 */
+  #confirm_photo>ul>li {
+    float: none;
+    width: 93.6%;
+    margin-bottom: 10px;
+    padding: 3%
+  }
+
+  #confirm_point>ul>li {
+    width: 93%;
+    padding: 3%
+  }
+
+  .confirm_beinfo li {
+    width: 50%;
+    margin-bottom: 30px;
+    background-position: 90% center
+  }
+
+  .confirm_beinfo li:nth-child(3) {
+    clear: both
+  }
+
+  .confirm_beinfo li:nth-child(4n) {
+    clear: none;
+    float: left
+  }
+
+  .confirm_beinfo li h4 {
+    font-size: 18px;
+    letter-spacing: -1px
+  }
+
+  .confirm_beinfo li p {
+    font-size: 14px;
+    letter-spacing: -1px
+  }
+
+}
+
+@media screen and (max-width:600px) {
+
+  /* 서브 탭 */
+  .sb_tab li a {
+    font-size: 15px
+  }
+
+  .tip3 {
+    display: none
+  }
+
+  .programList_tip_b {
+    display: none
+  }
+
+
+  /*서브컨텐츠 및 타이틀 공통 */
+  #sb_contents h3.tit {
+    font-size: 26px;
+    letter-spacing: -2px
+  }
+
+  #sb_contents h4.tit {
+    font-size: 20px
+  }
+
+  /* 봉사활동 신청 */
+  /* 자원봉사소개 */
+  .knpsinfo ul.info_img {
+    padding-top: 7%
+  }
+
+  .knpsinfo ul.info_img li {
+    display: block;
+    width: 100%
+  }
+
+  .knpsinfo ul.info_img img {
+    padding-top: 5px
+  }
+
+  .knpsinfo ul.info_list li {
+    float: none;
+    width: 100%;
+    padding-top: 20px
+  }
+
+  .knpsinfo p.txt_box {
+    font-size: 20px
+  }
+
+  #donate .donate_list li:nth-child(2n) {
+    font-size: 14px
+  }
+
+  .m_more {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 10px 0;
+    border: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+    background-size: 17px
+  }
+
+  .m_more a {
+    display: block;
+    box-sizing: border-box;
+    padding: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center
+  }
+
+  .m_more img {
+    width: 17px;
+    margin-right: 5px
+  }
+
+  /* 봉사활동 신청 확인 */
+  .tbl_regReser_02 col:first-child {
+    width: 35%
+  }
+
+  .tbl_regReser_02 col:last-child {
+    width: 65%
+  }
+
+  .zip_code input {
+    width: 40%
+  }
+
+  .mail_form .mail_01 {
+    width: 45%
+  }
+
+  .mail_form .mail_02 {
+    width: 42.7%
+  }
+
+  /* 봉사활동 단체 예약 조회 신청*/
+  .calender_form li input {
+    width: 85%
+  }
+
+  /* 봉사활동 단체관리 */
+  .msg_box {
+    margin-bottom: 15px;
+    padding: 25px 0;
+    font-size: 20px
+  }
+
+  .msg_box.policy {
+    padding: 10% 5%;
+    font-size: 15px;
+    line-height: 1.3em
+  }
+
+  .tbl_group_02 col:nth-child(1) {
+    width: 28%
+  }
+
+  .tbl_group_02 col:nth-child(2) {
+    width: 22%
+  }
+
+  .tbl_group_02 col:nth-child(3) {
+    width: 28%
+  }
+
+  .tbl_group_02 col:nth-child(4) {
+    width: 22%
+  }
+
+  .tbl_group_03 col:nth-child(1) {
+    width: 22%
+  }
+
+  .tbl_group_03 col:nth-child(3) {
+    width: 22%
+  }
+
+  .tbl_group_03 col:nth-child(4) {
+    width: 29%
+  }
+
+  .tbl_group_03 col:nth-child(5) {
+    width: 25%
+  }
+
+  /* 소통 */
+  /* 게시판 */
+  .board_list .num {
+    width: 11%;
+    padding: 28px 2% 12px 2%
+  }
+
+  .board_list .data {
+    width: 71%;
+    padding: 20px 2% 20px 0
+  }
+
+  /* 자원활동가 명예의전당 */
+  .volunteer_list li {
+    width: 24%;
+    margin-bottom: 2px
+  }
+
+  .volunteer_list li:nth-child(5) {
+    float: left
+  }
+
+  .volunteer_list li a img {
+    display: none
+  }
+
+  .volunteer_list li a span {
+    width: inherit;
+    padding: 10px 0;
+    text-align: center
+  }
+
+  .volunteer .volunteer_list {
+    margin-bottom: 10px
+  }
+
+  /* 간편예약 */
+  .simpl_contents ul.simpl_list li {
+    min-height: 100px;
+    padding: 20px 10px
+  }
+
+  .simpl_contents ul.simpl_list li h4 {
+    margin-bottom: 5px;
+    font-size: 24px;
+    letter-spacing: -1px
+  }
+
+  .simpl_contents ul.simpl_list li a img {
+    display: none
+  }
+
+  .simpl .confirm_step_m li {
+    font-size: 16px;
+    letter-spacing: -1px
+  }
+
+  .simpl_contents ul.simpl_list li h4 {
+    padding-top: 20px
+  }
+
+  .simpl_contents ul.simpl_list li p {
+    display: none
+  }
+
+}
+
+@media screen and (max-width:477px) {
+
+  /*서브컨텐츠 및 타이틀 공통 */
+  #sb_contents h3.tit {
+    margin-bottom: 7%
+  }
+
+  .result_list table col:nth-child(3) {
+    width: 67%
+  }
+
+  .result_list table col:nth-child(5) {
+    width: 33%
+  }
+
+  /* 서브 맵 공통*/
+  #volunteer_map {
+    min-width: auto;
+    margin-top: 0px;
+    border-radius: 0;
+    background: none
+  }
+
+  #volunteer_map .web {
+    display: none
+  }
+
+  #volunteer_map .mobile {
+    display: block
+  }
+
+  #volunteer_map h4.tit {
+    display: block
+  }
+
+  /* 봉사활동 신청 */
+  /* 자원봉사소개 */
+  .knpsinfo_pp {
+    margin-top: 20px;
+    background-size: 80%
+  }
+
+  .knpsinfo ul.info_list li p {
+    padding-top: 15px
+  }
+
+  /* 달력 */
+  .tbl_calender th {
+    padding: 10px 0;
+    text-align: center;
+    text-indent: 0
+  }
+
+  .tbl_calender td {
+    height: 60px;
+    padding: 6px;
+    font-size: 11px;
+    vertical-align: top
+  }
+
+  /* 검색결과 리스트 */
+  .result_list {
+    padding-top: 30px
+  }
+
+  .result_list h5.result_list_tit {
+    padding-bottom: 10px;
+    font-size: 30px
+  }
+
+  /* 자원봉사 프로그램 안내 */
+  /* 후원기금 안내 */
+  #donate .donate_list li {
+    font-size: 14px;
+    letter-spacing: -0.05em
+  }
+
+  /* 확인 인증 취소 */
+  /* 신청 확인 */
+  .file_wrap .btn_file {
+    width: 100%;
+    min-width: 40px
+  }
+
+  #confirm_photo p.img {
+    height: 170px
+  }
+
+  .confirm_beinfo {
+    margin: 10px 0;
+    padding: 0;
+    letter-spacing: -1px
+  }
+
+  .confirm_beinfo li {
+    margin-bottom: 20px;
+    background: url(/reservation/img/sub/arrow_set02.png) 95% 30px no-repeat;
+  }
+
+  .confirm_beinfo li.bg_no {
+    background: none
+  }
+
+  .confirm_beinfo li span.step {
+    padding-bottom: 10px;
+    font-size: 16px
+  }
+
+  /*.confirm_beinfo li p{display:none}*/
+  .confirm_beinfo li h4 {
+    font-size: 16px;
+    letter-spacing: -2px
+  }
+
+  .confirm_beinfo li p {
+    width: 90%;
+    font-size: 13px;
+    letter-spacing: -1px
+  }
+
+  /* 소통 */
+  /* 게시판 */
+  .board_list .num {
+    width: 16%
+  }
+
+  .board_list .data {
+    width: 60%
+  }
+
+  .board_list .data li {
+    padding: 0 5px
+  }
+
+  /*.board_list .data li.adm{display:none}*/
+  .board_list .data li.view {
+    display: none
+  }
+
+  .board_list .data li.date {
+    border-right: none
+  }
+
+  .board_detail .data li:nth-child(3n) {
+    padding-left: 0
+  }
+
+  /*.board_detail .data li.adm{display:none}*/
+  .board_detail .data li.view {
+    display: none
+  }
+
+  .board_detail .data li.date {
+    border-right: none
+  }
+
+
+
+  /* 간편예약 */
+  .simpl_contents ul.simpl_list li h4 {
+    font-size: 20px
+  }
+
+  .simpl .confirm_step_m li {
+    padding-right: 25px;
+    letter-spacing: -2px
+  }
+
+  .simpl .confirm_step_m li:last-child {
+    padding-right: 0
+  }
+
+}
+
+
+/* 웹 */
+.kind_store .mobile {
+  display: none;
+}
+
+
+/* 모바일 */
+@media screen and (max-width:460px) {
+  .kind_store .web {
+    display: none;
+  }
+
+  .kind_store .mobile {
+    display: block;
+  }
+}
+
+.tip_tt {
+  margin-bottom: 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tip_tt:before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border: 4px solid #520A35;
+  border-radius: 6px;
+  margin-right: 3px;
+}
+
+.btn_ul {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+}
+
+.btn_ul:after {
+  clear: both;
+  content: '';
+  display: block;
+}
+
+.btn_ul li {
+  display: inline-block;
+  position: relative;
+  width: 32%;
+  box-sizing: border-box;
+}
+
+.btn_ul li+li {
+  margin-left: 0;
+  margin-left: 2%;
+}
+
+.btn_ul li a {
+  position: relative;
+  display: block;
+  padding: 12px 12px 12px 20px;
+  background: #fff;
+  color: #fff;
+  border-radius: 10px;
+  transition: 0.3s;
+  overflow: hidden;
+  text-align: left;
+}
+
+.btn_ul li a:hover,
+.btn_ul li a:active {
+  background: #036a76;
+  color: #fff;
+}
+
+.btn_ul li.grn_btn a {
+  color: #009106;
+  border: 1px solid #009106;
+}
+
+.btn_ul li.grn_btn a:hover,
+.btn_ul li.grn_btn a:active {
+  background: #016a06;
+  color: #fff;
+}
+
+.btn_ul li.mtn_btn a {
+  color: #036a76;
+  border: 1px solid #036a76;
+}
+
+.btn_ul li.mtn_btn a:hover,
+.btn_ul li.mtn_btn a:active {
+  color: #fff;
+}
+
+.btn_ul li.stp_btn a {
+  color: #5261b6;
+  border: 1px solid #5261b6;
+}
+
+.btn_ul li.stp_btn a:hover,
+.btn_ul li.grn_btn a:active {
+  background: #2f3b80;
+  color: #fff;
+}
+
+.btn_ul li a:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background: #333 url('/reservation/img/common/tip_dl.png') no-repeat center;
+}
+
+.untact .btn_default_line {
+  min-width: 160px;
+  transition: 0.2s;
+}
+
+.untact .btn_default_line a {
+  position: relative;
+  display: block;
+  padding: 20px 15px 20px 0
+}
+
+.untact .btn_default_line a:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid #008b9c;
+  border-right: 2px solid #008b9c;
+  transform: rotate(-45deg);
+  right: 40px;
+  top: 22px;
+}
+
+.untact .btn_default_line:hover a:after,
+.untact .btn_default_line:focus a:after,
+.untact .btn_default_line:active a:after {
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+}
+
+.untact .btn_default_line.btn_red {
+  position: relative;
+  border: 1px solid #e261ac;
+  color: #008b9c;
+}
+
+.untact .btn_default_line.btn_red:hover,
+.untact .btn_default_line.btn_red:focus,
+.untact .btn_default_line.btn_red:active {
+  background: #e261ac;
+  color: #fff;
+}
+
+@media screen and (max-width:1000px) {
+  .btn_ul {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width:840px) {
+  .btn_ul {
+    width: 80%;
+  }
+
+  .btn_ul li {
+    float: none;
+    width: 100%;
+  }
+
+  .btn_ul li+li {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (max-width:600px) {
+  .tip5 {
+    display: block;
+  }
+}

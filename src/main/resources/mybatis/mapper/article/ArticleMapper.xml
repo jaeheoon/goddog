@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 네임스페이스(사용영역) 설정 인터페이스이름과 풀패키지명 설정-->
+<mapper	namespace="tteogipbangbeomdae.goddog.domain.board.mapper.ArticleMapper">
+
+	<!-- 신규 게시글 등록 -->
+	<insert id="create" parameterType="Article">
+		INSERT INTO review (
+				review_no,
+				member_id,
+				notice_no,
+				review_title,
+				review_contents,
+				count,
+				group_no,
+				level_no,
+				order_no)
+		VALUES (
+				review_no_seq.NEXTVAL,
+				#{memberId},
+				#{noticeNo},
+				#{reviewTitle},
+				#{reviewContents},
+				#{count},
+				review_no_seq.CURRVAL,
+				#{levelNo},
+				#{orderNo})
+	</insert>	
+	
+	<!-- 댓글 등록 -->
+	<insert id="createComment" parameterType="Article">
+		INSERT INTO review
+		            (review_no,
+		             notice_no,
+		             member_id,
+		             review_contents,
+		             count,
+		             group_no,
+		             level_no,
+		             order_no)
+		VALUES      (review_no_seq.NEXTVAL,
+		             #{noticeNo},
+		             #{memberId},
+		             #{reviewContents},
+		             0,
+		             #{groupNo},
+		             0 + 1,
+		             (SELECT MAX(order_no) + 1
+		              FROM   review
+		              WHERE  notice_no = #{noticeNo}
+		                     AND group_no = #{groupNo}))	
+			</insert>
+	
+	<!-- 전체 게시글 숫자 -->
+	<select id="getCount" parameterType="int" resultType="int">
+		SELECT COUNT(review_no) cnt
+		FROM   review
+		WHERE  notice_no = #{value}
+	</select>
+	
+	<!-- 전체 게시글 가져오기 -->
+	<select id="findAll" resultType="Article">
+		SELECT r.review_title reviewTitle,
+               r.member_id memberId,
+       		   r.write_date writeDate,
+       	  	   r.count count,
+       		   r.review_no reviewNo,
+       		   noticeNo,
+       		   groupNo,
+       		   levelNo,
+       		   orderNo
+		FROM (SELECT CEIL(rownum / #{pageParams.elementSize}) AS request_page,
+              r.review_title,
+              r.member_id,
+              TO_CHAR(r.write_date, 'YYYY-MM-DD') AS write_date,
+              r.count,
+              r.review_no,
+              noticeNo,
+              groupNo,
+              levelNo,
+              orderNo
+      		  FROM (SELECT r.review_title,
+                      	   r.member_id,
+                     	   r.write_date,
+                     	   r.count,
+                     	   r.review_no,
+                     	   r.notice_no noticeNo,
+                     	   r.group_no groupNo,
+                     	   r.level_no levelNo,
+                     	   r.order_no orderNo
+              	    FROM review r
+              	    JOIN notice n ON r.notice_no = n.notice_no
+              	    WHERE r.notice_no = #{noticeNo} AND r.level_no = 0
+              		ORDER BY r.review_no DESC) r
+                     ) r
+		WHERE request_page = #{pageParams.requestPage}
+		ORDER BY r.review_no DESC
+	</select>
+	
+	
+	<!-- 게시글 상세보기 -->
+	<select id="readArticle" parameterType="int" resultType="Article">
+		SELECT review_title,
+			   review_contents,
+			   write_date,
+			   level_no,
+			   order_no,
+			   member_id,
+			   count,
+			   review_no
+		FROM review
+		WHERE group_no = #{groupNo}
+		ORDER BY order_no
+	</select>
+
+	
+</mapper>

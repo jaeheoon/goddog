@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">입양글읽기</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/board/common_adop.css">
+		<link rel="stylesheet" href="/assets/css/board/sub_adop.css">
+		<link rel="stylesheet" href="/assets/css/board/comment.css">
+		<link rel="stylesheet" href="/assets/css/porfile/title.css">
+		<link rel="stylesheet" href="/assets/css/lib/swiper.css" media="all">
+		<link rel="stylesheet" href="/assets/css/theme/theme.css" media="all">
+		<link rel="stylesheet" href="/assets/css/donation/donation.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script src="/assets/js/board/article.js"></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<div data-elementor-type="wp-page" data-elementor-id="1691"
+			class="elementor elementor-1691" data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="3ae9f652" data-element_type="section"
+				data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+				<div class="elementor-background-overlay"></div>
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+						data-id="1de2e7fd" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-6071eefe elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="6071eefe" data-element_type="section"
+								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div
+										class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c709ea0"
+										data-id="c709ea0" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div
+												class="elementor-element elementor-element-5dc4c099 elementor-widget elementor-widget-heading"
+												data-id="5dc4c099" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h1 class="elementor-heading-title elementor-size-default">입양
+														후기</h1>
+												</div>
+											</div>
+										</div>
+									</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="6080893a" data-element_type="section">
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+						data-id="76dc7882" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+
+
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+								data-id="5e9da05a" data-element_type="section"
+								data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div
+											class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+											data-id="7f2c345c" data-element_type="widget"
+											data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+											data-widget_type="image-carousel.default">
+											<div class="elementor-widget-container">
+
+
+												<div
+													class="elementor-image-carousel-wrapper swiper-container"
+													dir="ltr">
+
+													<div class="elementor-widget-container">
+														<div class="volunteer_step m_hidden">
+
+															<script type="text/javascript">
+																$(function($) {
+
+																	// 목록버튼 클릭
+																	$(
+																			'#btnList')
+																			.css(
+																					'cursor',
+																					'pointer')
+																			.click(
+																					function() {
+																						location.href = "/community/board/qna/boardList.action";
+																					});
+
+																	// 수정버튼 클릭
+																	$(
+																			'#btnUpdate')
+																			.css(
+																					'cursor',
+																					'pointer')
+																			.click(
+																					function() {
+																						location.href = "/community/board/qna/boardUpdate.action?ntart_no=17883";
+																					});
+
+																	// 삭제버튼 클릭
+																	$(
+																			'#btnDelete')
+																			.css(
+																					'cursor',
+																					'pointer')
+																			.click(
+																					function() {
+																						confirmWinFn(
+																								"게시글을 삭제하시겠습니까?",
+																								function() {
+																									deleteForm.action = "/community/board/qna/boardDelete.action";
+																									deleteForm
+																											.submit();
+																								});
+																					});
+
+																	// 취소버튼 클릭
+																	$(
+																			'#btnCancel')
+																			.css(
+																					'cursor',
+																					'pointer')
+																			.click(
+																					function() {
+																						location.href = "/community/board/qna/boardList.action";
+																					});
+
+																	// 확인버튼 클릭
+																	$(
+																			'#btnSubmit')
+																			.css(
+																					'cursor',
+																					'pointer')
+																			.click(
+																					function() {
+																						if (basicValidate()) {
+
+																							confirmWinFn(
+																									"게시글을 변경하시겠습니까?",
+																									function() {
+																										form.action = "/community/board/qna/boardUpdate.action";
+																										form
+																												.submit();
+																									});
+
+																						}
+																					});
+
+																});
+
+																/** Validate 체크 */
+																function basicValidate() {
+																	// 기본 필수항목 체크
+																	var elements = $('._VNotNull');
+																	for (var index = 0; index < elements
+																			.size(); index++) {
+																		var element = elements
+																				.get(index);
+																		if (isRequired(element)) {
+																			return false;
+																		}
+																	}
+																	return true;
+																}
+															</script>
+
+															<!-- 서브 컨텐츠 -->
+															<div id="sb_contents" class="contents board_wrap">
+
+																<ul class="board_detail">
+
+																	<!-- 제목 -->
+																	<li class="tit_detail"><span class="hidden">제목</span>전주
+																		유기견 보호소 봉사 후기</li>
+
+																	<!-- 게시물정보 -->
+																	<li>
+																		<ul class="data">
+																			<li class="adm"><span class="hidden">글쓴이</span>전주영</li>
+																			<li class="date"><span class="hidden">날짜</span>2023-09-04</li>
+																			<li class="view"><span class="hidden">조회수</span>조회
+																				: 5</li>
+																		</ul>
+																	</li>
+
+																	<!-- 첨부파일 -->
+
+
+																	<!-- 내용 -->
+																	<li class="txt_box">
+																		<p>무더운 날이여서 힘들었지만 보람있었습니다.</p>
+
+																		<p>강아지들은 언제나 귀엽고 사랑스럽습니다.</p>
+																	</li>
+
+																</ul>
+
+																<!-- 버튼 -->
+																<ul class="btn_set board_btn">
+																	<li class="btn_default float_l"><a id="btnList" th:href="@{'/'+article+'/'+adoption+'/'+board}">목록</a></li>
+																	<li class="btn_default btn_red float_r"><a
+																		id="btnComment" style="cursor: pointer;">삭제하기</a></li>
+																	<li class="btn_default btn_green float_r mar_r5"><a
+																		id="btnCancel" style="cursor: pointer;" th:href="@{'/'+article+'/'+adoption+'/'+correct}">수정하기</a></li>
+																</ul>
+
+																<!-- 댓글 입력 폼 -->
+																<div id="commentForm" style="display: none;">
+																	<form id="commentForm">
+
+																		<input type="text" id="username" placeholder="사용자명"
+																			required>
+																		<textarea id="commentInput" placeholder="댓글 내용"
+																			required></textarea>
+																		<button type="submit" id="commentSubmit">댓글
+																			등록</button>
+																	</form>
+																</div>
+
+																<!-- // 서브 컨텐츠 -->
+
+																<!-- 댓글 컨텐츠 -->
+																<div id="sb_contents" class="contents board_wrap">
+
+																	<ul class="board_detail">
+
+																		<!-- 댓글 입력 폼 -->
+																		<li class="tit_detail">
+																			<div id="commentForm">
+																				<form id="commentForm">
+
+																					<input type="text" id="username" placeholder="사용자명"
+																						required>
+																					<textarea id="commentInput" placeholder="댓글 내용"
+																						required></textarea>
+
+																					<br>
+																					<br>
+																					<ul class="btn_set board_btn">
+																						<li class="btn_default float_l"><a
+																							id="btnList" onclick="doDisplay();">댓글보기</a></li>
+																						<li class="btn_default btn_red float_r mar_r5">
+																							<a id="btnCancel" style="cursor: pointer;">댓글
+																								등록</a>
+																						</li>
+																					</ul>
+																				</form>
+																			</div>
+																		</li>
+
+																		<!-- 작성된 댓글들 -->
+																		<div class="commentBoxList" style="display: none;">
+																			<li class="adoptcommentbox">
+																				<div class="container">
+																					<div class="comment-container">
+																						<div class="box commentt">
+																							<div class="comment">
+																								<div class="date">2023-08-19</div>
+																								<div class="user">사용자1</div>
+																								<div class="message">이 글은 정말 유용합니다!</div>
+
+																								<!-- <ul class="btn_set board_btn">
+																								<li class="btn_default_line btn_green float_r">
+																									<a class="a_bt02" id="btnRegist" style="cursor: pointer;">수정하기</a>
+																								</li>
+																							</ul> -->
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</li>
+
+																			<li class="adoptcommentbox">
+																				<div class="container">
+																					<div class="comment-container">
+																						<div class="box commentt">
+																							<div class="comment">
+																								<div class="date">2023-08-19</div>
+																								<div class="user">사용자2</div>
+																								<div class="message">이 글은 정말 유용합니다!</div>
+
+																								<!-- <ul class="btn_set board_btn">
+																								<li class="btn_default_line btn_green float_r">
+																									<a class="a_bt02" id="btnRegist" style="cursor: pointer;">수정하기</a>
+																								</li>
+																							</ul> -->
+																							</div>
+																						</div>
+																					</div>
+																				</div>
+																			</li>
+																		</div>
+
+																		<!-- // 서브 컨텐츠 -->
+																</div>
+															</div>
+														</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<!-- line -->
+		<div
+			class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+			data-id="48adf803" data-element_type="widget"
+			data-widget_type="divider.default">
+			<div class="elementor-widget-container">
+				<div class="elementor-divider">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- // line-->
+		<!-- line -->
+		<div
+			class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+			data-id="48adf803" data-element_type="widget"
+			data-widget_type="divider.default">
+			<div class="elementor-widget-container">
+				<div class="elementor-divider">
+					</span>
+				</div>
+			</div>
+		</div>
+		<!-- // line-->
+		<!-- line -->
+		<div
+			class="elementor-element elementor-element-48adf803 elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
+			data-id="48adf803" data-element_type="widget"
+			data-widget_type="divider.default">
+			<div class="elementor-widget-container">
+				<div class="elementor-divider">
+					</span>
+				</div>
+			</div>
+		</div>
+	</th:block>
+
+</th:block>

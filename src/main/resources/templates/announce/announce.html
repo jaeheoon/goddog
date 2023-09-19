@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block
+	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">공지페이지</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/faq/title_font.css">
+		<link rel="stylesheet" href="/assets/css/faq/faq_font.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+		<link rel='stylesheet' id='e-animations-css'
+			href='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.15.3'
+			media='all' />
+		<!-- ============================================================== 개별script =========================================================================-->
+		<script
+			src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/lib/jquery-numerator/jquery-numerator.min.js?ver=0.2.1'
+			id='jquery-numerator-js'></script>
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<div data-elementor-type="wp-page" data-elementor-id="1716"
+			class="elementor elementor-1716" data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-7cfdd3b4 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="7cfdd3b4" data-element_type="section"
+				data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+				<div class="elementor-background-overlay"></div>
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-677a6be"
+						data-id="677a6be" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-4c47144e elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="4c47144e" data-element_type="section"
+								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div
+										class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-27dbcae8"
+										data-id="27dbcae8" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div
+												class="elementor-element elementor-element-2f875ab2 elementor-widget elementor-widget-heading"
+												data-id="2f875ab2" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h1 class="elementor-heading-title elementor-size-default">자주
+														묻는 질문</h1>
+												</div>
+											</div>
+											<div
+												class="elementor-element elementor-element-4877342c elementor-widget elementor-widget-text-editor"
+												data-id="4877342c" data-element_type="widget"
+												data-widget_type="text-editor.default">
+												<div class="elementor-widget-container">
+
+													<p>자주 묻는 질문을 통해 다양한 정보를 알아가보세요.</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<!-- =============================================================공지사항 목록===================================================================== -->
+			<th:block th:fragment="content">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-75f717dc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="75f717dc" data-element_type="section">
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1cf8ba77"
+						data-id="1cf8ba77" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<div
+								class="elementor-element elementor-element-16da86d2 elementor-widget elementor-widget-toggle"
+								data-id="16da86d2" data-element_type="widget"
+								data-widget_type="toggle.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-toggle">
+										
+										<div class="elementor-toggle-item" th:each="announce, state : ${list}">
+											
+											<div id="elementor-tab-title-3831"
+												class="elementor-tab-title" th:data-tab="${state.count}" data-tab="1" role="button"
+												aria-controls="elementor-tab-content-3831"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0"th:text="${announce.title}">입양 과정은
+													어떻게 이루어지나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3831"
+												class="elementor-tab-content elementor-clearfix"
+												th:data-tab="${state.count}"
+												data-tab="1" role="region"
+												aria-labelledby="elementor-tab-title-3831" th:text="${announce.contents}">입양 과정은
+												일반적으로 신청, 승인, 서류 작성 및 서류 검토, 그리고 최종 입양 절차로 진행됩니다.
+											</div>
+											
+										</div>
+										<!-- 
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3832"
+												class="elementor-tab-title" data-tab="2" role="button"
+												aria-controls="elementor-tab-content-3832"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">어떤 시간에
+													입양 및 방문이 가능한가요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3832"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="2" role="region"
+												aria-labelledby="elementor-tab-title-3832">입양 및 방문 가능
+												시간은 보호소나 구조 단체의 정책에 따라 다를 수 있으며, 일반적으로 주말과 평일의 일정한 시간에 열려
+												있습니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3833"
+												class="elementor-tab-title" data-tab="3" role="button"
+												aria-controls="elementor-tab-content-3833"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">강아지들을 직접
+													만나볼 수 있나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3833"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="3" role="region"
+												aria-labelledby="elementor-tab-title-3833">네, 일반적으로
+												보호소에서는 입양을 고려하는 사람들이 강아지를 직접 만날 수 있도록 허용합니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3834"
+												class="elementor-tab-title" data-tab="4" role="button"
+												aria-controls="elementor-tab-content-3834"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">현재 보호소에
+													몇 마리의 강아지가 있나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3834"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="4" role="region"
+												aria-labelledby="elementor-tab-title-3834">현재 보호소에 있는
+												강아지의 수는 항상 변할 수 있으며, 주기적으로 업데이트됩니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3835"
+												class="elementor-tab-title" data-tab="5" role="button"
+												aria-controls="elementor-tab-content-3835"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">입양을 원하는
+													강아지를 찾았어요. 다음 단계는 무엇인가요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3835"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="5" role="region"
+												aria-labelledby="elementor-tab-title-3835">원하는 강아지를
+												찾았다면, 일반적으로 입양 신청서를 작성하고 검토를 위해 제출해야 합니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3836"
+												class="elementor-tab-title" data-tab="6" role="button"
+												aria-controls="elementor-tab-content-3836"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">입양 전
+													강아지의 건강 상태를 어떻게 확인하나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3836"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="6" role="region"
+												aria-labelledby="elementor-tab-title-3836">보호소에서는
+												일반적으로 강아지의 건강 상태를 확인하고 필요한 모든 예방 접종과 의료 검진을 완료합니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3837"
+												class="elementor-tab-title" data-tab="7" role="button"
+												aria-controls="elementor-tab-content-3837"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">어떻게 봉사자가
+													될 수 있나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3837"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="7" role="region"
+												aria-labelledby="elementor-tab-title-3837">봉사자가 되고자 하는
+												경우, 해당 보호소나 구조 단체의 웹사이트에서 봉사 신청 양식을 작성하거나 직접 연락할 수 있습니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3838"
+												class="elementor-tab-title" data-tab="8" role="button"
+												aria-controls="elementor-tab-content-3838"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">입양이 불가능한
+													경우는 어떤 경우인가요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3838"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="8" role="region"
+												aria-labelledby="elementor-tab-title-3838">입양이 불가능한
+												경우에는 보호소의 정책이나 강아지의 특정 상황에 따라 달라질 수 있습니다. 자세한 내용은 보호소에
+												문의하세요.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-3839"
+												class="elementor-tab-title" data-tab="9" role="button"
+												aria-controls="elementor-tab-content-3839"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">보호소에서
+													필요한 물품을 기부하려면 어떻게 해야 하나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-3839"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="9" role="region"
+												aria-labelledby="elementor-tab-title-3839">보호소에서 필요한
+												물품을 기부하려면 해당 보호소의 웹사이트나 연락처를 통해 기부 절차와 원하는 물품 목록을 확인하세요.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-38310"
+												class="elementor-tab-title" data-tab="10" role="button"
+												aria-controls="elementor-tab-content-38310"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">입양 신청 후
+													얼마나 빨리 피드백을 받을 수 있나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-38310"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="10" role="region"
+												aria-labelledby="elementor-tab-title-38310">입양 신청 후
+												보호소에서 얼마나 빨리 피드백을 받을지는 보호소에 따라 다를 수 있으며, 일반적으로 몇 일 내에 연락을 받을
+												것입니다.</div>
+										</div>
+										<div class="elementor-toggle-item">
+											<div id="elementor-tab-title-38311"
+												class="elementor-tab-title" data-tab="11" role="button"
+												aria-controls="elementor-tab-content-38311"
+												aria-expanded="false">
+												<span
+													class="elementor-toggle-icon elementor-toggle-icon-right"
+													aria-hidden="true"> <span
+													class="elementor-toggle-icon-closed"><i
+														class="fas fa-chevron-down"></i></span> <span
+													class="elementor-toggle-icon-opened"><i
+														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
+												</span> <a class="elementor-toggle-title" tabindex="0">입양 시 필요한
+													서류는 어떤 것이 있나요?</a>
+											</div>
+
+											<div id="elementor-tab-content-38311"
+												class="elementor-tab-content elementor-clearfix"
+												data-tab="11" role="region"
+												aria-labelledby="elementor-tab-title-38311">일반적으로 입양을
+												위해 신분증, 주소 증명서, 그리고 입양 신청서와 같은 기본 서류가 필요할 수 있습니다.
+											</div>
+										</div>
+										 -->
+									</div>
+
+
+								</div>
+							</div>
+							<div
+								class="elementor-element elementor-element-51cddda0 elementor-widget elementor-widget-spacer"
+								data-id="51cddda0" data-element_type="widget"
+								data-widget_type="spacer.default">
+								<div class="elementor-widget-container">
+									<div class="elementor-spacer">
+										<div class="elementor-spacer-inner"></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			<th:block>
+			
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-4691d05d elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+				data-id="4691d05d" data-element_type="section">
+				<div class="elementor-container elementor-column-gap-no">
+					<div
+						class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6bf0cc79"
+						data-id="6bf0cc79" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-ae66c18 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="ae66c18" data-element_type="section"
+								data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-background-overlay"></div>
+								<div class="elementor-container elementor-column-gap-no">
+									<div
+										class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-750a02dc"
+										data-id="750a02dc" data-element_type="column"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-background-overlay"></div>
+											<section
+												class="elementor-section elementor-inner-section elementor-element elementor-element-55539608 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+												data-id="55539608" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-no">
+													<div
+														class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-326c77c8"
+														data-id="326c77c8" data-element_type="column">
+														<div
+															class="elementor-widget-wrap elementor-element-populated">
+															<div
+																class="elementor-element elementor-element-2407c2a1 elementor-widget elementor-widget-image"
+																data-id="2407c2a1" data-element_type="widget"
+																data-widget_type="image.default">
+																<div class="elementor-widget-container">
+																	<img decoding="async" loading="lazy" width="328"
+																		height="327"
+																		src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption-white.png"
+																		class="attachment-large size-large wp-image-455"
+																		alt=""
+																		srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption-white.png 328w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption-white-300x300.png 300w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption-white-150x150.png 150w"
+																		sizes="(max-width: 328px) 100vw, 328px" />
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-2178c798"
+														data-id="2178c798" data-element_type="column">
+														<div
+															class="elementor-widget-wrap elementor-element-populated">
+															<div
+																class="elementor-element elementor-element-45af0b63 elementor-widget elementor-widget-heading"
+																data-id="45af0b63" data-element_type="widget"
+																data-widget_type="heading.default">
+																<div class="elementor-widget-container">
+																	<h5
+																		class="elementor-heading-title elementor-size-default">봉사하러
+																		가기</h5>
+																</div>
+															</div>
+															<div
+																class="elementor-element elementor-element-7b257a00 elementor-widget elementor-widget-text-editor"
+																data-id="7b257a00" data-element_type="widget"
+																data-widget_type="text-editor.default">
+																<div class="elementor-widget-container">
+																	<p>봉사활동을 통해 강아지들에게 사랑과 관심을 전해주세요.</p>
+																</div>
+															</div>
+															<div
+																class="elementor-element elementor-element-1c7c65ad elementor-mobile-align-center elementor-widget elementor-widget-button"
+																data-id="1c7c65ad" data-element_type="widget"
+																data-widget_type="button.default">
+																<div class="elementor-widget-container">
+																	<div class="elementor-button-wrapper">
+																		<a
+																			class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
+																			href="/volunteer/agreement.html"
+																			th:href="@{'/'+volunteer+'/'+agreement}"> <span
+																			class="elementor-button-content-wrapper"> <span
+																				class="elementor-button-icon elementor-align-icon-right">
+																					<i aria-hidden="true" class="fas fa-arrow-right"></i>
+																			</span> <span class="elementor-button-text">봉사신청</span>
+																		</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+									<div
+										class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4547e079"
+										data-id="4547e079" data-element_type="column"
+										data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-background-overlay"></div>
+											<section
+												class="elementor-section elementor-inner-section elementor-element elementor-element-4e0eab03 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+												data-id="4e0eab03" data-element_type="section">
+												<div class="elementor-container elementor-column-gap-no">
+													<div
+														class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-4818454a"
+														data-id="4818454a" data-element_type="column">
+														<div
+															class="elementor-widget-wrap elementor-element-populated">
+															<div
+																class="elementor-element elementor-element-fe832ed elementor-widget elementor-widget-image"
+																data-id="fe832ed" data-element_type="widget"
+																data-widget_type="image.default">
+																<div class="elementor-widget-container">
+																	<img decoding="async" loading="lazy" width="328"
+																		height="327"
+																		src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome-v2.png"
+																		class="attachment-large size-large wp-image-456"
+																		alt=""
+																		srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome-v2.png 328w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome-v2-300x300.png 300w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome-v2-150x150.png 150w"
+																		sizes="(max-width: 328px) 100vw, 328px" />
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-4d9be6e2"
+														data-id="4d9be6e2" data-element_type="column">
+														<div
+															class="elementor-widget-wrap elementor-element-populated">
+															<div
+																class="elementor-element elementor-element-163ee5ed elementor-widget elementor-widget-heading"
+																data-id="163ee5ed" data-element_type="widget"
+																data-widget_type="heading.default">
+																<div class="elementor-widget-container">
+																	<h4
+																		class="elementor-heading-title elementor-size-default">강아지들
+																		보러가기</h4>
+																</div>
+															</div>
+															<div
+																class="elementor-element elementor-element-182d1763 elementor-widget elementor-widget-text-editor"
+																data-id="182d1763" data-element_type="widget"
+																data-widget_type="text-editor.default">
+																<div class="elementor-widget-container">
+																	<p>함께 살아갈 강아지나 도움이 필요한 강아지들을 보러가세요.</p>
+																</div>
+															</div>
+															<div
+																class="elementor-element elementor-element-4e4c5501 elementor-mobile-align-center elementor-widget elementor-widget-button"
+																data-id="4e4c5501" data-element_type="widget"
+																data-widget_type="button.default">
+																<div class="elementor-widget-container">
+																	<div class="elementor-button-wrapper">
+																		<a
+																			class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
+																			href="/dog/dog-list.html"
+																			th:href="@{'/'+dog}"> <span
+																			class="elementor-button-content-wrapper"> <span
+																				class="elementor-button-icon elementor-align-icon-right">
+																					<i aria-hidden="true" class="fas fa-arrow-right"></i>
+																			</span> <span class="elementor-button-text">보러가기</span>
+																		</span>
+																		</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</section>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</th:block>
+
+</th:block>

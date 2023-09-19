@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<th:block th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
+
+	<!--/* 타이틀 동적변경 */-->
+	<title th:fragment="title">입양게시판</title>
+
+	<!--/* 페이지별 특정 head내용 동적변경*/-->
+	<th:block th:fragment="uniqhead">
+		<!-- =============================================================== 개별css ========================================================================== -->
+		<link rel="stylesheet" href="/assets/css/board/common_adop.css">
+		<link rel="stylesheet" href="/assets/css/board/sub_adop.css">
+		<link rel="stylesheet" href="/assets/css/porfile/title.css">
+		<link rel="stylesheet" href="/assets/css/lib/swiper.css" media="all">
+		<link rel="stylesheet" href="/assets/css/theme/theme.css" media="all">
+		<link rel="stylesheet" href="/assets/css/donation/donation.css">
+		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+	</th:block>
+
+	<!--/* 페이지별 콘텐츠 동적변경 */-->
+	<th:block th:fragment="content">
+		<div data-elementor-type="wp-page" data-elementor-id="1691" class="elementor elementor-1691"
+			data-elementor-post-type="page">
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-3ae9f652 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="3ae9f652" data-element_type="section"
+				data-settings="{&quot;background_background&quot;:&quot;gradient&quot;}">
+				<div class="elementor-background-overlay"></div>
+				<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
+						data-id="1de2e7fd" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-6071eefe elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+								data-id="6071eefe" data-element_type="section"
+								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-c709ea0"
+										data-id="c709ea0" data-element_type="column">
+										<div class="elementor-widget-wrap elementor-element-populated">
+											<div class="elementor-element elementor-element-5dc4c099 elementor-widget elementor-widget-heading"
+												data-id="5dc4c099" data-element_type="widget"
+												data-widget_type="heading.default">
+												<div class="elementor-widget-container">
+													<h1 class="elementor-heading-title elementor-size-default">입양 후기
+													</h1>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section
+				class="elementor-section elementor-top-section elementor-element elementor-element-6080893a elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				data-id="6080893a" data-element_type="section" style="margin-bottom: 10%;">
+				<div class="elementor-container elementor-column-gap-no">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-76dc7882"
+						data-id="76dc7882" data-element_type="column">
+						<div class="elementor-widget-wrap elementor-element-populated">
+
+
+							<section
+								class="elementor-section elementor-inner-section elementor-element elementor-element-5e9da05a elementor-section-full_width elementor-section-height-default elementor-section-height-default"
+								data-id="5e9da05a" data-element_type="section"
+								data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+								<div class="elementor-container elementor-column-gap-no">
+									<div class="elementor-widget-wrap elementor-element-populated">
+										<div class="elementor-element elementor-element-7f2c345c elementor-arrows-position-inside elementor-widget elementor-widget-image-carousel"
+											data-id="7f2c345c" data-element_type="widget"
+											data-settings="{&quot;slides_to_show&quot;:&quot;1&quot;,&quot;navigation&quot;:&quot;arrows&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;effect&quot;:&quot;slide&quot;,&quot;speed&quot;:500}"
+											data-widget_type="image-carousel.default">
+											<div class="elementor-widget-container">
+
+
+												<div class="elementor-image-carousel-wrapper swiper-container"
+													dir="ltr">
+
+													<div class="elementor-widget-container">
+														<div class="volunteer_step m_hidden">
+
+															<!-- Board -->
+
+															<script type="text/javascript">
+																$(function ($) {
+
+																	// 페이징URL
+																	$('.setElementPerPage').change(function () {
+																		Request.forward({
+																			url: '?',
+																			params: {
+																				dprtmId: '',
+																				searchType: '',
+																				searchText: '',
+																				elementPerPage: $(this).val()
+																			}
+																		});
+																	});
+
+																	// 게시글 등록 버튼 클릭
+																	$('#btnRegist').css('cursor', 'pointer').click(function () {
+																		location.href = "/community/board/review/boardRegist.action";
+																	});
+
+																	// 조회버튼클릭
+																	$('#btnSearch').css('cursor', 'pointer').click(function () {
+																		searchForm.action = "/community/board/review/boardList.action";
+																		searchForm.submit();
+																	});
+
+																});
+															</script>
+															<!-- 컨텐츠 -->
+															<div id="sb_contents" class="contents board_wrap">
+
+																<!-- 검색 -->
+																<div class="search_box">
+																	<form id="boardDefaultVO" name="searchForm"
+																		action="/community/board/review/boardList.action"
+																		method="GET">
+																		<fieldset>
+																			<legend>게시판 검색</legend>
+																			<label class="search_label"
+																				for="searchType"></label>
+																			<select id="searchType" name="searchType"
+																				class="search_w01 search_type">
+																				<option value="ntartSubjc">제목</option>
+																				<option value="rgterNm">글쓴이</option>
+																			</select>
+																			<label class="search_label"
+																				for="searchText"></label>
+																			<input id="searchText" name="searchText"
+																				class="search_w02" type="text"
+																				value="" />
+																			<ul class="btn_set">
+																				<li
+																					class="btn_default btn_red search_w03">
+																					<a href="#" id="btnSearch">검색</a>
+																				</li>
+																			</ul>
+																		</fieldset>
+																	</form>
+																</div>
+																<!-- //검색 -->
+
+																<!-- 게시판 -->
+																<p class="result_list_num">Total : <span>3624 개 (페이지
+																		1/363) </span></p>
+																<ul class="board_list">
+
+
+																	<li>
+																		<div class="num">
+																			<span>3624</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>이현주</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-31
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 23
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3623</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>김동희</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-31
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 8</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3622</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>정명철</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-29
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 10
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3621</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>황상선</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-26
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 40
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3620</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이 </a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>박희수</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-20
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 51
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3619</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>황상선</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-20
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 45
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3618</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>김동희</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-20
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 10
+																			</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3617</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">강아지는 사랑입니당</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>이명철</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-20
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 5</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3616</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>성은희</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-19
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 7</li>
+																		</ul>
+																	</li>
+
+
+
+																	<li>
+																		<div class="num">
+																			<span>3615</span>
+																		</div>
+																		<ul class="data">
+																			<li class="tit"><span
+																					class="hidden">제목</span>
+																				<a href="#">우리집 막내가 된 댕댕이</a>
+																			</li>
+																			<li class="adm"><span
+																					class="hidden">글쓴이</span>김창규</li>
+																			<li class="date"><span
+																					class="hidden">날짜</span>2023-08-19
+																			</li>
+																			<li class="view"><span
+																					class="hidden">조회수</span>조회 : 6</li>
+																		</ul>
+																	</li>
+
+
+																</ul>
+
+																<ul class="btn_set board_btn">
+																	<li class="btn_default_line btn_green float_r">
+																	<a class="a_bt02" id="btnRegist"
+																	th:href="@{'/'+article+'/'+adoption+'/'+create}"
+																			style="cursor: pointer;">작성하기</a></li>
+																</ul>
+
+
+																<!-- pagenate -->
+																<ul class="pagenate">
+
+																	<!-- 11페이지부터 나옴 -->
+																	<li><a href="#">&lt;&lt;</a></li>
+
+																	<!-- 2페이지부터 나옴 -->
+																	<li><a href="#">&lt;</a></li>
+
+																	<li class="on"><a>1</a></li>
+
+																	<li><a href="#">2</a></li>
+
+																	<li><a href="#">3</a></li>
+
+																	<li><a href="#">4</a></li>
+
+																	<li><a href="#">5</a></li>
+
+																	<li><a href="#">6</a></li>
+
+																	<li><a href="#">7</a></li>
+
+																	<li><a href="#">8</a></li>
+
+																	<li><a href="#">9</a></li>
+
+																	<li><a href="#">10</a></li>
+
+																	<!-- 마지막 페이지에서 사라짐 -->
+																	<li><a href="#">&gt;</a></li>
+
+																	<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
+																	<li><a href="#">&gt;&gt;</a></li>
+
+																</ul>
+																<!-- pagenate -->
+
+															</div>
+															<!-- //컨텐츠 -->
+
+
+														</div>
+													</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+	</th:block>
+
+</th:block>
