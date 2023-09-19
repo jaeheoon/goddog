@@ -2990,3 +2990,367 @@ java.lang.ClassCastException: class tteogipbangbeomdae.goddog.domain.member.dto.
 [2023-09-19 16:26:09][http-nio-80-exec-1][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
 [2023-09-19 16:26:09][http-nio-80-exec-1][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
 [2023-09-19 16:26:09][http-nio-80-exec-1][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 16:26:48][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:26:48][http-nio-80-exec-4][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 16:26:48][http-nio-80-exec-4][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:26:48][http-nio-80-exec-4][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:26:48][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:26:48][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 16:26:52][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/5, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:26:52][http-nio-80-exec-3][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/5
+[2023-09-19 16:26:52][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:26:52][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:26:52][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:26:52][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/5
+[2023-09-19 16:32:52][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:32:52][http-nio-80-exec-5][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 16:32:52][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:52][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:52][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:32:52][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 16:32:53][http-nio-80-exec-1][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:32:53][http-nio-80-exec-1][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 16:32:53][http-nio-80-exec-1][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:53][http-nio-80-exec-1][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:53][http-nio-80-exec-1][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:32:53][http-nio-80-exec-1][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 16:32:54][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/3, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:32:54][http-nio-80-exec-4][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/3
+[2023-09-19 16:32:54][http-nio-80-exec-4][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:54][http-nio-80-exec-4][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:54][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:32:54][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/3
+[2023-09-19 16:32:55][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/4, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 16:32:55][http-nio-80-exec-3][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/4
+[2023-09-19 16:32:55][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:55][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:32:55][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:32:55][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/4
+[2023-09-19 16:41:16][File Watcher][INFO ](LocalDevToolsAutoConfiguration.java: onApplicationEvent(): 211) : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+[2023-09-19 16:41:16][Thread-5][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 16:41:16][Thread-5][INFO ](DirectJDKLog.java: log(): 173) : Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-19 16:41:16][Thread-5][WARN ](DirectJDKLog.java: log(): 173) : The web application [ROOT] appears to have started a thread named [oracle.jdbc.driver.BlockSource.ThreadedCachingBlockSource.BlockReleaser] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:258)
+ app//oracle.jdbc.internal.Monitor$WaitableMonitor.monitorWait(Monitor.java:240)
+ app//oracle.jdbc.driver.BlockSource$ThreadedCachingBlockSource$BlockReleaser.run(BlockSource.java:345)
+[2023-09-19 16:41:16][Thread-5][WARN ](DirectJDKLog.java: log(): 173) : The web application [ROOT] appears to have started a thread named [InterruptTimer] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8/java.lang.Object.wait(Native Method)
+ java.base@17.0.8/java.util.TimerThread.mainLoop(Timer.java:563)
+ java.base@17.0.8/java.util.TimerThread.run(Timer.java:516)
+[2023-09-19 16:41:16][Thread-5][WARN ](DirectJDKLog.java: log(): 173) : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.8/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.8/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.8/java.lang.Thread.run(Thread.java:833)
+[2023-09-19 16:41:16][Thread-5][INFO ](HikariDataSource.java: close(): 350) : HikariPool-1 - Shutdown initiated...
+[2023-09-19 16:41:16][Thread-5][INFO ](HikariDataSource.java: close(): 352) : HikariPool-1 - Shutdown completed.
+[2023-09-19 16:41:16][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:41:16][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:41:16][restartedMain][WARN ](AbstractApplicationContext.java: refresh(): 616) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [tteogipbangbeomdae.goddog.SpringMvcApplication]
+[2023-09-19 16:41:16][restartedMain][ERROR](SpringApplication.java: reportFailure(): 824) : Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [tteogipbangbeomdae.goddog.SpringMvcApplication]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:178) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:415) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:287) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:344) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:115) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:771) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:589) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.2.jar:3.1.2]
+	at tteogipbangbeomdae.goddog.SpringMvcApplication.main(SpringMvcApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.2.jar:3.1.2]
+Caused by: org.springframework.context.annotation.ConflictingBeanDefinitionException: Annotation-specified bean name 'articleController' for bean class [tteogipbangbeomdae.goddog.web.chat.controller.ArticleController] conflicts with existing, non-compatible bean definition of same name and class [tteogipbangbeomdae.goddog.web.article.controller.ArticleController]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.checkCandidate(ClassPathBeanDefinitionScanner.java:349) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ClassPathBeanDefinitionScanner.doScan(ClassPathBeanDefinitionScanner.java:287) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ComponentScanAnnotationParser.parse(ComponentScanAnnotationParser.java:128) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:289) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:243) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:196) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:164) ~[spring-context-6.0.11.jar:6.0.11]
+	... 18 common frames omitted
+[2023-09-19 16:41:44][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:41:44][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:41:44][restartedMain][INFO ](TomcatWebServer.java: initialize(): 108) : Tomcat initialized with port(s): 80 (http)
+[2023-09-19 16:41:44][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting service [Tomcat]
+[2023-09-19 16:41:44][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-09-19 16:41:44][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring embedded WebApplicationContext
+[2023-09-19 16:41:44][restartedMain][INFO ](ServletWebServerApplicationContext.java: prepareWebApplicationContext(): 291) : Root WebApplicationContext: initialization completed in 251 ms
+[2023-09-19 16:41:45][restartedMain][INFO ](WelcomePageHandlerMapping.java: <init>(): 57) : Adding welcome page: class path resource [static/index.html]
+[2023-09-19 16:41:45][restartedMain][WARN ](AbstractApplicationContext.java: refresh(): 616) : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'chatController' method 
+tteogipbangbeomdae.goddog.web.chat.controller.ChatController#createAdoptionArticle(Model)
+to {GET [/article/adoption/create]}: There is already 'articleController' bean method
+tteogipbangbeomdae.goddog.web.article.controller.ArticleController#createAdoptionArticle(Model) mapped.
+[2023-09-19 16:41:45][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 16:41:45][restartedMain][INFO ](ConditionEvaluationReportLogger.java: logMessage(): 82) : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2023-09-19 16:41:45][restartedMain][ERROR](SpringApplication.java: reportFailure(): 824) : Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'chatController' method 
+tteogipbangbeomdae.goddog.web.chat.controller.ChatController#createAdoptionArticle(Model)
+to {GET [/article/adoption/create]}: There is already 'articleController' bean method
+tteogipbangbeomdae.goddog.web.article.controller.ArticleController#createAdoptionArticle(Model) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:973) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:942) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608) ~[spring-context-6.0.11.jar:6.0.11]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:734) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:436) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306) ~[spring-boot-3.1.2.jar:3.1.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295) ~[spring-boot-3.1.2.jar:3.1.2]
+	at tteogipbangbeomdae.goddog.SpringMvcApplication.main(SpringMvcApplication.java:10) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.1.2.jar:3.1.2]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'chatController' method 
+tteogipbangbeomdae.goddog.web.chat.controller.ChatController#createAdoptionArticle(Model)
+to {GET [/article/adoption/create]}: There is already 'articleController' bean method
+tteogipbangbeomdae.goddog.web.article.controller.ArticleController#createAdoptionArticle(Model) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:667) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:633) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:441) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:76) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:225) ~[spring-webmvc-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-6.0.11.jar:6.0.11]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.11.jar:6.0.11]
+	... 21 common frames omitted
+[2023-09-19 16:43:12][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:43:12][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:43:12][restartedMain][INFO ](TomcatWebServer.java: initialize(): 108) : Tomcat initialized with port(s): 80 (http)
+[2023-09-19 16:43:12][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting service [Tomcat]
+[2023-09-19 16:43:12][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-09-19 16:43:12][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring embedded WebApplicationContext
+[2023-09-19 16:43:12][restartedMain][INFO ](ServletWebServerApplicationContext.java: prepareWebApplicationContext(): 291) : Root WebApplicationContext: initialization completed in 185 ms
+[2023-09-19 16:43:12][restartedMain][INFO ](WelcomePageHandlerMapping.java: <init>(): 57) : Adding welcome page: class path resource [static/index.html]
+[2023-09-19 16:43:12][restartedMain][INFO ](OptionalLiveReloadServer.java: startServer(): 59) : LiveReload server is running on port 35729
+[2023-09-19 16:43:12][restartedMain][INFO ](TomcatWebServer.java: start(): 220) : Tomcat started on port(s): 80 (http) with context path ''
+[2023-09-19 16:43:12][restartedMain][INFO ](StartupInfoLogger.java: logStarted(): 57) : Started SpringMvcApplication in 0.435 seconds (process running for 1058.479)
+[2023-09-19 16:43:12][restartedMain][INFO ](ConditionEvaluationDeltaLoggingListener.java: onApplicationEvent(): 63) : Condition evaluation unchanged
+[2023-09-19 16:43:15][File Watcher][INFO ](LocalDevToolsAutoConfiguration.java: onApplicationEvent(): 211) : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2023-09-19 16:43:15][Thread-20][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 16:43:15][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:43:15][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:43:15][restartedMain][INFO ](TomcatWebServer.java: initialize(): 108) : Tomcat initialized with port(s): 80 (http)
+[2023-09-19 16:43:15][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting service [Tomcat]
+[2023-09-19 16:43:15][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-09-19 16:43:15][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring embedded WebApplicationContext
+[2023-09-19 16:43:15][restartedMain][INFO ](ServletWebServerApplicationContext.java: prepareWebApplicationContext(): 291) : Root WebApplicationContext: initialization completed in 154 ms
+[2023-09-19 16:43:15][restartedMain][INFO ](WelcomePageHandlerMapping.java: <init>(): 57) : Adding welcome page: class path resource [static/index.html]
+[2023-09-19 16:43:15][restartedMain][INFO ](OptionalLiveReloadServer.java: startServer(): 59) : LiveReload server is running on port 35729
+[2023-09-19 16:43:15][restartedMain][INFO ](TomcatWebServer.java: start(): 220) : Tomcat started on port(s): 80 (http) with context path ''
+[2023-09-19 16:43:15][restartedMain][INFO ](StartupInfoLogger.java: logStarted(): 57) : Started SpringMvcApplication in 0.381 seconds (process running for 1061.493)
+[2023-09-19 16:43:15][restartedMain][INFO ](ConditionEvaluationDeltaLoggingListener.java: onApplicationEvent(): 63) : Condition evaluation unchanged
+[2023-09-19 16:43:23][File Watcher][INFO ](LocalDevToolsAutoConfiguration.java: onApplicationEvent(): 211) : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2023-09-19 16:43:23][Thread-29][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 16:43:23][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:43:23][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:43:23][restartedMain][INFO ](TomcatWebServer.java: initialize(): 108) : Tomcat initialized with port(s): 80 (http)
+[2023-09-19 16:43:23][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting service [Tomcat]
+[2023-09-19 16:43:23][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-09-19 16:43:23][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring embedded WebApplicationContext
+[2023-09-19 16:43:23][restartedMain][INFO ](ServletWebServerApplicationContext.java: prepareWebApplicationContext(): 291) : Root WebApplicationContext: initialization completed in 175 ms
+[2023-09-19 16:43:23][restartedMain][INFO ](WelcomePageHandlerMapping.java: <init>(): 57) : Adding welcome page: class path resource [static/index.html]
+[2023-09-19 16:43:23][restartedMain][INFO ](OptionalLiveReloadServer.java: startServer(): 59) : LiveReload server is running on port 35729
+[2023-09-19 16:43:23][restartedMain][INFO ](TomcatWebServer.java: start(): 220) : Tomcat started on port(s): 80 (http) with context path ''
+[2023-09-19 16:43:23][restartedMain][INFO ](StartupInfoLogger.java: logStarted(): 57) : Started SpringMvcApplication in 0.414 seconds (process running for 1069.924)
+[2023-09-19 16:43:23][restartedMain][INFO ](ConditionEvaluationDeltaLoggingListener.java: onApplicationEvent(): 63) : Condition evaluation unchanged
+[2023-09-19 16:43:25][File Watcher][INFO ](LocalDevToolsAutoConfiguration.java: onApplicationEvent(): 211) : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2023-09-19 16:43:25][Thread-33][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 16:43:25][restartedMain][INFO ](StartupInfoLogger.java: logStarting(): 51) : Starting SpringMvcApplication using Java 17.0.8 with PID 18092 (C:\ezen_fullstack\workspace\goddog\bin\main started by 조영호 in C:\ezen_fullstack\workspace\goddog)
+[2023-09-19 16:43:25][restartedMain][INFO ](SpringApplication.java: logStartupProfileInfo(): 634) : No active profile set, falling back to 1 default profile: "dev"
+[2023-09-19 16:43:25][restartedMain][INFO ](TomcatWebServer.java: initialize(): 108) : Tomcat initialized with port(s): 80 (http)
+[2023-09-19 16:43:25][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting service [Tomcat]
+[2023-09-19 16:43:25][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Starting Servlet engine: [Apache Tomcat/10.1.11]
+[2023-09-19 16:43:25][restartedMain][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring embedded WebApplicationContext
+[2023-09-19 16:43:25][restartedMain][INFO ](ServletWebServerApplicationContext.java: prepareWebApplicationContext(): 291) : Root WebApplicationContext: initialization completed in 156 ms
+[2023-09-19 16:43:25][restartedMain][INFO ](WelcomePageHandlerMapping.java: <init>(): 57) : Adding welcome page: class path resource [static/index.html]
+[2023-09-19 16:43:25][restartedMain][INFO ](OptionalLiveReloadServer.java: startServer(): 59) : LiveReload server is running on port 35729
+[2023-09-19 16:43:25][restartedMain][INFO ](TomcatWebServer.java: start(): 220) : Tomcat started on port(s): 80 (http) with context path ''
+[2023-09-19 16:43:25][restartedMain][INFO ](StartupInfoLogger.java: logStarted(): 57) : Started SpringMvcApplication in 0.382 seconds (process running for 1071.897)
+[2023-09-19 16:43:25][restartedMain][INFO ](ConditionEvaluationDeltaLoggingListener.java: onApplicationEvent(): 63) : Condition evaluation unchanged
+[2023-09-19 16:46:57][http-nio-80-exec-5][INFO ](DirectJDKLog.java: log(): 173) : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2023-09-19 16:46:57][http-nio-80-exec-5][INFO ](FrameworkServlet.java: initServletBean(): 532) : Initializing Servlet 'dispatcherServlet'
+[2023-09-19 16:46:57][http-nio-80-exec-5][INFO ](FrameworkServlet.java: initServletBean(): 554) : Completed initialization in 1 ms
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /null, ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /null
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 28) : => 로그인 하지 않은 사용자 요청으로 로그인 화면으로 리다이렉트
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 31) : 들어온 쿼리스트링 [null]
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 33) : 완성된URI [/null]
+[2023-09-19 16:46:59][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /null
+[2023-09-19 16:47:04][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:47:04][http-nio-80-exec-10][INFO ](HikariDataSource.java: getConnection(): 110) : HikariPool-2 - Starting...
+[2023-09-19 16:47:04][http-nio-80-exec-10][WARN ](DriverDataSource.java: <init>(): 70) : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2023-09-19 16:47:04][http-nio-80-exec-10][INFO ](HikariPool.java: checkFailFast(): 565) : HikariPool-2 - Added connection oracle.jdbc.driver.T4CConnection@932823d
+[2023-09-19 16:47:04][http-nio-80-exec-10][INFO ](HikariDataSource.java: getConnection(): 123) : HikariPool-2 - Start completed.
+[2023-09-19 16:47:04][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:47:04][http-nio-80-exec-8][INFO ](MemberController.java: login(): 127) : 들어온 로그인 타입. false
+[2023-09-19 16:47:04][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 16:47:04][http-nio-80-exec-8][INFO ](MemberController.java: login(): 146) : 찾아온 회원 Member(memberId=bangry, passwd=null, name=김기정, phoneNum=010-1111-2222, emailF=null, emailB=null, regdate=2023-09-11, year=null, month=null, day=null, adress=null, detailAdress=null, lev=1, fullEmail=bangry@gmail.com, fullBirthday=1955-05-09, fullAdress=서울 중랑구 숙선옹주로 11)
+[2023-09-19 16:47:04][http-nio-80-exec-8][WARN ](MemberController.java: login(): 159) : 들어온 redirectURI /null
+[2023-09-19 16:47:04][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /null, ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+[2023-09-19 16:47:04][http-nio-80-exec-7][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /null
+[2023-09-19 16:47:04][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 16:47:04][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /null
+[2023-09-19 17:10:44][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /chat, tteogipbangbeomdae.goddog.web.chat.controller.ChatController#connectChat()
+[2023-09-19 17:10:44][http-nio-80-exec-3][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /chat
+[2023-09-19 17:10:44][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="chat/view"; model={}]
+[2023-09-19 17:10:44][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /chat
+[2023-09-19 17:10:48][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /chat, tteogipbangbeomdae.goddog.web.chat.controller.ChatController#connectChat()
+[2023-09-19 17:10:48][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /chat
+[2023-09-19 17:10:48][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="chat/view"; model={}]
+[2023-09-19 17:10:48][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /chat
+[2023-09-19 17:10:51][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /chat, tteogipbangbeomdae.goddog.web.chat.controller.ChatController#connectChat()
+[2023-09-19 17:10:51][http-nio-80-exec-6][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /chat
+[2023-09-19 17:10:51][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="chat/view"; model={}]
+[2023-09-19 17:10:51][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /chat
+[2023-09-19 17:12:03][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage, tteogipbangbeomdae.goddog.web.member.controller.MemberController#selectMethod(int, int, Model, HttpSession)
+[2023-09-19 17:12:03][http-nio-80-exec-7][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage
+[2023-09-19 17:12:03][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:03][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:03][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:03][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:03][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="member/mypage"; model={pagination1=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=4), totalPages=1, listNo=0, startPage=1, endPage=1, previousStartPage=1, nextStartPage=6], pagination2=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=109), totalPages=22, listNo=0, startPage=1, endPage=5, previousStartPage=1, nextStartPage=6], reserList=[Reservation(reservationNo=305, memberId=bangry, memberName=null, people=4, insertDate=2023-09-19, regdate=2023-10-25, regtime=9:00 ~ 13:00, status=true, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=304, memberId=bangry, memberName=null, people=3, insertDate=2023-09-19, regdate=2023-09-30, regtime=9:00 ~ 13:00, status=await, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=303, memberId=bangry, memberName=null, people=6, insertDate=2023-09-18, regdate=2023-09-20, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=302, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-28, regtime=14:00 ~ 18:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null), Reservation(reservationNo=301, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-29, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null)], donaList=[Donahistory(donahistoryNo=22, memberId=bangry, donation=100000, donationDate=2023-09-19), Donahistory(donahistoryNo=21, memberId=bangry, donation=30000, donationDate=2023-09-19), Donahistory(donahistoryNo=3, memberId=bangry, donation=3000, donationDate=2023-09-12), Donahistory(donahistoryNo=2, memberId=bangry, donation=5000, donationDate=2023-09-12)], org.springframework.validation.BindingResult.pagination1=org.springframework.validation.BeanPropertyBindingResult: 0 errors, org.springframework.validation.BindingResult.pagination2=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2023-09-19 17:12:03][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage
+[2023-09-19 17:12:11][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:12:11][http-nio-80-exec-6][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:12:11][http-nio-80-exec-6][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:11][http-nio-80-exec-6][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:11][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:12:11][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:12:13][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:12:13][http-nio-80-exec-3][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 17:12:13][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:13][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:12:13][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:12:13][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 17:28:39][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:28:39][http-nio-80-exec-10][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:28:39][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:39][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:39][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:28:39][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:28:39][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:28:39][http-nio-80-exec-9][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 17:28:39][http-nio-80-exec-9][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:39][http-nio-80-exec-9][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:39][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:28:39][http-nio-80-exec-9][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 17:28:40][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/3, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:28:40][http-nio-80-exec-6][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/3
+[2023-09-19 17:28:40][http-nio-80-exec-6][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:40][http-nio-80-exec-6][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:40][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:28:40][http-nio-80-exec-6][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/3
+[2023-09-19 17:28:44][http-nio-80-exec-2][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage, tteogipbangbeomdae.goddog.web.member.controller.MemberController#selectMethod(int, int, Model, HttpSession)
+[2023-09-19 17:28:44][http-nio-80-exec-2][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage
+[2023-09-19 17:28:44][http-nio-80-exec-2][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:44][http-nio-80-exec-2][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:44][http-nio-80-exec-2][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:44][http-nio-80-exec-2][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:44][http-nio-80-exec-2][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="member/mypage"; model={pagination1=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=4), totalPages=1, listNo=0, startPage=1, endPage=1, previousStartPage=1, nextStartPage=6], pagination2=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=109), totalPages=22, listNo=0, startPage=1, endPage=5, previousStartPage=1, nextStartPage=6], reserList=[Reservation(reservationNo=305, memberId=bangry, memberName=null, people=4, insertDate=2023-09-19, regdate=2023-10-25, regtime=9:00 ~ 13:00, status=true, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=304, memberId=bangry, memberName=null, people=3, insertDate=2023-09-19, regdate=2023-09-30, regtime=9:00 ~ 13:00, status=await, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=303, memberId=bangry, memberName=null, people=6, insertDate=2023-09-18, regdate=2023-09-20, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=302, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-28, regtime=14:00 ~ 18:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null), Reservation(reservationNo=301, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-29, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null)], donaList=[Donahistory(donahistoryNo=22, memberId=bangry, donation=100000, donationDate=2023-09-19), Donahistory(donahistoryNo=21, memberId=bangry, donation=30000, donationDate=2023-09-19), Donahistory(donahistoryNo=3, memberId=bangry, donation=3000, donationDate=2023-09-12), Donahistory(donahistoryNo=2, memberId=bangry, donation=5000, donationDate=2023-09-12)], org.springframework.validation.BindingResult.pagination1=org.springframework.validation.BeanPropertyBindingResult: 0 errors, org.springframework.validation.BindingResult.pagination2=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2023-09-19 17:28:44][http-nio-80-exec-2][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage
+[2023-09-19 17:28:48][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:28:48][http-nio-80-exec-8][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:28:48][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:48][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:48][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:28:48][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:28:50][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:28:50][http-nio-80-exec-7][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 17:28:50][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:50][http-nio-80-exec-7][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:28:50][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:28:50][http-nio-80-exec-7][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 17:31:27][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage, tteogipbangbeomdae.goddog.web.member.controller.MemberController#selectMethod(int, int, Model, HttpSession)
+[2023-09-19 17:31:27][http-nio-80-exec-5][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage
+[2023-09-19 17:31:27][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:27][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:27][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:27][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:27][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="member/mypage"; model={pagination1=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=4), totalPages=1, listNo=0, startPage=1, endPage=1, previousStartPage=1, nextStartPage=6], pagination2=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=109), totalPages=22, listNo=0, startPage=1, endPage=5, previousStartPage=1, nextStartPage=6], reserList=[Reservation(reservationNo=305, memberId=bangry, memberName=null, people=4, insertDate=2023-09-19, regdate=2023-10-25, regtime=9:00 ~ 13:00, status=true, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=304, memberId=bangry, memberName=null, people=3, insertDate=2023-09-19, regdate=2023-09-30, regtime=9:00 ~ 13:00, status=await, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=303, memberId=bangry, memberName=null, people=6, insertDate=2023-09-18, regdate=2023-09-20, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=302, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-28, regtime=14:00 ~ 18:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null), Reservation(reservationNo=301, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-29, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null)], donaList=[Donahistory(donahistoryNo=22, memberId=bangry, donation=100000, donationDate=2023-09-19), Donahistory(donahistoryNo=21, memberId=bangry, donation=30000, donationDate=2023-09-19), Donahistory(donahistoryNo=3, memberId=bangry, donation=3000, donationDate=2023-09-12), Donahistory(donahistoryNo=2, memberId=bangry, donation=5000, donationDate=2023-09-12)], org.springframework.validation.BindingResult.pagination1=org.springframework.validation.BeanPropertyBindingResult: 0 errors, org.springframework.validation.BindingResult.pagination2=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2023-09-19 17:31:27][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage
+[2023-09-19 17:31:30][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /volunteer/detail/305, tteogipbangbeomdae.goddog.web.volunteer.controller.VolunteerController#viewDetail(int, Model)
+[2023-09-19 17:31:30][http-nio-80-exec-4][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /volunteer/detail/305
+[2023-09-19 17:31:30][http-nio-80-exec-4][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:30][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="volunteer/cancel_detail"; model={reservation=Reservation(reservationNo=305, memberId=null, memberName=김기정, people=4, insertDate=2023-09-19, regdate=2023-10-25, regtime=9:00 ~ 13:00, status=true, memberPhoneNum=010-1111-2222, careNo=0, shelterName=춘향이와멍멍이, telNum=010-9876-5432), org.springframework.validation.BindingResult.reservation=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2023-09-19 17:31:30][http-nio-80-exec-4][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /volunteer/detail/305
+[2023-09-19 17:31:35][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:31:35][http-nio-80-exec-8][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:31:35][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:35][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:31:35][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:31:35][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:32:20][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage, tteogipbangbeomdae.goddog.web.member.controller.MemberController#selectMethod(int, int, Model, HttpSession)
+[2023-09-19 17:32:20][http-nio-80-exec-5][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage
+[2023-09-19 17:32:20][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:20][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:20][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:20][http-nio-80-exec-5][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:20][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => ModelAndView [view="member/mypage"; model={pagination1=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=4), totalPages=1, listNo=0, startPage=1, endPage=1, previousStartPage=1, nextStartPage=6], pagination2=Pagination [params=PageParams(elementSize=5, pageSize=5, requestPage=1, rowCount=109), totalPages=22, listNo=0, startPage=1, endPage=5, previousStartPage=1, nextStartPage=6], reserList=[Reservation(reservationNo=305, memberId=bangry, memberName=null, people=4, insertDate=2023-09-19, regdate=2023-10-25, regtime=9:00 ~ 13:00, status=true, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=304, memberId=bangry, memberName=null, people=3, insertDate=2023-09-19, regdate=2023-09-30, regtime=9:00 ~ 13:00, status=await, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=303, memberId=bangry, memberName=null, people=6, insertDate=2023-09-18, regdate=2023-09-20, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=3, shelterName=춘향이와멍멍이, telNum=null), Reservation(reservationNo=302, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-28, regtime=14:00 ~ 18:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null), Reservation(reservationNo=301, memberId=bangry, memberName=null, people=1, insertDate=2023-09-18, regdate=2023-09-29, regtime=9:00 ~ 13:00, status=null, memberPhoneNum=null, careNo=1, shelterName=해피파워, telNum=null)], donaList=[Donahistory(donahistoryNo=22, memberId=bangry, donation=100000, donationDate=2023-09-19), Donahistory(donahistoryNo=21, memberId=bangry, donation=30000, donationDate=2023-09-19), Donahistory(donahistoryNo=3, memberId=bangry, donation=3000, donationDate=2023-09-12), Donahistory(donahistoryNo=2, memberId=bangry, donation=5000, donationDate=2023-09-12)], org.springframework.validation.BindingResult.pagination1=org.springframework.validation.BeanPropertyBindingResult: 0 errors, org.springframework.validation.BindingResult.pagination2=org.springframework.validation.BeanPropertyBindingResult: 0 errors}]
+[2023-09-19 17:32:20][http-nio-80-exec-5][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage
+[2023-09-19 17:32:25][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:32:25][http-nio-80-exec-10][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:32:25][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:25][http-nio-80-exec-10][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:25][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:32:25][http-nio-80-exec-10][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:32:27][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/2, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:32:27][http-nio-80-exec-8][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/2
+[2023-09-19 17:32:27][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:27][http-nio-80-exec-8][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:27][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:32:27][http-nio-80-exec-8][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/2
+[2023-09-19 17:32:29][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: preHandle(): 34) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 전) => /member/mypage/1, tteogipbangbeomdae.goddog.web.member.controller.MemberController#restReservationList(int, Model, HttpSession)
+[2023-09-19 17:32:29][http-nio-80-exec-3][INFO ](LoginCheckInterceptor.java: preHandle(): 23) : => [로그인 체크 인터셉터 실행] : /member/mypage/1
+[2023-09-19 17:32:29][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:29][http-nio-80-exec-3][DEBUG](DataSourceUtils.java: doGetConnection(): 117) : Fetching JDBC Connection from DataSource
+[2023-09-19 17:32:29][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: postHandle(): 42) : [로그 인터셉터 실행] : HTTP 요청(세부 컨트롤러 호출 후) => null
+[2023-09-19 17:32:29][http-nio-80-exec-3][INFO ](LoggerInterceptor.java: afterCompletion(): 49) : [로그 인터셉터 실행] : HTT 응답(뷰 렌더링 이후) => /member/mypage/1
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][INFO ](SpringApplicationAdminMXBeanRegistrar.java: shutdown(): 159) : Application shutdown requested.
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][INFO ](DirectJDKLog.java: log(): 173) : Stopping service [Tomcat]
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][INFO ](DirectJDKLog.java: log(): 173) : Destroying Spring FrameworkServlet 'dispatcherServlet'
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][WARN ](DirectJDKLog.java: log(): 173) : The web application [ROOT] appears to have started a thread named [HikariPool-2 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@17.0.8/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@17.0.8/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@17.0.8/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1672)
+ java.base@17.0.8/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1182)
+ java.base@17.0.8/java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:899)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1062)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1122)
+ java.base@17.0.8/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+ java.base@17.0.8/java.lang.Thread.run(Thread.java:833)
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][INFO ](HikariDataSource.java: close(): 350) : HikariPool-2 - Shutdown initiated...
+[2023-09-19 17:37:54][RMI TCP Connection(84)-127.0.0.1][INFO ](HikariDataSource.java: close(): 352) : HikariPool-2 - Shutdown completed.

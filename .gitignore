@@ -31,7 +31,7 @@ tmp/**/*
 local.properties
 .settings/
 .loadpath
-.log
+log/
 .zip
 
 # External tool builders
