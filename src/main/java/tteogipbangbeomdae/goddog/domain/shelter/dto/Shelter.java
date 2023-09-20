@@ -34,5 +34,7 @@ public class Shelter{
 	private String volunteerAm;
 	private String volunteerPm;
 	private String mapUrl;
+	private String introduction;
+	private String etc;
 	
 }

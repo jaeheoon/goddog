@@ -9,7 +9,8 @@
 	<select id="selectShelter" parameterType="int" resultType="Shelter">
 		SELECT care_no, name, adress, tel, closeday,
 		mans, open, close,
-		volunteer_am, volunteer_pm, map_url
+		volunteer_am, volunteer_pm, map_url,
+		etc, introduction
 		FROM care
 		WHERE care_no = #{value}
 	</select>
