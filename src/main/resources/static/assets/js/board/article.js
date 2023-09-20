@@ -66,3 +66,4 @@ document.querySelector('.confirm').addEventListener('click',(event)=>{
 		alert('댓글내용을 입력하세요.');
 	}
 })
+
