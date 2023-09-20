@@ -1,6 +1,8 @@
 package tteogipbangbeomdae.goddog.web.member.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -188,64 +190,10 @@ public class MemberController {
 		return member != null || adminMember != null ? true : false;
 	}
 	
-	/** API 서비스 시 예외 처리를 위한 테스트 */
-//	@GetMapping("/rest/{id}")
-//	@ResponseBody
-//	public Member read(@PathVariable String id) {
-//		// 테스트를 위한 코드
-//		if(id.equals("bangry1")) {
-//			throw new IllegalArgumentException("잘못된 값을 입력하였습니다.");
-//		}
-//		
-//		if(id.equals("bangry2")) {
-//			throw new RuntimeException("서버 장애가 발생하였습니다.");
-//		}
-//		
-//		if(id.equals("bangry3")) {
-//			throw new MemberException("인증되지 않은 사용자입니다.");
-//		}
-//		
-//		return new Member(id, "1111", "looney", "looney@gmail.com", "2023/09/02");
-//	}
 	
 	@GetMapping("/mypage")
-	public String selectMethod(@RequestParam(value = "requestPage1" , defaultValue = "1") int requestPage1 , @RequestParam(value = "requestPage2" , defaultValue = "1") int requestPage2,Model model, HttpSession session) {		
-		Member loginMember = (Member)session.getAttribute("loginMember");
-		String loginId = loginMember.getMemberId();
+	public String selectMethod(Model model, HttpSession session) {		
 
-
-		
-		//해당하는 회원의 후원, 봉사목록총 갯수
-		int donaRowCount = donahistroyService.getDonaCountById(loginId);
-		int reserRowCount = reservationService.getReserCountById(loginId);
-		
-		PageParams pageParams1 = PageParams.builder()
-				  .elementSize(ELEMENT_SIZE)
-				  .pageSize(PAGE_SIZE)
-				  .requestPage(requestPage1)
-				  .rowCount(donaRowCount)
-				  .build();
-		Pagination pagination1 = new Pagination(pageParams1);
-		
-		PageParams pageParams2 = PageParams.builder()
-				  .elementSize(ELEMENT_SIZE)
-				  .pageSize(PAGE_SIZE)
-				  .requestPage(requestPage2)
-				  .rowCount(reserRowCount)
-				  .build();
-		Pagination pagination2 = new Pagination(pageParams2);
-		
-		List<Donahistory> donaList = donahistroyService.getAllDonaHistory(pageParams1,loginId);
-		List<Reservation> reserList = reservationService.findAllReservationById(pageParams2,loginId);
-		//불러온 내역을 가지고 마이페이지(/mypage)로 이동
-
-		model.addAttribute("pagination1", pagination1);
-		model.addAttribute("pagination2", pagination2);
-		model.addAttribute("reserList", reserList);
-
-//		model.addAttribute("reserList", reserList);
-
-		model.addAttribute("donaList", donaList);
 		return "member/mypage";
 	}
 	
@@ -279,29 +227,64 @@ public class MemberController {
 		
 		return "member/adminpage";
 	}
-	
-	@GetMapping("/mypage/{requestPage2}")
+	//봉사예약리스트를 RestAPI로 JSON으로 넘겨주기
+	@GetMapping("/mypage/reser/{requestPage}")
 	@ResponseBody
-	public List<Reservation> restReservationList(@PathVariable(value = "requestPage2") int requestPage,Model model, HttpSession session) {		
+	public Map<String, Object> restReservationList(@PathVariable("requestPage") int requestPage, Model model, HttpSession session) {		
 		//세션에 들어있는 관리자 정보에서 careNo를 추출
 		Member loginMember = (Member)session.getAttribute("loginMember");
 		String loginId = loginMember.getMemberId();
 		//log.info("들어온 리퀘스트페이지 {}",requestPage);
 		//페이징 처리를 위한 해당 보호소 봉사내역갯수.
 		int reserRowCount = reservationService.getReserCountById(loginId);
-		
+		int donaRowCount = donahistroyService.getDonaCountById(loginId);
 		//페이징 처리를 위한 Pagination객체 생성.
-		PageParams pageParams = PageParams.builder()
+		PageParams pageParams2 = PageParams.builder()
 				.elementSize(ELEMENT_SIZE)
 				.pageSize(PAGE_SIZE)
 				.requestPage(requestPage)
 				.rowCount(reserRowCount)
 				.build();
-//		Pagination pagination = new Pagination(pageParams);
+		Pagination pagination2 = new Pagination(pageParams2);
+		
+		//페이징처리된 목
+		List<Reservation> reserList = reservationService.findAllReservationById(pageParams2,loginId);
+		
+	    Map<String, Object> responseMap = new HashMap<>();
+	    responseMap.put("pagination2", pagination2);
+	    responseMap.put("reserList", reserList);
 		
 		//페이징 처리를 위한 해당 보호소의 봉사내역리스트.
-//		List<Reservation> reserList = reservationService.findAllReservationById(pageParams,loginId);
-		return reservationService.findAllReservationById(pageParams,loginId);
+		return responseMap;
 	}
-	
+	//후원내역을 RestAPI로 JSON데이터로 넘겨주기
+	@GetMapping("/mypage/dona/{requestPage}")
+	@ResponseBody
+	public Map<String, Object> restDonahistoryList(@PathVariable("requestPage") int requestPage, Model model, HttpSession session) {		
+		//세션에 들어있는 관리자 정보에서 careNo를 추출
+		Member loginMember = (Member)session.getAttribute("loginMember");
+		String loginId = loginMember.getMemberId();
+		//log.info("들어온 리퀘스트페이지 {}",requestPage);
+		//페이징 처리를 위한 해당 보호소 봉사내역갯수.
+		int donaRowCount = donahistroyService.getDonaCountById(loginId);
+		//페이징 처리를 위한 Pagination객체 생성.
+		//donahistory를 위한 페이징
+		PageParams pageParams1 = PageParams.builder()
+				.elementSize(ELEMENT_SIZE)
+				.pageSize(PAGE_SIZE)
+				.requestPage(requestPage)
+				.rowCount(donaRowCount)
+				.build();
+		Pagination pagination1 = new Pagination(pageParams1);
+
+		//페이징처리된 목
+		List<Donahistory> donaList = donahistroyService.getAllDonaHistory(pageParams1,loginId);
+		
+	    Map<String, Object> responseMap = new HashMap<>();
+	    responseMap.put("pagination1", pagination1);
+	    responseMap.put("donaList", donaList);
+		
+		//페이징 처리를 위한 해당 보호소의 봉사내역리스트.
+		return responseMap;
+	}
 }

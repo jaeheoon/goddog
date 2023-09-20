@@ -19,7 +19,8 @@
 		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
 		<link rel="stylesheet" href="/assets/css/pagenation.css">
 		<!-- ============================================================== 개별script =========================================================================-->
-		<script defer src="/assets/js/member/mypaging.js"></script>
+		<script defer src="/assets/js/member/reserpaging.js"></script>
+		<script defer src="/assets/js/member/donapaging.js"></script>
 	</th:block>
 
 	<!--/* 페이지별 콘텐츠 동적변경 */-->
@@ -366,7 +367,8 @@
 																			<th scope="col" class="m">결제금액 (원)</th>
 																		</tr>
 																	</thead>
-																	<tbody class="donahistory">
+																	<tbody class="donation">
+																	<!-- 
 																		<tr th:each="donahistory, state : ${donaList}"
 																			id="table-content">
 																			<td class="m_hidden" th:text="${state.count}">009802949240</td>
@@ -374,6 +376,7 @@
 																				th:text="${donahistory.donationDate}">2023.09.04</td>
 																			<td class="m" th:text="${donahistory.donation}">10000</td>
 																		</tr>
+																	-->
 																		<!--
 																		<tr id="table-content">
 																			<td class="m_hidden">009802949240</td>
@@ -385,56 +388,9 @@
 																</table>
 																							<!-- paging -->
 										<!-- pagenate -->
-										<ul class="pagenate" style="margin-bottom: 5%;">
+										<ul class="pagenate donahistory" style="margin-bottom: 5%;">
 
-											<th:block th:if="${pagination1.showFirst}">
-												<!-- 11페이지부터 나옴 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage1+'='+1}"
-													class="page-link" href="#" aria-label="Previous">&lt;&lt;</a>
-												</li>
-											</th:block>
 
-											<th:block th:if="${pagination1.showPrevious}">
-												<!-- 2페이지부터 나옴 -->
-												<li class="page-item"><a class="page-link" href="#"
-													aria-label="Previous"
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage1+'='+${pagination1.previousStartPage}}">&lt;</a>
-												</li>
-											</th:block>
-
-											<th:block
-												th:each="i : ${#numbers.sequence(pagination1.startPage, pagination1.endPage)}">
-												<li class="on page-item"
-													th:class="${i == pagination1.params.requestPage} ? 'page-item active' : 'page-item'">
-													<a class="page-link" href="#"
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage1+'='+${i}}"
-													th:text="${i}">1</a>
-												</li>
-											</th:block>
-											<!-- 
-											<li><a href="#">2</a></li>
-
-											<li><a href="#">3</a></li>
-
-											<li><a href="#">4</a></li>
-
-											<li><a href="#">5</a></li>
-											 -->
-											<th:block th:if="${pagination1.showNext}">
-												<!-- 마지막 페이지에서 사라짐 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage1+'='+${pagination1.nextStartPage}}"
-													class="page-link" href="#" aria-label="Previous">&gt;</a></li>
-											</th:block>
-
-											<th:block th:if="${pagination1.showLast}">
-												<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage1+'='+${pagination1.totalPages}}"
-													class="page-link" href="#" aria-label="Previous">&gt;&gt;</a>
-												</li>
-											</th:block>
 
 										</ul>
 										<!-- pagenate -->
@@ -486,6 +442,7 @@
 																		</tr>
 																	</thead>
 																	<tbody class="reservation">
+																	<!-- 
 																		<tr th:each="reservation : ${reserList}" id="table-content">
 																			<td class="m_hidden" th:text="${reservation.insertDate}">2023.09.04</td>
 																			<td class="m_hidden"> <a th:text="${reservation.shelterName}">외래식물제거 자원봉사(우이)</a> </td>
@@ -503,7 +460,7 @@
 																				</ul>
 																			</td>
 																		</tr>
-
+																	 -->
 
 																		<!--
 																		<tr id="table-content">
@@ -527,57 +484,9 @@
 																</table>
 																<!-- paging -->
 										<!-- pagenate -->
-										<ul class="pagenate" style="margin-bottom: 5%;">
+										<ul class="pagenate reserhistory" style="margin-bottom: 5%;">
 
-											<th:block th:if="${pagination2.showFirst}">
-												<!-- 11페이지부터 나옴 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage2+'='+1}"
-													class="page-link" href="#" aria-label="Previous">&lt;&lt;</a>
-												</li>
-											</th:block>
-
-											<th:block th:if="${pagination2.showPrevious}">
-												<!-- 2페이지부터 나옴 -->
-												<li class="page-item"><a class="page-link" href="#"
-													aria-label="Previous"
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage2+'='+${pagination2.previousStartPage}}">&lt;</a>
-												</li>
-											</th:block>
-
-											<th:block
-												th:each="i : ${#numbers.sequence(pagination2.startPage, pagination2.endPage)}">
-												<li class="on page-item"
-													th:class="${i == pagination2.params.requestPage} ? 'page-item active' : 'page-item'">
-													<a class="page-link" href="#"
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage2+'='+${i}}"
-													th:text="${i}">1</a>
-												</li>
-											</th:block>
-											<!-- 
-											<li><a href="#">2</a></li>
-
-											<li><a href="#">3</a></li>
-
-											<li><a href="#">4</a></li>
-
-											<li><a href="#">5</a></li>
-											 -->
-											<th:block th:if="${pagination2.showNext}">
-												<!-- 마지막 페이지에서 사라짐 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage2+'='+${pagination2.nextStartPage}}"
-													class="page-link" href="#" aria-label="Previous">&gt;</a></li>
-											</th:block>
-
-											<th:block th:if="${pagination2.showLast}">
-												<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
-												<li class="page-item"><a
-													th:href="@{'/'+member+'/'+'mypage'+'?'+requestPage2+'='+${pagination2.totalPages}}"
-													class="page-link" href="#" aria-label="Previous">&gt;&gt;</a>
-												</li>
-											</th:block>
-
+											
 										</ul>
 										<!-- pagenate -->
 															</div>
