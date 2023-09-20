@@ -28,14 +28,14 @@ logging:
   pattern:
     console: "[%d{yy-MM-dd}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
     #file: "[%d{yyyy-MM-dd HH:mm:ss}][%thread][%-5level]\\(%F: %method\\(\\): %L\\) : %msg%n"
-  #file:
-    #name: C:\ezen_fullstack\workspace\goddog\log\application-dev.log #조장변경
-  #logback:
-   # rollingpolicy:
-    #  max-file-size: 1MB         #default 10M
-     # max-history: 31            #default 7
-      #file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.zip
-  # 패키지별 Log Level 설정
+#  file:
+#    name: C:\ezen_fullstack\workspace\goddog\log\application-dev.log #조장변경
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 1MB         #default 10M
+#      max-history: 31            #default 7
+#      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i.zip
+#   패키지별 Log Level 설정
   level:
     org:
       apache:
@@ -89,7 +89,7 @@ mybatis:
   type-aliases-package: tteogipbangbeomdae.goddog.domain.member.dto,
    tteogipbangbeomdae.goddog.domain.adress.dto,
     tteogipbangbeomdae.goddog.domain.donahistory.dto,
-     tteogipbangbeomdae.goddog.domain.reservation.dto ,
+     tteogipbangbeomdae.goddog.domain.reservation.dto,
       tteogipbangbeomdae.goddog.domain.adress.dto,
        tteogipbangbeomdae.goddog.domain.dog.dto,
         tteogipbangbeomdae.goddog.domain.adminmember.dto,

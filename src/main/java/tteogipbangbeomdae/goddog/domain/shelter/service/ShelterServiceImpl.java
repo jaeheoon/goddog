@@ -1,7 +1,8 @@
 package tteogipbangbeomdae.goddog.domain.shelter.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
@@ -18,4 +19,8 @@ public class ShelterServiceImpl implements ShelterService{
 		return shelterMapper.selectShelter(careNo);
 	}
 
+	@Override
+	public List<Shelter> findAllShelter() {
+		return shelterMapper.getShelterList();
+	}
 }
