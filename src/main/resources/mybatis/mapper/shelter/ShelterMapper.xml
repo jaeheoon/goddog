@@ -14,4 +14,9 @@
 		WHERE care_no = #{value}
 	</select>
 
+	<select id="getShelterList" resultType="Shelter">
+		SELECT *
+		FROM care
+	</select>
+
 </mapper>
