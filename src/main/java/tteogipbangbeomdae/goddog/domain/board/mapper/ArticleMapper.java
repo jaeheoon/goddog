@@ -26,24 +26,26 @@ public interface ArticleMapper {
 	public int getCount(int noticeNo);
 	
 	// 페이징 계산(검색 값 포함)에 필요한 게시글 전체 갯수 반환
-	
+	public int getCountAll(PageParams pageParams);
 	
 	// 요청 페이지, 페이지당 보여지는 목록 갯수에 따른 목록 반환 
-	
+	public List<Article> findByAll(PageParams pageParams);
 	
 	// 댓글 쓰기 기능
 	public void createComment(Article article);
-	
-	// 글 수정 기능
-	public boolean updateArticle();
-	
+
 	// 글 상세보기 시 선택된 글의 hitCount 증가 기능
 	public boolean updateHitCount();
 
 	// 게시글 상세보기
 	public List<Article> readArticle(int groupNo);
 	
+<<<<<<< HEAD
 	// 게시글 삭제
 	public boolean deleteArticle(Article article);
+=======
+	// 글 수정 기능
+	public boolean updateArticle();
+>>>>>>> 5dd938d70ff0d0931a02dd524e15e66c80c9315f
 	
 }
