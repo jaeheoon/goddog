@@ -109,5 +109,17 @@ public class ArticleMapperTest {
 		}
 
 	}
+	 
+	 @Test
+	 @DisplayName("게시글 수정")
+	 @Disabled
+	 public void createArticleTest() {
+		 //given
+		 
+		 //when
+		 
+		 //then
+		 
+	 }
 	
 }
