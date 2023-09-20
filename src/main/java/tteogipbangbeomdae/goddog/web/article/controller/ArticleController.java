@@ -118,8 +118,21 @@ public class ArticleController {
 	}
 	
 	@PostMapping("/adoption/create")
-	public String createAdoptionArticleResult(Model model) {
-		return "redirect:adoption_board";
+	public String createAdoptionArticleResult(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("multipartFile") List<MultipartFile> files, HttpSession session, Model model) {
+		log.info("받은 제목 : {}", title);
+		log.info("받은 내용 : {}", content);
+		log.info("받은 첨부파일 : {}",files);
+		int noticeNo = (int)session.getAttribute("noticeNo");
+		Member member = (Member)session.getAttribute("loginMember");
+		String memberId = member.getMemberId();
+		Article article = Article.builder()
+								 .reviewTitle(title)
+								 .reviewContents(content)
+								 .noticeNo(noticeNo)
+								 .memberId(memberId)
+								 .build();
+		articleService.createArticle(article);
+		return "redirect:board/"+noticeNo;
 	}
 	
 	@PostMapping("/comment")
@@ -138,7 +151,11 @@ public class ArticleController {
 										.build();
 		articleService.createNewComment(comment);
 		
-		return "redirect:volunteer/read?groupNo="+groupNo;
+		if(noticeNo == 1) {
+			return "redirect:volunteer/read?groupNo="+groupNo;			
+		}else {
+			return "redirect:adoption/read?groupNo="+groupNo;				
+		}
 	}
 	
 // ==============================================Read===========================================================================
@@ -153,7 +170,12 @@ public class ArticleController {
 	}
 	
 	@GetMapping("/adoption/read")
-	public String readAdoptionArticle(Model model) {
+	public String readAdoptionArticle(@RequestParam("groupNo") int groupNo, HttpSession session, Model model) {
+		List<Article> articleList = articleService.datailArticle(groupNo);
+				
+		model.addAttribute("articleList", articleList);
+		session.setAttribute("groupNo", groupNo);
+		
 		return "article/adoption_read";
 	}
 

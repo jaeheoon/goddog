@@ -5,6 +5,8 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+import com.ezen.springmvc.domain.article.dto.ArticleDTO;
+
 import tteogipbangbeomdae.goddog.domain.article.dto.Article;
 import tteogipbangbeomdae.goddog.domain.common.web.dto.PageParams;
 
@@ -40,5 +42,8 @@ public interface ArticleMapper {
 
 	// 게시글 상세보기
 	public List<Article> readArticle(int groupNo);
+	
+	// 게시글 삭제
+	public boolean deleteArticle(Article article);
 	
 }

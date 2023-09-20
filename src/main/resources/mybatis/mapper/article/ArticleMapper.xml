@@ -115,6 +115,23 @@
 		WHERE group_no = #{groupNo}
 		ORDER BY order_no
 	</select>
+	
+	<!-- 게시글 삭제하기 -->
+	<delete id="deleteArticle">
+		DELETE
+  		FROM review
+ 		WHERE
+  		<if test="member_id = #{memberId}">
+         <choose>
+            <when test="levelNo == 0">
+			   group_no = #{groupNo}
+            </when>
+            <otherwise>
+            	review_no = #{reviewNo}    
+            </otherwise>
+         </choose>
+      </if>
+	</delete>
 
 	
 </mapper>

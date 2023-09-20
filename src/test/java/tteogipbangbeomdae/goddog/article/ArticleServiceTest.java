@@ -1,4 +1,4 @@
-package tteogipbangbeomdae.goddog;
+package tteogipbangbeomdae.goddog.article;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
