@@ -42,4 +42,14 @@ public interface ReservationService {
 	/** CareNo로 봉사 예약 총 인원 수 검색 */
 	public int getReservationCount(int careNo);
 	
+	/** 봉사예약정보 삭제 */
+	public boolean deleteReservation(int reservationNo);
+	
+	/** 예약번호로 해당 예약정보 불러오기 */
+	public Reservation getReservaionInfo(int reservationNo);
+	
+	/** 레저베이션 업데이트 */
+	public Reservation updateReservationInfo(Reservation reservation);
+	
+	
 }

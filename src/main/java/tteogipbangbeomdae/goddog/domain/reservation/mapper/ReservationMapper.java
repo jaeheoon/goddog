@@ -50,6 +50,14 @@ public interface ReservationMapper {
 	
 	//날짜와 아이디로 보호소 예약 불러오기
 	public Reservation getReservation(Reservation reservation);
-
+	
+	//선택된 정보로 해당 reservationNo의 reservation업데이트
+	public void updateReservation(Reservation reservation);
+	
+	//reservationNo을 받아서 삭제
+	public boolean deleteReservation(int reservationNo);
+	
+	//고유번호에 해당하는 레저베이션 정보 반환
+	public Reservation getReservationByNo(int reservationNo);
 	
 }

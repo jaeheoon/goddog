@@ -7,6 +7,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * OpenApi로 강아지 정보 불러와서 저장하는 클래스
+ *
+ * @author  떡잎방범대 홍재헌
+ * @since   2023. 9. 12.
+ * @version 1.0
+ */
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -14,6 +21,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class Dog {
+	
 	private String desertionNo;		//번호
 	private String happenDt;		//접수일
 	private String happenPlace;		//발견장소

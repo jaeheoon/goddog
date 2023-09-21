@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.constraints.AssertFalse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import tteogipbangbeomdae.goddog.domain.member.dto.Member;
@@ -78,10 +79,14 @@ public class VolunteerController {
 	
 
 	@GetMapping("/calender")
-	public String viewCalender(@RequestParam("careNo") int careNo, Model model,HttpSession session) {
+	public String viewCalender(@RequestParam("careNo") int careNo, @RequestParam(value = "reservationNo",required = false) String reservationNo,Model model,HttpSession session) {
 		Shelter shelter = shelterService.clickShelter(careNo);
 		int maxCount = reservationService.getReservationCount(careNo);
-		
+		if(reservationNo != null) {
+			int reservationNumber = Integer.parseInt(reservationNo);
+			Reservation updateReservation = reservationService.getReservaionInfo(reservationNumber);			
+			session.setAttribute("updateReservation", updateReservation);
+		}
 		session.setAttribute("careNo", careNo);
 		session.setAttribute("shelter", shelter);
 		session.setAttribute("maxCount", maxCount);
@@ -117,7 +122,10 @@ public class VolunteerController {
 		Shelter resultShelter = shelterService.clickShelter(careNo);
 		model.addAttribute("resultReservation", resultReservation);
 		model.addAttribute("resultShelter", resultShelter);
-
+		session.removeAttribute("careNo");
+		session.removeAttribute("shelter");
+		session.removeAttribute("maxCount");
+		session.removeAttribute("updateReservation");
 		return "volunteer/result";
 	}
 	
@@ -130,28 +138,37 @@ public class VolunteerController {
 		int people = resultReservation.getPeople();
 		String regTime = resultReservation.getRegtime();
 		String regDate = resultReservation.getRegdate().replace('.', '-');
-		
+		Reservation setReservation;
 		// 데이터 검증 실패 시 봉사예약 첫 화면으로 Forward
 		if (bindingResult.hasErrors()) {
 			return "volunteer/map";
 		}
-		Reservation setReservation = Reservation.builder()
-											 .memberId(memberId)
-											 .careNo(careNo)
-											 .shelterName(shelterName)
-											 .people(people)
-											 .regdate(regDate)
-											 .regtime(regTime)
-											 .build();
-		reservationService.isReservation(setReservation);
-		redirectAttributes.addFlashAttribute("status", true);
-		return "redirect:/volunteer/result/" + setReservation.getMemberId() + "/" + setReservation.getRegdate() + "/" + setReservation.getRegtime();
+		if(session.getAttribute("updateReservation") != null) {
+			Reservation updateReservation = (Reservation)session.getAttribute("updateReservation");
+			updateReservation.setRegdate(regDate);
+			updateReservation.setRegtime(regTime);
+			updateReservation.setPeople(people);
+			Reservation updatedReservation = reservationService.updateReservationInfo(updateReservation);
+			return "redirect:/volunteer/result/" + updatedReservation.getMemberId() + "/" + updatedReservation.getRegdate() + "/" + updatedReservation.getRegtime();
+		} else {
+			setReservation = Reservation.builder()
+					.memberId(memberId)
+					.careNo(careNo)
+					.shelterName(shelterName)
+					.people(people)
+					.regdate(regDate)
+					.regtime(regTime)
+					.build();		
+			reservationService.isReservation(setReservation);
+			redirectAttributes.addFlashAttribute("status", true);
+			return "redirect:/volunteer/result/" + setReservation.getMemberId() + "/" + setReservation.getRegdate() + "/" + setReservation.getRegtime();
+		}
 	}
 	
-	@GetMapping("/list")
-	public String viewList(Model model) {
-		return "volunteer/list";
-	}
+//	@GetMapping("/list")
+//	public String viewList(Model model) {
+//		return "volunteer/list";
+//	}
 	
 	@GetMapping("/detail/{reservationNo}")
 	public String viewDetail(@PathVariable("reservationNo")int reservationNo, Model model) {
@@ -159,6 +176,13 @@ public class VolunteerController {
 
 		model.addAttribute("reservation", reservation);
 		return "volunteer/cancel_detail";
+	}
+	
+	@GetMapping("/cancel/{reservationNo}")
+	public String deleteReservation(@PathVariable("reservationNo")int reservationNo, Model model) {
+			reservationService.deleteReservation(reservationNo);
+			
+		return "redirect:/member/mypage";
 	}
 	
 }
