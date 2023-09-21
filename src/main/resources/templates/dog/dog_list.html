@@ -151,7 +151,8 @@
 													<div class="elementor-widget-container">
 														<ul class="elementor-icon-list-items elementor-inline-items">
 															<li class="elementor-icon-list-item elementor-inline-item">
-																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.sexCd : ''}">Male</span>
+																<span class="elementor-icon-list-text"  th:if="${dog != null ? dog.sexCd : ''}"
+																th:text="${dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷'}">Male</span>
 															</li>
 															<li class="elementor-icon-list-item elementor-inline-item">
 																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.age : ''}">4 Years</span>

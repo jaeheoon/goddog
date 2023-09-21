@@ -17,6 +17,8 @@ public interface OpenApiService {
 	
 	public List<Dog> getDogList(String page, String sido);
 	
+	public List<Dog> getDogIndexList();
+	
 	public List<Area> getAreaList();
 	
 	public List<DogKind> getDogKindList();
