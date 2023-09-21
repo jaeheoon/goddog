@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
 import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 
@@ -24,11 +25,12 @@ import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 @Controller
 @RequestMapping("/shelter")
 @RequiredArgsConstructor
+@Slf4j
 public class ShelterController {
 	
 	private final ShelterService shelterService;
 	
-	@GetMapping("")
+	@GetMapping
 	public String showShelterList(Model model) {
 		List<Shelter> list = shelterService.findAllShelter();
 		model.addAttribute("list", list);
@@ -37,13 +39,12 @@ public class ShelterController {
 	
 	@GetMapping("/detail/{careNo}")
 	public String showDetail(@PathVariable("careNo") int careNo, Model model) {
-//		List<Shelter> list = shelterService.findAllShelter();
-//		받은 케어넘버로 특정 보호소정보만가져오기 Shelter <- 특정보호소 정보만 가진 shelter객체가 생성됨.
-//		그걸 모델에넣고 뷰로넘어감.
-//		Thyemleef써서 담긴 객체 이름으로 속성을 골라씀.
 		Shelter shelter = shelterService.clickShelter(careNo);
 		model.addAttribute("shelter", shelter);
 		return "shelter/shelter_detail";
 	}
 	
 }
+
+
+

@@ -73,6 +73,8 @@
 				</section>
 			</div>
 			
+			
+			<!--th:each="shelter : ${list}" -->
 			<section class="explore-section section-padding" id="section_2">
 				<div class="container">
 					<div class="row">
@@ -89,11 +91,14 @@
 												굿도그</h3>
 										</div>
 									</div>
+									
 									<!-- 센터 정보 -->
 									<div class="row centerinfo">
-										<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/shelter_out/gooddog/introex1.jpg">
+										<div class="col-md-5 imgfram">
+											<img class="intro" th:src="'/assets/img/shelter_out/'+ ${shelter.careImg1}">
 										</div>
-										<div class="col-md-5" th:text="${shelter.introduction}">
+										
+										<div class="col-md-5" th:text="${shelter.introduction}" style="margin-top: 5%">
 											해피파워 입양센터는 전주시에 위치해 있고, 주인을 기다리고 있는 반려동물 입양시설입니다.
 											보다 쉽게 유기동물과 교감하고 가족이 되실 수 있습니다. 보호되고 있는 아이들 모두 착하고 밝으니 한번 보러오세요!
 										</div>
@@ -107,22 +112,22 @@
 											<div id="picturs1" class="carousel slide">
 												<div class="carousel-inner">
 													<div class="carousel-item active">
-														<img src="/assets/img/ex1.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg2}" class="img-fluid" alt="...">
 													</div>
 													<div class="carousel-item">
-														<img src="/assets/img/ex2.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg3}" class="img-fluid" alt="...">
 													</div>
 													<div class="carousel-item">
-														<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg4}" class="img-fluid" alt="...">
 													</div>
 												</div>
 												<button class="carousel-control-prev" type="button"
-													data-bs-target="#picturs1" data-bs-slide="prev">
+													data-bs-target="#picturs1" data-bs-slide="prev" style="border-radius: 30px 0px 0px 30px;">
 													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 													<span>&lt&lt</span>
 												</button>
 												<button class="carousel-control-next" type="button"
-													data-bs-target="#picturs1" data-bs-slide="next">
+													data-bs-target="#picturs1" data-bs-slide="next"style="border-radius: 0px 30px 30px 0px;">
 													<span class="carousel-control-next-icon" aria-hidden="true"></span>
 													<span>&gt&gt</span>
 												</button>
@@ -136,7 +141,7 @@
 											<div>
 												<iframe th:src="${shelter.mapUrl}"
 													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-													width="600" height="450" style="border:0;" allowfullscreen=""
+													width="600" height="450" style="border-radius: 30px 30px 30px 30px;" allowfullscreen=""
 													loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 											</div>
 										</div>
