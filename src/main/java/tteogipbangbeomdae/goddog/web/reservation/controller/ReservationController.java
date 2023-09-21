@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import tteogipbangbeomdae.goddog.domain.reservation.service.ReservationService;
 
 /**
- * /shelter관련 요청을 처리하는 세부 컨트롤러 구현 클래스
+ * /Reservation관련 요청을 처리하는 세부 컨트롤러 구현 클래스
  *
  * @author 떡잎방범대 조영호
  * @since 2023. 9. 16.

@@ -151,7 +151,7 @@
 																				<br><br>
 																				<ul class="btn_set board_btn">
 																					<li class="btn_default float_l">
-																						<a id="btnList" onclick="doDisplay();">댓글보기</a>
+																						<a id="btnList" class="btnList" onclick="doDisplay();">댓글보기</a>
 																					</li>
 																					<li class="btn_default btn_red float_r mar_r5">
 																						<a href="#" id="btnCancel" class="confirm">댓글 등록</a>
@@ -162,40 +162,9 @@
 																	</li>
 
 																	<!-- 작성된 댓글들 -->
-																	<div class="commentBoxList" th:each="articleList : ${articleList}" th:if=" ${articleList.levelNo}==1" style="display: none;">
-																		<li class="commentbox">
-																			<div class="container">
-																				<div class="comment-container">
-																					<div class="box commentt">
-																						<div class="comment">
-																							<div class="date" th:text="${articleList.writeDate}">2023-08-19</div>
-																							<div class="user" th:text="${articleList.memberId}">사용자1</div>
-																							<div class="message" th:text="${articleList.reviewContents}">이 글은 정말 유용합니다!</div>
-																							<!-- <ul class="btn_set board_btn">
-																							<li class="btn_default_line btn_green float_r">
-																								<a class="a_bt02" id="btnRegist" style="cursor: pointer;">수정하기</a>
-																							</li>
-																						</ul> -->
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</li>
+																	<div class="commentBoxList" style="display: none;">
+																		<!-- 동적으로 REST API이용하여 화면깜밖임없이 댓글작성 가능.
 
-																		<!-- 
-																		<li class="commentbox">
-																			<div class="container">
-																				<div class="comment-container">
-																					<div class="box commentt">
-																						<div class="comment">
-																							<div class="date">2023-08-19</div>
-																							<div class="user">사용자2</div>
-																							<div class="message">이 글은 정말 유용합니다!</div>
-																						</div>
-																					</div>
-																				</div>
-																			</div>
-																		</li>
 																		 -->
 																	</div>
 
