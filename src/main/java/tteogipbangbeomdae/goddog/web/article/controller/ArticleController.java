@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
@@ -118,44 +119,48 @@ public class ArticleController {
 	}
 	
 	@PostMapping("/adoption/create")
-	public String createAdoptionArticleResult(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("multipartFile") List<MultipartFile> files, HttpSession session, Model model) {
-		log.info("받은 제목 : {}", title);
-		log.info("받은 내용 : {}", content);
-		log.info("받은 첨부파일 : {}",files);
-		int noticeNo = (int)session.getAttribute("noticeNo");
-		Member member = (Member)session.getAttribute("loginMember");
-		String memberId = member.getMemberId();
-		Article article = Article.builder()
-								 .reviewTitle(title)
-								 .reviewContents(content)
-								 .noticeNo(noticeNo)
-								 .memberId(memberId)
-								 .build();
-		articleService.createArticle(article);
-		return "redirect:board/"+noticeNo;
+	public String createAdoptionArticleResult(Model model) {
+		return "redirect:adoption_board";
 	}
 	
+//	@PostMapping("/comment")
+//	public String insertComment(@RequestParam("memberId") String memberId, @RequestParam("reviewContents") String reviewContents,
+//			HttpSession session ,Model model) {
+//
+//		int noticeNo = (int)session.getAttribute("noticeNo");
+////		int levelNo = (int)session.getAttribute("levelNo");
+//		int groupNo = (int)session.getAttribute("groupNo");
+//
+//		Article comment = Article.builder()
+//										.memberId(memberId)
+//										.reviewContents(reviewContents)
+//										.noticeNo(noticeNo)
+//										.groupNo(groupNo)
+//										.build();
+//		articleService.createNewComment(comment);
+//		
+//		return "redirect:volunteer/read?groupNo="+groupNo;
+//	}
+	
 	@PostMapping("/comment")
-	public String insertComment(@RequestParam("memberId") String memberId, @RequestParam("reviewContents") String reviewContents,
+	@ResponseBody
+	public List<Article> insertComment(@RequestParam(value = "writer",required = false) String writer, @RequestParam(value = "content", required = false) String content,
 			HttpSession session ,Model model) {
-
 		int noticeNo = (int)session.getAttribute("noticeNo");
-//		int levelNo = (int)session.getAttribute("levelNo");
 		int groupNo = (int)session.getAttribute("groupNo");
-
-		Article comment = Article.builder()
-										.memberId(memberId)
-										.reviewContents(reviewContents)
-										.noticeNo(noticeNo)
-										.groupNo(groupNo)
-										.build();
-		articleService.createNewComment(comment);
-		
-		if(noticeNo == 1) {
-			return "redirect:volunteer/read?groupNo="+groupNo;			
-		}else {
-			return "redirect:adoption/read?groupNo="+groupNo;				
+		//작성자와 컨텐츠가 있을때만 생성한뒤 리스트보내주고 아니면 그냥 리스트만 넘어감
+		System.err.println(writer);
+		System.err.println(content);
+		if(!(writer.equals("undefined")) && !(content.equals("undefined"))) {
+			Article comment = Article.builder()
+					.memberId(writer)
+					.reviewContents(content)
+					.noticeNo(noticeNo)
+					.groupNo(groupNo)
+					.build();
+			articleService.createNewComment(comment);
 		}
+		return articleService.datailArticle(groupNo);
 	}
 	
 // ==============================================Read===========================================================================
@@ -170,12 +175,7 @@ public class ArticleController {
 	}
 	
 	@GetMapping("/adoption/read")
-	public String readAdoptionArticle(@RequestParam("groupNo") int groupNo, HttpSession session, Model model) {
-		List<Article> articleList = articleService.datailArticle(groupNo);
-				
-		model.addAttribute("articleList", articleList);
-		session.setAttribute("groupNo", groupNo);
-		
+	public String readAdoptionArticle(Model model) {
 		return "article/adoption_read";
 	}
 
