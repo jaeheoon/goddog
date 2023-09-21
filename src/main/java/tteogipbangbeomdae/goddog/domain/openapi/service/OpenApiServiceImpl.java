@@ -14,7 +14,9 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.stereotype.Service;
 
 import lombok.RequiredArgsConstructor;
+import tteogipbangbeomdae.goddog.domain.area.dto.Area;
 import tteogipbangbeomdae.goddog.domain.dog.dto.Dog;
+import tteogipbangbeomdae.goddog.domain.dog.dto.DogKind;
 
 /**
  * OpenAPI 관련 비즈니스 구현 클래스
@@ -29,7 +31,7 @@ public class OpenApiServiceImpl implements OpenApiService{
 	
 	/** OpenAPI 이용하여 강아지 리스트 불러오는 메소드 */
 	@Override
-	public List<Dog> getDogList(String pageNo) {
+	public List<Dog> getDogList(String pageNo, String sido) {
 		List<Dog> dogList = new ArrayList<Dog>();
 		StringBuilder sb = new StringBuilder();
 	     
@@ -37,9 +39,10 @@ public class OpenApiServiceImpl implements OpenApiService{
 	    	   StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic"); /*URL*/
 	           urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=akTdA6bI7qrFaVDNLP%2BSmmO0iqjbLVr6ff3e3zCcvKWVCtW%2B%2BmG2WQwnFVcsSjYMJPPRn54XgDA66FM2XgO1vQ%3D%3D"); /*Service Key*/
 	           urlBuilder.append("&" + URLEncoder.encode("upkind","UTF-8") + "=" + URLEncoder.encode("417000", "UTF-8")); /*축종 코드(개 : 417000)*/
-	           urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("9", "UTF-8")); /*한 페이지 결과 수(1,000 이하)*/
-	           urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode(pageNo, "UTF-8")); /*페이지 번호*/
-	           urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*xml(기본값) 또는 json*/
+	           urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("9", "UTF-8"));   /*한 페이지 결과 수(1,000 이하)*/
+	           urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode(pageNo, "UTF-8"));   /*페이지 번호*/
+	           urlBuilder.append("&" + URLEncoder.encode("upr_cd","UTF-8") + "=" + URLEncoder.encode(sido, "UTF-8"));     /*시도 번호*/
+	           urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));    /*xml(기본값) 또는 json*/
 	           URL url = new URL(urlBuilder.toString());
 	           HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
 	           urlConnection.setRequestMethod("GET");
@@ -114,4 +117,100 @@ public class OpenApiServiceImpl implements OpenApiService{
 	       }
 		return dogList;
 	}
+	
+	/** OpenAPI 이용하여 시, 도 리스트 불러오는 메소드 */
+	@Override
+	public List<Area> getAreaList() {
+		
+		List<Area> areaList = new ArrayList<Area>();
+		StringBuilder sb = new StringBuilder();
+	     
+	       try {
+	    	   StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1543061/abandonmentPublicSrvc/sido"); /*URL*/
+	           urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=akTdA6bI7qrFaVDNLP%2BSmmO0iqjbLVr6ff3e3zCcvKWVCtW%2B%2BmG2WQwnFVcsSjYMJPPRn54XgDA66FM2XgO1vQ%3D%3D"); /*Service Key*/
+	           urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("17", "UTF-8")); /*한 페이지 결과 수(1,000 이하)*/
+	           urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));     /*페이지 번호*/
+	           urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));   /*xml(기본값) 또는 json*/
+	           URL url = new URL(urlBuilder.toString());
+	           HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+	           urlConnection.setRequestMethod("GET");
+	           urlConnection.setRequestProperty("Content-type", "application/json");
+	           
+	           BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+	           
+	           String line = null;
+	           while ((line = bf.readLine()) != null) {
+	               sb.append(line);
+	           }
+	           bf.close();
+	           
+	           JSONParser jsonParser = new JSONParser();
+	           JSONObject jsonObject = (JSONObject)jsonParser.parse(sb.toString());
+	           JSONObject response = (JSONObject)jsonObject.get("response");
+	           JSONObject body = (JSONObject)response.get("body");
+	           JSONObject items = (JSONObject)body.get("items");
+	           JSONArray jsonArray = (JSONArray)items.get("item");
+	           for (int i = 0; i < jsonArray.size(); i++) {
+	        	   JSONObject object = (JSONObject) jsonArray.get(i);
+	        	   String orgCd = (String) object.get("orgCd");					//시도 코드
+	        	   String orgdownNm = (String) object.get("orgdownNm");			//시도명
+	        	   Area area = Area.builder()
+	        			   		.orgCd(orgCd)
+	        			   		.orgdownNm(orgdownNm)
+	        			   		.build();
+	        	   areaList.add(area);
+	           }
+	       }catch(Exception e) {
+	           e.printStackTrace();
+	       }
+		return areaList;
+	}
+	
+	/** OpenAPI 이용하여 품종 리스트 불러오는 메소드 */
+	@Override
+	public List<DogKind> getDogKindList() {
+		
+		List<DogKind> dogKindList = new ArrayList<DogKind>();
+		StringBuilder sb = new StringBuilder();
+	     
+	       try {
+	    	   StringBuilder urlBuilder = new StringBuilder("http://apis.data.go.kr/1543061/abandonmentPublicSrvc/kind"); /*URL*/
+	           urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=akTdA6bI7qrFaVDNLP%2BSmmO0iqjbLVr6ff3e3zCcvKWVCtW%2B%2BmG2WQwnFVcsSjYMJPPRn54XgDA66FM2XgO1vQ%3D%3D"); /*Service Key*/
+	           urlBuilder.append("&" + URLEncoder.encode("up_kind_cd","UTF-8") + "=" + URLEncoder.encode("417000", "UTF-8")); /*페이지 번호*/
+	           urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*xml(기본값) 또는 json*/
+	           URL url = new URL(urlBuilder.toString());
+	           HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+	           urlConnection.setRequestMethod("GET");
+	           urlConnection.setRequestProperty("Content-type", "application/json");
+	           
+	           BufferedReader bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+	           
+	           String line = null;
+	           while ((line = bf.readLine()) != null) {
+	               sb.append(line);
+	           }
+	           bf.close();
+	           
+	           JSONParser jsonParser = new JSONParser();
+	           JSONObject jsonObject = (JSONObject)jsonParser.parse(sb.toString());
+	           JSONObject response = (JSONObject)jsonObject.get("response");
+	           JSONObject body = (JSONObject)response.get("body");
+	           JSONObject items = (JSONObject)body.get("items");
+	           JSONArray jsonArray = (JSONArray)items.get("item");
+	           for (int i = 0; i < jsonArray.size(); i++) {
+	        	   JSONObject object = (JSONObject) jsonArray.get(i);
+	        	   String kindCd = (String) object.get("kindCd");		//품종 코드
+	        	   String knm = (String) object.get("knm");				//품종명
+	        	   DogKind dogKind = DogKind.builder()
+	        			   		.kindCd(kindCd)
+	        			   		.knm(knm)
+	        			   		.build();
+	        	   dogKindList.add(dogKind);
+	           }
+	       }catch(Exception e) {
+	           e.printStackTrace();
+	       }
+		return dogKindList;
+	}
+	
 }

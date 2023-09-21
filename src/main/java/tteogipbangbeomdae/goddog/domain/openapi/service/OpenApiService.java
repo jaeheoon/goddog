@@ -2,7 +2,9 @@ package tteogipbangbeomdae.goddog.domain.openapi.service;
 
 import java.util.List;
 
+import tteogipbangbeomdae.goddog.domain.area.dto.Area;
 import tteogipbangbeomdae.goddog.domain.dog.dto.Dog;
+import tteogipbangbeomdae.goddog.domain.dog.dto.DogKind;
 
 /**
  * OpenAPI 관련 비즈니스 인터페이스
@@ -13,6 +15,10 @@ import tteogipbangbeomdae.goddog.domain.dog.dto.Dog;
  */
 public interface OpenApiService {
 	
-	public List<Dog> getDogList(String page);
+	public List<Dog> getDogList(String page, String sido);
+	
+	public List<Area> getAreaList();
+	
+	public List<DogKind> getDogKindList();
 	
 }
