@@ -72,36 +72,12 @@
 					</div>
 				</section>
 			</div>
+			
+			
+			<!--th:each="shelter : ${list}" -->
 			<section class="explore-section section-padding" id="section_2">
-
-
 				<div class="container">
-					<!-- <div class="container-fluid">
 					<div class="row">
-						<ul class="nav nav-tabs" id="myTab" role="tablist">
-
-							<li class="nav-item nb" role="presentation">
-								<button class="nav-link center-tab active" data-bs-toggle="tab" data-bs-target="#center1-tab-pane"
-									type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">해피파우 센터</button>
-							</li>
-
-							<li class="nav-item nb" role="presentation">
-								<button class="nav-link center-tab" data-bs-toggle="tab" data-bs-target="#center2-tab-pane"
-									type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">골아파덕 센터</button>
-							</li>
-
-							<li class="nav-item nb" role="presentation">
-								<button class="nav-link center-tab" data-bs-toggle="tab" data-bs-target="#center3-tab-pane"
-									type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">닥트리오 센터</button>
-							</li>
-
-
-						</ul>
-					</div>
-				</div> -->
-
-					<div class="row">
-
 						<div class="col-12">
 							<div class="tab-content" id="myTabContent">
 								<div class="tab-pane fade show active" id="center1-tab-pane" role="tabpanel"
@@ -110,16 +86,19 @@
 									<div class="box" style="height: 3em;"></div>
 									<div class="centerintro">
 										<div class="elementor-widget-container">
-											<h3 style="text-align: center;"><i aria-hidden="true"
-													class="fas fa-house"></i>
+											<h3 style="text-align: center;" th:text="${shelter.name}"><i aria-hidden="true"
+													class="fas fa-house" ></i>
 												굿도그</h3>
 										</div>
 									</div>
+									
 									<!-- 센터 정보 -->
 									<div class="row centerinfo">
-										<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex1.jpg">
+										<div class="col-md-5 imgfram">
+											<img class="intro" th:src="'/assets/img/shelter_out/'+ ${shelter.careImg1}">
 										</div>
-										<div class="col-md-5">
+										
+										<div class="col-md-5" th:text="${shelter.introduction}" style="margin-top: 5%">
 											해피파워 입양센터는 전주시에 위치해 있고, 주인을 기다리고 있는 반려동물 입양시설입니다.
 											보다 쉽게 유기동물과 교감하고 가족이 되실 수 있습니다. 보호되고 있는 아이들 모두 착하고 밝으니 한번 보러오세요!
 										</div>
@@ -133,22 +112,22 @@
 											<div id="picturs1" class="carousel slide">
 												<div class="carousel-inner">
 													<div class="carousel-item active">
-														<img src="/assets/img/ex1.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg2}" class="img-fluid" alt="...">
 													</div>
 													<div class="carousel-item">
-														<img src="/assets/img/ex2.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg3}" class="img-fluid" alt="...">
 													</div>
 													<div class="carousel-item">
-														<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
+														<img th:src="'/assets/img/shelter_out/'+${shelter.careImg4}" class="img-fluid" alt="...">
 													</div>
 												</div>
 												<button class="carousel-control-prev" type="button"
-													data-bs-target="#picturs1" data-bs-slide="prev">
+													data-bs-target="#picturs1" data-bs-slide="prev" style="border-radius: 30px 0px 0px 30px;">
 													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 													<span>&lt&lt</span>
 												</button>
 												<button class="carousel-control-next" type="button"
-													data-bs-target="#picturs1" data-bs-slide="next">
+													data-bs-target="#picturs1" data-bs-slide="next"style="border-radius: 0px 30px 30px 0px;">
 													<span class="carousel-control-next-icon" aria-hidden="true"></span>
 													<span>&gt&gt</span>
 												</button>
@@ -160,9 +139,9 @@
 												<h5 class="info2h">센터 위치</h5>
 											</div>
 											<div>
-												<iframe
+												<iframe th:src="${shelter.mapUrl}"
 													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-													width="600" height="450" style="border:0;" allowfullscreen=""
+													width="600" height="450" style="border-radius: 30px 30px 30px 30px;" allowfullscreen=""
 													loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 											</div>
 										</div>
@@ -171,212 +150,15 @@
 									<div class="row centerinfo3">
 										<div class="col-md-3" style="margin: 4%;">
 											<h5 class="info3h">기타내용</h5>
-											<p>입양으로 인생의 변화를 경험하세요</p>
+											<p th:text="${shelter.etc}">입양으로 인생의 변화를 경험하세요</p>
 										</div>
 										<div class="col-md-3" style="margin: 4.5%;">
 											<h5 class="info3h">전화번호</h5>
-											<p>02-5565-7787</p>
+											<p th:text="${shelter.tel}">02-5565-7787</p>
 										</div>
 										<div class="col-md-3" style="margin: 4%;">
 											<h5 class="info3h">운영시간</h5>
-											<p>09:00 ~ 18:00</p>
-										</div>
-									</div>
-
-									<div class="row centerinfo4">
-										<div>
-											<!-- <p>우리센터에서<br>보호중인 아이들</p> -->
-											<h5>보호중인 아이들</h5>
-										</div>
-										<div class="wrapper">
-											<div class="carousel2">
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="tab-pane fade show" id="center2-tab-pane" role="tabpanel"
-									aria-labelledby="content-tab" tabindex="0">
-									<!-- 센터이름(소개) -->
-									<div class="centerintro">
-										<div class="elementor-widget-container" style="margin: 3em 3.5em;">
-											<h3><i aria-hidden="true" class="fas fa-house"></i>
-												해피파워</h3>
-										</div>
-									</div>
-									<!-- 센터 정보 -->
-									<div class="row centerinfo">
-										<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex2.jpg">
-										</div>
-										<div class="col-md-5">
-											우리 입양센터에서 진정한 동반자를 만나보세요.
-											강아지의 건강과 행복을 최우선으로 생각하며, 안전한 환경에서 무한한 사랑을 제공합니다.
-											입양은 양쪽 모두에게 특별한 경험을 선물할 수 있는 기회입니다.
-											이 멋진 여정을 함께 시작해보세요.
-										</div>
-									</div>
-
-									<div class="row centerinfo2">
-										<div class="col-md-5 centerpicture">
-											<div>
-												<h5 class="info2h">지점사진보기</h5>
-											</div>
-											<div id="picturs2" class="carousel slide">
-												<div class="carousel-inner">
-													<div class="carousel-item active">
-														<img src="/assets/img/ex1.jpg" class="img-fluid" alt="...">
-													</div>
-													<div class="carousel-item">
-														<img src="/assets/img/ex2.jpg" class="img-fluid" alt="...">
-													</div>
-													<div class="carousel-item">
-														<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
-													</div>
-												</div>
-												<button class="carousel-control-prev" type="button"
-													data-bs-target="#picturs2" data-bs-slide="prev">
-													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-													<span>&lt&lt</span>
-												</button>
-												<button class="carousel-control-next" type="button"
-													data-bs-target="#picturs2" data-bs-slide="next">
-													<span class="carousel-control-next-icon" aria-hidden="true"></span>
-													<span>&gt&gt</span>
-												</button>
-											</div>
-										</div>
-										<!-- <div class-"col-md-2"></div> -->
-										<div class="col-md-5 offset-1 map">
-											<div>
-												<h5 class="info2h">센터 위치</h5>
-											</div>
-											<div>
-												<iframe
-													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-													width="600" height="450" style="border:0;" allowfullscreen=""
-													loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-											</div>
-										</div>
-									</div>
-
-									<div class="row centerinfo3">
-										<div class="col-md-3" style="margin: 4%;">
-											<h5 class="info3h">기타내용</h5>
-											<p>입양으로 인생의 변화를 경험하세요</p>
-										</div>
-										<div class="col-md-3" style="margin: 4.5%;">
-											<h5 class="info3h">전화번호</h5>
-											<p>02-5565-7787</p>
-										</div>
-										<div class="col-md-3" style="margin: 4%;">
-											<h5 class="info3h">운영시간</h5>
-											<p>09:00 ~ 18:00</p>
-										</div>
-									</div>
-
-									<div class="row centerinfo4">
-										<div>
-											<!-- <p>우리센터에서<br>보호중인 아이들</p> -->
-											<h5>보호중인 아이들</h5>
-										</div>
-										<div class="wrapper">
-											<div class="carousel2">
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
-											</div>
-										</div>
-									</div>
-
-								</div>
-
-								<div class="tab-pane fade show" id="center3-tab-pane" role="tabpanel"
-									aria-labelledby="design-tab" tabindex="0">
-									<!-- 센터이름(소개) -->
-									<div class="centerintro">
-										<div class="elementor-widget-container" style="margin: 3em 3.5em;">
-											<h3><i aria-hidden="true" class="fas fa-house"></i>
-												춘향이와 멍멍이</h3>
-										</div>
-									</div>
-									<!-- 센터 정보 -->
-									<div class="row centerinfo">
-										<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex3.jpg">
-										</div>
-										<div class="col-md-5">
-											우리 입양센터에서는 남겨진 강아지들에게 새로운 희망을 선사합니다.
-											매일 그들을 위해 헌신하며, 각 강아지의 독특한 특성과 성격을 고려하여 최적의 매칭을 찾아드립니다.
-											한 마리 강아지를 입양하면, 그 강아지의 삶을 풍요롭게 만들 뿐 아니라 당신의 삶에도 큰 변화를 가져다 줄 수 있는 특별한 기회가 여기
-											있습니다.
-											지금 입양하고, 함께 행복한 순간을 만들어보세요.
-										</div>
-									</div>
-
-									<div class="row centerinfo2">
-										<div class="col-md-5 centerpicture">
-											<div>
-												<h5 class="info2h">지점사진보기</h5>
-											</div>
-											<div id="picturs3" class="carousel slide">
-												<div class="carousel-inner">
-													<div class="carousel-item active">
-														<img src="/assets/img/ex1.jpg" class="img-fluid" alt="...">
-													</div>
-													<div class="carousel-item">
-														<img src="/assets/img/ex2.jpg" class="img-fluid" alt="...">
-													</div>
-													<div class="carousel-item">
-														<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
-													</div>
-												</div>
-												<button class="carousel-control-prev" type="button"
-													data-bs-target="#picturs3" data-bs-slide="prev">
-													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-													<span>&lt&lt</span>
-												</button>
-												<button class="carousel-control-next" type="button"
-													data-bs-target="#picturs3" data-bs-slide="next">
-													<span class="carousel-control-next-icon" aria-hidden="true"></span>
-													<span>&gt&gt</span>
-												</button>
-											</div>
-										</div>
-										<!-- <div class-"col-md-2"></div> -->
-										<div class="col-md-5 offset-1 map">
-											<div>
-												<h5 class="info2h">센터 위치</h5>
-											</div>
-											<div>
-												<iframe
-													src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-													width="600" height="450" style="border:0;" allowfullscreen=""
-													loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-											</div>
-										</div>
-									</div>
-
-									<div class="row centerinfo3">
-										<div class="col-md-3" style="margin: 4%;">
-											<h5 class="info3h">기타내용</h5>
-											<p>사랑스러운 동반자를 만나보세요.</p>
-										</div>
-										<div class="col-md-3" style="margin: 4.5%;">
-											<h5 class="info3h">전화번호</h5>
-											<p>02-5565-7787</p>
-										</div>
-										<div class="col-md-3" style="margin: 4%;">
-											<h5 class="info3h">운영시간</h5>
-											<p>09:00 ~ 18:00</p>
+											<p th:text="${shelter.open + ' ~ ' + shelter.close}">09:00 ~ 18:00</p>
 										</div>
 									</div>
 

@@ -37,10 +37,10 @@ public interface ArticleMapper {
 
 	// 게시글 상세보기
 	public List<Article> readArticle(int groupNo);
-	
+
 	// 게시글 삭제
 	public boolean deleteArticle(Article article);
-	
+
 	// 글 수정 기능
 	public boolean updateArticle();
 	

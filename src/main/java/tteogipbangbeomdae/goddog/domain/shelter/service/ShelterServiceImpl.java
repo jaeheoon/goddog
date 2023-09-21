@@ -23,4 +23,5 @@ public class ShelterServiceImpl implements ShelterService{
 	public List<Shelter> findAllShelter() {
 		return shelterMapper.getShelterList();
 	}
+
 }
