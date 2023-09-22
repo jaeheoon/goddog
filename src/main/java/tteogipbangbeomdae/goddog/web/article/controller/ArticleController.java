@@ -21,12 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
-
-import jakarta.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import tteogipbangbeomdae.goddog.domain.article.dto.Article;
 import tteogipbangbeomdae.goddog.domain.article.service.ArticleService;
 import tteogipbangbeomdae.goddog.domain.common.web.dto.PageParams;
@@ -35,6 +30,10 @@ import tteogipbangbeomdae.goddog.domain.file.dto.ArticleForm;
 import tteogipbangbeomdae.goddog.domain.file.dto.UploadFile;
 import tteogipbangbeomdae.goddog.domain.member.dto.Member;
 import tteogipbangbeomdae.goddog.web.common.filehandler.FileStore;
+
+import jakarta.servlet.http.HttpSession;
+
+import lombok.RequiredArgsConstructor;
 
 /**
  * 
@@ -208,171 +207,55 @@ public class ArticleController {
     * @param model
     * @return
     */
-   @PostMapping("/comment")
-   public String insertComment(@RequestParam("memberId") String memberId, @RequestParam("reviewContents") String reviewContents,
-      HttpSession session ,Model model) {
-
-      int noticeNo = (int)session.getAttribute("noticeNo");
-      int groupNo = (int)session.getAttribute("groupNo");
-	
-	private final int ELEMENT_SIZE = 10;
-	private final int PAGE_SIZE = 10;
-	
-	private final ArticleService articleService;
-	
-	/**
-	 * @author 떡잎방범대 조영호
-	 * @param 뷰에담아줄 모델
-	 * @since 2023. 09. 10.
-	 * @version 1.0
-	 * @return /volunteer요청에 해당하는 활동과 뷰 반환
-	 */
-	@GetMapping("/volunteer/board/{noticeNo}")
-	public String viewVolunteerBoard(@PathVariable("noticeNo") int noticeNo,@RequestParam(value = "requestPage", defaultValue = "1") int requestPage, HttpSession session, Model model) {
-		session.setAttribute("noticeNo", noticeNo);
-		log.info("들어온 요청페이지 : {}",requestPage);
-		int rowCount = articleService.getAllcount(noticeNo);
-		PageParams pageParams = PageParams.builder()
-										  .elementSize(ELEMENT_SIZE)
-										  .requestPage(requestPage)
-										  .rowCount(rowCount)
-										  .pageSize(PAGE_SIZE)
-										  .build();
-		Pagination pagination = new Pagination(pageParams);
-		List<Article> volunteerList = articleService.getAllPagingArticle(pageParams, noticeNo);
-		
-		model.addAttribute("rowCount", rowCount);
-		model.addAttribute("volunteerList", volunteerList);
-		model.addAttribute("pagination", pagination);
-		model.addAttribute("requestPage", requestPage);
-		return "article/volunteer_board";
-	}
-	
-	@GetMapping("/adoption/board/{noticeNo}")
-	public String viewAdoptionBoard(@PathVariable("noticeNo") int noticeNo,@RequestParam(value = "requestPage", defaultValue = "1") int requestPage, HttpSession session, Model model) {
-		session.setAttribute("noticeNo", noticeNo);
-		log.info("들어온 요청페이지 : {}",requestPage);
-		int rowCount = articleService.getAllcount(noticeNo);
-		PageParams pageParams = PageParams.builder()
-										  .elementSize(ELEMENT_SIZE)
-										  .requestPage(requestPage)
-										  .rowCount(rowCount)
-										  .pageSize(PAGE_SIZE)
-										  .build();
-		Pagination pagination = new Pagination(pageParams);
-		List<Article> adoptionList = articleService.getAllPagingArticle(pageParams, noticeNo);
-		
-		model.addAttribute("rowCount", rowCount);
-		model.addAttribute("adoptionList", adoptionList);
-		model.addAttribute("pagination", pagination);
-		model.addAttribute("requestPage", requestPage);
-		return "article/adoption_board";
-	}
-//	==============================================Create=========================================================================
-	
-	@GetMapping("/volunteer/create")
-	public String createVolunteerArticle(Model model) {
-		return "article/volunteer_create";
-	}
-	
-	@GetMapping("/adoption/create")
-	public String createAdoptionArticle(Model model) {
-		return "article/adoption_create";
-	}
-	
-	@PostMapping("/volunteer/create")
-	public String createVolunteerArticleResult(@RequestParam("title") String title, @RequestParam("content") String content, @RequestParam("multipartFile") List<MultipartFile> files, HttpSession session, Model model) {
-		log.info("받은 제목 : {}", title);
-		log.info("받은 내용 : {}", content);
-		log.info("받은 첨부파일 : {}",files);
-		int noticeNo = (int)session.getAttribute("noticeNo");
-		Member member = (Member)session.getAttribute("loginMember");
-		String memberId = member.getMemberId();
-		Article article = Article.builder()
-								 .reviewTitle(title)
-								 .reviewContents(content)
-								 .noticeNo(noticeNo)
-								 .memberId(memberId)
-								 .build();
-		articleService.createArticle(article);
-		return "redirect:board/"+noticeNo;
-	}
-	
-	@PostMapping("/adoption/create")
-	public String createAdoptionArticleResult(Model model) {
-		return "redirect:adoption_board";
-	}
-	
-//	@PostMapping("/comment")
-//	public String insertComment(@RequestParam("memberId") String memberId, @RequestParam("reviewContents") String reviewContents,
-//			HttpSession session ,Model model) {
+//   @PostMapping("/comment")
+//   public String insertComment(@RequestParam("memberId") String memberId, @RequestParam("reviewContents") String reviewContents,
+//      HttpSession session ,Model model) {
 //
-//		int noticeNo = (int)session.getAttribute("noticeNo");
-////		int levelNo = (int)session.getAttribute("levelNo");
-//		int groupNo = (int)session.getAttribute("groupNo");
+//      int noticeNo = (int)session.getAttribute("noticeNo");
+//      int groupNo = (int)session.getAttribute("groupNo");
 //
-//		Article comment = Article.builder()
-//										.memberId(memberId)
-//										.reviewContents(reviewContents)
-//										.noticeNo(noticeNo)
-//										.groupNo(groupNo)
-//										.build();
-//		articleService.createNewComment(comment);
-//		
-//		return "redirect:volunteer/read?groupNo="+groupNo;
-//	}
-	
-	@PostMapping("/comment")
-	@ResponseBody
-	public List<Article> insertComment(@RequestParam(value = "writer",required = false) String writer, @RequestParam(value = "content", required = false) String content,
-			HttpSession session ,Model model) {
-		int noticeNo = (int)session.getAttribute("noticeNo");
-		int groupNo = (int)session.getAttribute("groupNo");
-		//작성자와 컨텐츠가 있을때만 생성한뒤 리스트보내주고 아니면 그냥 리스트만 넘어감
-		System.err.println(writer);
-		System.err.println(content);
-		if(!(writer.equals("undefined")) && !(content.equals("undefined"))) {
-			Article comment = Article.builder()
-					.memberId(writer)
-					.reviewContents(content)
-					.noticeNo(noticeNo)
-					.groupNo(groupNo)
-					.build();
-			articleService.createNewComment(comment);
-		}
-		return articleService.datailArticle(groupNo);
-	}
-	
-// ==============================================Read===========================================================================
-	@GetMapping("/volunteer/read")
-	public String readVolunteerArticle(@RequestParam("groupNo") int groupNo, HttpSession session, Model model) {
-		List<Article> articleList = articleService.datailArticle(groupNo);
-		
-		model.addAttribute("articleList", articleList);
-		session.setAttribute("groupNo", groupNo);
-		
-		return "article/volunteer_read";
-	}
-	
-	@GetMapping("/adoption/read")
-	public String readAdoptionArticle(Model model) {
-		return "article/adoption_read";
-	}
-
-      Article comment = Article.builder()
-                              .memberId(memberId)
-                              .reviewContents(reviewContents)
-                              .noticeNo(noticeNo)
-                              .groupNo(groupNo)
-                              .build();
-      articleService.createNewComment(comment);
-      
-      if(noticeNo == 1) {
-         return "redirect:volunteer/read?groupNo="+groupNo;         
-      }else {
-         return "redirect:adoption/read?groupNo="+groupNo;            
-      }
-   }
+//      Article comment = Article.builder()
+//                              .memberId(memberId)
+//                              .reviewContents(reviewContents)
+//                              .noticeNo(noticeNo)
+//                              .groupNo(groupNo)
+//                              .build();
+//      articleService.createNewComment(comment);
+//      
+//      if(noticeNo == 1) {
+//         return "redirect:volunteer/read?groupNo="+groupNo;         
+//      }else {
+//         return "redirect:adoption/read?groupNo="+groupNo;            
+//      }
+//   }
+   	/**
+   	 * REST API로 댓글 리스트 or 생성일시엔 생성후 리스트 반환
+   	 * 
+   	 * @author 조영호
+   	 * @param writer 작성자
+   	 * @param content 작성내용
+   	 * @return
+   	 */
+   	@PostMapping("/comment")
+   	@ResponseBody
+   	public List<Article> insertComment(@RequestParam(value = "writer",required = false) String writer, @RequestParam(value = "content", required = false) String content,
+   			HttpSession session ,Model model) {
+   		int noticeNo = (int)session.getAttribute("noticeNo");
+   		int groupNo = (int)session.getAttribute("groupNo");
+   		//작성자와 컨텐츠가 있을때만 생성한뒤 리스트보내주고 아니면 그냥 리스트만 넘어감
+   		System.err.println(writer);
+   		System.err.println(content);
+   		if(!(writer.equals("undefined")) && !(content.equals("undefined"))) {
+   			Article comment = Article.builder()
+   					.memberId(writer)
+   					.reviewContents(content)
+   					.noticeNo(noticeNo)
+   					.groupNo(groupNo)
+   					.build();
+   			articleService.createNewComment(comment);
+   		}
+   		return articleService.datailArticle(groupNo);
+   	}
    
    /**
     * 봉사 후기 게시글 상세보기 화면 처리
@@ -424,17 +307,17 @@ public class ArticleController {
     */
    @GetMapping("/volunteer/delete/{groupNo}")
    public String deleteVolunteerArticle(@PathVariable("groupNo") String groupNo, HttpSession session, Model model) {
-	   int groupNumber = Integer.parseInt(groupNo);
-	   Member member = (Member)session.getAttribute("loginMember");
-	   int noticeNo = (int)session.getAttribute("noticeNo");
-	   String memberId = member.getMemberId();
-	   Article article = Article.builder()
-			   					.memberId(memberId)
-			   					.groupNo(groupNumber)
-			   					.build();
-	   articleService.delete(article);
+      int groupNumber = Integer.parseInt(groupNo);
+      Member member = (Member)session.getAttribute("loginMember");
+      int noticeNo = (int)session.getAttribute("noticeNo");
+      String memberId = member.getMemberId();
+      Article article = Article.builder()
+                           .memberId(memberId)
+                           .groupNo(groupNumber)
+                           .build();
+      articleService.delete(article);
        
-	   return "redirect:"+"/article/volunteer/board/"+noticeNo;
+      return "redirect:"+"/article/volunteer/board/"+noticeNo;
    }
    
    /**
@@ -447,16 +330,16 @@ public class ArticleController {
     */
    @GetMapping("/adoption/delete/{groupNo}")
    public String deletetAdoptionArticle(@PathVariable("groupNo") String groupNo, HttpSession session, Model model) {
-	   int groupNumber = Integer.parseInt(groupNo);
-	   Member member = (Member)session.getAttribute("loginMember");
-	   int noticeNo = (int)session.getAttribute("noticeNo");
-	   String memberId = member.getMemberId();
-	   Article article = Article.builder()
-			   					.memberId(memberId)
-			   					.groupNo(groupNumber)
-			   					.build();
-	   articleService.delete(article);
-	   
-	   return "redirect:"+"/article/adoption/board/"+noticeNo;   
+      int groupNumber = Integer.parseInt(groupNo);
+      Member member = (Member)session.getAttribute("loginMember");
+      int noticeNo = (int)session.getAttribute("noticeNo");
+      String memberId = member.getMemberId();
+      Article article = Article.builder()
+                           .memberId(memberId)
+                           .groupNo(groupNumber)
+                           .build();
+      articleService.delete(article);
+      
+      return "redirect:"+"/article/adoption/board/"+noticeNo;   
    }
 }
