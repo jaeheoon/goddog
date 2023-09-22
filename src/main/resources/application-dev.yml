@@ -95,15 +95,14 @@ mybatis:
         tteogipbangbeomdae.goddog.domain.adminmember.dto,
         tteogipbangbeomdae.goddog.domain.shelter.dto,
         tteogipbangbeomdae.goddog.domain.article.dto,
-        tteogipbangbeomdae.goddog.domain.announce.dto,
-        tteogipbangbeomdae.goddog.domain.board.dto
+        tteogipbangbeomdae.goddog.domain.announce.dto
 
 
 ---
       
 # 파일업로드 경로 설정
 common:
-  uploadPath: C:\ezen_fullstack\workspace\goddog\upload\
+  uploadPath: C:\ezen-fullstack\workspace\goddog\upload\
   
   
   

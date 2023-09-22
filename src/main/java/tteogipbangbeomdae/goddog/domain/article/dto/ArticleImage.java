@@ -9,10 +9,10 @@ import lombok.ToString;
 
 /**
  * 
- * Article DTO클래스
+ * ArticleImage DTO 구현
  *
- * @author  떡잎방범대 신혜원, 최은비
- * @since   2023. 09. 10.
+ * @author  떡잎방범대 최은비
+ * @since   2023. 09. 18.
  * @version 1.0
  */
 @NoArgsConstructor
@@ -21,17 +21,11 @@ import lombok.ToString;
 @Setter
 @ToString
 @Builder
-public class Article {
+public class ArticleImage {
 	
+	private int imgNo;
+	private String img;
 	private int reviewNo;
 	private String memberId;
 	private int noticeNo;
-	private String reviewTitle;
-	private String reviewContents;
-	private int count;
-	private String writeDate;
-	private int groupNo;
-	private int levelNo;
-	private int orderNo;
-
 }

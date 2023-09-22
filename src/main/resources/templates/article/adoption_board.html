@@ -157,7 +157,7 @@
 																	<li th:each="adoption,loop : ${adoptionList}">
 																		
 																		<div class="num">
-																			<span>3624</span>
+																			<span th:text="${(rowCount+10) - (requestPage * 10) - (loop.index)}">3624</span>
 																		</div>
 																		<ul class="data">
 																			<li class="tit"><span
@@ -172,8 +172,11 @@
 																			<li class="date" th:text="${adoption.writeDate}"><span
 																					class="hidden">날짜</span>2023-08-31
 																			</li>
-																			<li class="view" th:text="${adoption.count}"><span
-																					class="hidden">조회수</span>조회 : 23
+																			<li class="view"><span>조회 :  </span>
+																					<span th:text="${adoption.count}">조회 : 23</span>
+																			</li>
+																			<li class="comment"><span>댓글 :  </span>
+																					<span th:text="${adoption.count}">조회 : 23</span>
 																			</li>
 																		</ul>
 																	</li>

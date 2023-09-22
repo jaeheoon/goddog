@@ -156,7 +156,7 @@
 																	<li th:each="volunteer,loop : ${volunteerList}">
 																	
 																		<div class="num">
-																			<span>3624</span>
+																			<span th:text="${(rowCount+10) - (requestPage * 10) - (loop.index)}">3624</span>
 																		</div>
 																		<ul class="data">
 																			<li class="tit"><span
@@ -178,8 +178,11 @@
 																			<li class="date" th:text="${volunteer.writeDate}"><span
 																					class="hidden">날짜</span>2023-08-31
 																			</li>
-																			<li class="view" th:text="${volunteer.count}"><span
-																					class="hidden">조회수</span>조회 : 23
+																			<li class="view"><span>조회 :  </span>
+																					<span th:text="${volunteer.count}">조회 : 23</span>
+																			</li>
+																			<li class="comment"><span>댓글 :  </span>
+																					<span th:text="${volunteer.count}">조회 : 23</span>
 																			</li>
 																		</ul>
 																	</li>

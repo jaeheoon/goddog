@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
 import tteogipbangbeomdae.goddog.domain.reservation.dto.Reservation;
 import tteogipbangbeomdae.goddog.domain.reservation.mapper.ReservationMapper;
 import tteogipbangbeomdae.goddog.domain.shelter.mapper.ShelterMapper;
@@ -98,15 +97,16 @@ public class ReservationServiceImpl implements ReservationService {
 					.careNo(resultReservation.getCareNo())
 					.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
 			return reservation2;
-		} else
+		} else {
 			reservationMapper.updateReservation(reservation);
-		Reservation resultReservation = reservationMapper.getReservation(reservation);
-		Reservation reservation2 = Reservation.builder().memberId(resultReservation.getMemberId())
-				.insertDate(resultReservation.getInsertDate()).regdate(resultReservation.getRegdate())
-				.regtime(resultReservation.getRegtime()).people(resultReservation.getPeople())
-				.careNo(resultReservation.getCareNo())
-				.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
-		return reservation2;
+			Reservation resultReservation = reservationMapper.getReservation(reservation);
+			Reservation reservation2 = Reservation.builder().memberId(resultReservation.getMemberId())
+					.insertDate(resultReservation.getInsertDate()).regdate(resultReservation.getRegdate())
+					.regtime(resultReservation.getRegtime()).people(resultReservation.getPeople())
+					.careNo(resultReservation.getCareNo())
+					.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
+			return reservation2;
+		}
 	}
 	
 	@Override
