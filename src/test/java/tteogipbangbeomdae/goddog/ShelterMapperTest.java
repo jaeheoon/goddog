@@ -29,6 +29,7 @@ public class ShelterMapperTest {
 		}
 	}
 	@Test
+//	@Disabled
 	public void selectShelterTest() {
 		int careNo = 1;
 		Shelter shelter = shelterMapper.selectShelter(careNo);
