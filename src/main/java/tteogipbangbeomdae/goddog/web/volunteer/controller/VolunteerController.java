@@ -108,12 +108,16 @@ public class VolunteerController {
 	@GetMapping("/choice")
 	public String viewChoice(@RequestParam("regdate") String regdate, Model model, HttpSession session) {
 		SimpleDateFormat inputFormat = new SimpleDateFormat("yyyyMMdd");
-	    SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy.MM.dd");
-	    
+	    SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+	    Shelter shelter = (Shelter)session.getAttribute("shelter");
+	    int careNo = shelter.getCareNo();
 	    try {
 	        Date date = inputFormat.parse(regdate); // 입력 날짜를 파싱
 	        String formattedDate = outputFormat.format(date); // 원하는 형식으로 포맷
+	        System.err.println(formattedDate);
 	        session.setAttribute("regdate", formattedDate);
+	        int allPeople = reservationService.getAllpeople(careNo, formattedDate);
+	        model.addAttribute("allPeople", allPeople);
 	    } catch (ParseException e) {
 	        // 파싱 실패 시 예외 처리
 	        e.printStackTrace();

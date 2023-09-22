@@ -1,7 +1,7 @@
 <!--/*  
  * 홈페이지 담당.
- * 작성자 : 떡잎방범대 홍재헌
- * 작성일 : 2023. 9. 21.
+ * 작성자 : 떡잎방범대 조영호
+ * 작성일 : 2023. 9. 10.
 */-->
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
@@ -78,8 +78,7 @@
 													<div class="elementor-button-wrapper">
 														<a
 															class="elementor-button elementor-button-link elementor-size-sm"
-															href="/dog/dog-list.html"
-															th:href="@{/dog}"> <span
+															href="/dog/dog-list.html" th:href="@{/dog}"> <span
 															class="elementor-button-content-wrapper"> <span
 																class="elementor-button-icon elementor-align-icon-right">
 																	<i aria-hidden="true" class="fas fa-arrow-circle-right"></i>
@@ -159,8 +158,9 @@
 												<div class="elementor-widget-container">
 													<div class="elementor-image-box-wrapper">
 														<figure class="elementor-image-box-img">
-															<a href="/volunteer/volunteer.html" th:href="@{'/'+volunteer}"><img
-																decoding="async" width="170" height="171"
+															<a href="/volunteer/volunteer.html"
+																th:href="@{'/'+volunteer}"><img decoding="async"
+																width="170" height="171"
 																src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption.png"
 																class="attachment-full size-full wp-image-218" alt=""
 																srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption.png 170w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/adoption-150x150.png 150w"
@@ -168,7 +168,8 @@
 														</figure>
 														<div class="elementor-image-box-content">
 															<h4 class="elementor-image-box-title">
-																<a href="/volunteer/volunteer.html" th:href="@{'/'+volunteer}">자원봉사 지원하기</a>
+																<a href="/volunteer/volunteer.html"
+																	th:href="@{'/'+volunteer}">자원봉사 지원하기</a>
 															</h4>
 															<p class="elementor-image-box-description">자원봉사에
 																참여해보세요.</p>
@@ -183,8 +184,9 @@
 												<div class="elementor-widget-container">
 													<div class="elementor-image-box-wrapper">
 														<figure class="elementor-image-box-img">
-															<a href="/shelter/shelter-list.html" th:href="@{'/'+shelter}"><img
-																decoding="async" width="171" height="170"
+															<a href="/shelter/shelter-list.html"
+																th:href="@{'/'+shelter}"><img decoding="async"
+																width="171" height="170"
 																src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome.png"
 																class="attachment-full size-full wp-image-560" alt=""
 																srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome.png 171w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/rehome-150x150.png 150w"
@@ -192,7 +194,8 @@
 														</figure>
 														<div class="elementor-image-box-content">
 															<h4 class="elementor-image-box-title">
-																<a href="/shelter/shelter-list.html" th:href="@{'/'+shelter}">강아지 입양하기</a>
+																<a href="/shelter/shelter-list.html"
+																	th:href="@{'/'+shelter}">강아지 입양하기</a>
 															</h4>
 															<p class="elementor-image-box-description">보호소로
 																연결해드립니다.</p>
@@ -207,8 +210,9 @@
 												<div class="elementor-widget-container">
 													<div class="elementor-image-box-wrapper">
 														<figure class="elementor-image-box-img">
-															<a href="/donation/donation.html" th:href="@{'/'+ donation}"><img
-																decoding="async" width="171" height="170"
+															<a href="/donation/donation.html"
+																th:href="@{'/'+donation}"><img decoding="async"
+																width="171" height="170"
 																src="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/donation.png"
 																class="attachment-full size-full wp-image-559" alt=""
 																srcset="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/donation.png 171w, https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/donation-150x150.png 150w"
@@ -216,7 +220,8 @@
 														</figure>
 														<div class="elementor-image-box-content">
 															<h4 class="elementor-image-box-title">
-																<a href="/donation/donation.html" th:href="@{'/'+donation}">후원하기</a>
+																<a href="/donation/donation.html"
+																	th:href="@{'/'+donation}">후원하기</a>
 															</h4>
 															<p class="elementor-image-box-description">원하는 금액으로
 																기부가 가능합니다.</p>
@@ -272,7 +277,8 @@
 									</div>
 								</div>
 							</section>
-							<div class="elementor-element elementor-element-a5a6d20 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+							<div
+								class="elementor-element elementor-element-a5a6d20 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
 								data-id="a5a6d20" data-element_type="widget"
 								data-widget_type="spacer.default">
 								<div class="elementor-widget-container">
@@ -282,91 +288,114 @@
 								</div>
 							</div>
 							<th:block th:each="dogList : ${list}">
-							<section class="elementor-section elementor-inner-section elementor-element elementor-element-7567db0e elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
-								data-id="7567db0e" data-element_type="section"
-								data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-								<div class="elementor-container elementor-column-gap-no">
-									<th:block th:each="dog : ${dogList}">
-									<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-73623687"
-										data-id="73623687" data-element_type="column">
-										<div class="elementor-widget-wrap elementor-element-populated">
-											<div class="elementor-element elementor-element-403e978e elementor-position-top elementor-widget elementor-widget-image-box"
-												data-id="403e978e" data-element_type="widget"
-												data-widget_type="image-box.default">
-												<div class="elementor-widget-container">
-													<div class="elementor-image-box-wrapper">
-														<figure class="elementor-image-box-img" style="text-align: center;">
-																<a href="/dog/dog-profile.html" 
-																th:href="@{'/'+dog+'/'+ profile + '?' + requestPage +'=' + 1 + '&' + desertionNo + '=' + ${dog != null ? dog.desertionNo : ''}}">
-																	<img class="elementor-animation-float attachment-full" style="height: 300px; width: 400px;"
+								<section
+									class="elementor-section elementor-inner-section elementor-element elementor-element-7567db0e elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
+									data-id="7567db0e" data-element_type="section"
+									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+									<div class="elementor-container elementor-column-gap-no">
+										<th:block th:each="dog : ${dogList}">
+											<div
+												class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-73623687"
+												data-id="73623687" data-element_type="column">
+												<div
+													class="elementor-widget-wrap elementor-element-populated">
+													<div
+														class="elementor-element elementor-element-403e978e elementor-position-top elementor-widget elementor-widget-image-box"
+														data-id="403e978e" data-element_type="widget"
+														data-widget_type="image-box.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-image-box-wrapper">
+																<figure class="elementor-image-box-img"
+																	style="text-align: center;">
+																	<a href="/dog/dog-profile.html"
+																		th:href="@{'/'+dog+'/'+ profile + '?' + requestPage +'=' + 1 + '&' + desertionNo + '=' + ${dog != null ? dog.desertionNo : ''}}">
+																		<img class="elementor-animation-float attachment-full"
+																		style="height: 300px; width: 400px;"
 																		alt="강아지 정보가 없습니다."
 																		th:src="${dog != null ? dog.popfile : ''}" />
-																</a>
-															</figure>
-														<div class="elementor-image-box-content">
-																<h4 class="elementor-image-box-title">
-																	<a href="/dog/dog-profile.html" th:href="@{'/'+dog+'/'+profile}" th:text="${dog != null ? dog.kindCd : ''}">Velfire</a>
-																</h4>
-																<p class="elementor-image-box-description" th:text="${dog != null ? dog.noticeNo : ''}">German Sheperd Dog</p>
+																	</a>
+																</figure>
+																<div class="elementor-image-box-content">
+																	<h4 class="elementor-image-box-title">
+																		<a href="/dog/dog-profile.html"
+																			th:href="@{'/'+dog+'/'+profile}"
+																			th:text="${dog != null ? dog.kindCd : ''}">Velfire</a>
+																	</h4>
+																	<p class="elementor-image-box-description"
+																		th:text="${dog != null ? dog.noticeNo : ''}">German
+																		Sheperd Dog</p>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div
+														class="elementor-element elementor-element-672aa59 elementor-widget elementor-widget-spacer"
+														data-id="672aa59" data-element_type="widget"
+														data-widget_type="spacer.default">
+														<div class="elementor-widget-container">
+															<div class="elementor-spacer">
+																<div class="elementor-spacer-inner"></div>
+															</div>
+														</div>
+													</div>
+
+													<div
+														class="elementor-element elementor-element-7a6b531b elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+														data-id="7a6b531b" data-element_type="widget"
+														data-widget_type="icon-list.default">
+														<div class="elementor-widget-container">
+															<ul
+																class="elementor-icon-list-items elementor-inline-items">
+																<li
+																	class="elementor-icon-list-item elementor-inline-item">
+																	<span class="elementor-icon-list-text"
+																	th:if="${dog != null ? dog.sexCd : ''}"
+																	th:text="${dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷'}">Male</span>
+																</li>
+																<li
+																	class="elementor-icon-list-item elementor-inline-item">
+																	<span class="elementor-icon-list-text"
+																	th:text="${dog != null ? dog.age : ''}">4 Years</span>
+																</li>
+																<li
+																	class="elementor-icon-list-item elementor-inline-item">
+																	<span class="elementor-icon-list-text"
+																	th:text="${dog != null ? dog.orgNm : ''}">Oakland,
+																		CA</span>
+																</li>
+															</ul>
 														</div>
 													</div>
 												</div>
 											</div>
-											<div class="elementor-element elementor-element-672aa59 elementor-widget elementor-widget-spacer"
-												data-id="672aa59" data-element_type="widget"
-												data-widget_type="spacer.default">
-												<div class="elementor-widget-container">
-													<div class="elementor-spacer">
-														<div class="elementor-spacer-inner"></div>
-													</div>
-												</div>
-											</div>
-											
-											<div class="elementor-element elementor-element-7a6b531b elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-												data-id="7a6b531b" data-element_type="widget"
-												data-widget_type="icon-list.default">
-												<div class="elementor-widget-container">
-													<ul class="elementor-icon-list-items elementor-inline-items">
-														<li class="elementor-icon-list-item elementor-inline-item">
-															<span class="elementor-icon-list-text"  th:if="${dog != null ? dog.sexCd : ''}"
-															th:text="${dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷'}">Male</span>
-														</li>
-														<li class="elementor-icon-list-item elementor-inline-item">
-															<span class="elementor-icon-list-text" th:text="${dog != null ? dog.age : ''}">4 Years</span>
-														</li>
-														<li class="elementor-icon-list-item elementor-inline-item">
-															<span class="elementor-icon-list-text" th:text="${dog != null ? dog.orgNm : ''}">Oakland, CA</span>
-														</li>
-													</ul>
-												</div>
-											</div>
+										</th:block>
+									</div>
+								</section>
+								<div
+									class="elementor-element elementor-element-ae02095 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+									data-id="ae02095" data-element_type="widget"
+									data-widget_type="spacer.default">
+									<div class="elementor-widget-container">
+										<div class="elementor-spacer">
+											<div class="elementor-spacer-inner"></div>
 										</div>
 									</div>
-									</th:block>
 								</div>
-							</section>
-							<div class="elementor-element elementor-element-ae02095 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
-								data-id="ae02095" data-element_type="widget"
-								data-widget_type="spacer.default">
-								<div class="elementor-widget-container">
-									<div class="elementor-spacer">
-										<div class="elementor-spacer-inner"></div>
-									</div>
-								</div>
-							</div>
 							</th:block>
-							
-							<div class="elementor-element elementor-element-7e72dff9 elementor-align-center elementor-mobile-align-justify elementor-widget elementor-widget-button"
+
+							<div
+								class="elementor-element elementor-element-7e72dff9 elementor-align-center elementor-mobile-align-justify elementor-widget elementor-widget-button"
 								data-id="7e72dff9" data-element_type="widget"
 								data-widget_type="button.default">
 								<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
-										<a class="elementor-button elementor-button-link elementor-size-sm"
-											href="/dog"> <span class="elementor-button-content-wrapper"> 
-											<span class="elementor-button-icon elementor-align-icon-right">
+										<a
+											class="elementor-button elementor-button-link elementor-size-sm"
+											href="/dog"> <span
+											class="elementor-button-content-wrapper"> <span
+												class="elementor-button-icon elementor-align-icon-right">
 													<i aria-hidden="true" class="fas fa-arrow-right"></i>
-											</span> 
-											<span class="elementor-button-text">자세히 보기</span>
+											</span> <span class="elementor-button-text">자세히 보기</span>
 										</span>
 										</a>
 									</div>
@@ -1085,8 +1114,7 @@
 																	<div class="elementor-button-wrapper">
 																		<a
 																			class="elementor-button elementor-button-link elementor-size-sm elementor-animation-float"
-																			href="/dog/dog-list.html"
-																			th:href="@{/dog}"> <span
+																			href="/dog/dog-list.html" th:href="@{/dog}"> <span
 																			class="elementor-button-content-wrapper"> <span
 																				class="elementor-button-icon elementor-align-icon-right">
 																					<i aria-hidden="true" class="fas fa-arrow-right"></i>
@@ -1109,26 +1137,28 @@
 				</div>
 			</section>
 		</div>
-		      <!-- Button trigger modal -->
-         <i aria-hidden="true" class="fas fa-comment" style="font-size: 50px; position: fixed; bottom: 80px; right: 90px; z-index: 999;" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1"
-         aria-labelledby="exampleModalLabel" aria-hidden="true">
-         <div
-            class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Live Chat</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"
-                     aria-label="Close"></button>
-               </div>
-               <div class="modal-body">
-                  <iframe src="http://localhost:5000"
-                     style="width: 100%; height: 550px;"></iframe>
-               </div>
-            </div>
-         </div>
-      </div>
+		<!-- Button trigger modal -->
+		<i aria-hidden="true" class="fas fa-comment"
+			style="font-size: 50px; position: fixed; left: 1600px; top: 700px; z-index: 999; color: #616FE2;"
+			data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div
+				class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Live Chat</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<iframe src="http://localhost:5000"
+							style="width: 100%; height: 550px;"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
 	</th:block>
 
 </th:block>
