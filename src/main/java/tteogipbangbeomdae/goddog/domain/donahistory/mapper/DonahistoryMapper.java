@@ -15,6 +15,9 @@ import tteogipbangbeomdae.goddog.domain.web.dto.PageParams;
  * @author  떡잎방범대 조영호
  * @since  	2023. 09. 12.
  * @version 버전
+ * @author  떡잎방범대 문승욱
+ * @since  	2023. 09. 18.
+ * @version 버전
  */
 @Mapper
 public interface DonahistoryMapper {
