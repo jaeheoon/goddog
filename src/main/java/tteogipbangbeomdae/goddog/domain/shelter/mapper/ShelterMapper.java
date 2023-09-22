@@ -1,5 +1,9 @@
 package tteogipbangbeomdae.goddog.domain.shelter.mapper;
 
+/** @author  떡잎방범대 문승욱
+  * @since   2023. 9. 21.
+  * @version 1.0
+*/
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
