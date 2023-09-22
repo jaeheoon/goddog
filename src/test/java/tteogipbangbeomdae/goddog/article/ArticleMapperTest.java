@@ -77,7 +77,7 @@ public class ArticleMapperTest {
 	@Test
 	@DisplayName("댓글 등록")
 	@Transactional
-//	@Disabled
+	@Disabled
 	void createCommentTest() {
 		Article article = Article.builder()
 						  .memberId("bangry")
@@ -110,16 +110,5 @@ public class ArticleMapperTest {
 
 	}
 	 
-	 @Test
-	 @DisplayName("게시글 수정")
-	 @Disabled
-	 public void createArticleTest() {
-		 //given
-		 
-		 //when
-		 
-		 //then
-		 
-	 }
 	
 }

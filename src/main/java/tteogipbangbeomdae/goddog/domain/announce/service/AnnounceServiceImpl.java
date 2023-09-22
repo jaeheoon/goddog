@@ -15,12 +15,10 @@ import tteogipbangbeomdae.goddog.domain.announce.mapper.AnnounceMapper;
 @RequiredArgsConstructor
 @Service
 public class AnnounceServiceImpl implements AnnounceService{
-	
 	private final AnnounceMapper announceMapper;
 
 	@Override
 	public List<Announce> getAnnoList() {
 		return announceMapper.questionAnswer();
 	}
-
 }
