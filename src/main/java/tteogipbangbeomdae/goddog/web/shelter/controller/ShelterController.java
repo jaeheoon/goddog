@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
 import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 
@@ -23,20 +25,26 @@ import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 @Controller
 @RequestMapping("/shelter")
 @RequiredArgsConstructor
+@Slf4j
 public class ShelterController {
 	
 	private final ShelterService shelterService;
 	
-	@GetMapping("")
+	@GetMapping
 	public String showShelterList(Model model) {
 		List<Shelter> list = shelterService.findAllShelter();
 		model.addAttribute("list", list);
 		return "shelter/shelter_list";
 	}
 	
-	@GetMapping("/detail")
-	public String showDetail(Model model) {		
+	@GetMapping("/detail/{careNo}")
+	public String showDetail(@PathVariable("careNo") int careNo, Model model) {
+		Shelter shelter = shelterService.clickShelter(careNo);
+		model.addAttribute("shelter", shelter);
 		return "shelter/shelter_detail";
 	}
 	
 }
+
+
+

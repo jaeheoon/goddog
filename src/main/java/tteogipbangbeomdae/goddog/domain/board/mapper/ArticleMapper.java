@@ -42,5 +42,11 @@ public interface ArticleMapper {
 	
 	// 게시글 검색 기능
 	public Article find(int reviewNo);
+
+	// 게시글 삭제
+	public boolean deleteArticle(Article article);
+
+	// 글 수정 기능
+	public boolean updateArticle();
 	
 }

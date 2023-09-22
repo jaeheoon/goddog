@@ -6,17 +6,50 @@
 <mapper
 	namespace="tteogipbangbeomdae.goddog.domain.shelter.mapper.ShelterMapper">
 
+	<select id="getShelterList"  resultType="Shelter">
+		SELECT
+		    c.care_no      careno,
+		    c.name         name,
+		    c.adress       adress,
+		    c.tel          tel,
+		    c.closeday     closeday,
+		    c.mans         mans,
+		    ci.care_img_no careimgno,
+		    ci.care_img    careimg
+		FROM
+		    care c
+		JOIN care_img ci ON c.care_no = ci.care_no
+	</select>
+	
 	<select id="selectShelter" parameterType="int" resultType="Shelter">
-		SELECT care_no, name, adress, tel, closeday,
-		mans, open, close,
-		volunteer_am, volunteer_pm, map_url
-		FROM care
-		WHERE care_no = #{value}
+		
+		SELECT
+		    c.care_no      careno,
+		    c.name         name,
+		    c.introduction introduction,
+		    c.adress       adress,
+		    c.tel          tel,
+		    c.closeday     closeday,
+		    c.mans         mans,
+		    c.open         open,
+		    c.close        close,
+		    c.etc          etc,
+		    c.map_url      map_url,
+		    c.volunteer_am volunteerAm,
+		    c.volunteer_pm volunteerPm,
+		    ci.care_img_no careimgno,
+		    ci.care_img    careimg,
+		    ci.care_1_img  careimg1,
+		    ci.care_2_img  careimg2,
+		    ci.care_3_img  careimg3,
+		    ci.care_4_img  careimg4
+		FROM
+		         care c
+		    JOIN care_img ci ON c.care_no = ci.care_no
+		WHERE c.care_no = #{value}
 	</select>
 
-	<select id="getShelterList" resultType="Shelter">
-		SELECT *
-		FROM care
-	</select>
+	
+	
 
 </mapper>

@@ -20,24 +20,24 @@ import tteogipbangbeomdae.goddog.web.member.exception.MemberException;
 @Slf4j
 public class ControllerExceptionAdvice {
 
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	@ExceptionHandler(IllegalArgumentException.class)
-	public ErrorResult exception4xxHandle(IllegalArgumentException ex) {
-		log.error("[Client 요청 오류] : {}", ex);
-		return new ErrorResult("CLIENT-ERROR", ex.getMessage());
-	}
-	
-	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	@ExceptionHandler
-	public ErrorResult exception5xxHandle(Exception ex) {
-		log.error("[Server 응답 오류] : {}", ex);
-		return new ErrorResult("SERVER-ERROR", ex.getMessage());
-	}
-
-	@ExceptionHandler
-	public ResponseEntity<ErrorResult> userExcptionHandle(MemberException ex) {
-		log.error("[User 응답 예외] : {}", ex);
-		ErrorResult errorResult = new ErrorResult("USER-EXCEPTION", ex.getMessage());
-		return new ResponseEntity<>(errorResult, HttpStatus.BAD_REQUEST);
-	}
+//	@ResponseStatus(HttpStatus.BAD_REQUEST)
+//	@ExceptionHandler(IllegalArgumentException.class)
+//	public ErrorResult exception4xxHandle(IllegalArgumentException ex) {
+//		log.error("[Client 요청 오류] : {}", ex);
+//		return new ErrorResult("CLIENT-ERROR", ex.getMessage());
+//	}
+//	
+//	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+//	@ExceptionHandler
+//	public ErrorResult exception5xxHandle(Exception ex) {
+//		log.error("[Server 응답 오류] : {}", ex);
+//		return new ErrorResult("SERVER-ERROR", ex.getMessage());
+//	}
+//
+//	@ExceptionHandler
+//	public ResponseEntity<ErrorResult> userExcptionHandle(MemberException ex) {
+//		log.error("[User 응답 예외] : {}", ex);
+//		ErrorResult errorResult = new ErrorResult("USER-EXCEPTION", ex.getMessage());
+//		return new ResponseEntity<>(errorResult, HttpStatus.BAD_REQUEST);
+//	}
 }

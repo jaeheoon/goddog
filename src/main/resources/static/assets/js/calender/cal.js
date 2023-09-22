@@ -5,11 +5,14 @@ let today = new Date();     // 페이지를 로드한 날짜를 저장
 today.setHours(0, 0, 0, 0);    // 비교 편의를 위해 today의 시간을 초기화
 
 // 달력 생성 : 해당 달에 맞춰 테이블을 만들고, 날짜를 채워 넣는다.
-function buildCalendar() {
+async function buildCalendar() {
 
   let firstDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth(), 1);     // 이번달 1일
   let lastDate = new Date(nowMonth.getFullYear(), nowMonth.getMonth() + 1, 0);  // 이번달 마지막날
-
+  //선택된 센터의 고유번호 얻어오기
+  let shelterNameElement = document.querySelector(".shelterName");
+  let careNo = shelterNameElement.getAttribute('data-careNo');
+  //console.log(careNo);
   let tbody_Calendar = document.querySelector(".Calendar > tbody");
   document.getElementById("calYear").innerText = nowMonth.getFullYear();             // 연도 숫자 갱신
   document.getElementById("calMonth").innerText = leftPad(nowMonth.getMonth() + 1);  // 월 숫자 갱신
@@ -27,8 +30,19 @@ function buildCalendar() {
   for (let nowDay = firstDate; nowDay <= lastDate; nowDay.setDate(nowDay.getDate() + 1)) {   // day는 날짜를 저장하는 변수, 이번달 마지막날까지 증가시키며 반복  
 
     let nowColumn = nowRow.insertCell();        // 새 열을 추가하고
-
-
+	const formattedDate = nowDay.getFullYear() + '-' + String(nowDay.getMonth() + 1).padStart(2, '0') + '-' + String(nowDay.getDate()).padStart(2, '0');
+	//console.log(formattedDate);
+	let responseResult = await fetch(`/volunteer/calender/people/${formattedDate}/${careNo}`);
+	const data = await responseResult.json();
+	//console.dir(data);
+	//console.log(data.peopleCount);
+	//console.log(data.limitCount);
+	//console.log(data.closeday);
+	let peopleCount = data.peopleCount;
+	let limitCount = data.limitCount;
+	let closeday = data.closeday;
+	let dayName = getDayName(nowDay.getDay());
+	//console.log(dayName);
     let newDIV = document.createElement("p");
     newDIV.innerHTML = leftPad(nowDay.getDate())        // 추가한 열에 날짜 입력
 
@@ -38,7 +52,7 @@ function buildCalendar() {
       nowRow = tbody_Calendar.insertRow();    // 새로운 행 추가
     }
 
-    if (nowDay < today) {                       // 지난날인 경우
+    if ((nowDay < today) || (peopleCount >= limitCount) || (closeday === dayName)) {                       // 지난날인 경우
       newDIV.className = "pastDay";
     }
     else if (nowDay.getFullYear() == today.getFullYear() && nowDay.getMonth() == today.getMonth() && nowDay.getDate() == today.getDate()) { // 오늘인 경우           
@@ -88,6 +102,12 @@ function leftPad(value) {
     return value;
   }
   return value;
+}
+
+// getDay()로 얻어온 숫자를 실제 한글요일로 반환하는 함수
+function getDayName(dayIndex) {
+    const daysOfWeek = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+    return daysOfWeek[dayIndex];
 }
 
 //다음버튼 클릭시 선택된 날짜까지 포함해서 요청

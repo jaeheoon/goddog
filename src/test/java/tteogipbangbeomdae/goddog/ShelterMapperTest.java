@@ -1,5 +1,8 @@
 package tteogipbangbeomdae.goddog;
 
+
+import java.util.List;
+
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +19,23 @@ public class ShelterMapperTest {
 	@Autowired
 	private ShelterMapper shelterMapper;
 	
+	
 	@Test
 	@Disabled
+	public void getShelterListTest() {
+		List<Shelter> list = shelterMapper.getShelterList();
+		for (Shelter shelter : list) {
+			log.info("쉘터 정보 : {}", shelter);
+		}
+	}
+	@Test
+//	@Disabled
 	public void selectShelterTest() {
 		int careNo = 1;
 		Shelter shelter = shelterMapper.selectShelter(careNo);
 		log.info("보호소 정보 : {}", shelter.toString());
 	}
+	
+	
 	
 }

@@ -42,4 +42,23 @@ public interface ReservationService {
 	/** CareNo로 봉사 예약 총 인원 수 검색 */
 	public int getReservationCount(int careNo);
 	
+	/** 봉사예약정보 삭제 */
+	public boolean deleteReservation(int reservationNo);
+	
+	/** 예약번호로 해당 예약정보 불러오기 */
+	public Reservation getReservaionInfo(int reservationNo);
+	
+	/** 레저베이션 업데이트 */
+	public Reservation updateReservationInfo(Reservation reservation);
+	
+	/** 센터번호와 해당날짜로 봉사신청인원 가져오기 */
+	public int getAllpeople(int careNo, String formattedDate);
+	
+	/** 특정센터의 봉사최대인원 가져오기 */
+	public int getMaxCount(int careNo);
+	
+	/** 특정센터 휴무일 가져오기 */
+	public String getClosedayByCareNo(int careNo);
+	
+	
 }
