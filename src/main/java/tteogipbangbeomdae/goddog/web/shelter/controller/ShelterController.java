@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
+import tteogipbangbeomdae.goddog.domain.dog.dto.Dog;
+import tteogipbangbeomdae.goddog.domain.openapi.service.OpenApiService;
 import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
 import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 
@@ -18,17 +19,19 @@ import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
  *
  * @author  떡잎방범대 조영호
  * @since   2023. 9. 10.
- *  * @author  떡잎방범대 문승욱
+ * @author  떡잎방범대 문승욱
  * @since   2023. 9. 20.
+ * @author  떡잎방범대 홍재헌
+ * @since   2023. 9. 22.
  * @version 1.0
  */
 @Controller
 @RequestMapping("/shelter")
 @RequiredArgsConstructor
-@Slf4j
 public class ShelterController {
 	
 	private final ShelterService shelterService;
+	private final OpenApiService openApiService;
 	
 	@GetMapping
 	public String showShelterList(Model model) {
@@ -40,7 +43,9 @@ public class ShelterController {
 	@GetMapping("/detail/{careNo}")
 	public String showDetail(@PathVariable("careNo") int careNo, Model model) {
 		Shelter shelter = shelterService.clickShelter(careNo);
+		List<Dog> dogList = openApiService.getShelterDogList(careNo, false);
 		model.addAttribute("shelter", shelter);
+		model.addAttribute("dogList", dogList);
 		return "shelter/shelter_detail";
 	}
 	

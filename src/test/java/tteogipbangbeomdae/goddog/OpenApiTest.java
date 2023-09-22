@@ -21,7 +21,7 @@ public class OpenApiTest {
 	private OpenApiService openApiService;
 	
 	@Test
-//	@Disabled
+	@Disabled
 	void listTest() {
 		List<Dog> dogs = openApiService.getDogIndexList();
 		for (int i = 0; i < dogs.size(); i++) {
@@ -48,6 +48,15 @@ public class OpenApiTest {
 		List<DogKind> list = openApiService.getDogKindList();
 		for (DogKind dogKind : list) {
 			log.info("품종 정보 : {}", dogKind);
+		}
+	}
+	
+	@Test
+//	@Disabled
+	void shelterDogListTest() {
+		List<Dog> list = openApiService.getShelterDogList(1);
+		for (Dog dog : list) {
+			log.info("강아지 사진, 번호 : {}", dog);
 		}
 	}
 }

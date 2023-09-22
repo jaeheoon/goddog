@@ -169,12 +169,9 @@
 										</div>
 										<div class="wrapper">
 											<div class="carousel2">
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
-												<div><img src="/assets/img/introex1.jpg"></div>
-												<div><img src="/assets/img/introex2.jpg"></div>
-												<div><img src="/assets/img/introex3.jpg"></div>
+												<div th:each="dog : ${dogList}">
+													<img src="/assets/img/introex1.jpg" th:src="${dog != null ? dog.popfile : ''}">
+												</div>
 											</div>
 										</div>
 									</div>
