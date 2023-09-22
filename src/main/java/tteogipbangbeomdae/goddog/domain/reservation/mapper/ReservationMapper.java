@@ -60,4 +60,13 @@ public interface ReservationMapper {
 	//고유번호에 해당하는 레저베이션 정보 반환
 	public Reservation getReservationByNo(int reservationNo);
 	
+	//해당하는 쉘터와 해당하는 날짜의 봉사인원수 반환
+	public int getCountByDate(@Param("careNo") int careNo, @Param("formattedDate") String formattedDate);
+	
+	//해당쉘터의 최대 봉사인원 제한수 반환
+	public int getMaxCountInshelter(int careNo);
+	
+	//해당쉘터의 휴무일 반환
+	public String getCloseday(int careNo);
+	
 }

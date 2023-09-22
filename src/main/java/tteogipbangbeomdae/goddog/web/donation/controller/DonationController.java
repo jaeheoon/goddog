@@ -26,14 +26,30 @@ import tteogipbangbeomdae.goddog.domain.member.dto.Member;
 @RequiredArgsConstructor
 public class DonationController {
 	
+	/**
+	 * 도네이션 비즈니스 로직을 위한 서비스
+	 * @author 문승욱
+	 */
 	private final DonahistroyService donahistroyService;
 	
-	
+	/**
+	 * 제일처음 보여주는 donation도메인 페이지 뷰
+	 * @return 해당하는 메인 뷰 보여주기
+	 * @author 조영호
+	 * @since 2023. 09. 10.
+	 */
 	@GetMapping("")
 	public String showDog(Model model) {		
 		return "donation/donation";
 	}
 	
+	/**
+	 * 화면에서 선택한 금액을 ,로 파싱하여 모델에 담아주기
+	 * @author 문승욱
+	 * @param pay 사용자가 선택한 금액
+	 * @param model
+	 * @return 결제방법선택창 뷰로 이동
+	 */
 	@GetMapping("/method/{pay}")
 	public String selectMethod(@PathVariable("pay") Integer pay , Model model) {
 		model.addAttribute("pay", pay);
@@ -43,6 +59,11 @@ public class DonationController {
 		return "donation/payment_method";
 	}
 	
+	/**
+	 * @author 문승욱
+	 * @param pay 사용자가 선택한 금액
+	 * @return 결제결과창으로 이동
+	 */
 	@GetMapping("/result/{pay}")
 	public String viewResult(@PathVariable("pay") Integer pay, Model model, HttpSession session) {
 		model.addAttribute("payment", pay);

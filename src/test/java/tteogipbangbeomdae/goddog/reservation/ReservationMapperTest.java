@@ -44,6 +44,7 @@ public class ReservationMapperTest {
 	}
 	
 	@Test
+	@Disabled
 	@DisplayName("봉사 내역 등록")
 	public void createReservationTest() {
 		Reservation reservation = Reservation.builder()
@@ -154,6 +155,19 @@ public class ReservationMapperTest {
 		int count = reservationMapper.getCountById(memberId);
 		//then
 		log.info("들어온 갯수 : {}",count);
+	}
+	
+	@Test
+//	@Disabled
+	@DisplayName("날짜와 봉사번호로 해당하는 총인원수 불러오기")
+	public void getCountByDateTest() {
+		//given
+		int careNo = 1;
+		String date = "2023-09-02";
+		//when
+		int result = reservationMapper.getCountByDate(careNo, date);
+		//then
+		log.info("날짜에 해당하는 봉사 인원 수 : {}",result);
 	}
 	
 	
