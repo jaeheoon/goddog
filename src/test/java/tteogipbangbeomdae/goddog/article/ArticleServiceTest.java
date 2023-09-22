@@ -1,6 +1,7 @@
 package tteogipbangbeomdae.goddog.article;
 
 import org.junit.jupiter.api.Disabled;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,14 @@ import tteogipbangbeomdae.goddog.domain.article.dto.Article;
 import tteogipbangbeomdae.goddog.domain.article.service.ArticleService;
 import tteogipbangbeomdae.goddog.domain.board.mapper.ArticleMapper;
 
+/**
+ * 
+ * ArticleService가 정상 작동 하는지 테스트하는 클래스
+ *
+ * @author  떡잎방범대 신혜원, 최은비
+ * @since   2023. 09. 10.
+ * @version 1.0
+ */
 @SpringBootTest
 @Slf4j
 public class ArticleServiceTest {
@@ -34,13 +43,11 @@ public class ArticleServiceTest {
 							  .levelNo(0)
 							  .orderNo(0)
 							  .build();
-			
-		articleService.createArticle(article);
 		}
 		
 		@Test
 		@DisplayName("댓글 등록")
-//		@Disabled
+		@Disabled
 		public void createNewCommentTest() {
 			Article article = Article.builder()
 								.memberId("bangry")
@@ -52,7 +59,6 @@ public class ArticleServiceTest {
 								.levelNo(1)
 								.orderNo(4)
 								.build();
-			
 			articleService.createNewComment(article);
 		}
 }

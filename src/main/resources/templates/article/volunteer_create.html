@@ -98,8 +98,7 @@
 															<!-- 서브 컨텐츠 -->
 															<div id="sb_contents" class="contents board_wrap">
 
-																<form id="boardVO" name="form" class="boardForm"
-																	action="/article/volunteer/create" method="post"
+																<form id="boardVO" name="form" class="boardForm" action="/article/review/create" method="post"
 																	enctype="multipart/form-data">
 																	<input type="hidden" name="prnts_ntart_no" value="" />
 																	<input type="hidden" name="tmprr_no" id="tmprr_no"
@@ -118,8 +117,7 @@
 
 																		<tbody>
 																			<tr>
-																				<th scope="row">제목<i
-																					class="fas fa-check pad_l5" alt="필수" /></th>
+																				<th scope="row">제목<i class="fas fa-check pad_l5" alt="필수"></i></th>
 																				<td><label for="ntart_subjc" class="hidden">제목</label>
 																					<input id="ntart_subjc" name="title"
 																					class="width input2 _VNotNull" title="제목"
@@ -127,8 +125,7 @@
 																					<!--<input id="ntart_subjc" name="ntart_subjc" -->
 																			</tr>
 																			<tr>
-																				<th scope="row">내용<i
-																					class="fas fa-check pad_l5" alt="필수" /></th>
+																				<th scope="row">내용<i class="fas fa-check pad_l5" alt="필수"></i></th>
 																				<td><label for="cntns_bdtxt_cont"
 																					class="hidden">내용</label> <textarea
 																						id="cntns_bdtxt_cont" name="content"></textarea>
@@ -139,11 +136,8 @@
 																				<th rowspan="2">첨부파일</th>
 																				<td><label for="multipartFile" class="hidden">첨부파일선택</label>
 																					<!--<input type="file" name="techFileDTO.multipartFile"  -->
-																					<input type="file" name="multipartFile"
-																					id="multipartFile_0" class="btn_upload"
-																					multiple="multiple" onchange="addFile(this);" /> <input
-																					type="hidden" name="fileFieldName"
-																					value="techFileDTO.multipartFile" /></td>
+																					<input type="file" name="uploadFiles" id="multipartFile" class="btn_upload"
+																					multiple="multiple"/> 
 																			</tr>
 																		</tbody>
 																	</table>
