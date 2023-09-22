@@ -53,4 +53,3 @@ public interface ArticleMapper {
    public boolean updateArticle();
    
 }
-

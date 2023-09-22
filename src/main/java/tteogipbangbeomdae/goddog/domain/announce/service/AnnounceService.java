@@ -11,5 +11,4 @@ import tteogipbangbeomdae.goddog.domain.announce.dto.Announce;
 public interface AnnounceService {
 
 	public List<Announce> getAnnoList();
-
 }

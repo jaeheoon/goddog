@@ -95,8 +95,7 @@ mybatis:
         tteogipbangbeomdae.goddog.domain.adminmember.dto,
         tteogipbangbeomdae.goddog.domain.shelter.dto,
         tteogipbangbeomdae.goddog.domain.article.dto,
-        tteogipbangbeomdae.goddog.domain.announce.dto,
-        tteogipbangbeomdae.goddog.domain.board.dto
+        tteogipbangbeomdae.goddog.domain.announce.dto
 
 
 ---

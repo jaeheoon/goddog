@@ -141,11 +141,11 @@ public class ArticleMapperTest {
      @Transactional
      @Disabled
      public void deleteArticleTest() {
-		 Article article = Article.builder()
-				 				  .memberId("furkids")
-				 				  .groupNo(201)
-				 				  .levelNo(0)
-				 				  .build();
-		 boolean result = articleMapper.deleteArticle(article);
+       Article article = Article.builder()
+                           .memberId("furkids")
+                           .groupNo(201)
+                           .levelNo(0)
+                           .build();
+       boolean result = articleMapper.deleteArticle(article);
      }
 }

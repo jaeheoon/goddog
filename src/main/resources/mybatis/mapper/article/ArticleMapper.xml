@@ -79,7 +79,7 @@
       SELECT COUNT(review_no) cnt
       FROM   review
       WHERE  notice_no = #{value} 
-      		 AND level_no = 0
+             AND level_no = 0
    </select>
 
    <!-- 전체 게시글 가져오기 -->
@@ -161,7 +161,7 @@
       FROM
          review
       WHERE
-      	 member_id = #{memberId} AND
+          member_id = #{memberId} AND
          group_no = #{groupNo}
    </delete>
 
