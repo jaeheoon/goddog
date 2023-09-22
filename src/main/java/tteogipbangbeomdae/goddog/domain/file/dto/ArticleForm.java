@@ -11,14 +11,23 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * 
+ * 이미지 파일을 담기위한 객체
+ *
+ * @author  떡잎방범대 최은비
+ * @since   2023. 09. 18.
+ * @version 1.0
+ */
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString
 @Builder
-public class MemberForm {
-	private String uploader;
-	private String description;
-	private List<MultipartFile> uploadfiles;
+public class ArticleForm {
+	
+	private String title;
+	private String content;
+	private List<MultipartFile> uploadFiles;
 }

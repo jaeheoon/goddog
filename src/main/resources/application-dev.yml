@@ -102,7 +102,7 @@ mybatis:
       
 # 파일업로드 경로 설정
 common:
-  uploadPath: C:\ezen_fullstack\workspace\goddog\upload\
+  uploadPath: C:\ezen-fullstack\workspace\goddog\upload\
   
   
   

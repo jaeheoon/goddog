@@ -7,6 +7,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * 
+ * 이미지 파일을 담기위한 객체
+ *
+ * @author  떡잎방범대 최은비
+ * @since   2023. 09. 18.
+ * @version 1.0
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -14,6 +22,7 @@ import lombok.ToString;
 @ToString
 @Builder
 public class UploadFile {
+	
 	private String uploadFileName;
 	private String storeFileName;
 }
