@@ -51,5 +51,14 @@ public interface ReservationService {
 	/** 레저베이션 업데이트 */
 	public Reservation updateReservationInfo(Reservation reservation);
 	
+	/** 센터번호와 해당날짜로 봉사신청인원 가져오기 */
+	public int getAllpeople(int careNo, String formattedDate);
+	
+	/** 특정센터의 봉사최대인원 가져오기 */
+	public int getMaxCount(int careNo);
+	
+	/** 특정센터 휴무일 가져오기 */
+	public String getClosedayByCareNo(int careNo);
+	
 	
 }
