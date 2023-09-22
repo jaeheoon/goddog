@@ -97,15 +97,16 @@ public class ReservationServiceImpl implements ReservationService {
 					.careNo(resultReservation.getCareNo())
 					.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
 			return reservation2;
-		} else
+		} else {
 			reservationMapper.updateReservation(reservation);
-		Reservation resultReservation = reservationMapper.getReservation(reservation);
-		Reservation reservation2 = Reservation.builder().memberId(resultReservation.getMemberId())
-				.insertDate(resultReservation.getInsertDate()).regdate(resultReservation.getRegdate())
-				.regtime(resultReservation.getRegtime()).people(resultReservation.getPeople())
-				.careNo(resultReservation.getCareNo())
-				.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
-		return reservation2;
+			Reservation resultReservation = reservationMapper.getReservation(reservation);
+			Reservation reservation2 = Reservation.builder().memberId(resultReservation.getMemberId())
+					.insertDate(resultReservation.getInsertDate()).regdate(resultReservation.getRegdate())
+					.regtime(resultReservation.getRegtime()).people(resultReservation.getPeople())
+					.careNo(resultReservation.getCareNo())
+					.shelterName(shelterMapper.selectShelter(resultReservation.getCareNo()).getName()).build();
+			return reservation2;
+		}
 	}
 	
 	@Override

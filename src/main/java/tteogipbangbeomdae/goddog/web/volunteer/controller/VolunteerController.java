@@ -79,7 +79,7 @@ public class VolunteerController {
 	
 
 	@GetMapping("/calender")
-	public String viewCalender(@RequestParam("careNo") int careNo, @RequestParam(value = "reservationNo",required = false) String reservationNo,Model model,HttpSession session) {
+	public String viewCalender(@RequestParam("careNo") int careNo, @RequestParam(value = "reservationNo", required = false) String reservationNo, Model model,HttpSession session) {
 		Shelter shelter = shelterService.clickShelter(careNo);
 		int maxCount = reservationService.getReservationCount(careNo);
 		if(reservationNo != null) {
