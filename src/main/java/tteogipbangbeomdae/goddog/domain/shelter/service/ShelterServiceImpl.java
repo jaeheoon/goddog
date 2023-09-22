@@ -19,11 +19,12 @@ public class ShelterServiceImpl implements ShelterService{
 	
 	private final ShelterMapper shelterMapper;
 
+	//	보호소별 번호 조회
 	@Override
 	public Shelter clickShelter(int careNo) {
 		return shelterMapper.selectShelter(careNo);
 	}
-
+	//	보호소 전체 목록 
 	@Override
 	public List<Shelter> findAllShelter() {
 		return shelterMapper.getShelterList();

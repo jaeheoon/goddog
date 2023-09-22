@@ -13,17 +13,12 @@ import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
 @Mapper
 public interface ShelterMapper {
 	
-	/**
-	 * 보호소 상세 정보 반환
-	 * @param careNo
-	 * @return
-	 */
+	
+	//	보호소 상세 정보 반환
 	public Shelter selectShelter(int careNo);
 	
-	/**
-	 * 보호소 목록 반환
-	 * @return
-	 */
+	
+	//	 보호소 목록 반환
 	public List<Shelter> getShelterList();
 	
 }

@@ -12,8 +12,10 @@ import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
 
 public interface ShelterService {
 	
+	//	보호소 전체 목록
 	public List<Shelter> findAllShelter();	
 	
+	//	보호소 번호 조회
 	public Shelter clickShelter(int careNo);
 
 	
