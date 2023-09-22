@@ -2,101 +2,121 @@
 <html lang="ko">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="generator" content="WordPress 6.3.1" />
-	<meta name="generator"
-		content="Elementor 3.15.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
-	<meta name="msapplication-TileImage"
-		content="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/Dog-Pals-Favicon-300x300.png" />
-	<meta name='robots' content='max-image-preview:large' />
-	<title>보호소상세페이지</title>
-	<!-- ============================================================ 공통 구간(여깄는거 손대면 때찌) ====================================================-->
-	<!-- ====================================================================공통css =====================================================================-->
-	<!-- netmarblefont.css 추가 -->
-	<link rel="stylesheet" href="/assets/css/font/netmarblefont.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="WordPress 6.3.1" />
+<meta name="generator"
+	content="Elementor 3.15.3; features: e_dom_optimization, e_optimized_assets_loading, e_optimized_css_loading, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<meta name="msapplication-TileImage"
+	content="https://templatekit.tokomoo.com/adopkit/wp-content/uploads/sites/119/2023/02/Dog-Pals-Favicon-300x300.png" />
+<meta name='robots' content='max-image-preview:large' />
+<title>보호소상세페이지</title>
+<!-- ============================================================ 공통 구간(여깄는거 손대면 때찌) ====================================================-->
+<!-- ====================================================================공통css =====================================================================-->
+<!-- netmarblefont.css 추가 -->
+<link rel="stylesheet" href="/assets/css/font/netmarblefont.css">
 
-	<!-- index.html문서안의 style태그의 내용을 모아 만들었지만 주석해도 화면에 변화가 없어 실제 적용되는지 의심되지만 있었어서 넣음-->
-	<link rel="stylesheet" href="/assets/css/index.css">
-	<link rel="stylesheet" href="/assets/css/lib/elementor-icons.css" media="all">
+<!-- index.html문서안의 style태그의 내용을 모아 만들었지만 주석해도 화면에 변화가 없어 실제 적용되는지 의심되지만 있었어서 넣음-->
+<link rel="stylesheet" href="/assets/css/index.css">
+<link rel="stylesheet" href="/assets/css/lib/elementor-icons.css"
+	media="all">
 
-	<!-- 화면전체에서 사용하는 CSS -->
-	<link rel="stylesheet" href="/assets/css/frontend-lite3153.css" media="all">
-	<link rel="stylesheet" href="/assets/css/frontend-lite3150.css" media="all">
-	<link rel="stylesheet" href="/assets/css/post9.css" media="all">
-	<link rel="stylesheet" href="/assets/css/post1544.css" media="all">
-	<link rel="stylesheet" href="/assets/css/post1578.css" media="all">
-	<link rel="stylesheet" href="/assets/css/post1676.css" media="all">
+<!-- 화면전체에서 사용하는 CSS -->
+<link rel="stylesheet" href="/assets/css/frontend-lite3153.css"
+	media="all">
+<link rel="stylesheet" href="/assets/css/frontend-lite3150.css"
+	media="all">
+<link rel="stylesheet" href="/assets/css/post9.css" media="all">
+<link rel="stylesheet" href="/assets/css/post1544.css" media="all">
+<link rel="stylesheet" href="/assets/css/post1578.css" media="all">
+<link rel="stylesheet" href="/assets/css/post1676.css" media="all">
 
-	<!-- 헤더에 쓰이는 CSS -->
-	<link rel="stylesheet" href="/assets/css/widget-nav-menu.css" media="all">
+<!-- 헤더에 쓰이는 CSS -->
+<link rel="stylesheet" href="/assets/css/widget-nav-menu.css"
+	media="all">
 
-	<!-- li태그들 앞에 동그라미 삭제해주는 듯한 CSS-->
-	<link rel="stylesheet" href="/assets/css/widget-icon-list.css" media="all">
+<!-- li태그들 앞에 동그라미 삭제해주는 듯한 CSS-->
+<link rel="stylesheet" href="/assets/css/widget-icon-list.css"
+	media="all">
 
-	<!-- 화면에 부드럽게 요소들을 나타나게 해주는 CSS -->
-	<link rel="stylesheet" href="/assets/css/lib/animation.css" media="all">
+<!-- 화면에 부드럽게 요소들을 나타나게 해주는 CSS -->
+<link rel="stylesheet" href="/assets/css/lib/animation.css" media="all">
 
-	<!-- CDN방식 CSS(웹에서 받아서 쓰기)-->
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-	<link rel='stylesheet' id='google-fonts-1-css'
-		href='https://fonts.googleapis.com/css?family=Averia+Serif+Libre%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CInter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.3.1'
-		media='all' />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<!-- 영호 신규 추가한 bootstrap.css -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<!-- CDN방식 CSS(웹에서 받아서 쓰기)-->
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<link rel='stylesheet' id='google-fonts-1-css'
+	href='https://fonts.googleapis.com/css?family=Averia+Serif+Libre%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CInter%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.3.1'
+	media='all' />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<!-- 영호 신규 추가한 bootstrap.css -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+	crossorigin="anonymous">
 
-	<!-- ============================================================== 공통script =========================================================================-->
-	<script>
+<!-- ============================================================== 공통script =========================================================================-->
+<script>
 		window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/templatekit.tokomoo.com\/adopkit\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1" } };
 		/*! This file is auto-generated */
 		!function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff", "\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
 	</script>
 
-	<!-- index에서 창들 동적으로 생기는 역할을 맏고있는 듯함. 끄면 개리스트나 작은창들 안뜸 -->
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/jquery.min.js?ver=3.7.0'
-		id='jquery-core-js'></script>
+<!-- index에서 창들 동적으로 생기는 역할을 맏고있는 듯함. 끄면 개리스트나 작은창들 안뜸 -->
+<script
+	src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/jquery.min.js?ver=3.7.0'
+	id='jquery-core-js'></script>
 
-	<script
-		src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/template-kit-export/public/assets/js/template-kit-export-public.min.js?ver=1.0.21'
-		id='template-kit-export-js'></script>
+<script
+	src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/template-kit-export/public/assets/js/template-kit-export-public.min.js?ver=1.0.21'
+	id='template-kit-export-js'></script>
 
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1'
-		id='jquery-migrate-js'></script>
+<script
+	src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1'
+	id='jquery-migrate-js'></script>
 
-	<!-- 영호 헤더의 JS 기관명 사용자명 단축 ...JS -->
-	<script defer src="/assets/js/rename.js"></script>
+<!-- 영호 헤더의 JS 기관명 사용자명 단축 ...JS -->
+<script defer src="/assets/js/rename.js"></script>
 
-	<!-- 영호 신규 추가한 bootstrap.js -->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-		crossorigin="anonymous"></script>
+<!-- 영호 신규 추가한 bootstrap.js -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+	crossorigin="anonymous"></script>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-		integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-		crossorigin="anonymous"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+	integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+	crossorigin="anonymous"></script>
 
-	<!-- ============ 개별구간(공통을 변경해야할 경우나 다른 페이지의 CSS를 사용할때 여기넣기) ============================================================ -->
-	<!-- ==================================(다른페이지의 CSS를 수정해서 사용할경우 경우 복사해서 개별파일로 작업후 여기에 추가 부탁함.) =================== -->
-	<!-- ============ 파일명은 공통CSS변경시 공통CSS명_페이지명으로 해서 복사해서 사용하기. ex frontend-lite3153_volunteer.css ============================ -->
-	<!-- =============================================================== 개별css ========================================================================== -->
-	<link rel="stylesheet" href="/assets/css/doglist/title.css">
-	<link rel="stylesheet" href="/assets/css/shelter/shelter-detail.css">
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
+<!-- ============ 개별구간(공통을 변경해야할 경우나 다른 페이지의 CSS를 사용할때 여기넣기) ============================================================ -->
+<!-- ==================================(다른페이지의 CSS를 수정해서 사용할경우 경우 복사해서 개별파일로 작업후 여기에 추가 부탁함.) =================== -->
+<!-- ============ 파일명은 공통CSS변경시 공통CSS명_페이지명으로 해서 복사해서 사용하기. ex frontend-lite3153_volunteer.css ============================ -->
+<!-- =============================================================== 개별css ========================================================================== -->
+<link rel="stylesheet" href="/assets/css/doglist/title.css">
+<link rel="stylesheet" href="/assets/css/shelter/shelter-detail.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700'
+	rel='stylesheet' type='text/css'>
+<link rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css'>
+<link rel='stylesheet'
+	href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css'>
 
-	<!-- ============================================================== 개별script =========================================================================-->
-	<script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-		crossorigin="anonymous"></script>
-	<script defer src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-	<script defer src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script>
-	<script defer src="/assets/js/shelter/slick.js"></script>
+<!-- ============================================================== 개별script =========================================================================-->
+<script
+	src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+	integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+	crossorigin="anonymous"></script>
+<script defer
+	src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script defer
+	src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js'></script>
+<script defer src="/assets/js/shelter/slick.js"></script>
 </head>
 
 <!-- =============================================================== 바디 시작 ===========================================================================-->
@@ -109,18 +129,21 @@
 
 	<!--=========================================================== 헤더 시작 ===============================================================================-->
 	<header data-elementor-type="header" data-elementor-id="1544"
-		class="elementor elementor-1544 elementor-location-header" data-elementor-post-type="elementor_library">
+		class="elementor elementor-1544 elementor-location-header"
+		data-elementor-post-type="elementor_library">
 		<section
 			class="elementor-section elementor-top-section elementor-element elementor-element-3d270bb elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="3d270bb" data-element_type="section"
 			data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 			<div class="elementor-container elementor-column-gap-no">
-				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2b9563b"
+				<div
+					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-2b9563b"
 					data-id="2b9563b" data-element_type="column">
 					<div class="elementor-widget-wrap elementor-element-populated">
 						<section
 							class="elementor-section elementor-inner-section elementor-element elementor-element-4c15836 elementor-section-full_width elementor-section-content-middle elementor-hidden-tablet elementor-hidden-mobile elementor-section-height-default elementor-section-height-default"
-							data-id="4c15836" data-element_type="section" style="display: flex; flex: 1;">
+							data-id="4c15836" data-element_type="section"
+							style="display: flex; flex: 1;">
 							<div class="elementor-container elementor-column-gap-no">
 								<div
 									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-aece90a"
@@ -128,19 +151,21 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div
 											class="elementor-element elementor-element-891d51e elementor-widget elementor-widget-theme-site-logo elementor-widget-image"
-											data-id="891d51e" data-element_type="widget" data-widget_type="theme-site-logo.default">
+											data-id="891d51e" data-element_type="widget"
+											data-widget_type="theme-site-logo.default">
 											<div class="elementor-widget-container">
-												<a href="/index.html">
-													<img width="257" height="101"
-														src="/assets/img/LOGO.png"
-														class="attachment-full size-full wp-image-1549" alt="" /> </a>
+												<a href="/index.html"> <img width="257" height="101"
+													src="/assets/img/LOGO.png"
+													class="attachment-full size-full wp-image-1549" alt="" />
+												</a>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div
 									class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-33e43f4"
-									data-id="33e43f4" data-element_type="column" style="width:54em !important;">
+									data-id="33e43f4" data-element_type="column"
+									style="width: 54em !important;">
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div
 											class="elementor-element elementor-element-e636937 elementor-nav-menu__align-left elementor-nav-menu--stretch elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu"
@@ -154,37 +179,49 @@
 													<ul id="menu-1-e636937" class="elementor-nav-menu">
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
-															<a class="elementor-item elementor-item-anchor">소개</a>
-															<!-- <p>소개</p> -->
+															<a class="elementor-item elementor-item-anchor">소개</a> <!-- <p>소개</p> -->
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/introduce/introduce.html" class="elementor-sub-item">기업소개</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/introduce/team.html" class="elementor-sub-item">팀소개</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/introduce/introduce.html"
+																	class="elementor-sub-item">기업소개</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/introduce/team.html" class="elementor-sub-item">팀소개</a></li>
 																<!-- <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
 																		href="dog-list.html" class="elementor-sub-item">오시는길</a></li> -->
 															</ul>
 														</li>
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
-															<a href="/dog/dog-list.html" class="elementor-item elementor-item-anchor">강아지목록</a>
+															<a href="/dog/dog-list.html"
+															class="elementor-item elementor-item-anchor">강아지목록</a>
 														</li>
 														<!-- 후원 -->
-														<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1740"><a
-																href="/donation/donation.html" class="elementor-item">후원</a></li>
+														<li
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1740"><a
+															href="/donation/donation.html" class="elementor-item">후원</a></li>
 														<!-- 보호소 -->
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
 															<a class="elementor-item elementor-item-anchor">보호소</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-list.html" class="elementor-sub-item">보호소목록</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">해피파워보호소</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">굿도그</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">춘향이와멍멍이</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-list.html"
+																	class="elementor-sub-item">보호소목록</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">해피파워보호소</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">굿도그</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">춘향이와멍멍이</a></li>
 															</ul>
 														</li>
 														<!-- 봉사 -->
@@ -192,10 +229,14 @@
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1537">
 															<a class="elementor-item elementor-item-anchor">봉사</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
-																		href="/volunteer/volunteer.html" class="elementor-sub-item">봉사예약</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
-																		href="/article/volunteer_board.html" class="elementor-sub-item">봉사후기</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
+																	href="/volunteer/volunteer.html"
+																	class="elementor-sub-item">봉사예약</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
+																	href="/article/volunteer_board.html"
+																	class="elementor-sub-item">봉사후기</a></li>
 															</ul>
 														</li>
 														<!-- 커뮤니티 -->
@@ -203,55 +244,75 @@
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1537">
 															<a class="elementor-item elementor-item-anchor">커뮤니티</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
-																		href="/announce/announce.html" class="elementor-sub-item">공지사항</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
-																		href="/article/adoption_board.html" class="elementor-sub-item">입양후기</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
+																	href="/announce/announce.html"
+																	class="elementor-sub-item">공지사항</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
+																	href="/article/adoption_board.html"
+																	class="elementor-sub-item">입양후기</a></li>
 															</ul>
 														</li>
 
 													</ul>
 												</nav>
 												<!--네브가 2개라서 이상해보이지만 햄버거 버튼용 네브임 지우면 안됨.-->
-												<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle"
-													aria-expanded="false">
+												<div class="elementor-menu-toggle" role="button"
+													tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
 													<i aria-hidden="true" role="presentation"
-														class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true"
-														role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i> <span
-														class="elementor-screen-only">Menu</span>
+														class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i
+														aria-hidden="true" role="presentation"
+														class="elementor-menu-toggle__icon--close eicon-close"></i>
+													<span class="elementor-screen-only">Menu</span>
 												</div>
-												<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+												<nav
+													class="elementor-nav-menu--dropdown elementor-nav-menu__container"
+													aria-hidden="true">
 													<ul id="menu-2-e636937" class="elementor-nav-menu">
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
 															<a class="elementor-item elementor-item-anchor">소개</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/introduce/introduce.html" class="elementor-sub-item">기업소개</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/introduce/team.html" class="elementor-sub-item">팀소개</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/introduce/introduce.html"
+																	class="elementor-sub-item">기업소개</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/introduce/team.html" class="elementor-sub-item">팀소개</a></li>
 															</ul>
 														</li>
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
-															<a href="/dog/dog-list.html" class="elementor-item elementor-item-anchor">강아지목록</a>
+															<a href="/dog/dog-list.html"
+															class="elementor-item elementor-item-anchor">강아지목록</a>
 														</li>
 														<!-- 후원 -->
-														<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1740"><a
-																href="/donation/donation.html" class="elementor-item">후원</a></li>
+														<li
+															class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1740"><a
+															href="/donation/donation.html" class="elementor-item">후원</a></li>
 														<!-- 보호소 -->
 														<li
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
 															<a class="elementor-item elementor-item-anchor">보호소</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-list.html" class="elementor-sub-item">보호소목록</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">해피파워보호소</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">굿도그</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html" class="elementor-sub-item">춘향이와멍멍이</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-list.html"
+																	class="elementor-sub-item">보호소목록</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">해피파워보호소</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">굿도그</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
+																	href="/shelter/shelter-detail.html"
+																	class="elementor-sub-item">춘향이와멍멍이</a></li>
 															</ul>
 														</li>
 														<!-- 봉사 -->
@@ -259,10 +320,14 @@
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1537">
 															<a class="elementor-item elementor-item-anchor">봉사</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
-																		href="/volunteer/volunteer.html" class="elementor-sub-item">봉사예약</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
-																		href="/article/volunteer_board.html" class="elementor-sub-item">봉사후기</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
+																	href="/volunteer/volunteer.html"
+																	class="elementor-sub-item">봉사예약</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
+																	href="/article/volunteer_board.html"
+																	class="elementor-sub-item">봉사후기</a></li>
 															</ul>
 														</li>
 														<!-- 커뮤니티 -->
@@ -270,10 +335,14 @@
 															class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1537">
 															<a class="elementor-item elementor-item-anchor">커뮤니티</a>
 															<ul class="sub-menu elementor-nav-menu--dropdown">
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
-																		href="/announce/announce.html" class="elementor-sub-item">공지사항</a></li>
-																<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
-																		href="/article/adoption_board.html" class="elementor-sub-item">입양후기</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1741"><a
+																	href="/announce/announce.html"
+																	class="elementor-sub-item">공지사항</a></li>
+																<li
+																	class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1746"><a
+																	href="/article/adoption_board.html"
+																	class="elementor-sub-item">입양후기</a></li>
 															</ul>
 														</li>
 
@@ -286,28 +355,35 @@
 								</div>
 								<div
 									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-66ffe73"
-									data-id="66ffe73" data-element_type="column" style="width: 70% !important;">
+									data-id="66ffe73" data-element_type="column"
+									style="width: 70% !important;">
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<section
 											class="elementor-section elementor-inner-section elementor-element elementor-element-bbfe9cf elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default"
 											data-id="bbfe9cf" data-element_type="section">
-											<div class="elementor-container elementor-column-gap-no" style="width: 100%; max-width: 100%;">
+											<div class="elementor-container elementor-column-gap-no"
+												style="width: 100%; max-width: 100%;">
 												<!-- 이건 채팅 버튼 -->
 												<div
 													class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
-													data-id="37be7ac" data-element_type="column" style="flex-basis: content; margin-right: 2%;">
-													<div class="elementor-widget-wrap elementor-element-populated">
+													data-id="37be7ac" data-element_type="column"
+													style="flex-basis: content; margin-right: 2%;">
+													<div
+														class="elementor-widget-wrap elementor-element-populated">
 														<div
 															class="elementor-element elementor-element-d40de64 elementor-align-right elementor-widget elementor-widget-button"
-															data-id="d40de64" data-element_type="widget" data-widget_type="button.default">
+															data-id="d40de64" data-element_type="widget"
+															data-widget_type="button.default">
 															<div class="elementor-widget-container">
 																<div class="elementor-button-wrapper">
-																	<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-																		<span class="elementor-button-content-wrapper">
-																			<span class="elementor-button-icon elementor-align-icon-left">
-																				<i aria-hidden="true" class="fas fa-paw"></i> </span>
-																			<span class="elementor-button-text">채팅</span>
-																		</span>
+																	<a
+																		class="elementor-button elementor-button-link elementor-size-sm"
+																		href="#"> <span
+																		class="elementor-button-content-wrapper"> <span
+																			class="elementor-button-icon elementor-align-icon-left">
+																				<i aria-hidden="true" class="fas fa-paw"></i>
+																		</span> <span class="elementor-button-text">채팅</span>
+																	</span>
 																	</a>
 																</div>
 															</div>
@@ -320,20 +396,25 @@
 												<!-- 로그인 버튼 -->
 												<div
 													class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
-													data-id="37be7ac" data-element_type="column" style="flex-basis: content; margin-right: 3%;">
-													<div class="elementor-widget-wrap elementor-element-populated">
+													data-id="37be7ac" data-element_type="column"
+													style="flex-basis: content; margin-right: 3%;">
+													<div
+														class="elementor-widget-wrap elementor-element-populated">
 														<div
 															class="elementor-element elementor-element-d40de64 elementor-align-right elementor-widget elementor-widget-button"
-															data-id="d40de64" data-element_type="widget" data-widget_type="button.default">
+															data-id="d40de64" data-element_type="widget"
+															data-widget_type="button.default">
 
 															<div class="elementor-widget-container">
 																<div class="elementor-button-wrapper">
-																	<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-																		<span class="elementor-button-content-wrapper">
-																			<span class="elementor-button-icon elementor-align-icon-left">
-																				<i aria-hidden="true" class="fas fa-paw"></i> </span>
-																			<span class="elementor-button-text">로그아웃</span>
-																		</span>
+																	<a
+																		class="elementor-button elementor-button-link elementor-size-sm"
+																		href="#"> <span
+																		class="elementor-button-content-wrapper"> <span
+																			class="elementor-button-icon elementor-align-icon-left">
+																				<i aria-hidden="true" class="fas fa-paw"></i>
+																		</span> <span class="elementor-button-text">로그아웃</span>
+																	</span>
 																	</a>
 																</div>
 															</div>
@@ -347,12 +428,15 @@
 												<!-- 사용자 정보 -->
 												<div
 													class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
-													data-id="37be7ac" data-element_type="column" style="flex-basis: content; margin-right: 3%;">
-													<div class="badge bg-secondary elementor-widget-wrap elementor-element-populated"
+													data-id="37be7ac" data-element_type="column"
+													style="flex-basis: content; margin-right: 3%;">
+													<div
+														class="badge bg-secondary elementor-widget-wrap elementor-element-populated"
 														style="background-color: white !important; color: rgba(0, 0, 0, 0.864); border: 1px solid rgba(0, 0, 0, 0.864); padding: 0 13px; font-size: 1em;">
 														<div
 															class="elementor-element elementor-element-d40de64 elementor-align-right elementor-widget elementor-widget-button"
-															data-id="d40de64" data-element_type="widget" data-widget_type="button.default">
+															data-id="d40de64" data-element_type="widget"
+															data-widget_type="button.default">
 
 															<div class="elementor-widget-container">
 																<div class="elementor-button-wrapper">
@@ -368,16 +452,20 @@
 												<!-- 사용자 정보 끝 -->
 												<div
 													class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
-													data-id="37be7ac" data-element_type="column" style="flex-basis: content;">
-													<div class="badge bg-secondary elementor-widget-wrap elementor-element-populated"
+													data-id="37be7ac" data-element_type="column"
+													style="flex-basis: content;">
+													<div
+														class="badge bg-secondary elementor-widget-wrap elementor-element-populated"
 														style="background-color: #616fe2 !important; padding: 0 13px; font-size: 1em; border-radius: 15px;">
 														<div
 															class="elementor-element elementor-element-d40de64 elementor-align-right elementor-widget elementor-widget-button"
-															data-id="d40de64" data-element_type="widget" data-widget_type="button.default">
+															data-id="d40de64" data-element_type="widget"
+															data-widget_type="button.default">
 
 															<div class="elementor-widget-container">
 																<div class="elementor-button-wrapper">
-																	<a href="/member/mypage.html"><span style=" color: #fff !important;">마이페이지</span></a>
+																	<a href="/member/mypage.html"><span
+																		style="color: #fff !important;">마이페이지</span></a>
 																</div>
 																<!-- 로그인한 사람이 센터관계자일 경우 보호소 이름 표기 -->
 																<!-- <span class="elementor-button-text centername">주먹빱진짜너모조아보호소</span> -->
@@ -404,9 +492,10 @@
 	<!-- ============================================================ 헤더 끝 ==============================================================================-->
 
 	<!-- ============================================================ 보호소 상세페이지 시작 ===================================================================-->
-	<main id="centerdetail" style="background-color: #FFFCF7; margin-bottom: 7%;">
-		<div data-elementor-type="wp-page" data-elementor-id="1686" class="elementor elementor-1686"
-			data-elementor-post-type="page">
+	<main id="centerdetail"
+		style="background-color: #FFFCF7; margin-bottom: 7%;">
+		<div data-elementor-type="wp-page" data-elementor-id="1686"
+			class="elementor elementor-1686" data-elementor-post-type="page">
 			<section
 				class="elementor-section elementor-top-section elementor-element elementor-element-69bd6b53 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 				data-id="69bd6b53" data-element_type="section"
@@ -428,14 +517,16 @@
 										<div class="elementor-widget-wrap elementor-element-populated">
 											<div
 												class="elementor-element elementor-element-3fdf0404 elementor-widget elementor-widget-heading"
-												data-id="3fdf0404" data-element_type="widget" data-widget_type="heading.default">
+												data-id="3fdf0404" data-element_type="widget"
+												data-widget_type="heading.default">
 												<div class="elementor-widget-container">
 													<h1 class="elementor-heading-title elementor-size-default">보호소</h1>
 												</div>
 											</div>
 											<div
 												class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
-												data-id="1d5bbe7b" data-element_type="widget" data-widget_type="text-editor.default">
+												data-id="1d5bbe7b" data-element_type="widget"
+												data-widget_type="text-editor.default">
 												<div class="elementor-widget-container">
 													<p>기관에 등록된 보호소를 살펴보세요!</p>
 												</div>
@@ -481,23 +572,25 @@
 
 					<div class="col-12">
 						<div class="tab-content" id="myTabContent">
-							<div class="tab-pane fade show active" id="center1-tab-pane" role="tabpanel" aria-labelledby="design-tab"
-								tabindex="0">
+							<div class="tab-pane fade show active" id="center1-tab-pane"
+								role="tabpanel" aria-labelledby="design-tab" tabindex="0">
 								<!-- 센터이름(소개) -->
 								<div class="box" style="height: 3em;"></div>
 								<div class="centerintro">
 									<div class="elementor-widget-container">
-										<h3 style="text-align: center;"><i aria-hidden="true" class="fas fa-house"></i>
-											굿도그</h3>
+										<h3 style="text-align: center;">
+											<i aria-hidden="true" class="fas fa-house"></i> 굿도그
+										</h3>
 									</div>
 								</div>
 								<!-- 센터 정보 -->
 								<div class="row centerinfo">
-									<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex1.jpg"></div>
-									<div class="col-md-5">
-										해피파워 입양센터는 전주시에 위치해 있고, 주인을 기다리고 있는 반려동물 입양시설입니다.
-										보다 쉽게 유기동물과 교감하고 가족이 되실 수 있습니다. 보호되고 있는 아이들 모두 착하고 밝으니 한번 보러오세요!
+									<div class="col-md-5 imgfram">
+										<img class="intro" src="/assets/img/introex1.jpg">
 									</div>
+									<div class="col-md-5">해피파워 입양센터는 전주시에 위치해 있고, 주인을 기다리고 있는
+										반려동물 입양시설입니다. 보다 쉽게 유기동물과 교감하고 가족이 되실 수 있습니다. 보호되고 있는 아이들 모두
+										착하고 밝으니 한번 보러오세요!</div>
 								</div>
 
 								<div class="row centerinfo2">
@@ -517,13 +610,13 @@
 													<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
 												</div>
 											</div>
-											<button class="carousel-control-prev" type="button" data-bs-target="#picturs1"
-												data-bs-slide="prev">
+											<button class="carousel-control-prev" type="button"
+												data-bs-target="#picturs1" data-bs-slide="prev">
 												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 												<span>&lt&lt</span>
 											</button>
-											<button class="carousel-control-next" type="button" data-bs-target="#picturs1"
-												data-bs-slide="next">
+											<button class="carousel-control-next" type="button"
+												data-bs-target="#picturs1" data-bs-slide="next">
 												<span class="carousel-control-next-icon" aria-hidden="true"></span>
 												<span>&gt&gt</span>
 											</button>
@@ -537,7 +630,8 @@
 										<div>
 											<iframe
 												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-												width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+												width="600" height="450" style="border: 0;"
+												allowfullscreen="" loading="lazy"
 												referrerpolicy="no-referrer-when-downgrade"></iframe>
 										</div>
 									</div>
@@ -565,36 +659,49 @@
 									</div>
 									<div class="wrapper">
 										<div class="carousel2">
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
 										</div>
 									</div>
 								</div>
 
 							</div>
 
-							<div class="tab-pane fade show" id="center2-tab-pane" role="tabpanel" aria-labelledby="content-tab"
-								tabindex="0">
+							<div class="tab-pane fade show" id="center2-tab-pane"
+								role="tabpanel" aria-labelledby="content-tab" tabindex="0">
 								<!-- 센터이름(소개) -->
 								<div class="centerintro">
-									<div class="elementor-widget-container" style="margin: 3em 3.5em;">
-										<h3><i aria-hidden="true" class="fas fa-house"></i>
-											해피파워</h3>
+									<div class="elementor-widget-container"
+										style="margin: 3em 3.5em;">
+										<h3>
+											<i aria-hidden="true" class="fas fa-house"></i> 해피파워
+										</h3>
 									</div>
 								</div>
 								<!-- 센터 정보 -->
 								<div class="row centerinfo">
-									<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex2.jpg"></div>
-									<div class="col-md-5">
-										우리 입양센터에서 진정한 동반자를 만나보세요.
-										강아지의 건강과 행복을 최우선으로 생각하며, 안전한 환경에서 무한한 사랑을 제공합니다.
-										입양은 양쪽 모두에게 특별한 경험을 선물할 수 있는 기회입니다.
-										이 멋진 여정을 함께 시작해보세요.
+									<div class="col-md-5 imgfram">
+										<img class="intro" src="/assets/img/introex2.jpg">
 									</div>
+									<div class="col-md-5">우리 입양센터에서 진정한 동반자를 만나보세요. 강아지의 건강과
+										행복을 최우선으로 생각하며, 안전한 환경에서 무한한 사랑을 제공합니다. 입양은 양쪽 모두에게 특별한 경험을
+										선물할 수 있는 기회입니다. 이 멋진 여정을 함께 시작해보세요.</div>
 								</div>
 
 								<div class="row centerinfo2">
@@ -614,13 +721,13 @@
 													<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
 												</div>
 											</div>
-											<button class="carousel-control-prev" type="button" data-bs-target="#picturs2"
-												data-bs-slide="prev">
+											<button class="carousel-control-prev" type="button"
+												data-bs-target="#picturs2" data-bs-slide="prev">
 												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 												<span>&lt&lt</span>
 											</button>
-											<button class="carousel-control-next" type="button" data-bs-target="#picturs2"
-												data-bs-slide="next">
+											<button class="carousel-control-next" type="button"
+												data-bs-target="#picturs2" data-bs-slide="next">
 												<span class="carousel-control-next-icon" aria-hidden="true"></span>
 												<span>&gt&gt</span>
 											</button>
@@ -634,7 +741,8 @@
 										<div>
 											<iframe
 												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-												width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+												width="600" height="450" style="border: 0;"
+												allowfullscreen="" loading="lazy"
 												referrerpolicy="no-referrer-when-downgrade"></iframe>
 										</div>
 									</div>
@@ -662,36 +770,50 @@
 									</div>
 									<div class="wrapper">
 										<div class="carousel2">
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
 										</div>
 									</div>
 								</div>
 
 							</div>
 
-							<div class="tab-pane fade show" id="center3-tab-pane" role="tabpanel" aria-labelledby="design-tab"
-								tabindex="0">
+							<div class="tab-pane fade show" id="center3-tab-pane"
+								role="tabpanel" aria-labelledby="design-tab" tabindex="0">
 								<!-- 센터이름(소개) -->
 								<div class="centerintro">
-									<div class="elementor-widget-container" style="margin: 3em 3.5em;">
-										<h3><i aria-hidden="true" class="fas fa-house"></i>
-											춘향이와 멍멍이</h3>
+									<div class="elementor-widget-container"
+										style="margin: 3em 3.5em;">
+										<h3>
+											<i aria-hidden="true" class="fas fa-house"></i> 춘향이와 멍멍이
+										</h3>
 									</div>
 								</div>
 								<!-- 센터 정보 -->
 								<div class="row centerinfo">
-									<div class="col-md-5 imgfram"><img class="intro" src="/assets/img/introex3.jpg"></div>
-									<div class="col-md-5">
-										우리 입양센터에서는 남겨진 강아지들에게 새로운 희망을 선사합니다.
-										매일 그들을 위해 헌신하며, 각 강아지의 독특한 특성과 성격을 고려하여 최적의 매칭을 찾아드립니다.
-										한 마리 강아지를 입양하면, 그 강아지의 삶을 풍요롭게 만들 뿐 아니라 당신의 삶에도 큰 변화를 가져다 줄 수 있는 특별한 기회가 여기 있습니다.
-										지금 입양하고, 함께 행복한 순간을 만들어보세요.
+									<div class="col-md-5 imgfram">
+										<img class="intro" src="/assets/img/introex3.jpg">
 									</div>
+									<div class="col-md-5">우리 입양센터에서는 남겨진 강아지들에게 새로운 희망을
+										선사합니다. 매일 그들을 위해 헌신하며, 각 강아지의 독특한 특성과 성격을 고려하여 최적의 매칭을 찾아드립니다.
+										한 마리 강아지를 입양하면, 그 강아지의 삶을 풍요롭게 만들 뿐 아니라 당신의 삶에도 큰 변화를 가져다 줄 수
+										있는 특별한 기회가 여기 있습니다. 지금 입양하고, 함께 행복한 순간을 만들어보세요.</div>
 								</div>
 
 								<div class="row centerinfo2">
@@ -711,13 +833,13 @@
 													<img src="/assets/img/ex3.jpg" class="img-fluid" alt="...">
 												</div>
 											</div>
-											<button class="carousel-control-prev" type="button" data-bs-target="#picturs3"
-												data-bs-slide="prev">
+											<button class="carousel-control-prev" type="button"
+												data-bs-target="#picturs3" data-bs-slide="prev">
 												<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 												<span>&lt&lt</span>
 											</button>
-											<button class="carousel-control-next" type="button" data-bs-target="#picturs3"
-												data-bs-slide="next">
+											<button class="carousel-control-next" type="button"
+												data-bs-target="#picturs3" data-bs-slide="next">
 												<span class="carousel-control-next-icon" aria-hidden="true"></span>
 												<span>&gt&gt</span>
 											</button>
@@ -731,7 +853,8 @@
 										<div>
 											<iframe
 												src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.2865790979563!2d127.10105461158334!3d37.61894622100418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cba21c49379e7%3A0x18e763e51b5158de!2z7ISc7Jq47Jyg6riw64-Z66y87J6F7JaR7IS87YSw!5e0!3m2!1sko!2skr!4v1693736569582!5m2!1sko!2skr"
-												width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+												width="600" height="450" style="border: 0;"
+												allowfullscreen="" loading="lazy"
 												referrerpolicy="no-referrer-when-downgrade"></iframe>
 										</div>
 									</div>
@@ -759,12 +882,24 @@
 									</div>
 									<div class="wrapper">
 										<div class="carousel2">
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
-											<div><img src="/assets/img/introex1.jpg"></div>
-											<div><img src="/assets/img/introex2.jpg"></div>
-											<div><img src="/assets/img/introex3.jpg"></div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex1.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex2.jpg">
+											</div>
+											<div>
+												<img src="/assets/img/introex3.jpg">
+											</div>
 										</div>
 									</div>
 								</div>
@@ -781,12 +916,14 @@
 	</main>
 	<!--==================================================================== 푸터 시작 =====================================================================-->
 	<footer data-elementor-type="footer" data-elementor-id="1578"
-		class="elementor elementor-1578 elementor-location-footer" data-elementor-post-type="elementor_library">
+		class="elementor elementor-1578 elementor-location-footer"
+		data-elementor-post-type="elementor_library">
 		<section
 			class="elementor-section elementor-top-section elementor-element elementor-element-9779fb7 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 			data-id="9779fb7" data-element_type="section">
 			<div class="elementor-container elementor-column-gap-no">
-				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-46e17e6"
+				<div
+					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-46e17e6"
 					data-id="46e17e6" data-element_type="column">
 					<div class="elementor-widget-wrap elementor-element-populated">
 						<section
@@ -799,69 +936,75 @@
 									<div class="elementor-widget-wrap elementor-element-populated">
 										<div
 											class="elementor-element elementor-element-14296d8 elementor-widget-mobile__width-initial elementor-widget elementor-widget-theme-site-logo elementor-widget-image"
-											data-id="14296d8" data-element_type="widget" data-widget_type="theme-site-logo.default">
+											data-id="14296d8" data-element_type="widget"
+											data-widget_type="theme-site-logo.default">
 											<div class="elementor-widget-container">
-												<a href="https://templatekit.tokomoo.com/adopkit">
-													<img width="257" height="101"
-														src="/assets/img/LOGO.png"
-														class="attachment-full size-full wp-image-1549" alt="" loading="lazy" /> </a>
+												<a href="https://templatekit.tokomoo.com/adopkit"> <img
+													width="257" height="101" src="/assets/img/LOGO.png"
+													class="attachment-full size-full wp-image-1549" alt=""
+													loading="lazy" />
+												</a>
 											</div>
 										</div>
 										<div
 											class="elementor-element elementor-element-d8192bf elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-											data-id="d8192bf" data-element_type="widget" data-widget_type="icon-list.default">
-										</div>
+											data-id="d8192bf" data-element_type="widget"
+											data-widget_type="icon-list.default"></div>
 									</div>
 								</div>
 								<div
 									class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-6648925"
 									data-id="6648925" data-element_type="column">
 									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-3dc32c3 elementor-widget elementor-widget-heading"
-											data-id="3dc32c3" data-element_type="widget" data-widget_type="heading.default">
+										<div
+											class="elementor-element elementor-element-3dc32c3 elementor-widget elementor-widget-heading"
+											data-id="3dc32c3" data-element_type="widget"
+											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
 												<h5 class="elementor-heading-title elementor-size-default">Navigation</h5>
 											</div>
 										</div>
 										<div
 											class="elementor-element elementor-element-15e7729 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-											data-id="15e7729" data-element_type="widget" data-widget_type="icon-list.default">
+											data-id="15e7729" data-element_type="widget"
+											data-widget_type="icon-list.default">
 											<div class="elementor-widget-container">
 												<ul class="elementor-icon-list-items">
-													<li class="elementor-icon-list-item">
-														<span style="font-size: 16px;">Donation</span>
-													</li>
-													<li class="elementor-icon-list-item">
-														<span style="font-size: 16px;">Dog List</span>
-													</li>
-													<li class="elementor-icon-list-item">
-														<span style="font-size: 16px;">Volunteer</span>
-													</li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Donation</span></li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Dog List</span></li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Volunteer</span></li>
 												</ul>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class=" elementor-column elementor-col-20 elementor-inner-column elementor-element
-															elementor-element-c5eb609" data-id="c5eb609" data-element_type="column">
+								<div
+									class=" elementor-column elementor-col-20 elementor-inner-column elementor-element
+															elementor-element-c5eb609"
+									data-id="c5eb609" data-element_type="column">
 									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-8afab7a elementor-widget elementor-widget-heading"
-											data-id="8afab7a" data-element_type="widget" data-widget_type="heading.default">
+										<div
+											class="elementor-element elementor-element-8afab7a elementor-widget elementor-widget-heading"
+											data-id="8afab7a" data-element_type="widget"
+											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Our Organization</h5>
+												<h5 class="elementor-heading-title elementor-size-default">Our
+													Organization</h5>
 											</div>
 										</div>
 										<div
 											class="elementor-element elementor-element-663a6e5 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-											data-id="663a6e5" data-element_type="widget" data-widget_type="icon-list.default">
+											data-id="663a6e5" data-element_type="widget"
+											data-widget_type="icon-list.default">
 											<div class="elementor-widget-container">
 												<ul class="elementor-icon-list-items">
-													<li class="elementor-icon-list-item">
-														<span style="font-size: 16px;">Our Team</span>
-													</li>
-													<li class="elementor-icon-list-item">
-														<span style="font-size: 16px;">FAQ's</span>
-													</li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Our Team</span></li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">FAQ's</span></li>
 												</ul>
 											</div>
 										</div>
@@ -871,25 +1014,24 @@
 									class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-ff175d0"
 									data-id="ff175d0" data-element_type="column">
 									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-26a51c1 elementor-widget elementor-widget-heading"
-											data-id="26a51c1" data-element_type="widget" data-widget_type="heading.default">
+										<div
+											class="elementor-element elementor-element-26a51c1 elementor-widget elementor-widget-heading"
+											data-id="26a51c1" data-element_type="widget"
+											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
 												<h5 class="elementor-heading-title elementor-size-default">Information</h5>
 											</div>
 										</div>
 										<div
 											class="elementor-element elementor-element-62be157 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
-											data-id="62be157" data-element_type="widget" data-widget_type="icon-list.default">
+											data-id="62be157" data-element_type="widget"
+											data-widget_type="icon-list.default">
 											<div class="elementor-widget-container">
 												<ul class="elementor-icon-list-items">
-													<li class="elementor-icon-list-item">
-
-														<span style="font-size: 16px;">Center Information</span>
-													</li>
-													<li class="elementor-icon-list-item">
-
-														<span style="font-size: 16px;">Terms of service</span>
-													</li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Center Information</span></li>
+													<li class="elementor-icon-list-item"><span
+														style="font-size: 16px;">Terms of service</span></li>
 												</ul>
 											</div>
 										</div>
@@ -899,11 +1041,13 @@
 									class="elementor-column elementor-col-20 elementor-inner-column elementor-element elementor-element-b585555"
 									data-id="b585555" data-element_type="column">
 									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-a9545cf elementor-widget elementor-widget-heading"
-											data-id="a9545cf" data-element_type="widget" data-widget_type="heading.default">
+										<div
+											class="elementor-element elementor-element-a9545cf elementor-widget elementor-widget-heading"
+											data-id="a9545cf" data-element_type="widget"
+											data-widget_type="heading.default">
 											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Subscribe to our newsletter
-												</h5>
+												<h5 class="elementor-heading-title elementor-size-default">Subscribe
+													to our newsletter</h5>
 											</div>
 										</div>
 										<div
@@ -912,30 +1056,34 @@
 											data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;25&quot;,&quot;button_width_mobile&quot;:&quot;25&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}"
 											data-widget_type="form.default">
 											<div class="elementor-widget-container">
-												<form class="elementor-form" method="post" name="Newsletter Form">
-													<input type="hidden" name="post_id" value="1578" />
-													<input type="hidden" name="form_id" value="470dc33" />
-													<input type="hidden" name="referer_title" value="" />
+												<form class="elementor-form" method="post"
+													name="Newsletter Form">
+													<input type="hidden" name="post_id" value="1578" /> <input
+														type="hidden" name="form_id" value="470dc33" /> <input
+														type="hidden" name="referer_title" value="" /> <input
+														type="hidden" name="queried_id" value="1676" />
 
-													<input type="hidden" name="queried_id" value="1676" />
-
-													<div class="elementor-form-fields-wrapper elementor-labels-">
+													<div
+														class="elementor-form-fields-wrapper elementor-labels-">
 														<div
 															class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-75 elementor-sm-75 elementor-field-required">
-															<label for="form-field-email" class="elementor-field-label elementor-screen-only">
-																Email </label>
-															<input size="1" type="email" name="form_fields[email]" id="form-field-email"
+															<label for="form-field-email"
+																class="elementor-field-label elementor-screen-only">
+																Email </label> <input size="1" type="email"
+																name="form_fields[email]" id="form-field-email"
 																class="elementor-field elementor-size-md  elementor-field-textual"
-																placeholder="Enter email" required="required" aria-required="true">
+																placeholder="Enter email" required="required"
+																aria-required="true">
 														</div>
 														<div
 															class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-25 e-form__buttons elementor-sm-25">
-															<button type="submit" class="elementor-button elementor-size-lg">
-																<span>
-																	<span class="elementor-align-icon-left elementor-button-icon">
-																		<i aria-hidden="true" class="fas fa-paper-plane"></i> <span
-																			class="elementor-screen-only">Submit</span>
-																	</span>
+															<button type="submit"
+																class="elementor-button elementor-size-lg">
+																<span> <span
+																	class="elementor-align-icon-left elementor-button-icon">
+																		<i aria-hidden="true" class="fas fa-paper-plane"></i>
+																		<span class="elementor-screen-only">Submit</span>
+																</span>
 																</span>
 															</button>
 														</div>
@@ -945,32 +1093,30 @@
 										</div>
 										<div
 											class="elementor-element elementor-element-4a27bc3 elementor-shape-circle e-grid-align-left elementor-grid-0 elementor-widget elementor-widget-social-icons"
-											data-id="4a27bc3" data-element_type="widget" data-widget_type="social-icons.default">
+											data-id="4a27bc3" data-element_type="widget"
+											data-widget_type="social-icons.default">
 											<div class="elementor-widget-container">
 												<div class="elementor-social-icons-wrapper elementor-grid">
-													<span class="elementor-grid-item">
-														<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-fd5cc62"
-															target="_blank">
-															<span class="elementor-screen-only">Facebook-f</span>
-															<i class="fab fa-facebook-f" style="left: 30%; top: 30%;"></i> </a>
-													</span>
-													<span class="elementor-grid-item">
-														<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-8e75f02"
-															target="_blank">
-															<span class="elementor-screen-only">Twitter</span>
-															<i class="fab fa-twitter" style="left: 30%; top: 30%;"></i> </a>
-													</span>
-													<span class="elementor-grid-item">
-														<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-aec5c7b"
-															target="_blank">
-															<span class="elementor-screen-only">Instagram</span>
-															<i class="fab fa-instagram" style="left: 30%; top: 30%;"></i> </a>
-													</span>
-													<span class="elementor-grid-item">
-														<a class="elementor-icon elementor-social-icon elementor-social-icon-tiktok elementor-repeater-item-10121cc"
-															target="_blank">
-															<span class="elementor-screen-only">Tiktok</span>
-															<i class="fab fa-tiktok" style="left: 30%; top: 30%;"></i> </a>
+													<span class="elementor-grid-item"> <a
+														class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-fd5cc62"
+														target="_blank"> <span class="elementor-screen-only">Facebook-f</span>
+															<i class="fab fa-facebook-f" style="left: 30%; top: 30%;"></i>
+													</a>
+													</span> <span class="elementor-grid-item"> <a
+														class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-8e75f02"
+														target="_blank"> <span class="elementor-screen-only">Twitter</span>
+															<i class="fab fa-twitter" style="left: 30%; top: 30%;"></i>
+													</a>
+													</span> <span class="elementor-grid-item"> <a
+														class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-repeater-item-aec5c7b"
+														target="_blank"> <span class="elementor-screen-only">Instagram</span>
+															<i class="fab fa-instagram" style="left: 30%; top: 30%;"></i>
+													</a>
+													</span> <span class="elementor-grid-item"> <a
+														class="elementor-icon elementor-social-icon elementor-social-icon-tiktok elementor-repeater-item-10121cc"
+														target="_blank"> <span class="elementor-screen-only">Tiktok</span>
+															<i class="fab fa-tiktok" style="left: 30%; top: 30%;"></i>
+													</a>
 													</span>
 												</div>
 											</div>
@@ -979,8 +1125,10 @@
 								</div>
 							</div>
 						</section>
-						<div class="elementor-element elementor-element-d102166 elementor-widget elementor-widget-spacer"
-							data-id="d102166" data-element_type="widget" data-widget_type="spacer.default">
+						<div
+							class="elementor-element elementor-element-d102166 elementor-widget elementor-widget-spacer"
+							data-id="d102166" data-element_type="widget"
+							data-widget_type="spacer.default">
 							<div class="elementor-widget-container">
 								<div class="elementor-spacer">
 									<div class="elementor-spacer-inner"></div>
@@ -989,18 +1137,21 @@
 						</div>
 						<div
 							class="elementor-element elementor-element-9195eca elementor-widget-divider--view-line elementor-widget elementor-widget-divider"
-							data-id="9195eca" data-element_type="widget" data-widget_type="divider.default">
+							data-id="9195eca" data-element_type="widget"
+							data-widget_type="divider.default">
 							<div class="elementor-widget-container">
 								<div class="elementor-divider">
-									<span class="elementor-divider-separator">
-									</span>
+									<span class="elementor-divider-separator"> </span>
 								</div>
 							</div>
 						</div>
-						<div class="elementor-element elementor-element-388e005 elementor-widget elementor-widget-heading"
-							data-id="388e005" data-element_type="widget" data-widget_type="heading.default">
+						<div
+							class="elementor-element elementor-element-388e005 elementor-widget elementor-widget-heading"
+							data-id="388e005" data-element_type="widget"
+							data-widget_type="heading.default">
 							<div class="elementor-widget-container">
-								<p class="elementor-heading-title elementor-size-default">Copyright © 2023 Pet Pals By Tokomoo.</p>
+								<p class="elementor-heading-title elementor-size-default">Copyright
+									© 2023 Pet Pals By Tokomoo.</p>
 							</div>
 						</div>
 					</div>
@@ -1008,8 +1159,9 @@
 			</div>
 		</section>
 	</footer>
-	
-	<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+	<script data-cfasync="false"
+		src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script
 		src='https://templatekit.tokomoo.com/adopkit/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=1.0.0'
 		id='hello-theme-frontend-js'></script>
@@ -1025,16 +1177,20 @@
 	<script
 		src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.15.3'
 		id='elementor-frontend-modules-js'></script>
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2'
+	<script
+		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2'
 		id='wp-polyfill-inert-js'></script>
 	<script
 		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11'
 		id='regenerator-runtime-js'></script>
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0'
+	<script
+		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0'
 		id='wp-polyfill-js'></script>
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1'
+	<script
+		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1'
 		id='wp-hooks-js'></script>
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef'
+	<script
+		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/dist/i18n.min.js?ver=7701b0c3857f914212ef'
 		id='wp-i18n-js'></script>
 	<script id="wp-i18n-js-after">
 		wp.i18n.setLocaleData({ 'text direction\u0004ltr': ['ltr'] });
@@ -1048,7 +1204,8 @@
 	<script
 		src='https://templatekit.tokomoo.com/adopkit/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2'
 		id='elementor-waypoints-js'></script>
-	<script src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2'
+	<script
+		src='https://templatekit.tokomoo.com/adopkit/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2'
 		id='jquery-ui-core-js'></script>
 	<script id="elementor-frontend-js-before">
 		var elementorFrontendConfig = { "environmentMode": { "edit": false, "wpPreview": false, "isScriptDebug": false }, "i18n": { "shareOnFacebook": "Share on Facebook", "shareOnTwitter": "Share on Twitter", "pinIt": "Pin it", "download": "Download", "downloadImage": "Download image", "fullscreen": "Fullscreen", "zoom": "Zoom", "share": "Share", "playVideo": "Play Video", "previous": "Previous", "next": "Next", "close": "Close", "a11yCarouselWrapperAriaLabel": "Carousel | Horizontal scrolling: Arrow Left & Right", "a11yCarouselPrevSlideMessage": "Previous slide", "a11yCarouselNextSlideMessage": "Next slide", "a11yCarouselFirstSlideMessage": "This is the first slide", "a11yCarouselLastSlideMessage": "This is the last slide", "a11yCarouselPaginationBulletMessage": "Go to slide" }, "is_rtl": false, "breakpoints": { "xs": 0, "sm": 480, "md": 768, "lg": 1025, "xl": 1440, "xxl": 1600 }, "responsive": { "breakpoints": { "mobile": { "label": "Mobile Portrait", "value": 767, "default_value": 767, "direction": "max", "is_enabled": true }, "mobile_extra": { "label": "Mobile Landscape", "value": 880, "default_value": 880, "direction": "max", "is_enabled": false }, "tablet": { "label": "Tablet Portrait", "value": 1024, "default_value": 1024, "direction": "max", "is_enabled": true }, "tablet_extra": { "label": "Tablet Landscape", "value": 1200, "default_value": 1200, "direction": "max", "is_enabled": false }, "laptop": { "label": "Laptop", "value": 1366, "default_value": 1366, "direction": "max", "is_enabled": false }, "widescreen": { "label": "Widescreen", "value": 2400, "default_value": 2400, "direction": "min", "is_enabled": false } } }, "version": "3.15.3", "is_static": false, "experimentalFeatures": { "e_dom_optimization": true, "e_optimized_assets_loading": true, "e_optimized_css_loading": true, "additional_custom_breakpoints": true, "theme_builder_v2": true, "hello-theme-header-footer": true, "landing-pages": true, "page-transitions": true, "notes": true, "loop": true, "form-submissions": true, "e_scroll_snap": true }, "urls": { "assets": "https:\/\/templatekit.tokomoo.com\/adopkit\/wp-content\/plugins\/elementor\/assets\/" }, "swiperClass": "swiper-container", "settings": { "page": [], "editorPreferences": [] }, "kit": { "active_breakpoints": ["viewport_mobile", "viewport_tablet"], "global_image_lightbox": "yes", "lightbox_enable_counter": "yes", "lightbox_enable_fullscreen": "yes", "lightbox_enable_zoom": "yes", "lightbox_enable_share": "yes", "lightbox_title_src": "title", "lightbox_description_src": "description", "hello_header_logo_type": "logo", "hello_header_menu_layout": "horizontal", "hello_footer_logo_type": "logo" }, "post": { "id": 1686, "title": "Dog%20list%20%E2%80%93%20Dog%20Pals", "excerpt": "", "featuredImage": false } };

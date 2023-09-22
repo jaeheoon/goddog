@@ -6,23 +6,8 @@
 <mapper
 	namespace="tteogipbangbeomdae.goddog.domain.shelter.mapper.ShelterMapper">
 
-	<select id="getShelterList"  resultType="Shelter">
-		SELECT
-		    c.care_no      careno,
-		    c.name         name,
-		    c.adress       adress,
-		    c.tel          tel,
-		    c.closeday     closeday,
-		    c.mans         mans,
-		    ci.care_img_no careimgno,
-		    ci.care_img    careimg
-		FROM
-		    care c
-		JOIN care_img ci ON c.care_no = ci.care_no
-	</select>
-	
+		<!--  shelter_detail 페이지를 위한 쿼리문 -->
 	<select id="selectShelter" parameterType="int" resultType="Shelter">
-		
 		SELECT
 		    c.care_no      careno,
 		    c.name         name,
@@ -48,6 +33,24 @@
 		    JOIN care_img ci ON c.care_no = ci.care_no
 		WHERE c.care_no = #{value}
 	</select>
+
+		<!--  shelter_lsit 페이지를 위한 쿼리문  -->
+	<select id="getShelterList"  resultType="Shelter">
+		SELECT
+		    c.care_no      careno,
+		    c.name         name,
+		    c.adress       adress,
+		    c.tel          tel,
+		    c.closeday     closeday,
+		    c.mans         mans,
+		    ci.care_img_no careimgno,
+		    ci.care_img    careimg
+		FROM
+		    care c
+		JOIN care_img ci ON c.care_no = ci.care_no
+	</select>
+	
+	
 
 	
 	

@@ -68,7 +68,7 @@
 
 
 				<!-- 첫번째 보호소 -->
-				<div data-elementor-type="wp-page" data-elementor-id="1691"
+				<div data-elementor-type="wp-page" data-elementor-id="1691" 
 					class="elementor elementor-1691" data-elementor-post-type="page">
 					 <!-- Shelter 객체 목록을 반복 -->
     			<div th:each="shelter : ${list}">
@@ -79,9 +79,9 @@
 						<!-- 배경색 -->
 						<!-- <div class="elementor-background-overlay"></div> -->
 						<div class="elementor-container elementor-column-gap-no">
-							<div
+							<div 
 								class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-1de2e7fd"
-								data-id="1de2e7fd" data-element_type="column">
+								data-id="1de2e7fd" data-element_type="column"style="margin-left: 10%">
 								<div class="elementor-widget-wrap elementor-element-populated">
 								</div>
 							</div>
@@ -176,8 +176,8 @@
 																		data-widget_type="heading.default">
 																		<div class="elementor-widget-container">
 																			<h6
-																				class="elementor-heading-title elementor-size-default">매주&nbsp<span th:text="${shelter.closeday}">:
-																				일요일</span></h6>
+																				class="elementor-heading-title elementor-size-default" th:text="${shelter.closeday}">:
+																				일요일</h6>
 																		</div>
 																	</div>
 																	<div
@@ -294,7 +294,7 @@
 				</div>
 				</div>
 			</div>
-			</div>
+			
 			<div style="margin-top: 5%; color: #FFFCF7">.</div>
 		</main>
 		
