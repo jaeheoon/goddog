@@ -2,29 +2,23 @@ package tteogipbangbeomdae.goddog.web.volunteer.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import jakarta.servlet.http.HttpSession;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import tteogipbangbeomdae.goddog.domain.member.dto.Member;
-import tteogipbangbeomdae.goddog.domain.reservation.dto.Reservation;
-import tteogipbangbeomdae.goddog.domain.reservation.service.ReservationService;
-import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
-import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -73,15 +67,23 @@ public class VolunteerController {
 	
 	@GetMapping("/map")
 	public String viewMap(Model model) {
+		List<Shelter> Shelterlist = shelterService.findAllShelter();
+		
+		
+		model.addAttribute("Shelterlist", Shelterlist);
 		return "volunteer/map";
 	}
 	
 
 	@GetMapping("/calender")
-	public String viewCalender(@RequestParam("careNo") int careNo, Model model,HttpSession session) {
+	public String viewCalender(@RequestParam("careNo") int careNo, @RequestParam(value = "reservationNo",required = false) String reservationNo,Model model,HttpSession session) {
 		Shelter shelter = shelterService.clickShelter(careNo);
 		int maxCount = reservationService.getReservationCount(careNo);
-		
+		if(reservationNo != null) {
+			int reservationNumber = Integer.parseInt(reservationNo);
+			Reservation updateReservation = reservationService.getReservaionInfo(reservationNumber);			
+			session.setAttribute("updateReservation", updateReservation);
+		}
 		session.setAttribute("careNo", careNo);
 		session.setAttribute("shelter", shelter);
 		session.setAttribute("maxCount", maxCount);
@@ -117,7 +119,10 @@ public class VolunteerController {
 		Shelter resultShelter = shelterService.clickShelter(careNo);
 		model.addAttribute("resultReservation", resultReservation);
 		model.addAttribute("resultShelter", resultShelter);
-
+		session.removeAttribute("careNo");
+		session.removeAttribute("shelter");
+		session.removeAttribute("maxCount");
+		session.removeAttribute("updateReservation");
 		return "volunteer/result";
 	}
 	
@@ -130,28 +135,37 @@ public class VolunteerController {
 		int people = resultReservation.getPeople();
 		String regTime = resultReservation.getRegtime();
 		String regDate = resultReservation.getRegdate().replace('.', '-');
-		
+		Reservation setReservation;
 		// 데이터 검증 실패 시 봉사예약 첫 화면으로 Forward
 		if (bindingResult.hasErrors()) {
 			return "volunteer/map";
 		}
-		Reservation setReservation = Reservation.builder()
-											 .memberId(memberId)
-											 .careNo(careNo)
-											 .shelterName(shelterName)
-											 .people(people)
-											 .regdate(regDate)
-											 .regtime(regTime)
-											 .build();
-		reservationService.isReservation(setReservation);
-		redirectAttributes.addFlashAttribute("status", true);
-		return "redirect:/volunteer/result/" + setReservation.getMemberId() + "/" + setReservation.getRegdate() + "/" + setReservation.getRegtime();
+		if(session.getAttribute("updateReservation") != null) {
+			Reservation updateReservation = (Reservation)session.getAttribute("updateReservation");
+			updateReservation.setRegdate(regDate);
+			updateReservation.setRegtime(regTime);
+			updateReservation.setPeople(people);
+			Reservation updatedReservation = reservationService.updateReservationInfo(updateReservation);
+			return "redirect:/volunteer/result/" + updatedReservation.getMemberId() + "/" + updatedReservation.getRegdate() + "/" + updatedReservation.getRegtime();
+		} else {
+			setReservation = Reservation.builder()
+					.memberId(memberId)
+					.careNo(careNo)
+					.shelterName(shelterName)
+					.people(people)
+					.regdate(regDate)
+					.regtime(regTime)
+					.build();		
+			reservationService.isReservation(setReservation);
+			redirectAttributes.addFlashAttribute("status", true);
+			return "redirect:/volunteer/result/" + setReservation.getMemberId() + "/" + setReservation.getRegdate() + "/" + setReservation.getRegtime();
+		}
 	}
 	
-	@GetMapping("/list")
-	public String viewList(Model model) {
-		return "volunteer/list";
-	}
+//	@GetMapping("/list")
+//	public String viewList(Model model) {
+//		return "volunteer/list";
+//	}
 	
 	@GetMapping("/detail/{reservationNo}")
 	public String viewDetail(@PathVariable("reservationNo")int reservationNo, Model model) {
@@ -159,6 +173,32 @@ public class VolunteerController {
 
 		model.addAttribute("reservation", reservation);
 		return "volunteer/cancel_detail";
+	}
+	
+	@GetMapping("/cancel/{reservationNo}")
+	public String deleteReservation(@PathVariable("reservationNo")int reservationNo, Model model) {
+			reservationService.deleteReservation(reservationNo);
+			
+		return "redirect:/member/mypage";
+	}
+	
+	/**
+	 * @author 조영호
+	 * @since 2023. 09. 22.
+	 * @param formattedDate 자바스크립트에서 넘어온 동적 날짜들
+	 * @return 날짜에 해당하는 총 봉사인원 수 반환
+	 */
+	@GetMapping("/calender/people/{formattedDate}/{careNo}")
+	@ResponseBody
+	public Map<String,Object> sendPeopleCount(@PathVariable("formattedDate") String formattedDate,@PathVariable("careNo") int careNo,Model model) {
+		int limitCount = reservationService.getMaxCount(careNo);
+		int peopleCount = reservationService.getAllpeople(careNo, formattedDate);
+		String closeday = reservationService.getClosedayByCareNo(careNo);
+	    Map<String, Object> responseMap = new HashMap<>();
+	    responseMap.put("limitCount", limitCount);
+	    responseMap.put("peopleCount", peopleCount);
+	    responseMap.put("closeday", closeday);
+		return responseMap;
 	}
 	
 }

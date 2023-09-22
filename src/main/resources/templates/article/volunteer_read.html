@@ -210,6 +210,29 @@
 																				</div>
 																			</div>
 																		</li>
+																	<li class="tit_detail">
+																		<div id="commentForm">
+																			<form id="commentForm" class="commentForm" th:action="@{'/'+article+'/'+comment}" method="post">
+
+																				<input type="text" id="username" name="memberId" th:value="${session.loginMember.memberId}" placeholder="사용자명" required>
+																				<textarea id="commentInput" name="reviewContents" placeholder="댓글 내용" required></textarea>
+
+																				<br><br>
+																				<ul class="btn_set board_btn">
+																					<li class="btn_default float_l">
+																						<a id="btnList" class="btnList" onclick="doDisplay();">댓글보기</a>
+																					</li>
+																					<li class="btn_default btn_red float_r mar_r5">
+																						<a href="#" id="btnCancel" class="confirm">댓글 등록</a>
+																					</li>
+																				</ul>
+																			</form>
+																		</div>
+																	</li>
+
+																	<!-- 작성된 댓글들 -->
+																	<div class="commentBoxList" style="display: none;">
+																		<!-- 동적으로 REST API이용하여 화면깜밖임없이 댓글작성 가능.
 																		 -->
 																	</div>
 

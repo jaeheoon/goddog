@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <div class="user-container">
+            <label for="nick-name">대화명</label>
+            <input type="text" id="nick-name">
+            <button class="join-button"> 입 장 </button>
+        </div>
+        
+        <div class="display-container">
+            <ul class="chatting-list">
+
+            </ul>
+        </div>
+        <div class="input-container">
+            <span>
+                <input type="text" class="chatting-input">
+                <button class="send-button"> 전 송 </button>
+            </span>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+</body>
+
+</html>

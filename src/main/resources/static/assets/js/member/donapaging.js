@@ -30,10 +30,11 @@ function showReply2(replys) {
 	let content = ``;
 
 	replys.forEach(reply => {
+		let formattedDonation = reply.donation.toLocaleString();
 		content += `<tr id="table-content">
 						<td class="m_hidden">${reply.donahistoryNo}1</td>
 						<td class="m_hidden">${reply.donationDate}</td>
-						<td class="m">${reply.donation}</td>
+						<td class="m">${formattedDonation}<span>원</span></td>
 					</tr>`;
 	});
 
