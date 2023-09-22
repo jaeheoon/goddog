@@ -9,6 +9,8 @@ import lombok.ToString;
 /**
  * Announce DTO클래스
  * @author 신혜원
+ * @since   2023. 09. 14.
+ * @version 1.0
  * build어노테이션 사용.
  */
 @AllArgsConstructor
@@ -22,5 +24,4 @@ public class Announce {
 	private int annoNo;
 	private String title;
 	private String contents;
-	
 }

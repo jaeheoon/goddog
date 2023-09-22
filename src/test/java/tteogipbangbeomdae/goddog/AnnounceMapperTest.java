@@ -15,12 +15,10 @@ import tteogipbangbeomdae.goddog.domain.announce.mapper.AnnounceMapper;
 
 /**
  * AnnounceMapperTest
- * 전체 공지사항 조회하기
  * @author 떡잎방범대 신혜원
  */
 
 @SpringBootTest
-@Slf4j
 public class AnnounceMapperTest {
 	
 	@Autowired
@@ -29,13 +27,7 @@ public class AnnounceMapperTest {
 	@Test
 	@Disabled
 	public void questionAskTest() {
-		
 		List<Announce> announces = announceMapper.questionAnswer();
-		log.info("들어왔남?? : {}", announces);
-		assertThat(announces).isNotNull();
-		
+		assertThat(announces).isNotNull();	
 	}
-	
-	
-
 }

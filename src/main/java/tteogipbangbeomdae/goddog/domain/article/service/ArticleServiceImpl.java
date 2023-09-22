@@ -12,7 +12,7 @@ import tteogipbangbeomdae.goddog.domain.common.web.dto.PageParams;
 
 /**
  * ArticleServiceImpl
- * @author 신혜원
+ * @author 신혜원, 최은비
  *
  */
 @Service
@@ -23,14 +23,18 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	// Insert
 	
-	// 게시글 등록
+	/**
+	 * 게시글 등록
+	 */
 	@Override
 	@Transactional
 	public void createArticle(Article article) {
 		articleMapper.create(article);
 	}
 	
-	// 댓글 등록
+	/**
+	 * 댓글 등록
+	 */
 	@Override
 	public void createNewComment(Article article) {
 		articleMapper.createComment(article);
@@ -38,6 +42,10 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	
 	//Select
+	
+	/**
+	 * 전체 게시글 반환 페이징 처리됨
+	 */
 	@Override
 	public List<Article> getAllPagingArticle(PageParams pageParams, int noticeNo) {
 		return articleMapper.findAll(pageParams, noticeNo);
@@ -48,11 +56,12 @@ public class ArticleServiceImpl implements ArticleService{
 		return articleMapper.getCount(noticeNo);
 	}
 
-	// 게시글 상세보기
+	/**
+	 * 게시글 상세보기
+	 */
 	@Override
 	public List<Article> datailArticle(int groupNo) {
 		return articleMapper.readArticle(groupNo);
 	}
-
-
+	
 }
