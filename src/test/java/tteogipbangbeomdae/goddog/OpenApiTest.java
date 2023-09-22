@@ -54,7 +54,7 @@ public class OpenApiTest {
 	@Test
 //	@Disabled
 	void shelterDogListTest() {
-		List<Dog> list = openApiService.getShelterDogList(1);
+		List<Dog> list = openApiService.getShelterDogList(1, false);
 		for (Dog dog : list) {
 			log.info("강아지 사진, 번호 : {}", dog);
 		}

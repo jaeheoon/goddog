@@ -54,7 +54,7 @@ public class DogController {
 			status = true;
 			for (int i = 0; i < shelterList.size(); i++) {
 				if (shelter.equals(shelterList.get(i).getName())) {
-					dogList = openApiService.getShelterDogList(i + 1, status);
+					dogList = openApiService.getShelterDogList(i + 1, requestPage, status);
 				}
 			}
 		}
