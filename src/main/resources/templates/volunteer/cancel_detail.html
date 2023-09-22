@@ -5,7 +5,7 @@
 	th:replace="~{/layout/layoutV1 :: setContent(~{this :: title}, ~{this :: uniqhead}, ~{this :: content})}">
 
 	<!--/* 타이틀 동적변경 */-->
-	<title th:fragment="title">동의페이지</title>
+	<title th:fragment="title">상세정보</title>
 
 	<!--/* 페이지별 특정 head내용 동적변경*/-->
 	<th:block th:fragment="uniqhead">
@@ -112,8 +112,7 @@
 											<tbody>
 												<tr>
 													<th scope="row">신청인</th>
-													<td colspan="3" class="txt_l"
-														th:text="${reservation.memberName}">홍길동</td>
+													<td colspan="3" class="txt_l" th:text="${reservation.memberName}">홍길동</td>
 												</tr>
 												<tr>
 													<th scope="row">신청인원</th>
@@ -224,12 +223,12 @@
 													th:href="@{'/'+member+'/'+mypage}">목록</a></li>
 												<th:block th:if="${reservation.status == 'await'}">
 													<li class="btn_default btn_red float_r"><a
-														href="/volunteer/volunteer.html" th:href="@{'/'+volunteer}"
+														href="/volunteer/volunteer.html" th:href="@{'/'+volunteer+'/cancel/'+${reservation.reservationNo}}"
 														id="btnRegist">예약취소</a>
 													</li>
 
-													<li class='btn_default btn_green float_r'><a
-														href="/volunteer/calender" th:href="@{'/'+volunteer}">예약수정</a>
+													<li class='btn_default btn_green float_r'>
+														<a href="/volunteer/calender" th:href="@{'/volunteer'+'/calender'+'?careNo='+${reservation.careNo}+'&reservationNo='+${reservation.reservationNo}}">예약수정</a>
 													</li>
 												</th:block>
 											</ul>

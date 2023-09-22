@@ -15,7 +15,6 @@
 		    c.closeday     closeday,
 		    c.mans         mans,
 		    ci.care_img_no careimgno,
-		    ci.care_no     careno,
 		    ci.care_img    careimg
 		FROM
 		    care c
@@ -32,12 +31,13 @@
 		    c.tel          tel,
 		    c.closeday     closeday,
 		    c.mans         mans,
-		    c.open         opne,
+		    c.open         open,
 		    c.close        close,
 		    c.etc          etc,
 		    c.map_url      map_url,
+		    c.volunteer_am volunteerAm,
+		    c.volunteer_pm volunteerPm,
 		    ci.care_img_no careimgno,
-		    ci.care_no     careno,
 		    ci.care_img    careimg,
 		    ci.care_1_img  careimg1,
 		    ci.care_2_img  careimg2,
@@ -46,7 +46,6 @@
 		FROM
 		         care c
 		    JOIN care_img ci ON c.care_no = ci.care_no
-				
 		WHERE c.care_no = #{value}
 	</select>
 

@@ -1,5 +1,6 @@
 package tteogipbangbeomdae.goddog.web.member.controller;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -182,6 +183,7 @@ public class MemberController {
 		return member != null ? true : false;
 	}
 	
+	/** 로그인 요청시 회원여부 체크 */
 	@GetMapping("/valid/{id}/{passwd}")
 	@ResponseBody
 	public boolean isMemberIdAndPw(@PathVariable("id") String id, @PathVariable("passwd") String passwd) {
@@ -190,7 +192,7 @@ public class MemberController {
 		return member != null || adminMember != null ? true : false;
 	}
 	
-	
+	/** 기본 마이페이지 뷰 보여주는 요청처리 */
 	@GetMapping("/mypage")
 	public String selectMethod(Model model, HttpSession session) {		
 
@@ -203,7 +205,7 @@ public class MemberController {
 		//세션에 들어있는 관리자 정보에서 careNo를 추출
 		AdminMember adminMember = (AdminMember)session.getAttribute("loginMember");
 		int careNo = adminMember.getCareNo();
-		//log.info("들어온 리퀘스트페이지 {}",requestPage);
+		
 		//페이징 처리를 위한 해당 보호소 봉사내역갯수.
 		int rowCount = reservationService.getCount(careNo);
 		
@@ -218,9 +220,7 @@ public class MemberController {
 		
 		//페이징 처리를 위한 해당 보호소의 봉사내역리스트.
 		List<Reservation> reservations = reservationService.getReservationList(pageParams, careNo);
-//		for (Reservation reservation : reservations) {
-//			log.info("들어온 상태 : {}",reservation.getStatus());
-//		}
+
 		//준비된 정보들 페이지에 보내기위해 모델에 저장.
 		model.addAttribute("pagination", pagination);
 		model.addAttribute("reservations", reservations);
@@ -279,6 +279,15 @@ public class MemberController {
 
 		//페이징처리된 목
 		List<Donahistory> donaList = donahistroyService.getAllDonaHistory(pageParams1,loginId);
+		
+		//가격
+//		DecimalFormat decimalFormat = new DecimalFormat("#,###원");
+//		for (Donahistory donahistory : donaList) {
+//			int donation = donahistory.getDonation();
+//			String formattedPay = decimalFormat.format(donation);
+//			int formattedDonation = Integer.parseInt(formattedPay);
+//			donahistory.setDonation(formattedDonation);
+//		}
 		
 	    Map<String, Object> responseMap = new HashMap<>();
 	    responseMap.put("pagination1", pagination1);

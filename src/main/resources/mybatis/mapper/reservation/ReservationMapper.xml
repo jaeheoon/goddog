@@ -113,7 +113,8 @@
 			   c.NAME shelterName, 
 			   r.status status, 
 			   r.people people, 
-			   m.tel memberPhoneNum
+			   m.tel memberPhoneNum,
+			   r.care_no careNo
 		  FROM RESERVATION R 
 		  JOIN MEMBER M ON r.member_id = m.member_id
 		  JOIN CARE c ON r.care_no = c.care_no
@@ -140,6 +141,43 @@
 		AND REGTIME = #{regtime}
 		AND MEMBER_ID = #{memberId}
 	</select>
-
+	
+	<update id="updateReservation" parameterType="Reservation">
+		UPDATE reservation
+		   SET regdate = #{regdate},
+		       regtime = #{regtime},
+		       people = #{people}
+		 WHERE reservation_no = #{reservationNo}
+	</update>
+	
+	<delete id="deleteReservation" parameterType="int">
+		DELETE FROM reservation
+		WHERE reservation_no = #{value}
+	</delete>
+	
+	<select id="getReservationByNo" resultType="Reservation" parameterType="int">
+		SELECT RESERVATION_NO reservationNo, MEMBER_ID memberId, REGTIME regtime, CARE_NO careNo, REGDATE regdate, TO_CHAR(INSERT_DATE, 'YYYY-MM-DD') insertDate, PEOPLE people
+		FROM RESERVATION
+		WHERE RESERVATION_NO = #{value}
+	</select>
+	
+	<select id="getCountByDate" resultType="int">
+		SELECT COALESCE(SUM(people), 0)
+		FROM reservation
+		WHERE care_no = #{careNo} AND regdate = #{formattedDate}
+	</select>
+	
+	<select id="getMaxCountInshelter" resultType="int">
+		SELECT mans
+		FROM care
+		WHERE care_no = #{value}
+	</select>
+	
+	<select id="getCloseday" parameterType="int" resultType="String">
+		SELECT closeday
+		FROM care
+		WHERE care_no = #{value}
+	</select>
+	
 
 </mapper>

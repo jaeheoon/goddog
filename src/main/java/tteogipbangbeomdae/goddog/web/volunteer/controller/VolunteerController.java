@@ -2,30 +2,23 @@ package tteogipbangbeomdae.goddog.web.volunteer.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import jakarta.servlet.http.HttpSession;
-import jakarta.validation.constraints.AssertFalse;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import tteogipbangbeomdae.goddog.domain.member.dto.Member;
-import tteogipbangbeomdae.goddog.domain.reservation.dto.Reservation;
-import tteogipbangbeomdae.goddog.domain.reservation.service.ReservationService;
-import tteogipbangbeomdae.goddog.domain.shelter.dto.Shelter;
-import tteogipbangbeomdae.goddog.domain.shelter.service.ShelterService;
 
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -74,6 +67,10 @@ public class VolunteerController {
 	
 	@GetMapping("/map")
 	public String viewMap(Model model) {
+		List<Shelter> Shelterlist = shelterService.findAllShelter();
+		
+		
+		model.addAttribute("Shelterlist", Shelterlist);
 		return "volunteer/map";
 	}
 	
@@ -183,6 +180,25 @@ public class VolunteerController {
 			reservationService.deleteReservation(reservationNo);
 			
 		return "redirect:/member/mypage";
+	}
+	
+	/**
+	 * @author 조영호
+	 * @since 2023. 09. 22.
+	 * @param formattedDate 자바스크립트에서 넘어온 동적 날짜들
+	 * @return 날짜에 해당하는 총 봉사인원 수 반환
+	 */
+	@GetMapping("/calender/people/{formattedDate}/{careNo}")
+	@ResponseBody
+	public Map<String,Object> sendPeopleCount(@PathVariable("formattedDate") String formattedDate,@PathVariable("careNo") int careNo,Model model) {
+		int limitCount = reservationService.getMaxCount(careNo);
+		int peopleCount = reservationService.getAllpeople(careNo, formattedDate);
+		String closeday = reservationService.getClosedayByCareNo(careNo);
+	    Map<String, Object> responseMap = new HashMap<>();
+	    responseMap.put("limitCount", limitCount);
+	    responseMap.put("peopleCount", peopleCount);
+	    responseMap.put("closeday", closeday);
+		return responseMap;
 	}
 	
 }

@@ -72,7 +72,8 @@ public class ReservationServiceImpl implements ReservationService {
 	public int getReserCountById(String memberId) {
 		return reservationMapper.getCountById(memberId);
 	}
-
+	
+	@Override
 	public int getReservationCount(int careNo) {
 		if (reservationMapper.getReservationCount(careNo) != null) {
 			return reservationMapper.getReservationCount(careNo);
@@ -128,5 +129,22 @@ public class ReservationServiceImpl implements ReservationService {
 		//업데이트된 레저베이션 반환
 		return reservationMapper.getReservation(reservation);
 	}
+
+	@Override
+	public int getAllpeople(int careNo, String formattedDate) {
+
+		return reservationMapper.getCountByDate(careNo, formattedDate);
+	}
+
+	@Override
+	public int getMaxCount(int careNo) {
+		return reservationMapper.getMaxCountInshelter(careNo);
+	}
+
+	@Override
+	public String getClosedayByCareNo(int careNo) {
+		return reservationMapper.getCloseday(careNo);
+	}
+	
 
 }
