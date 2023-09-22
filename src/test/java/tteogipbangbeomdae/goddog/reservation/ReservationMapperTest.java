@@ -163,7 +163,7 @@ public class ReservationMapperTest {
 	public void getCountByDateTest() {
 		//given
 		int careNo = 1;
-		String date = "2023-09-02";
+		String date = "2023-09-30";
 		//when
 		int result = reservationMapper.getCountByDate(careNo, date);
 		//then

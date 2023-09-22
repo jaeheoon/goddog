@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'netmarbleB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.1/netmarbleB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  font-family: 'netmarbleB' !important;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,7 +28,7 @@ body {
 }
 
 .user-container {
-    background: #a9bdce;
+    background: #ffb20c4d;
     padding: 0.3rem;
     flex: 1;
     display: flex;
@@ -38,13 +49,13 @@ body {
 }
 
 .display-container {
-    background: #b2c7d9;
+    background: #ffb20c1c;
     flex: 12;
     overflow-y: scroll;
 }
 
 .input-container {
-    background: #a9bdce;
+    background: #ffb20c4d;
     padding: 0.3rem;
     flex: 1;
     display: flex;
@@ -53,12 +64,13 @@ body {
 }
 
 .join-button {
-    background: #003b3b;
+    background: #616FE2;
     color: #fff;
     border: none;
     width: 100px;
     height: 90%;
     border-radius: 5px;
+    font-family: 'netmarbleB' !important;
 }
 
 .input-container span {
@@ -79,11 +91,12 @@ body {
 
 .send-button {
     flex: 2;
-    background: #003b3b;
+    background: #616FE2;
     color: #fff;
     border: none;
     height: 100%;
     border-radius: 5px;
+    font-family: 'netmarbleB' !important;
 }
 
 .chatting-list li {

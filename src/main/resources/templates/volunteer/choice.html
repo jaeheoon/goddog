@@ -211,7 +211,7 @@
 																					<td colspan="3" class="txt_l"><label for="prg_endtime_1"></label> 
 																						<select name="people" id="prg_endtime_1">
 																							<option value="">인원선택</option>
-																							<th:block th:each="num : ${#numbers.sequence(1, session.shelter.mans - session.maxCount)}">
+																							<th:block th:each="num : ${#numbers.sequence(1, session.shelter.mans - allPeople)}">
 																								<option th:value="${num}" th:text="${num + '명'}">1</option>
 																							</th:block>
 																						</select>
@@ -252,6 +252,7 @@
 				</div>
 			</section>
 		</main>
+		
 
 	</th:block>
 
