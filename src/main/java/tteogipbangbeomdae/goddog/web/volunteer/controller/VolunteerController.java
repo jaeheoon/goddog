@@ -65,16 +65,25 @@ public class VolunteerController {
 		return "volunteer/agreement";
 	}
 	
+	/**
+	 * DB에 저장된 쉘터 정보 받아와서 model에 저장 
+	 * @author 홍재헌
+	 * @since 2023. 09. 13.
+	 * @return 날짜 선택 페이지로 반환
+	 */
 	@GetMapping("/map")
 	public String viewMap(Model model) {
 		List<Shelter> Shelterlist = shelterService.findAllShelter();
-		
-		
 		model.addAttribute("Shelterlist", Shelterlist);
 		return "volunteer/map";
 	}
 	
-
+	/**
+	 * @author 홍재헌
+	 * @since 2023. 09. 13.
+	 * @param 사용자가 선택한 보호소 번호 받아와서 데이터 처리
+	 * @return 날짜 선택 페이지로 반환
+	 */
 	@GetMapping("/calender")
 	public String viewCalender(@RequestParam("careNo") int careNo, @RequestParam(value = "reservationNo", required = false) String reservationNo, Model model,HttpSession session) {
 		Shelter shelter = shelterService.clickShelter(careNo);
@@ -90,6 +99,12 @@ public class VolunteerController {
 		return "volunteer/calender";
 	}
 	
+	/**
+	 * @author 홍재헌
+	 * @since 2023. 09. 13.
+	 * @param 사용자가 선택한 날짜, 시간 받아와서 포맷 처리
+	 * @return choice 페이지로 반환
+	 */
 	@GetMapping("/choice")
 	public String viewChoice(@RequestParam("regdate") String regdate, Model model, HttpSession session) {
 		SimpleDateFormat inputFormat = new SimpleDateFormat("yyyyMMdd");
@@ -106,6 +121,12 @@ public class VolunteerController {
 		return "volunteer/choice";
 	}
 	
+	/**
+	 * @author 홍재헌
+	 * @since 2023. 09. 14.
+	 * @param 사용자가 선택한 캘린더, 맵, 날짜, 시간 받아와서 데이터 처리
+	 * @return 결과페이지 반환
+	 */
 	@GetMapping("/result/{id}/{regdate}/{regtime}")
 	public String viewResult(@PathVariable("id") String id, @PathVariable("regdate") String regdate, @PathVariable("regtime") String regtime, Model model, HttpSession session) {
 		int careNo = (int)session.getAttribute("careNo");
@@ -125,7 +146,12 @@ public class VolunteerController {
 		session.removeAttribute("updateReservation");
 		return "volunteer/result";
 	}
-	
+	/**
+	 * @author 홍재헌
+	 * @since 2023. 09. 16.
+	 * @param 봉사 예약 정보
+	 * @return 사용자가 선택한 캘린더, 맵, 날짜, 시간 Post
+	 */
 	@PostMapping("/result")
 	public String viewResultProsses(@ModelAttribute Reservation resultReservation, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model, HttpSession session) {
 		Member member = (Member)session.getAttribute("loginMember");

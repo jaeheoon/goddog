@@ -1,15 +1,4 @@
 package tteogipbangbeomdae.goddog.domain.shelter.dto;
-/**
- * @author  떡잎방범대 최은비
- * @since   2023. 9. 11.
- *  * @author  떡잎방범대 문승욱
- * @since   2023. 9. 21.
- * @version 1.0
- */
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

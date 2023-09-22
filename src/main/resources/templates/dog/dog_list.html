@@ -84,17 +84,15 @@
 						<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px; display: flex; flex: auto; flex-wrap: wrap">
 							<a href="/dog/dog-profile.html" class="filter area" th:each="area : ${areaList}" th:text="${area.orgdownNm}"
 							th:href="@{'/'+dog + '?' + requestPage +'=1&sido=' + ${area.orgCd}}">>경기도</a>
-							<!-- <button class="filter area" th:each="area : ${areaList}" th:text="${area.orgdownNm}">경기도</button> -->
 						</div>
 						
-						<!-- 품종은 제거 나중에 필요하면 추가
 						<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px; padding: 1.5em 0em 0em 0em">
-							<h4 class="elementor-image-box-title">품종</h4>
+							<h4 class="elementor-image-box-title">보호소</h4>
 						</div>
-						<div class="elementor-container elementor-column-gap-no" style="overflow:auto; width:1140px; height:160px; max-width: 1140px; display: flex; flex: auto; flex-wrap: wrap">
-							<a href="/dog/dog-profile.html" class="filter area" th:each="dogKind : ${dogKindList}" th:text="${dogKind.knm}">골든 리트리버</a>
+						<div class="elementor-container elementor-column-gap-no" style="overflow:auto; width:1140px; max-width: 1140px; display: flex; flex: auto; flex-wrap: wrap">
+							<a href="/dog/dog-profile.html" class="filter area" th:each="shelter : ${shelterList}" th:text="${shelter.name}"
+							th:href="@{'/'+dog + '?' + requestPage +'=1&shelter=' + ${shelter.name}}">>해피파워</a>
 						</div>
-						 -->
 					</div>
 				</section>
 							
@@ -120,7 +118,7 @@
 													<div class="elementor-widget-container">
 														<div class="elementor-image-box-wrapper">
 															<figure class="elementor-image-box-img" style="text-align: center;">
-																<a href="/dog/dog-profile.html" 
+																<a href="/dog/dog-profile.html"
 																th:href="@{'/'+dog+'/'+ profile + '?' + requestPage +'=' + ${requestPage} + '&' + desertionNo + '=' + ${dog != null ? dog.desertionNo : ''}}">
 																	<img class="elementor-animation-float attachment-full" style="height: 300px; width: 400px;"
 																		alt="강아지 정보가 없습니다."
@@ -152,7 +150,7 @@
 														<ul class="elementor-icon-list-items elementor-inline-items">
 															<li class="elementor-icon-list-item elementor-inline-item">
 																<span class="elementor-icon-list-text"  th:if="${dog != null ? dog.sexCd : ''}"
-																th:text="${dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷'}">Male</span>
+																th:text="${dog != null ? dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷' : ''}">Male</span>
 															</li>
 															<li class="elementor-icon-list-item elementor-inline-item">
 																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.age : ''}">4 Years</span>
@@ -188,26 +186,53 @@
 
 					<!-- 11페이지부터 나옴 - 처음으로 -->
 					<th:block th:if="${pagination.isShowFirst}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;&lt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&lt;&lt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;&lt;</a></li>
+						</th:block>
 					</th:block>
 					<!-- 2페이지부터 나옴 - 이전으로 -->
 					<th:block th:if="${pagination.isShowPrevious}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&lt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;</a></li>
+						</th:block>
 					</th:block>
 					
 					<!-- 목록 숫자 -->
 					<th:block th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
-						<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
-						<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}" th:text="${i}">1</a></li>
+						<th:block th:if="${status}">
+							<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
+							<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}" th:text="${i}">1</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
+							<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}" th:text="${i}">1</a></li>
+						</th:block>
 					</th:block>
 
 					<!-- 마지막 페이지에서 사라짐 - 다음으로 -->
 					<th:block th:if="${pagination.isShowNext}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&gt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;</a></li>
+						</th:block>
 					</th:block>
+					
 					<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 - 마지막으로 -->
 					<th:block th:if="${pagination.isShowLast}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;&gt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&gt;&gt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;&gt;</a></li>
+						</th:block>
 					</th:block>
 				</ul>
 				<!-- pagenate -->
