@@ -74,8 +74,8 @@ public class ArticleServiceImpl implements ArticleService{
     * 페이징 계산에 필요한 게시글 전체 갯수 반환
     */
    @Override
-   public int getAllcount(int noticeNo) {
-      return articleMapper.getCount(noticeNo);
+   public int getAllcount(int noticeNo,String searchValue,String searchType) {
+      return articleMapper.getCount(noticeNo,searchValue,searchType);
    }
 
    /**
@@ -110,4 +110,12 @@ public class ArticleServiceImpl implements ArticleService{
    public void updateCount(int reviewNo) {
       articleMapper.updateCount(reviewNo);      
    }
+   
+   /**
+    * 게시글에 해당하는 댓글 갯수 반환
+    */
+	@Override
+	public int getCountByGroupNo(int groupNo) {
+		return articleMapper.getCommentCount(groupNo);
+	}
 }

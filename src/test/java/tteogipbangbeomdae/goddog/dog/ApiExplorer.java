@@ -1,4 +1,4 @@
-package tteogipbangbeomdae.goddog;
+package tteogipbangbeomdae.goddog.dog;
 
 import java.io.BufferedReader;
 import java.io.IOException;

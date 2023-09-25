@@ -33,13 +33,16 @@ public interface ArticleService {
    public List<Article> getAllPagingArticle(PageParams pageParams, int noticeNo);
    
    /** 페이징 계산에 필요한 게시글 전체 갯수 반환 */
-   public int getAllcount(int noticeNo);
+   public int getAllcount(int noticeNo,String searchValue,String searchType);
    
    /** 게시글 상세보기 */
    public List<Article> datailArticle(int groupNo);
    
    /** 게시글 이미지 상세보기 */
    public List<String> articleImages(int reviewNo);
+   
+   /** 게시글에 해당하는 댓글 갯수 반환 */
+   public int getCountByGroupNo(int groupNo);
    
    //-----------------Update, Delete---------------
    

@@ -23,9 +23,9 @@ import lombok.ToString;
 @Builder
 public class ArticleImage {
 	
-	private int imgNo;
-	private String img;
-	private int reviewNo;
-	private String memberId;
-	private int noticeNo;
+	private int imgNo; //이미지 고유 번호
+	private String img; //이미지 이름
+	private int reviewNo; //연관된 리뷰 번호
+	private String memberId; //올린이
+	private int noticeNo; //게시판번호
 }

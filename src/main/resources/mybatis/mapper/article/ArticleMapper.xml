@@ -75,11 +75,18 @@
    </insert>
    
    <!-- 전체 게시글 숫자 -->
-   <select id="getCount" parameterType="int" resultType="int">
+   <select id="getCount" resultType="int">
       SELECT COUNT(review_no) cnt
       FROM   review
-      WHERE  notice_no = #{value} 
+      WHERE  notice_no = #{noticeNo} 
              AND level_no = 0
+             <if test="searchType == 'title' and searchValue != null">
+   			  AND review_title LIKE '%' || #{searchValue} || '%'
+  			 </if>
+  			 <!-- 작성자검색값일 때 -->
+			 <if test="searchType == 'memberId' and searchValue != null">
+			 AND member_id LIKE '%' || #{searchValue} || '%'
+			 </if>
    </select>
 
    <!-- 전체 게시글 가져오기 -->
@@ -92,7 +99,8 @@
                 noticeNo,
                 groupNo,
                 levelNo,
-                orderNo
+                orderNo,
+                (SELECT COUNT(*) FROM review WHERE group_no = r.groupNo AND level_no = 1) commentCount
       FROM (SELECT CEIL(rownum / #{pageParams.elementSize}) AS request_page,
               r.review_title,
               r.member_id,
@@ -115,6 +123,14 @@
                      FROM review r
                      JOIN notice n ON r.notice_no = n.notice_no
                      WHERE r.notice_no = #{noticeNo} AND r.level_no = 0
+                     <!-- 제목검색값일 때 -->
+                     <if test="pageParams.searchType == 'title' and pageParams.searchValue != null">
+    				 AND r.review_title LIKE '%' || #{pageParams.searchValue} || '%'
+  					 </if>
+  					 <!-- 작성자검색값일 때 -->
+					 <if test="pageParams.searchType == 'memberId' and pageParams.searchValue != null">
+					 AND r.member_id LIKE '%' || #{pageParams.searchValue} || '%'
+					 </if>
                     ORDER BY r.review_no DESC) r
                      ) r
       WHERE request_page = #{pageParams.requestPage}
@@ -164,5 +180,12 @@
           member_id = #{memberId} AND
          group_no = #{groupNo}
    </delete>
+   
+   <!-- 게시글에 해당하는 댓글 수반환 -->
+   <select id="getCommentCount" resultType="int" parameterType="int">
+   	 SELECT  COUNT(review_no)
+	 FROM review
+	 WHERE group_no = #{value} AND level_no = 1
+   </select>
 
 </mapper>

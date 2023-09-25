@@ -25,7 +25,7 @@ import tteogipbangbeomdae.goddog.domain.file.dto.UploadFile;
 public class FileStore {
 
 	@Value("${common.uploadPath}")
-	private String location = "C:/ezen-fullstack/workspace/goddog/upload/";
+	private String location = "C:/ezen_fullstack/workspace/goddog/upload/";
 
 	public String getFullPath(String filename) {
 		return location + filename;

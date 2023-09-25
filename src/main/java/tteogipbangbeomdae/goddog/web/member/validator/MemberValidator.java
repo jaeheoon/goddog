@@ -7,6 +7,14 @@ import org.springframework.validation.Validator;
 
 import tteogipbangbeomdae.goddog.domain.member.dto.Member;
 
+/**
+ * 
+ * 멤버관련 서버측 유효성검사 클래스
+ *
+ * @author  떡잎방범대 조영호
+ * @since   2023. 09. 13.
+ * @version 1.0
+ */
 @Component
 public class MemberValidator implements Validator{
 	@Override
@@ -62,13 +70,6 @@ public class MemberValidator implements Validator{
 		if (!StringUtils.hasText(member.getDetailAdress())) {
 			errors.rejectValue("detailAdress", "required");
 		}
-		
-		// 특정 입력 필드가 아닌 복합적 데이터 검증 시
-		// 예) 쇼핑몰 상품 주문 시 (주문갯수 * 가격 = 10000원 이상이어야 하는 경우)
-//		int totalPrice = 10000;
-//		if(totalPrice < 10000) {
-//			errors.reject("min.totalprice", new Object[]{10000, totalPrice}, null);
-//		}
 	}
 }
 

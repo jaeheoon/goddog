@@ -1,6 +1,5 @@
 package tteogipbangbeomdae.goddog.web.member.controller;
 
-import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -227,6 +226,7 @@ public class MemberController {
 		
 		return "member/adminpage";
 	}
+	
 	//봉사예약리스트를 RestAPI로 JSON으로 넘겨주기
 	@GetMapping("/mypage/reser/{requestPage}")
 	@ResponseBody
@@ -257,6 +257,7 @@ public class MemberController {
 		//페이징 처리를 위한 해당 보호소의 봉사내역리스트.
 		return responseMap;
 	}
+	
 	//후원내역을 RestAPI로 JSON데이터로 넘겨주기
 	@GetMapping("/mypage/dona/{requestPage}")
 	@ResponseBody
@@ -277,17 +278,8 @@ public class MemberController {
 				.build();
 		Pagination pagination1 = new Pagination(pageParams1);
 
-		//페이징처리된 목
+		//페이징처리된 목록
 		List<Donahistory> donaList = donahistroyService.getAllDonaHistory(pageParams1,loginId);
-		
-		//가격
-//		DecimalFormat decimalFormat = new DecimalFormat("#,###원");
-//		for (Donahistory donahistory : donaList) {
-//			int donation = donahistory.getDonation();
-//			String formattedPay = decimalFormat.format(donation);
-//			int formattedDonation = Integer.parseInt(formattedPay);
-//			donahistory.setDonation(formattedDonation);
-//		}
 		
 	    Map<String, Object> responseMap = new HashMap<>();
 	    responseMap.put("pagination1", pagination1);

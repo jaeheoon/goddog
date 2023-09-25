@@ -16,7 +16,7 @@ async function reserhandlePageClick(event) {
 	// pagination 정보와 봉사 내역 리스트를 받아옴
 	const pagination2 = data.pagination2;
 	const replys = data.reserList;
-	console.dir(pagination2);
+	
 	// 봉사 내역을 화면에 표시
 	showReply(replys);
 

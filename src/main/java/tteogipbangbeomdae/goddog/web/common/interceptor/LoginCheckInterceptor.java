@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 로그인 체크 Interceptor 구현
  *
- * @author 에너자이조 김기정
+ * @author 떡잎방범대 조영호
  * @since 2023. 9. 4.
  * @version 1.0
  */

@@ -1,4 +1,4 @@
-package tteogipbangbeomdae.goddog;
+package tteogipbangbeomdae.goddog.member;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

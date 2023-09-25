@@ -3,7 +3,6 @@ package tteogipbangbeomdae.goddog.domain.reservation.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +13,7 @@ import lombok.ToString;
  * 
  * 봉사예약 신청과 봉사 체크여부를 담기 위한 bean객체
  *
- * @author  떡잎방범대 홍재헌
+ * @author  떡잎방범대 홍재헌, 조영호
  * @since   2023. 09. 14.
  * @version 1.0
  */
@@ -24,7 +23,6 @@ import lombok.ToString;
 @Getter
 @ToString
 @Builder
-
 public class Reservation{
 
    //신청 회원 정보 관련 속성
