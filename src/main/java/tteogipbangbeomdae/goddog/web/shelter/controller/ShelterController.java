@@ -45,14 +45,14 @@ public class ShelterController {
 		return "shelter/shelter_list";
 	}
 	/**
-	 * @author 문승욱
+	 * @author 문승욱, 홍재헌
 	 * @param pay DB에 저장된 보호소 번호를 받아서 정보를 전달
 	 * @return 보호소 상세정보창으로 이동
 	 */
 	@GetMapping("/detail/{careNo}")
 	public String showDetail(@PathVariable("careNo") int careNo, Model model) {
 		Shelter shelter = shelterService.clickShelter(careNo);
-		List<Dog> dogList = openApiService.getShelterDogList(careNo, false);
+		List<Dog> dogList = openApiService.getShelterDogList(careNo, "1", false);
 		model.addAttribute("shelter", shelter);
 		model.addAttribute("dogList", dogList);
 		return "shelter/shelter_detail";
