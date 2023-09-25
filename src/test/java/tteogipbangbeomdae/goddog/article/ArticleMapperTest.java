@@ -91,8 +91,10 @@ public class ArticleMapperTest {
    @DisplayName("전체 행 갯수")
    @Disabled
    public void getCountTest() {
+	  String searchType = "memberId";
+	  String searchValue = "bangry";
       int noticeNo = 1;
-      int count = articleMapper.getCount(noticeNo);
+//      int count = articleMapper.getCount(noticeNo,,);
    }
    
    @Test

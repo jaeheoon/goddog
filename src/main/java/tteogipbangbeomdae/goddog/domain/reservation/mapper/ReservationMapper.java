@@ -13,9 +13,9 @@ import tteogipbangbeomdae.goddog.domain.web.dto.PageParams;
  * 
  * 봉사 관련 DB작업을 실행하는 Mapper인터페이스 xml파일에 해당하는 메소드를 맵핑하여 DB작업 수행
  *
- * @author  떡잎방범대 홍재헌
+ * @author  떡잎방범대 홍재헌(봉사생성담당), 조영호(봉사내역관리담당)
  * @since  	2023. 09. 14.
- * @version 버전
+ * @version 1.0
  */
 @Mapper
 public interface ReservationMapper {

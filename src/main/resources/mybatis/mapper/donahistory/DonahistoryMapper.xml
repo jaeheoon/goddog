@@ -24,10 +24,7 @@
                 ORDER BY donahistoryNo DESC) d
            	 WHERE memberId = #{memberId}
                          ) d
-			 WHERE request_page = #
-{
-    		pageParams.requestPage
-}
+			 WHERE request_page = #{pageParams.requestPage}
 	</select>
 	
 	<select id="getCountById" parameterType="String" resultType="int">
@@ -35,10 +32,7 @@
     		COUNT(donahistory_no) cnt
 		FROM
     		donahistory
-		WHERE  member_id = #
-{
-    	value
-}
+		WHERE  member_id = #{value}
 	</select>
 	
 	<!-- 후원 내역을 저장하기 위한 쿼리문  -->

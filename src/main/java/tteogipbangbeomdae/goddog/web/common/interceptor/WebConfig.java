@@ -20,8 +20,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
 	
-//	public static final List<String> loginEssential = Arrays.asList("/**");
-	
+	/**
+	 * 로그인이 필요한 url
+	 */
 	public static final List<String> loginEssential = Arrays.asList("/donation/method/{path}","/donation/result/{path}",
 																	"/article/volunteer/read","/article/adoption/read",
 																	"/article/volunteer/create","/article/adoption/create",
@@ -33,6 +34,9 @@ public class WebConfig implements WebMvcConfigurer{
 																	"/reservation/agreeReservations","/reservation/cancelReservations",
 																	"/reservation/agreeReservations/{path}","/reservation/cancelReservations/{path}");
 	
+	/**
+	 * 로그인이 필요없는 url
+	 */
 	public static final List<String> loginNotEssential = Arrays.asList("/", "/**/*.ico", "/**/*.html", "/**/css/**", 
 																		"/**/js/**", "/**/assets/**", "/error", "/member",
 																		"/member/signup", "/member/login", "/member/logout",

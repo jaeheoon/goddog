@@ -434,6 +434,9 @@
 																	<p>봉사활동을 통해 강아지들에게 사랑과 관심을 전해주세요.</p>
 																</div>
 															</div>
+															
+															<!-- 로그인멤버가 없거나 일반회원인경우만 신청버튼 출력 -->
+															<th:block th:if="${session.loginMember == null || session.loginMember.lev == 1}">
 															<div
 																class="elementor-element elementor-element-9d6ee50 elementor-mobile-align-center elementor-widget elementor-widget-button"
 																data-id="9d6ee50" data-element_type="widget"
@@ -453,6 +456,8 @@
 																	</div>
 																</div>
 															</div>
+															</th:block>
+															
 														</div>
 													</div>
 												</div>

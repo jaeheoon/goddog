@@ -16,11 +16,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/introduce")
 public class IntroduceController {
 	
+	/**
+	 * 기업소개 페이지 뷰로 이동
+	 * @param model
+	 * @return 기업소개 페이지 뷰이름
+	 */
 	@GetMapping("")
 	public String showIntroduce(Model model) {
 		return "introduce/introduce";
 	}
 	
+	/**
+	 * 팀소개 페이지 뷰로 이동
+	 * @param model
+	 * @return 팀소개 페이지 뷰이름
+	 */
 	@GetMapping("/team")
 	public String showTeam(Model model) {
 		return "introduce/team";

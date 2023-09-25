@@ -23,6 +23,6 @@ import lombok.ToString;
 @Builder
 public class UploadFile {
 	
-	private String uploadFileName;
-	private String storeFileName;
+	private String uploadFileName; //업로드된 실제파일이름
+	private String storeFileName; //저장된 파일이름
 }
