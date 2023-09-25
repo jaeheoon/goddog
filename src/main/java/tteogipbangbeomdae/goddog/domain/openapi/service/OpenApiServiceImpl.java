@@ -289,7 +289,7 @@ public class OpenApiServiceImpl implements OpenApiService{
 	}
 	
 	/** OpenAPI 이용하여 보호소 강아지 리스트 불러오는 메소드 */
-	public List<Dog> getShelterDogList(int shelterNo, boolean status) {
+	public List<Dog> getShelterDogList(int shelterNo, String pageNo, boolean status) {
 		List<Dog> dogList = new ArrayList<Dog>();
 		StringBuilder sb = new StringBuilder();
 		String area = "";
@@ -311,6 +311,7 @@ public class OpenApiServiceImpl implements OpenApiService{
 	           urlBuilder.append("?" + URLEncoder.encode("serviceKey","UTF-8") + "=akTdA6bI7qrFaVDNLP%2BSmmO0iqjbLVr6ff3e3zCcvKWVCtW%2B%2BmG2WQwnFVcsSjYMJPPRn54XgDA66FM2XgO1vQ%3D%3D"); /*Service Key*/
 	           urlBuilder.append("&" + URLEncoder.encode("upkind","UTF-8") + "=" + URLEncoder.encode("417000", "UTF-8")); 		/*축종 코드(개 : 417000)*/
 	           urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode(numOfRows, "UTF-8"));   /*한 페이지 결과 수(1,000 이하)*/
+	           urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode(pageNo, "UTF-8"));     	/*페이지 번호*/
 	           urlBuilder.append("&" + URLEncoder.encode("upr_cd","UTF-8") + "=" + URLEncoder.encode(area, "UTF-8"));     		/*쉘터 지역에 따라 결과 보여주게끔*/
 	           urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8"));    		/*xml(기본값) 또는 json*/
 	           URL url = new URL(urlBuilder.toString());

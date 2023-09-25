@@ -28,6 +28,6 @@ public interface OpenApiService {
 	public List<DogKind> getDogKindList();
 	
 	/** OpenAPI 이용하여 보호소 강아지 리스트 불러오는 메소드 */
-	public List<Dog> getShelterDogList(int shelterNo, boolean status);
+	public List<Dog> getShelterDogList(int shelterNo, String pageNo, boolean status);
 	
 }
