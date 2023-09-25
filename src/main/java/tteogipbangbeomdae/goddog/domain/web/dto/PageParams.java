@@ -21,5 +21,7 @@ public class PageParams {
 	private int elementSize;    /** 페이지에 보여지는 목록(게시판 제목) 갯수 */
 	private int pageSize;       /** 페이지에 보여지는 페이지(1, 2, 3, 4, 5) 갯수 */
 	private int requestPage;    /** 사용자 요청 페이지 */
+	private String searchValue;     /** 사용자 검색값 */
+	private String searchType; /** 사용자 검색타입 */
 	private int rowCount;       /** 검색된 행의 수 */
 }

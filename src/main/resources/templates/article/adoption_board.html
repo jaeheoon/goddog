@@ -120,7 +120,8 @@
 																<!-- 검색 -->
 																<div class="search_box">
 																	<form id="boardDefaultVO" name="searchForm"
-																		action="/community/board/review/boardList.action"
+																		action=""
+																		th:action="@{'/article/adoption/board/'+${session.noticeNo}}"
 																		method="GET">
 																		<fieldset>
 																			<legend>게시판 검색</legend>
@@ -128,18 +129,18 @@
 																				for="searchType"></label>
 																			<select id="searchType" name="searchType"
 																				class="search_w01 search_type">
-																				<option value="ntartSubjc">제목</option>
-																				<option value="rgterNm">글쓴이</option>
+																				<option value="title">제목</option>
+																				<option value="memberId">글쓴이</option>
 																			</select>
 																			<label for="searchText"
 																				class="search_label"></label>
-																			<input id="searchText" name="searchText"
+																			<input id="searchText" name="searchValue"
 																				class="search_w02" type="text"
 																				value="" />
 																			<ul class="btn_set">
 																				<li
 																					class="btn_default btn_red search_w03">
-																					<a href="#" id="btnSearch">검색</a>
+																					<button type="submit" id="btnSearch" style="padding: 13px; background-color: #E261AC;">검색</button>
 																				</li>
 																			</ul>
 																		</fieldset>
@@ -176,7 +177,7 @@
 																					<span th:text="${adoption.count}">조회 : 23</span>
 																			</li>
 																			<li class="comment"><span>댓글 :  </span>
-																					<span th:text="${adoption.count}">조회 : 23</span>
+																					<span th:text="${adoption.commentCount}">조회 : 23</span>
 																			</li>
 																		</ul>
 																	</li>
@@ -376,14 +377,15 @@
 																	</li>
 																	-->
 																</ul>
-
+																<!-- 로그인멤버가 없거나 일반회원인경우만 신청버튼 출력 -->
+																<th:block th:if="${session.loginMember == null || session.loginMember.lev == 1}">
 																<ul class="btn_set board_btn">
 																	<li class="btn_default_line btn_green float_r">
 																	<a class="a_bt02" id="btnRegist"
 																	th:href="@{'/'+article+'/'+adoption+'/'+create}"
 																			style="cursor: pointer;">작성하기</a></li>
 																</ul>
-
+																</th:block>
 
 																<!-- pagenate -->
 																<ul class="pagenate">
@@ -391,7 +393,7 @@
 																	<!-- 11페이지부터 나옴 -->
 																	<th:block th:if="${pagination.showFirst}">
 																		<li class="page-item">
-																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+1}"
+																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+1+'&'+searchValue+'='+${searchValue}+'&'+searchType+'='+${searchType}}"
 																		class="page-link" href="#" aria-label="Previous">&lt;&lt;</a>
 																		</li>
 																	</th:block>
@@ -399,14 +401,14 @@
 																	<!-- 2페이지부터 나옴 -->
 																	<th:block th:if="${pagination.showPrevious}">
 																		<li class="page-item">
-																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.previousStartPage}}"
+																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.previousStartPage}+'&'+searchValue+'='+${searchValue}+'&'+searchType+'='+${searchType}}"
 																			class="page-link" href="#" aria-label="Previous">&lt;</a>
 																		</li>
 																	</th:block>
 
 																	<th:block th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
 																		<li class="on page-item" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
-																		<a class="page-link" th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${i}}" th:text="${i}">1</a>
+																		<a class="page-link" th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${i}+'&'+searchValue+'='+${searchValue}+'&'+searchType+'='+${searchType}}" th:text="${i}">1</a>
 																		</li>
 																	</th:block>
 																		
@@ -433,7 +435,7 @@
 																	<th:block th:if="${pagination.showNext}">
 																	<!-- 마지막 페이지에서 사라짐 -->
 																		<li class="page-item">
-																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.nextStartPage}}"
+																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.nextStartPage}+'&'+searchValue+'='+${searchValue}+'&'+searchType+'='+${searchType}}"
 																			class="page-link" href="#" aria-label="Previous">&gt;</a>
 																		</li>
 																	</th:block>
@@ -441,7 +443,7 @@
 																	<th:block th:if="${pagination.showLast}">
 																	<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 -->
 																		<li class="page-item">
-																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.totalPages}}"
+																			<a th:href="@{'/'+article+'/'+'adoption'+'/'+board+'/'+'2'+'?'+requestPage+'='+${pagination.totalPages}+'&'+searchValue+'='+${searchValue}+'&'+searchType+'='+${searchType}}"
 																			class="page-link" href="#" aria-label="Previous">&gt;&gt;</a>
 																		</li>
 																	</th:block>

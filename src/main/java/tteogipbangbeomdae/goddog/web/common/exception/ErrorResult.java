@@ -5,8 +5,9 @@ import lombok.Data;
 
 /**
  * 오류코드와 오류메시지 저장
+ * 발표시엔 사용안하고 개발단계에서만 사용
  *
- * @author 에너자이조 김기정
+ * @author 떡잎방범대 조영호
  * @since 2023. 9. 5.
  * @version 1.0
  */

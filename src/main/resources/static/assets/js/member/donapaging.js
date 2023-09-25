@@ -16,8 +16,8 @@ async function donahandlePageClick(event) {
 	// pagination 정보와 봉사 내역 리스트를 받아옴
 	const pagination1 = data.pagination1;
 	const replys = data.donaList;
-	console.dir(pagination1);
-	// 봉사 내역을 화면에 표시
+
+	// 후원내역을 화면에 표시
 	showReply2(replys);
 
 	// pagination 정보를 사용하여 페이지 버튼을 업데이트
@@ -30,10 +30,11 @@ function showReply2(replys) {
 	let content = ``;
 
 	replys.forEach(reply => {
+		let formattedDonation = reply.donation.toLocaleString();
 		content += `<tr id="table-content">
 						<td class="m_hidden">${reply.donahistoryNo}1</td>
 						<td class="m_hidden">${reply.donationDate}</td>
-						<td class="m">${reply.donation}</td>
+						<td class="m">${formattedDonation}<span>원</span></td>
 					</tr>`;
 	});
 

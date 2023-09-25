@@ -9,8 +9,8 @@ import tteogipbangbeomdae.goddog.domain.web.dto.PageParams;
  * 
  * 후원내역 관련 비즈니스 로직 처리 및 트랜잭션 관리 명세
  *
- * @author  떡잎방범대 조영호
- * @since   2023. 09. 12.
+ * @author  떡잎방범대 떡잎방범대 조영호(회원정보관련담당),문승욱(생성담당)	
+ * @since   2023. 09. 18.
  * @version 1.0
  */
 public interface DonahistroyService {

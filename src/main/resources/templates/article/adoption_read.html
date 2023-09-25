@@ -20,7 +20,7 @@
       <link rel="stylesheet" href="/assets/css/footer/footer_common.css">
 
       <!-- ============================================================== 개별script =========================================================================-->
-      <script defer src="/assets/js/board/article.js"></script>
+      <script defer src="/assets/js/board/article2.js"></script>
    </th:block>
 
    <!--/* 페이지별 콘텐츠 동적변경 */-->
@@ -199,17 +199,15 @@
                                                          th:text="${articleList.reviewTitle}"><span
                                                          class="hidden">제목</span>전주 유기견 보호소 봉사 후기</li>
 
-                                                      <!-- 게시물정보 -->
-                                                      <li>
-                                                         <ul class="data">
-                                                            <li class="adm" th:text="${articleList.memberId}"><span
-                                                               class="hidden">글쓴이</span>전주영</li>
-                                                            <li class="date" th:text="${articleList.writeDate}"><span
-                                                               class="hidden">날짜</span>2023-09-04</li>
-                                                            <li class="view" th:text="${articleList.count}"><span
-                                                               class="hidden">조회수</span>조회 : 5</li>
-                                                         </ul>
-                                                      </li>
+													<!-- 게시물정보 -->
+                                                	<li>
+                                                   		<ul class="data">
+                                                      		<li class="adm" th:text="${articleList.memberId}"><span class="hidden" >글쓴이</span>전주영</li>
+                                                      		<li class="date" th:text="${articleList.writeDate}"><span class="hidden">날짜</span>2023-09-04</li>
+                                                      		<li class="view"><span>조회 : </span><span th:text="${articleList.count}">조회 : 5</span></li>
+                                                      		<li class="view"><span>댓글 : </span><span th:text="${commentCount}">조회 : 5</span></li>
+                                                   		</ul>
+                                                	</li>
 
                                                       <!-- 첨부파일 -->
 
@@ -279,48 +277,22 @@
                                                       </th:block>
 
                                                       <!-- 작성된 댓글들 -->
-                                                      <div class="commentBoxList" 
-                                                      th:each="articleList : ${articleList}"
-                                                            th:if=" ${articleList.levelNo}==1"
-                                                            style="display: none;" th:style="${session.loginMember.lev == 1} ? 'display:none' : ''">
-                                                         <li class="adoptcommentbox">
-                                                            <div class="container">
-                                                               <div class="comment-container">
-                                                                  <div class="box commentt">
-                                                                     <div class="comment">
-                                                                        <div class="date"
-                                                                        th:text="${articleList.writeDate}">2023-08-19</div>
-                                                                        <div class="user"
-                                                                        th:text="${articleList.memberId}">사용자1</div>
-                                                                        <div class="message"
-                                                                        th:text="${articleList.reviewContents}">이 글은 정말 유용합니다!</div>
-
-                                                                        <!-- <ul class="btn_set board_btn">
-                                                                        <li class="btn_default_line btn_green float_r">
-                                                                           <a class="a_bt02" id="btnRegist" style="cursor: pointer;">수정하기</a>
-                                                                        </li>
-                                                                     </ul> -->
-                                                                     </div>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-                                                         </li>
-
-                                                         <!-- 
+                                                      <div class="commentBoxList" style="display: none;" th:style="${session.loginMember.lev == 1} ? 'display:none' : ''">
+                                                      <!-- 
                                                          <li class="adoptcommentbox">
                                                             <div class="container">
                                                                <div class="comment-container">
                                                                   <div class="box commentt">
                                                                      <div class="comment">
                                                                         <div class="date">2023-08-19</div>
-                                                                        <div class="user">사용자2</div>
+                                                                        <div class="user">사용자1</div>
                                                                         <div class="message">이 글은 정말 유용합니다!</div>
                                                                      </div>
                                                                   </div>
                                                                </div>
                                                             </div>
                                                          </li>
-                                                          -->
+                                                       -->
                                                       </div>
 
                                                       <!-- // 서브 컨텐츠 -->

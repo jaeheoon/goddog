@@ -192,28 +192,8 @@
 															<!-- 보호소 -->
 															<li
 																class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1540">
-																<a class="elementor-item elementor-item-anchor">보호소</a>
-																<ul class="sub-menu elementor-nav-menu--dropdown">
-																	<li
-																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-list.html"
-																		th:href="@{'/'+shelter}" class="elementor-sub-item">보호소목록</a></li>
-																	<li
-																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html"
-																		th:href="@{'/'+shelter+'/'+detail}"
-																		class="elementor-sub-item">해피파워보호소</a></li>
-																	<li
-																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html"
-																		th:href="@{'/'+shelter+'/'+detail}"
-																		class="elementor-sub-item">굿도그</a></li>
-																	<li
-																		class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1745"><a
-																		href="/shelter/shelter-detail.html"
-																		th:href="@{'/'+shelter+'/'+detail}"
-																		class="elementor-sub-item">춘향이와멍멍이</a></li>
-																</ul>
+																<a class="elementor-item elementor-item-anchor"
+																th:href="@{'/'+shelter}">보호소</a>
 															</li>
 															<!-- 봉사 -->
 															<li
@@ -363,36 +343,6 @@
 												data-id="bbfe9cf" data-element_type="section">
 												<div class="elementor-container elementor-column-gap-no"
 													style="width: 100%; max-width: 100%;">
-													<!-- 이건 채팅 버튼 -->
-													<div
-														class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
-														data-id="37be7ac" data-element_type="column"
-														style="flex-basis: content; margin-right: 2%;">
-														<div
-															class="elementor-widget-wrap elementor-element-populated">
-															<div
-																class="elementor-element elementor-element-d40de64 elementor-align-right elementor-widget elementor-widget-button"
-																data-id="d40de64" data-element_type="widget"
-																data-widget_type="button.default">
-																<div class="elementor-widget-container">
-																	<div class="elementor-button-wrapper">
-																		<a
-																			class="elementor-button elementor-button-link elementor-size-sm"
-																			href="#" th:href="@{'/'+chat}"> <span
-																			class="elementor-button-content-wrapper"> <span
-																				class="elementor-button-icon elementor-align-icon-left">
-																					<i aria-hidden="true" class="fas fa-paw"></i>
-																			</span> <span class="elementor-button-text">채팅</span>
-																		</span>
-																		</a>
-																	</div>
-																</div>
-
-															</div>
-														</div>
-													</div>
-													<!-- 채팅버튼 끝 -->
-
 													<!-- 로그인 버튼 -->
 													<div
 														class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-37be7ac"
@@ -2128,8 +2078,29 @@
 				</section>
 			</div>
 		</th:block>
+		<!-- modal 버튼 -->
+		<i aria-hidden="true" class="fas fa-comment"
+			style="font-size: 50px; position: fixed; left: 1600px; top: 700px; z-index: 999; color: #616FE2; cursor: pointer;"
+			data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
+		<!-- Modal 창-->
+		<div class="modal fade" id="exampleModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div
+				class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Live Chat</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<iframe src="http://localhost:5000"
+							style="width: 100%; height: 550px;"></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!--======================================================== 메인페이지 끝 ============================================================================-->
-
 		<footer data-elementor-type="footer" data-elementor-id="1578"
 			class="elementor elementor-1578 elementor-location-footer"
 			data-elementor-post-type="elementor_library">

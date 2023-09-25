@@ -34,11 +34,11 @@ submitBtns.forEach((btn) => {
 			})
 			if (btnType === '승인') {
 				sendCheckValue(btnType, formData);
-				location.href = '/member/mypage/adminpage';
+				location.replace('/member/mypage/adminpage');
 				alert('승인처리 완료되었습니다.');
 			} else if (btnType === '거절') {
 				sendCheckValue(btnType, formData);
-				location.href = '/member/mypage/adminpage';
+				location.replace('/member/mypage/adminpage');
 				alert('거절처리 완료되었습니다.');		
 			}
 		}
@@ -58,19 +58,19 @@ async function getCancelResult(formData) {
 async function sendCheckValue(btnType, formData) {
 	if (btnType === '거절') {
 		let result = await getCancelResult(formData)
-		resultAction(result);
+		//resultAction(result);
 	} else if (btnType === '승인') {
 		let result = await getAgreeResult(formData)
-		resultAction(result);
+		//resultAction(result);
 	}
 }
 
 function resultAction(result) {
 	if (result) {
 		//console.log(result);
-		console.log('성공함!');
+		//console.log('성공함!');
 	} else {
 		console.log(result);
-		alert('실패함!');
+		//alert('실패함!');
 	}
 }

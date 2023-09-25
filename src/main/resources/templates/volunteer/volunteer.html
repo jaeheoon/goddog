@@ -343,6 +343,9 @@
 									더 밝고 풍요롭게 만들 수 있습니다.</p>
 							</div>
 						</div>
+						
+						<!-- 로그인멤버가 없거나 일반회원인경우만 신청버튼 출력 -->
+						<th:block th:if="${session.loginMember == null || session.loginMember.lev == 1}">
 						<div
 							class="elementor-element elementor-element-4e503b8b elementor-widget elementor-widget-button"
 							data-id="4e503b8b" data-element_type="widget"
@@ -359,6 +362,7 @@
 								</div>
 							</div>
 						</div>
+						</th:block>
 					</div>
 				</div>
 				<div
@@ -473,8 +477,8 @@
 				</div>
 			</div>
 		</section>
-
 	</div>
+	
 	</th:block>
 </th:block>
 

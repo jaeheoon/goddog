@@ -13,9 +13,9 @@ import tteogipbangbeomdae.goddog.domain.web.dto.PageParams;
  * 
  * 봉사 관련 DB작업을 실행하는 Mapper인터페이스 xml파일에 해당하는 메소드를 맵핑하여 DB작업 수행
  *
- * @author  떡잎방범대 홍재헌
+ * @author  떡잎방범대 홍재헌(봉사생성담당), 조영호(봉사내역관리담당)
  * @since  	2023. 09. 14.
- * @version 버전
+ * @version 1.0
  */
 @Mapper
 public interface ReservationMapper {
@@ -50,6 +50,23 @@ public interface ReservationMapper {
 	
 	//날짜와 아이디로 보호소 예약 불러오기
 	public Reservation getReservation(Reservation reservation);
-
+	
+	//선택된 정보로 해당 reservationNo의 reservation업데이트
+	public void updateReservation(Reservation reservation);
+	
+	//reservationNo을 받아서 삭제
+	public boolean deleteReservation(int reservationNo);
+	
+	//고유번호에 해당하는 레저베이션 정보 반환
+	public Reservation getReservationByNo(int reservationNo);
+	
+	//해당하는 쉘터와 해당하는 날짜의 봉사인원수 반환
+	public int getCountByDate(@Param("careNo") int careNo, @Param("formattedDate") String formattedDate);
+	
+	//해당쉘터의 최대 봉사인원 제한수 반환
+	public int getMaxCountInshelter(int careNo);
+	
+	//해당쉘터의 휴무일 반환
+	public String getCloseday(int careNo);
 	
 }

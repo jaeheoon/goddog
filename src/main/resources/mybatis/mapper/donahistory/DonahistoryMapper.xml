@@ -6,34 +6,38 @@
 <mapper	namespace="tteogipbangbeomdae.goddog.domain.donahistory.mapper.DonahistoryMapper">
 	
 	<select id="findAllById" resultType="Donahistory">
-			SELECT donation,
-                   donationDate,
-                   memberId,
-                   donahistoryNo
+			 SELECT
+    			donation,
+    			donationdate,
+    			memberid,
+    			donahistoryno
 			  FROM (SELECT CEIL(rownum / #{pageParams.elementSize}) AS request_page,
-            			   donation,
-            			   donationDate,
-            			   memberId,
-            			   donahistoryNo
-             	      FROM(SELECT donation,
-                                  TO_CHAR(donation_date,'YYYY-MM-DD') donationDate,
-                                  member_id memberId,
-                                  donahistory_no donahistoryNo
-                             FROM donahistory d
-                             ORDER BY donahistoryNo DESC) d
-                         WHERE memberId = #{memberId}
+            	donation,
+            	donationDate,
+            	memberId,
+            	donahistoryNo
+             FROM(SELECT donation,
+                TO_CHAR(donation_date,'YYYY-MM-DD') donationDate,
+                member_id memberId,
+                donahistory_no donahistoryNo
+             FROM donahistory d
+                ORDER BY donahistoryNo DESC) d
+           	 WHERE memberId = #{memberId}
                          ) d
-			WHERE request_page = #{pageParams.requestPage}
+			 WHERE request_page = #{pageParams.requestPage}
 	</select>
 	
 	<select id="getCountById" parameterType="String" resultType="int">
-		SELECT COUNT(donahistory_no) cnt
-		FROM   donahistory
+		SELECT
+    		COUNT(donahistory_no) cnt
+		FROM
+    		donahistory
 		WHERE  member_id = #{value}
 	</select>
 	
+	<!-- 후원 내역을 저장하기 위한 쿼리문  -->
 	<insert id="create" parameterType="donahistory">
-		INSERT INTO donahistory (
+		  INSERT INTO donahistory (
 			donahistory_no,
 			donation,
 			member_id

@@ -11,9 +11,12 @@
 	<th:block th:fragment="uniqhead">
 		<!-- =============================================================== 개별css ========================================================================== -->
 		<link rel="stylesheet" href="/assets/css/doglist/title.css">
+		<link rel="stylesheet" href="/assets/css/doglist/doglist.css">
 		<link rel="stylesheet" href="/assets/css/faq/faq.css">
 		<link rel="stylesheet" href="/assets/css/pagenation.css">
 		<link rel="stylesheet" href="/assets/css/footer/footer_common.css">
+		<!-- =============================================================== 개별js ========================================================================== -->
+		<script defer src="/assets/js/dog/dog_list.js"></script>
 	</th:block>
 
 	<!--/* 페이지별 콘텐츠 동적변경 */-->
@@ -46,12 +49,10 @@
 													data-id="3fdf0404" data-element_type="widget"
 													data-widget_type="heading.default">
 													<div class="elementor-widget-container">
-														<h1 class="elementor-heading-title elementor-size-default">보호
-															중 아이들</h1>
+														<h1 class="elementor-heading-title elementor-size-default">보호 중 아이들</h1>
 													</div>
 												</div>
-												<div
-													class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
+												<div class="elementor-element elementor-element-1d5bbe7b elementor-widget elementor-widget-text-editor"
 													data-id="1d5bbe7b" data-element_type="widget"
 													data-widget_type="text-editor.default">
 													<div class="elementor-widget-container">
@@ -69,34 +70,55 @@
 						</div>
 					</div>
 				</section>
-				<section
-					class="elementor-section elementor-top-section elementor-element elementor-element-5221af9d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+				
+				<!-- filter부분 -->
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-61adb26d elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
+					data-id="61adb26d" data-element_type="section" data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
+					<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px;">
+						<button onclick="clickFilterDisplay();"><i class="fa-solid fa-filter">  필터</i></button>
+					</div>
+					<div class="filter" style="display: none;">
+						<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px; padding: 1.5em 0em 0em 0em">
+							<h4 class="elementor-image-box-title">지역</h4>
+						</div>
+						<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px; display: flex; flex: auto; flex-wrap: wrap">
+							<a href="/dog/dog-profile.html" class="filter area" th:each="area : ${areaList}" th:text="${area.orgdownNm}"
+							th:href="@{'/'+dog + '?' + requestPage +'=1&sido=' + ${area.orgCd}}">>경기도</a>
+						</div>
+						
+						<div class="elementor-container elementor-column-gap-no" style="max-width: 1140px; padding: 1.5em 0em 0em 0em">
+							<h4 class="elementor-image-box-title">보호소</h4>
+						</div>
+						<div class="elementor-container elementor-column-gap-no" style="overflow:auto; width:1140px; max-width: 1140px; display: flex; flex: auto; flex-wrap: wrap">
+							<a href="/dog/dog-profile.html" class="filter area" th:each="shelter : ${shelterList}" th:text="${shelter.name}"
+							th:href="@{'/'+dog + '?' + requestPage +'=1&shelter=' + ${shelter.name}}">>해피파워</a>
+						</div>
+					</div>
+				</section>
+							
+				<!-- 강아지 리스트 -->
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5221af9d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 					data-id="5221af9d" data-element_type="section" style="padding: 2em 0em;">
 					<div class="elementor-container elementor-column-gap-no">
-						<div
-							class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-77d0f221"
+						<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-77d0f221"
 							data-id="77d0f221" data-element_type="column">
 							<div class="elementor-widget-wrap elementor-element-populated">
 								<th:block th:each="dogList : ${list}">
-									<section
-									class="elementor-section elementor-inner-section elementor-element elementor-element-22ae2982 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
+									<section class="elementor-section elementor-inner-section elementor-element elementor-element-22ae2982 elementor-section-full_width elementor-section-height-default elementor-section-height-default elementor-invisible"
 									data-id="22ae2982" data-element_type="section"
 									data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
 									<div class="elementor-container elementor-column-gap-no">
 									<th:block th:each="dog : ${dogList}">
-										<div
-											class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5d2e53be"
+										<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-5d2e53be"
 											data-id="5d2e53be" data-element_type="column">
-											<div
-												class="elementor-widget-wrap elementor-element-populated">
-												<div
-													class="elementor-element elementor-element-51b15f7e elementor-position-top elementor-widget elementor-widget-image-box"
+											<div class="elementor-widget-wrap elementor-element-populated">
+												<div class="elementor-element elementor-element-51b15f7e elementor-position-top elementor-widget elementor-widget-image-box"
 													data-id="51b15f7e" data-element_type="widget"
 													data-widget_type="image-box.default">
 													<div class="elementor-widget-container">
 														<div class="elementor-image-box-wrapper">
 															<figure class="elementor-image-box-img" style="text-align: center;">
-																<a href="/dog/dog-profile.html" 
+																<a href="/dog/dog-profile.html"
 																th:href="@{'/'+dog+'/'+ profile + '?' + requestPage +'=' + ${requestPage} + '&' + desertionNo + '=' + ${dog != null ? dog.desertionNo : ''}}">
 																	<img class="elementor-animation-float attachment-full" style="height: 300px; width: 400px;"
 																		alt="강아지 정보가 없습니다."
@@ -112,8 +134,7 @@
 														</div>
 													</div>
 												</div>
-												<div
-													class="elementor-element elementor-element-5dbba24c elementor-widget elementor-widget-spacer"
+												<div class="elementor-element elementor-element-5dbba24c elementor-widget elementor-widget-spacer"
 													data-id="5dbba24c" data-element_type="widget"
 													data-widget_type="spacer.default">
 													<div class="elementor-widget-container">
@@ -122,23 +143,19 @@
 														</div>
 													</div>
 												</div>
-												<div
-													class="elementor-element elementor-element-1567fdef elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
+												<div class="elementor-element elementor-element-1567fdef elementor-icon-list--layout-inline elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list"
 													data-id="1567fdef" data-element_type="widget"
 													data-widget_type="icon-list.default">
 													<div class="elementor-widget-container">
-														<ul
-															class="elementor-icon-list-items elementor-inline-items">
-															<li
-																class="elementor-icon-list-item elementor-inline-item">
-																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.sexCd : ''}">Male</span>
+														<ul class="elementor-icon-list-items elementor-inline-items">
+															<li class="elementor-icon-list-item elementor-inline-item">
+																<span class="elementor-icon-list-text"  th:if="${dog != null ? dog.sexCd : ''}"
+																th:text="${dog != null ? dog.sexCd == 'Q' ? '미상' : dog.sexCd == 'F' ? '암컷' : '수컷' : ''}">Male</span>
 															</li>
-															<li
-																class="elementor-icon-list-item elementor-inline-item">
+															<li class="elementor-icon-list-item elementor-inline-item">
 																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.age : ''}">4 Years</span>
 															</li>
-															<li
-																class="elementor-icon-list-item elementor-inline-item">
+															<li class="elementor-icon-list-item elementor-inline-item">
 																<span class="elementor-icon-list-text" th:text="${dog != null ? dog.orgNm : ''}">Oakland, CA</span>
 															</li>
 														</ul>
@@ -149,8 +166,7 @@
 										</th:block>
 									</div>
 								</section>
-								<div
-									class="elementor-element elementor-element-5aa53741 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
+								<div class="elementor-element elementor-element-5aa53741 elementor-hidden-mobile elementor-widget elementor-widget-spacer"
 									data-id="5aa53741" data-element_type="widget"
 									data-widget_type="spacer.default">
 									<div class="elementor-widget-container">
@@ -164,31 +180,59 @@
 					</div>
 				</div>
 			</section>
+			
 				<!-- pagenate -->
 				<ul class="pagenate">
 
 					<!-- 11페이지부터 나옴 - 처음으로 -->
 					<th:block th:if="${pagination.isShowFirst}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 }">&lt;&lt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&lt;&lt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + 1 + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;&lt;</a></li>
+						</th:block>
 					</th:block>
 					<!-- 2페이지부터 나옴 - 이전으로 -->
 					<th:block th:if="${pagination.isShowPrevious}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage}}">&lt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&lt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage +'=' + ${pagination.previousStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&lt;</a></li>
+						</th:block>
 					</th:block>
 					
 					<!-- 목록 숫자 -->
 					<th:block th:each="i : ${#numbers.sequence(pagination.startPage, pagination.endPage)}">
-						<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
-						<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i}}" th:text="${i}">1</a></li>
+						<th:block th:if="${status}">
+							<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
+							<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}" th:text="${i}">1</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li class="page-item active" th:class="${i == pagination.params.requestPage} ? 'page-item active' : 'page-item'">
+							<a class="page-link" href="#" th:href="@{'/'+ dog + '?' + requestPage + '=' + ${i} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}" th:text="${i}">1</a></li>
+						</th:block>
 					</th:block>
 
 					<!-- 마지막 페이지에서 사라짐 - 다음으로 -->
 					<th:block th:if="${pagination.isShowNext}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage}}">&gt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&gt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.nextStartPage} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;</a></li>
+						</th:block>
 					</th:block>
+					
 					<!-- 마지막 페이지가 포함된 리스트가 나오면 사라짐 - 마지막으로 -->
 					<th:block th:if="${pagination.isShowLast}">
-						<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages}}">&gt;&gt;</a></li>
+						<th:block th:if="${status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages} + '&' + shelter + '=' + ${shelter != null ? shelter : ''}}">&gt;&gt;</a></li>
+						</th:block>
+						<th:block th:if="${!status}">
+							<li><a href="#" th:href="@{'/' + dog + '?' + requestPage + '=' + ${pagination.totalPages} + '&' + sido + '=' + ${sidoCode != null ? sidoCode : ''}}">&gt;&gt;</a></li>
+						</th:block>
 					</th:block>
 				</ul>
 				<!-- pagenate -->
@@ -197,374 +241,6 @@
 				<br>
 				<br>
 
-
-
-				<!-- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		
-		<section
-			class="elementor-section elementor-top-section elementor-element elementor-element-7c0aa89c elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-			data-id="7c0aa89c" data-element_type="section"
-			data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-container elementor-column-gap-no">
-				<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-68379af"
-					data-id="68379af" data-element_type="column">
-					<div class="elementor-widget-wrap elementor-element-populated">
-						<section
-							class="elementor-section elementor-inner-section elementor-element elementor-element-50832419 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
-							data-id="50832419" data-element_type="section"
-							data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-							<div class="elementor-container elementor-column-gap-no">
-								<div
-									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7ebc6297"
-									data-id="7ebc6297" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-426aca28 elementor-widget elementor-widget-heading"
-											data-id="426aca28" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">How it works?
-												</h2>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-f0652d1 elementor-widget elementor-widget-text-editor"
-											data-id="f0652d1" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet consectetur. Sed eros turpis et convallis
-													egestas turpis. Id nibh amet consectetur enim integer accumsan
-													cursus urna.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<div class="elementor-element elementor-element-6302b41 elementor-widget elementor-widget-spacer"
-							data-id="6302b41" data-element_type="widget" data-widget_type="spacer.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-spacer">
-									<div class="elementor-spacer-inner"></div>
-								</div>
-							</div>
-						</div>
-						<section
-							class="elementor-section elementor-inner-section elementor-element elementor-element-11f91c29 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-							data-id="11f91c29" data-element_type="section">
-							<div class="elementor-container elementor-column-gap-no">
-								<div
-									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-43b0e462"
-									data-id="43b0e462" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div
-											class="elementor-element elementor-element-c10279 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
-											data-id="c10279" data-element_type="widget" data-widget_type="spacer.default">
-											<div class="elementor-widget-container">
-												<div class="elementor-spacer">
-													<div class="elementor-spacer-inner"></div>
-												</div>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-65d39497 elementor-widget elementor-widget-heading"
-											data-id="65d39497" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h4 class="elementor-heading-title elementor-size-default">01.</h4>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-7090c110 elementor-widget elementor-widget-heading"
-											data-id="7090c110" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Browse pet
-													profiles</h5>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-47fbf31 elementor-widget elementor-widget-text-editor"
-											data-id="47fbf31" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div
-									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-7624c106"
-									data-id="7624c106" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div
-											class="elementor-element elementor-element-77d463d0 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
-											data-id="77d463d0" data-element_type="widget" data-widget_type="spacer.default">
-											<div class="elementor-widget-container">
-												<div class="elementor-spacer">
-													<div class="elementor-spacer-inner"></div>
-												</div>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-7b340cf2 elementor-widget elementor-widget-heading"
-											data-id="7b340cf2" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h4 class="elementor-heading-title elementor-size-default">02.</h4>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-325f9f22 elementor-widget elementor-widget-heading"
-											data-id="325f9f22" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Join &amp;
-													message with Guardians</h5>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-71850aa1 elementor-widget elementor-widget-text-editor"
-											data-id="71850aa1" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div
-									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-1d9b2f41"
-									data-id="1d9b2f41" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div
-											class="elementor-element elementor-element-3a992585 elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
-											data-id="3a992585" data-element_type="widget" data-widget_type="spacer.default">
-											<div class="elementor-widget-container">
-												<div class="elementor-spacer">
-													<div class="elementor-spacer-inner"></div>
-												</div>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-565863e7 elementor-widget elementor-widget-heading"
-											data-id="565863e7" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h4 class="elementor-heading-title elementor-size-default">03.</h4>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-46118eea elementor-widget elementor-widget-heading"
-											data-id="46118eea" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Make a
-													meet-up</h5>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-77e92fbc elementor-widget elementor-widget-text-editor"
-											data-id="77e92fbc" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div
-									class="elementor-column elementor-col-25 elementor-inner-column elementor-element elementor-element-346254ed"
-									data-id="346254ed" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div
-											class="elementor-element elementor-element-7d16691d elementor-widget__width-initial elementor-widget-mobile__width-initial elementor-widget elementor-widget-spacer"
-											data-id="7d16691d" data-element_type="widget" data-widget_type="spacer.default">
-											<div class="elementor-widget-container">
-												<div class="elementor-spacer">
-													<div class="elementor-spacer-inner"></div>
-												</div>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-2f0879eb elementor-widget elementor-widget-heading"
-											data-id="2f0879eb" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h4 class="elementor-heading-title elementor-size-default">04.</h4>
-											</div>
-										</div>
-										<div class="elementor-element elementor-element-31fd5649 elementor-widget elementor-widget-heading"
-											data-id="31fd5649" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h5 class="elementor-heading-title elementor-size-default">Make a Legal
-													Pet Adoption</h5>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-17f7b4d4 elementor-widget elementor-widget-text-editor"
-											data-id="17f7b4d4" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section
-			class="elementor-section elementor-top-section elementor-element elementor-element-2ea8494d elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-			data-id="2ea8494d" data-element_type="section">
-			<div class="elementor-container elementor-column-gap-no">
-				<div
-					class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-34db1c2d"
-					data-id="34db1c2d" data-element_type="column">
-					<div class="elementor-widget-wrap elementor-element-populated">
-						<section
-							class="elementor-section elementor-inner-section elementor-element elementor-element-598d7826 elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
-							data-id="598d7826" data-element_type="section"
-							data-settings="{&quot;animation&quot;:&quot;fadeInUp&quot;}">
-							<div class="elementor-container elementor-column-gap-no">
-								<div
-									class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-1550aaf2"
-									data-id="1550aaf2" data-element_type="column">
-									<div class="elementor-widget-wrap elementor-element-populated">
-										<div class="elementor-element elementor-element-562114c8 elementor-widget elementor-widget-heading"
-											data-id="562114c8" data-element_type="widget" data-widget_type="heading.default">
-											<div class="elementor-widget-container">
-												<h2 class="elementor-heading-title elementor-size-default">Frequently
-													asked questions</h2>
-											</div>
-										</div>
-										<div
-											class="elementor-element elementor-element-488a796b elementor-widget elementor-widget-text-editor"
-											data-id="488a796b" data-element_type="widget" data-widget_type="text-editor.default">
-											<div class="elementor-widget-container">
-												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</section>
-						<div class="elementor-element elementor-element-cf58e0d elementor-widget elementor-widget-spacer"
-							data-id="cf58e0d" data-element_type="widget" data-widget_type="spacer.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-spacer">
-									<div class="elementor-spacer-inner"></div>
-								</div>
-							</div>
-						</div>
-						<div class="elementor-element elementor-element-7312315c elementor-widget elementor-widget-toggle"
-							data-id="7312315c" data-element_type="widget" data-widget_type="toggle.default">
-							<div class="elementor-widget-container">
-								<div class="elementor-toggle">
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1931" class="elementor-tab-title" data-tab="1" role="button"
-											aria-controls="elementor-tab-content-1931" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">What is the adoption fee?</a>
-										</div>
-
-										<div id="elementor-tab-content-1931" class="elementor-tab-content elementor-clearfix" data-tab="1"
-											role="region" aria-labelledby="elementor-tab-title-1931">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1932" class="elementor-tab-title" data-tab="2" role="button"
-											aria-controls="elementor-tab-content-1932" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">What is the adoption
-												process?</a>
-										</div>
-
-										<div id="elementor-tab-content-1932" class="elementor-tab-content elementor-clearfix" data-tab="2"
-											role="region" aria-labelledby="elementor-tab-title-1932">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1933" class="elementor-tab-title" data-tab="3" role="button"
-											aria-controls="elementor-tab-content-1933" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">When are we open for
-												adoptions / visitors?</a>
-										</div>
-
-										<div id="elementor-tab-content-1933" class="elementor-tab-content elementor-clearfix" data-tab="3"
-											role="region" aria-labelledby="elementor-tab-title-1933">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1934" class="elementor-tab-title" data-tab="4" role="button"
-											aria-controls="elementor-tab-content-1934" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">Can we come see the dogs?</a>
-										</div>
-
-										<div id="elementor-tab-content-1934" class="elementor-tab-content elementor-clearfix" data-tab="4"
-											role="region" aria-labelledby="elementor-tab-title-1934">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1935" class="elementor-tab-title" data-tab="5" role="button"
-											aria-controls="elementor-tab-content-1935" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">Can i come play with the
-												dogs?</a>
-										</div>
-
-										<div id="elementor-tab-content-1935" class="elementor-tab-content elementor-clearfix" data-tab="5"
-											role="region" aria-labelledby="elementor-tab-title-1935">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-									<div class="elementor-toggle-item">
-										<div id="elementor-tab-title-1936" class="elementor-tab-title" data-tab="6" role="button"
-											aria-controls="elementor-tab-content-1936" aria-expanded="false">
-											<span class="elementor-toggle-icon elementor-toggle-icon-right" aria-hidden="true">
-												<span class="elementor-toggle-icon-closed"><i class="fas fa-chevron-down"></i></span>
-												<span class="elementor-toggle-icon-opened"><i
-														class="elementor-toggle-icon-opened fas fa-chevron-up"></i></span>
-											</span>
-											<a class="elementor-toggle-title" tabindex="0">How many dogs do you
-												have?</a>
-										</div>
-
-										<div id="elementor-tab-content-1936" class="elementor-tab-content elementor-clearfix" data-tab="6"
-											role="region" aria-labelledby="elementor-tab-title-1936">Lorem ipsum dolor sit amet,
-											consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis,
-											pulvinar dapibus leo.</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section> -->
 			</div>
 		</main>
 	</th:block>

@@ -20,11 +20,34 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
 	
-	public static final List<String> loginEssential = Arrays.asList("/**");
+	/**
+	 * 로그인이 필요한 url
+	 */
+	public static final List<String> loginEssential = Arrays.asList("/donation/method/{path}","/donation/result/{path}",
+																	"/article/volunteer/read","/article/adoption/read",
+																	"/article/volunteer/create","/article/adoption/create",
+																	"/article/comment","/article/volunteer/correct","/article/adoption/correct",
+																	"/volunteer/delete","/adoption/delete","/member/mypage",
+																	"/member/mypage/adminpage","/mypage/reser/{path}","/mypage/dona/{path}",
+																	"/volunteer/agreement","/volunteer/calender","/volunteer/choice","/volunteer/result/{path}/{path}/{path}",
+																	"/volunteer/result","/volunteer/detail/{path}","/volunteer/cancel/{path}",
+																	"/reservation/agreeReservations","/reservation/cancelReservations",
+																	"/reservation/agreeReservations/{path}","/reservation/cancelReservations/{path}");
 	
-	public static final List<String> loginNotEssential = Arrays.asList("/", "/**/*.ico", "/**/*.html", "/**/css/**", "/**/js/**", "/**/assets/**", 
-				"/error", "/member", "/member/signup", "/member/login", "/member/logout", "/member/valid/{path}", "/member/valid/{path}/{path}", "/member/rest/{path}" ,"/**/img/**", "/**/video/**" ,"/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js","/shelter/list","/shelter/detail","/introduce/introduce","/introduce/team","/article/adoption/board","/article/volunteer/board","/announce","/announce/announce","/introduce","/dog","/donation","/shelter","/volunteer","/dog/profile","/member/mypage/adminpage","/article/volunteer/board/{path}","/article/adoption/board/{path}");
-
+	/**
+	 * 로그인이 필요없는 url
+	 */
+	public static final List<String> loginNotEssential = Arrays.asList("/", "/**/*.ico", "/**/*.html", "/**/css/**", 
+																		"/**/js/**", "/**/assets/**", "/error", "/member",
+																		"/member/signup", "/member/login", "/member/logout",
+																		"/member/valid/{path}", "/member/valid/{path}/{path}",
+																		"/member/rest/{path}" ,"/**/img/**", "/**/video/**" ,
+																		"/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js",
+																		"/shelter/list","/shelter/detail","/introduce/introduce",
+																		"/introduce/team","/article/adoption/board","/article/volunteer/board",
+																		"/announce","/announce/announce","/introduce","/dog","/donation",
+																		"/shelter","/volunteer","/dog/profile","/member/mypage/adminpage",
+																		"/article/volunteer/board/{path}","/article/adoption/board/{path}","/{path}");
 
 	 @Override
 	 public void addInterceptors(InterceptorRegistry registry) {

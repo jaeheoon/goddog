@@ -91,8 +91,10 @@ public class ArticleMapperTest {
    @DisplayName("전체 행 갯수")
    @Disabled
    public void getCountTest() {
+	  String searchType = "memberId";
+	  String searchValue = "bangry";
       int noticeNo = 1;
-      int count = articleMapper.getCount(noticeNo);
+//      int count = articleMapper.getCount(noticeNo,,);
    }
    
    @Test
@@ -141,11 +143,11 @@ public class ArticleMapperTest {
      @Transactional
      @Disabled
      public void deleteArticleTest() {
-		 Article article = Article.builder()
-				 				  .memberId("furkids")
-				 				  .groupNo(201)
-				 				  .levelNo(0)
-				 				  .build();
-		 boolean result = articleMapper.deleteArticle(article);
+       Article article = Article.builder()
+                           .memberId("furkids")
+                           .groupNo(201)
+                           .levelNo(0)
+                           .build();
+       boolean result = articleMapper.deleteArticle(article);
      }
 }
