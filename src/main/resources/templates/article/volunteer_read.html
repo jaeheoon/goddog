@@ -105,8 +105,8 @@
 																	<ul class="data">
 																		<li class="adm" th:text="${articleList.memberId}"><span class="hidden" >글쓴이</span>전주영</li>
 																		<li class="date" th:text="${articleList.writeDate}"><span class="hidden">날짜</span>2023-09-04</li>
-																		<li class="view" th:text="${articleList.count}"><span>조회 : </span>조회 : 5</li>
-																		<li class="view" th:text="${articleList.count}"><span>댓글 : </span>조회 : 5</li>
+																		<li class="view"><span>조회 : </span><span th:text="${articleList.count}">조회 : 5</span></li>
+																		<li class="view"><span>댓글 : </span><span th:text="${articleList.count}">조회 : 5</span></li>
 																	</ul>
 																</li>
 
