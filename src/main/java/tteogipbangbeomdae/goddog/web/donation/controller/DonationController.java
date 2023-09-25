@@ -17,7 +17,7 @@ import tteogipbangbeomdae.goddog.domain.member.dto.Member;
 /**
  * /donation관련 요청을 처리하는 세부 컨트롤러 구현 클래스
  *
- * @author  떡잎방범대 조영호
+ * @author  떡잎방범대 조영호(최초초기화담당), 문승욱(후원생성로직담당)
  * @since   2023. 9. 10.
  * @version 1.0
  */

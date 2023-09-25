@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  * 스프링은 스프링컨테이너에 빈을 등록하는게 xml, 어노테이션, java파일(인터셉터의 경우)
  * WebConfig.java로 빈을 등록함.
  * 
- * @author 에너자이조 김기정
+ * @author 떡잎방범대 조영호
  * @since 2023. 9. 4.
  * @version 1.0
  */

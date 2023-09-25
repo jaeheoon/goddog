@@ -25,11 +25,16 @@ import tteogipbangbeomdae.goddog.domain.reservation.service.ReservationService;
 @Controller
 @RequestMapping("/reservation")
 @RequiredArgsConstructor
-@Slf4j
 public class ReservationController {
 
 	private final ReservationService reservationService;
-
+	
+	/**
+	 * 선택된 봉사예약정보를 승인처리하는 요청처리
+	 * @param reservationNumbers 선택된 봉사예약번호
+	 * @param model
+	 * @return 승인처리여부
+	 */
 	@PostMapping("/agreeReservations")
 	@ResponseBody
 	public boolean agreeReservation(@RequestParam("reservationNo") List<Integer> reservationNumbers, Model model) {
@@ -43,6 +48,12 @@ public class ReservationController {
 		return result;
 	}
 	
+	/**
+	 * 선택된 봉사예약정보를 거부처리하는 요청처리
+	 * @param reservationNumbers 선택된 번호
+	 * @param model
+	 * @return 거부처리 여부
+	 */
 	@PostMapping("/cancelReservations")
 	@ResponseBody
 	public boolean cancelReservation(@RequestParam("reservationNo") List<Integer> reservationNumbers, Model model) {
@@ -56,16 +67,16 @@ public class ReservationController {
 		return result;
 	}
 	
-	@GetMapping("/agreeReservations/{reservationNo}")
-	public String agreeReservationPath(@PathVariable("reservationNo")int reservationNo, Model model) {
-		reservationService.agreeUpdate(reservationNo);
-		return "redirect:/member/mypage/adminpage";
-	}
-	
-	@GetMapping("/cancelReservations/{reservationNo}")
-	public String cancelReservationPath(@PathVariable("reservationNo")int reservationNo, Model model) {
-		reservationService.cancelUpdate(reservationNo);
-		return "redirect:/member/mypage/adminpage";
-	}
+//	@GetMapping("/agreeReservations/{reservationNo}")
+//	public String agreeReservationPath(@PathVariable("reservationNo")int reservationNo, Model model) {
+//		reservationService.agreeUpdate(reservationNo);
+//		return "redirect:/member/mypage/adminpage";
+//	}
+//	
+//	@GetMapping("/cancelReservations/{reservationNo}")
+//	public String cancelReservationPath(@PathVariable("reservationNo")int reservationNo, Model model) {
+//		reservationService.cancelUpdate(reservationNo);
+//		return "redirect:/member/mypage/adminpage";
+//	}
 	
 }

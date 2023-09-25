@@ -36,4 +36,5 @@ public class ReservationServiceTest {
 	public void getReservationCountTest() {
 		reservationService.getReservationCount(3);
 	}
+	
 }

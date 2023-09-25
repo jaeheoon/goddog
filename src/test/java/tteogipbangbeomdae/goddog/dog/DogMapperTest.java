@@ -1,4 +1,4 @@
-package tteogipbangbeomdae.goddog;
+package tteogipbangbeomdae.goddog.dog;
 
 import java.util.List;
 

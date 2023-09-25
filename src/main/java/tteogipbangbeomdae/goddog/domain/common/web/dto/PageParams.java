@@ -26,6 +26,7 @@ public class PageParams {
 	private int elementSize;    /** 페이지에 보여지는 목록 갯수 */
 	private int pageSize;       /** 페이지에 보여지는 페이지 갯수 */
 	private int requestPage;    /** 사용자 요청 페이지 */
-	private String keyword;     /** 검색값 */
+	private String searchValue;     /** 사용자 검색값 */
+	private String searchType; /** 사용자 검색타입 */
 	private int rowCount;       /** 테이블 목록 갯수 */
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.hibernate.validator.constraints.ParameterScriptAssert;
 
 import tteogipbangbeomdae.goddog.domain.article.dto.Article;
 import tteogipbangbeomdae.goddog.domain.article.dto.ArticleImage;
@@ -29,7 +30,7 @@ public interface ArticleMapper {
    public List<Article> findAll(@Param("pageParams") PageParams pageParams, @Param("noticeNo") int noticeNo);
 
    /** 페이징 계산에 필요한 게시글 전체 갯수 반환 */
-   public int getCount(int noticeNo);
+   public int getCount(@Param("noticeNo") int noticeNo,@Param("searchValue") String searchValue, @Param("searchType") String searchType);
    
    /** 요청 페이지, 페이지당 보여지는 목록 갯수에 따른 목록 반환 */
    public int getCountAll(PageParams pageParams);
@@ -51,5 +52,8 @@ public interface ArticleMapper {
    
    /** 게시글 수정 기능 */
    public boolean updateArticle();
+   
+   /** 게시글 댓글 갯수 */
+   public int getCommentCount(int groupNo);
    
 }

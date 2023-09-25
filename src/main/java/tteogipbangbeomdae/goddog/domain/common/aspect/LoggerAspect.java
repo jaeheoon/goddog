@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * 서비스 객체 로그 Aspect 구현 (서비스객체 로그기록용)
  * 필요없으면 Aspect주석
- * @author  에너자이조 김기정
+ * @author  떡잎방범대 조영호
  * @since   2023. 9. 4.
  * @version 1.0
  */

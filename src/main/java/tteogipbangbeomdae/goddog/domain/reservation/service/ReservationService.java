@@ -9,7 +9,7 @@ import tteogipbangbeomdae.goddog.domain.web.dto.PageParams;
 /**
  * 봉사예약 관련 비즈니스 인터페이스
  *
- * @author  떡잎방범대 홍재헌
+ * @author  떡잎방범대 홍재헌(봉사생성담당), 조영호(봉사내역관리담당)
  * @since   2023. 9. 14.
  * @version 1.0
  */

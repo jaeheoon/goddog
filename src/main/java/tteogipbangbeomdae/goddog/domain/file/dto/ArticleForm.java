@@ -27,7 +27,7 @@ import lombok.ToString;
 @Builder
 public class ArticleForm {
 	
-	private String title;
-	private String content;
-	private List<MultipartFile> uploadFiles;
+	private String title; //제목
+	private String content; //내용
+	private List<MultipartFile> uploadFiles; //업로드된 파일들
 }

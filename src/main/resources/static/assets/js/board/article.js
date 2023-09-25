@@ -60,10 +60,8 @@ function doDisplay() {
 //작성하기 버튼 누르면 페이지이동없이 바로 작성되는 이벤트 구현
 document.querySelector('.confirm').addEventListener('click', (event) => {
 	event.preventDefault();
-	//console.log('클릭');
 	let writer = document.querySelector('#username').value;
 	let content = document.querySelector('#commentInput').value;
-	//console.log(content);
 	if (content) {
 		createAndGetList(content, writer)
 	} else {
@@ -76,7 +74,6 @@ function commentListLoading(){
 async function createAndGetList(content, writer) {
 	//await로 GroupNo에 해당하는 전체리스트를 반환받음
 	let result = await createRequest(content, writer);
-	console.dir(result);
 	//댓글만 동적표시할꺼니 맨앞의 매인글은 배열에서 삭제후 완성된 댓글만으로 이루어진 배열 반환.
 	let commentList = result.slice(1);
 	//댓글갯수만큼 루프돌면서 해당 변수에 동적태그가 생성될 그릇을 생성
@@ -85,9 +82,6 @@ async function createAndGetList(content, writer) {
 	const view = document.querySelector('.commentBoxList');
 	//작성완료후 내용작성칸 초기화를 위해 TextArea찾아옴.
 	const commentTextArea = document.querySelector('#commentInput');
-	console.dir(commentList+'적힐갯수다요');
-	console.dir(commentTextArea);
-	console.dir(view+'뷰다요');
 	//댓글 갯수만큼 루프돌면서 원하는 속성을 사용하여 태그내용 구성하여 그릇에 더함
 	commentList.forEach(comment => {
 		resultTag += `<li class="commentbox">
@@ -105,9 +99,10 @@ async function createAndGetList(content, writer) {
 					 </li>`
 	});
 	//댓글내용적는 TextArea 초기화
-	commentTextArea.value = ``;
+	if(commentTextArea){
+	commentTextArea.value = ``;	
+	}
 	//완성된동적태그 화면에 출력
-	console.log(resultTag);
 	view.innerHTML = resultTag;
 }
 

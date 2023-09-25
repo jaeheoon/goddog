@@ -11,8 +11,9 @@ import tteogipbangbeomdae.goddog.web.member.exception.MemberException;
 
 /**
  * 세부 컨트롤러에서 발생하는 예외 처리를 위한 공통 구현
- *
- * @author 에너자이조 김기정
+ * 개발시에 오류메세지를 보기위해 만들어진 컨트롤러 발표때는 비활성화하여 원하는 에러페이지 자동이동하게함.
+ * 
+ * @author 떡잎방범대 조영호
  * @since 2023. 9. 5.
  * @version 1.0
  */
